@@ -1,5 +1,29 @@
 .home__news--highlight {
-	height: 433px;
-	.news--highlight__wrapper {
-	}
+    height: 433px;
+    background-color: #F4F5F9;
+}
+.news--highlight__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    h3 {
+        font-size: 30px;
+        font-weight: bold;
+        span {
+            color: #C4851A;
+        }
+    }
+    p {
+        font-size: 23px;
+        padding: 20px 0 30px 0;
+    }
+    a {
+        width: 138px;
+        height: 48px;
+        font-size: 18px;
+        border: #707070;
+        border-radius: 21px;
+        background-color: #C4851A;
+        font-weight: bold;
+    }
 }
