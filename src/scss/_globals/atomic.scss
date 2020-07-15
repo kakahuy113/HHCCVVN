@@ -112,3 +112,51 @@
 .td-u {
 	text-decoration: underline;
 }
+
+.cl-main-1 {
+	color: map-get($mau, main-1)
+}
+
+.cl-main-2 {
+	color: map-get($mau, main-2)
+}
+
+.cl-xanh-1 {
+	color: map-get($mau, xanh-1)
+}
+
+.cl-trang {
+	color: map-get($mau, trang)
+}
+
+.cl-den {
+	color: map-get($mau, den)
+}
+
+.cl-xam {
+	color: map-get($mau, xam)
+}
+
+.bg-main-1 {
+	background: map-get($mau, main-1)
+}
+
+.bg-main-2 {
+	background: map-get($mau, main-2)
+}
+
+.bg-xanh-1 {
+	background: map-get($mau, xanh-1)
+}
+
+.bg-trang {
+	background: map-get($mau, trang)
+}
+
+.bg-den {
+	background: map-get($mau, den)
+}
+
+.bg-xam {
+	background: map-get($mau, xam)
+}
