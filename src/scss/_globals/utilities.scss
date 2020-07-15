@@ -104,3 +104,10 @@ textarea {
 		-webkit-line-clamp: 3;
 	}
 }
+
+.__wrapper-calc {
+	@media (min-width: 1440px) {
+		width: calc(100% - 276px);
+		margin: 0 auto;
+	}
+}
