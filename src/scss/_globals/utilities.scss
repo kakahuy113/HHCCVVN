@@ -105,9 +105,11 @@ textarea {
 	}
 }
 
-.__wrapper-calc--276px {
+.container-1365px {
+	position: relative;
+
 	@media (min-width: 1440px) {
-		width: calc(100% - 276px);
+		max-width: 1365px;
 		margin: 0 auto;
 	}
 }
