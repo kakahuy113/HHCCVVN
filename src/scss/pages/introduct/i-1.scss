@@ -1,0 +1,8 @@
+section.Introduct {
+    .introduct--title {
+        h2 {
+            font-size: 30px;
+            color: map-get($mau, main-2);
+        }
+    }
+}
