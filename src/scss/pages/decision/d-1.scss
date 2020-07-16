@@ -1,0 +1,47 @@
+section.Decision {
+    padding-top: 56px;
+    padding-bottom: 130px;
+    .decision__wrapper {
+        margin: 0 auto;
+    }
+    .decision__intro {
+        margin-bottom: 73px;
+        h2 {
+            font-size: 30px;
+            color: map-get($mau, main-2);
+            text-transform: uppercase;
+            margin-bottom: 50px;
+            @media (max-width: 1440.98px) {
+                margin-bottom: 30px;
+            }
+            @media (max-width: 768.98px) {
+                margin-bottom: 25px;
+                font-size: 25px;
+            }
+        }
+        h4 {
+            color: map-get($mau, xam);
+            font-size: 20px;
+            margin-bottom: 20px;
+            @media (max-width: 768.98px) {
+                margin-bottom: 15px;
+                font-size: 15px;
+            }
+        }
+        p {
+            font-size: 1rem;
+            color: map-get($mau, xam);
+            margin-bottom: 20px;
+            @media (max-width: 768.98px) {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .decision__doc {
+        text-align: center;
+    }
+}
