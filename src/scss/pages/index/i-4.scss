@@ -1,0 +1,123 @@
+.home__Lib__video {
+	margin-bottom: 80px;
+}
+.home__lib__video__banner {
+	margin-bottom: 66px;
+}
+.home__lib__video--banner {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 60px;
+}
+
+.above__banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.92;
+}
+.banner--content {
+	position: absolute;
+	z-index: 999999;
+	top: 25%;
+	left: 278px;
+	color: map-get($mau, trang);
+	h4 {
+		font-size: 38px;
+		font-weight: bold;
+		span {
+			color: #c4851a;
+		}
+	}
+	p.sub-title {
+		font-size: 28px;
+	}
+	p.quaranty {
+		font-size: 78px;
+		font-weight: bold;
+		color: #c4851a;
+	}
+}
+.home__lib__video__wrapper--inner {
+    // display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+	& > div {
+        margin-top: 10px;
+        padding: 0 20px;
+		-ms-flex: 0 0 50%;
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.swiper-button-white {
+		color: #707070;
+    }
+    @media (max-width:1024px) {
+        flex-direction: column;
+        max-width: 100%;
+        margin-left: -10px;
+        margin-right: -10px;
+        & > div {
+            flex: 0 0 100%;
+            max-width: 90%;
+            margin: 10px auto;
+            padding-left: -10px;
+            padding-right: -10px;
+        }
+    }
+}
+.lib__images--right {
+	img {
+		width: 100%;
+	}
+	.gallery-thumbs > .swiper-wrapper {
+		justify-content: center;
+	}
+}
+
+.slider__wrapper {
+	position: relative;
+}
+.swiper--right__wrapper-1 {
+	padding-bottom: 50px;
+}
+.swiper--right__wrapper-2 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.swiper--left__wrapper {
+    .swiper-button-next {
+        right: -15px;
+    }
+    .swiper-button-prev  {
+        left: -15px;
+    }
+	.swiper-slide {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../assets/images/index/video/swiper_background1-1.png);
+		}
+	}
+}
+.lib__images--right {
+	.swiper--right__wrapper-2 {
+		.swiper-slide {
+			&::after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url(../assets/images/index/video/swiper_background.png);
+			}
+		}
+	}
+}
