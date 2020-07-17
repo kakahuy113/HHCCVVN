@@ -153,8 +153,8 @@ header {
 }
 
 .navbottom__wrapper>.navBar>.navBar__item>.navBar__link {
+	font-family: MYRIADPRO-SEMIBOLD;
 	font-size: 17px;
-	font-weight: 700;
 	text-transform: uppercase;
 
 	@media (max-width: 1199.98px) {
@@ -181,15 +181,15 @@ header {
 
 .isHaveSubMenu {
 	position: relative;
-	padding-right: 25px;
+	padding-right: 20px;
 
 	&:after {
 		content: '';
 		position: absolute;
-		width: 17px;
-		height: 10px;
+		width: 14px;
+		height: 7px;
 		right: 0;
-		top: 50%;
+		top: 45%;
 		transform: translateY(-50%);
 		background-image: url(../assets/icons/arrow-bottom-blue.svg);
 		background-size: 100% 100%;

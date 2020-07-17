@@ -1,4 +1,7 @@
-import { getSVGs, Loading } from './util/utilities';
+import {
+	getSVGs,
+	Loading
+} from './util/utilities';
 import Cookie from './lib/Cookie';
 
 // INIT CLASS SUB MENU
@@ -31,9 +34,7 @@ const initMainBanner = () => {
 		fadeEffect: {
 			crossFade: true,
 		},
-		centeredSlides: true,
 		speed: 1000,
-		loop: true,
 		autoplay: {
 			delay: 5000,
 			disableOnInteraction: false,
@@ -50,10 +51,6 @@ const init_Video = () => {
 	var swiper = new Swiper('.swiper--left__wrapper .swiper-container', {
 		// Enable lazy loading
 		lazy: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-		},
 		navigation: {
 			nextEl: '.swiper--left__wrapper .swiper-button-next',
 			prevEl: '.swiper--left__wrapper .swiper-button-prev',
@@ -69,7 +66,7 @@ const init_Image = () => {
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 	});
-	
+
 	var galleryTop = new Swiper('.lib__images--right .gallery-top', {
 		spaceBetween: 10,
 		navigation: {
@@ -81,17 +78,9 @@ const init_Image = () => {
 		},
 	});
 }
-function submitContact() {
-	$(".contact form .form-button").on("click", (e) => {
-		e.preventDefault();
-		const _form = $(e.currentTarget.parentElement);
-		
-
-	  });
-}
 
 const ajaxFormContact = () => {
-	$(".contact form .form-button").on('click', function(e) {
+	$(".contact form .form-button").on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');

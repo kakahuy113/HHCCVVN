@@ -20,6 +20,13 @@ textarea {
 	}
 }
 
+#back_to_top {
+	cursor: pointer;
+	position: fixed;
+	right: 25px;
+	bottom: 25px;
+}
+
 .field-validation-error {
 	display: inline-block;
 	margin: 0.5rem 0;
