@@ -35,8 +35,8 @@ section.Introduct {
         }
         @media (max-width: 575.98px) {
             display: block;
+            padding: 30px 0;
             margin-left: 0;
-            padding: 20px;
         }
     }
     .introduct__content {
@@ -55,9 +55,11 @@ section.Introduct {
         }
         @media (max-width: 575.98px) {
             width: 100%;
+            margin-left: 0;
         }
         h3 {
             text-transform: uppercase;
+            font-family: UTM-COPPERPLATEB;
             font-size: 30px;
             color: map-get($mau, main-2);
             margin-bottom: 20px;
@@ -69,6 +71,7 @@ section.Introduct {
             font-size: 20px;
             color: map-get($mau, xam);
             margin-bottom: 20px;
+            font-family: MYRIADPRO-SEMIBOLD;
             @media (max-width: 1440.98px) {
                 font-size: 17px;
                 margin-bottom: 15px;
@@ -83,6 +86,8 @@ section.Introduct {
         }
         p {
             margin-bottom: 35px;
+            font-family: MYRIADPRO-LIGHT;
+            color: map-get($mau, xam);
             @media (max-width: 1440.98px) {
                 margin-bottom: 15px;
                 font-size: 14px;
@@ -115,27 +120,29 @@ section.Introduct {
                 font-size: 24px;
             }
             @media (max-width: 1024.98px) {
-                font-size: 20px;
+                font-size: 19px;
             }
             @media (max-width: 768.98px) {
-                font-size: 16px;
+                font-size: 15px;
             }
             color: map-get($mau, main-2);
         }
     }
     .introduct__video {
-        margin-left: 76px;
+        width: 670px;
+        height: 490px;
+        margin-left: 40px;
         @media (max-width: 1024.98px) {
             margin-left: 50px;
         }
         @media (max-width: 768.98px) {
             margin-left: 15px;
         }
-        width: 765px;
         @media (max-width: 575.98px) {
             width: 100%;
+            margin-top: 20px;
+            margin-left: 0px;
         }
-        height: 490px;
         @media (max-width: 1440.98px) {
             height: auto;
         }
@@ -167,5 +174,8 @@ section.Introduct {
     }
     .introduct__botContent {
         background: map-get($mau, xam-1);
+        @media (max-width: 575.98px) {
+            padding-top: 20px;
+        }
     }
 }
