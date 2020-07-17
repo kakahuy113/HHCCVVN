@@ -75,7 +75,7 @@ ul.news__events--list {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	h3 {
+	h3.title {
 		font-size: 30px;
 		font-weight: bold;
 	}
@@ -83,8 +83,9 @@ ul.news__events--list {
 		font-size: 16px;
 		color: #c4851a;
 	}
-	p {
+	p.desc {
 		font-size: 16px;
+		font-family: MYRIADPRO-LIGHT;
 	}
 	a {
 		border: 0;
@@ -97,16 +98,17 @@ ul.news__events--list {
 		border-radius: 7px;
 		width: 134px;
 		height: 36px;
+		font-family: MYRIADPRO-BOLDIT;
 		position: relative;
 		&::after {
 			content: "";
 			position: absolute;
 			top: 50%;
-			right: 0;
+			right: 5px;
 			width: 1em;
 			height: 1em;
 			background-size: 100% 100%;
-			transform: translateY(-40%);
+			transform: translateY(-50%);
 			background: url(../assets/images/news-events/after-icon.svg) no-repeat;
 		}
 	}
