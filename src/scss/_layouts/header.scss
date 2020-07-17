@@ -4,4 +4,282 @@ header {
 	left: 0;
 	width: 100%;
 	z-index: 500;
+	background: map-get($mau, trang);
+	padding-top: 15px;
+}
+
+.header__after {
+	position: absolute;
+	height: 45px;
+	max-width: 28%;
+	width: 100%;
+	top: 100%;
+	left: 0;
+
+	&:after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: calc(100% - 41px);
+		top: 0;
+		left: 0;
+		background: #ffffff;
+		pointer-events: none;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 0;
+		height: 0;
+		border-top: 0px solid transparent;
+		border-left: 41px solid #ffffff;
+		border-bottom: 45px solid transparent;
+		z-index: 1;
+	}
+
+	@media (min-width: 1900px) {
+		max-width: 540px;
+	}
+}
+
+.header__logo {
+	position: absolute;
+	left: 0;
+	z-index: 1;
+}
+
+.header__nav--top,
+.header__nav--bottom {
+	max-width: 950px;
+	width: 100%;
+	margin-left: auto;
+
+	@media (max-width: 1439.98px) {
+		max-width: 70%;
+	}
+}
+
+.navtop__wrapper {
+	display: flex;
+	align-items: center;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(map-get($mau, main-1), $alpha: .5);
+}
+
+.header__informations {
+	display: flex;
+	margin-left: auto;
+
+	.information__item+.information__item {
+		margin-left: 86px;
+	}
+
+	.information__link {
+		color: map-get($mau, main-1);
+	}
+}
+
+.header__languages {
+	display: flex;
+	margin-left: 48px;
+
+	.languages__item {
+		+.languages__item {
+			margin-left: 19px;
+		}
+
+		&.active {
+			font-weight: 700;
+
+			.languages__link {
+				color: map-get($mau, main-2);
+			}
+		}
+	}
+
+	.languages__link {
+		color: map-get($mau, main-1);
+	}
+}
+
+.header__login {
+	margin-left: 45px;
+}
+
+.navbottom__wrapper {
+	position: relative;
+	margin-top: 18px;
+	margin-bottom: 10px;
+	padding-right: 50px;
+}
+
+.navBar {
+	display: flex;
+}
+
+.navbottom__wrapper>.navBar>.navBar__item {
+	+.navBar__item {
+		padding-left: 54px;
+
+		@media (max-width: 1439.98px) {
+			padding-left: 3%;
+		}
+	}
+
+	&.active {
+		>.navBar__link {
+			color: map-get($mau, main-2);
+		}
+
+		&:after {
+			background-image: url(../assets/icons/arrow-bottom-yellow.svg);
+		}
+	}
+
+	@media (min-width: 1025px) {
+		>.navBar__link {
+			transition: .3s all ease-in-out;
+		}
+
+		&:hover {
+			>.navBar__link {
+				color: map-get($mau, main-2);
+			}
+		}
+	}
+}
+
+.navbottom__wrapper>.navBar>.navBar__item>.navBar__link {
+	font-size: 17px;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	@media (max-width: 1199.98px) {
+		font-size: 14px;
+	}
+}
+
+.navBar__link {
+	color: map-get($mau, main-1);
+}
+
+.navSearch {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.navSearch__btn {
+	cursor: pointer;
+}
+
+// SUB MENU HERE !!!
+
+.isHaveSubMenu {
+	position: relative;
+	padding-right: 25px;
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 17px;
+		height: 10px;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		background-image: url(../assets/icons/arrow-bottom-blue.svg);
+		background-size: 100% 100%;
+	}
+
+	@media (min-width: 1025px) {
+		.navBar--lv1 {
+			transition: .3s all ease-in-out;
+		}
+
+		&:hover {
+			&:after {
+				background-image: url(../assets/icons/arrow-bottom-yellow.svg);
+			}
+
+			.navBar--lv1 {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+}
+
+.navBar--lv1 {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	flex-direction: column;
+	width: max-content;
+	padding-top: 10px;
+	background: map-get($mau, trang);
+	// HIDDEN !!!
+	opacity: 0;
+	visibility: hidden;
+}
+
+.navBar__item--lv1 {
+	padding: 10px;
+
+	+.navBar__item--lv1 {
+		border-top: 1px solid rgba($color:#B8B8B8, $alpha: .5);
+	}
+
+	>.navBar__link {
+		position: relative;
+		font-size: 14px;
+		padding-left: 15px;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 8px;
+			height: 8px;
+			background-image: url(../assets/icons/arrow-left-blue.svg);
+			background-size: 100% 100%;
+		}
+	}
+
+	&.acitve {
+		background: map-get($mau, main-1);
+
+		>.navBar__link {
+			color: map-get($mau, trang);
+
+			&::before {
+				background-image: url(../assets/icons/arrow-left-white.svg);
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		transition: .2s all ease-in-out;
+
+		>.navBar__link {
+			transition: .3s all ease-out;
+		}
+
+		&:hover {
+			background: map-get($mau, main-1);
+
+			>.navBar__link {
+				color: map-get($mau, trang);
+
+				&::before {
+					background-image: url(../assets/icons/arrow-left-white.svg);
+				}
+			}
+		}
+	}
 }

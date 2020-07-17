@@ -4,9 +4,31 @@ import {
 } from './util/utilities';
 import Cookie from './lib/Cookie';
 
+// INIT CLASS SUB MENU
+const initClassSubMenu = () => {
+	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
+
+	items__MainMenu.forEach((item) => {
+		const isHaveSub = item.querySelectorAll('.navBar');
+		// CHECK MAIN MENU IS HAVE SUB ???
+		if (isHaveSub.length > 0) {
+			// ADD CLASS IS HAVE SUB
+			item.classList.add('isHaveSubMenu');
+			// ADD CLASS LIST MENU LV1
+			isHaveSub.forEach((item) => {
+				item.classList.add('navBar--lv1')
+			})
+			// ADD CLASS ITEM MENU LV1
+			const items__MenuLv1 = item.querySelectorAll('.navBar__item');
+			items__MenuLv1.forEach((item) => {
+				item.classList.add('navBar__item--lv1')
+			})
+		}
+	})
+}
 
 // MAIN BANNER WEBSITE
-const init_MainBanner = () => {
+const initMainBanner = () => {
 	let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
 		effect: 'fade',
 		fadeEffect: {
@@ -32,7 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	getSVGs();
 	Loading();
 	// MAIN BANNER WEBSITE
-	init_MainBanner();
+	initMainBanner();
+	// INIT CLASS SUB MENU
+	initClassSubMenu();
 });
 
 document.addEventListener('DOMContentLoaded', () => {});

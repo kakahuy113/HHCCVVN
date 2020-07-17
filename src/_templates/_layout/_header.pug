@@ -1,4 +1,55 @@
 header
+	.header__after
 	.container
 		.header__wrapper.container-1365px
-			h1 hello
+			.header__logo
+				img.lazyload.blur-up(data-src="./assets/logo.png", alt="")
+			.header__nav--top
+				.navtop__wrapper
+					.header__informations
+						.information__item
+							a.information__link(href="#") đang cập nhật
+						.information__item
+							a.information__link(href="#") đang cập nhật
+					.header__languages
+						.languages__item.active
+							a.languages__link(href="#") Vietnamese
+						.languages__item
+							a.languages__link(href="#") English
+					.header__login
+						.btn.btn-login
+							h5.cl-main-2 Đăng nhập
+			.header__nav--bottom
+				.navbottom__wrapper
+					.navBar
+						.navBar__item
+							a.navBar__link(href="#") GIỚI THIỆU
+							.navBar
+								.navBar__item
+									a.navBar__link(href="#") Giới thiệu chung
+								.navBar__item
+									a.navBar__link(href="#") Sơ đồ tổ chức
+								.navBar__item
+									a.navBar__link(href="#") Quyết định thành lập
+								.navBar__item
+									a.navBar__link(href="#") Điều lệ
+								.navBar__item
+									a.navBar__link(href="#") Các đơn vị trực thuộc
+								.navBar__item
+									a.navBar__link(href="#") Ban chấp hành
+								.navBar__item
+									a.navBar__link(href="#") Ban thường trực
+								.navBar__item
+									a.navBar__link(href="#") Ban kiểm tra
+						.navBar__item
+							a.navBar__link(href="#") TIN TỨC - SỰ KIỆN
+						.navBar__item
+							a.navBar__link(href="#") NGHIÊN CỨU - TRAO ĐỔI
+						.navBar__item
+							a.navBar__link(href="#") THƯ VIỆN
+						.navBar__item
+							a.navBar__link(href="#") LIÊN HỆ
+					.navSearch
+						.navSearch__wrapper
+							.navSearch__btn
+								img.svg(src="./assets/icons/search.svg", alt="BUTTON SEARCH")
