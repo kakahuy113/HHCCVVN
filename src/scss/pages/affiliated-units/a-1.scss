@@ -1,13 +1,39 @@
 section.Affiliated-units {
     padding-top: 56px;
     padding-bottom: 150px;
+    @media (max-width: 1024.98px) {
+        padding-top: 30px;
+        padding: 0 80px;
+        padding-bottom: 150px;
+    }
+    @media (max-width: 768.98px) {
+        padding-top: 20px;
+        padding: 0 40px;
+        padding-bottom: 100px;
+    }
+    @media (max-width: 575.98px) {
+        padding-top: 20px;
+        padding: 0 10px;
+        padding-bottom: 50px;
+    }
+    .unit__wrapper.col-8 {
+        margin: 0 auto;
+    }
     .unit__content {
         margin-bottom: 50px;
+        @media (max-width: 575.98px) {
+            margin-bottom: 20px;
+        }
         h2 {
             font-size: 30px;
             color: map-get($mau, main-2);
             text-transform: uppercase;
             margin-bottom: 50px;
+            @media (max-width: 1440.98px) {
+                margin-bottom: 25px;
+                font-size: 25px;
+            }
+            font-family: UTM-COPPERPLATEB;
             @media (max-width: 768.98px) {
                 margin-bottom: 25px;
                 font-size: 25px;
@@ -17,15 +43,25 @@ section.Affiliated-units {
             color: map-get($mau, xam);
             font-size: 20px;
             margin-bottom: 20px;
+            font-family: MYRIADPRO-SEMIBOLD;
+            @media (max-width: 1440.98px) {
+                font-size: 17px;
+                margin-bottom: 15px;
+            }
             @media (max-width: 768.98px) {
                 margin-bottom: 15px;
                 font-size: 15px;
             }
         }
         p {
+            font-family: MYRIADPRO-LIGHT;
             font-size: 1rem;
             color: map-get($mau, xam);
             margin-bottom: 20px;
+            @media (max-width: 1440.98px) {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
             @media (max-width: 768.98px) {
                 font-size: 13px;
                 margin-bottom: 10px;
@@ -37,10 +73,22 @@ section.Affiliated-units {
     }
     .unit__row--list {
         .unit__col {
+            @media (max-width: 768.98px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 30px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
             h3 {
                 margin-bottom: 15px;
                 color: map-get($mau, main-2);
                 font-size: 20px;
+                font-family: MYRIADPRO-SEMIBOLD;
+                @media (max-width: 1440.98px) {
+                    font-size: 17px;
+                }
                 @media (max-width: 768.98px) {
                     font-size: 15px;
                     margin-bottom: 10px;
@@ -53,6 +101,9 @@ section.Affiliated-units {
                     margin-bottom: 10px;
                     &:last-child {
                         margin-bottom: 0;
+                    }
+                    @media (max-width: 1440.98px) {
+                        font-size: 14px;
                     }
                     @media (max-width: 768.98px) {
                         font-size: 13px;
