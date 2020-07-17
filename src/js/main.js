@@ -88,7 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainBanner();
 	// INIT CLASS SUB MENU
 	initClassSubMenu();
-	init_MainBanner();
 	// Home swiper Video
 	init_Video();
 	// HOme swiper Image

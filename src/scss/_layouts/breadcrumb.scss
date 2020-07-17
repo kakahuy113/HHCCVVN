@@ -1,0 +1,39 @@
+#breadcrumb-wrapper {
+	margin-top: 53px;
+
+	.breadcrumb {
+		list-style     : none;
+		display        : flex;
+		justify-content: flex-start;
+		padding        : 0;
+
+		li {
+			a {
+				color    : #777777;
+				font-size: 17px;
+				display  : inline-block;
+			}
+
+			&.active {
+				a {
+					color: map-get($mau, main);
+				}
+			}
+
+			&+li {
+				&:before {
+					content : "/";
+					position: relative;
+					left    : 0;
+					top     : 0;
+					margin  : 0 12px;
+					color   : #777777;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		display: none;
+	}
+}
