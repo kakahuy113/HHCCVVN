@@ -44,16 +44,24 @@
 .member--list {
 	display: grid;
 	grid-gap: 50px 100px;
-	grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto;
+   
 	& > div {
-		background: #f4f5f9;
+		background: #fff;
 		border-radius: 16px;
         box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
+        max-width: 466px;
+        height: 161px;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #707070;
 	}
 }
 .member--item {
-    display: flex;
-    & > div {
-        
-    }
+    // display: flex;
+    // .member--item--img {
+    //     -ms-flex: 0 0 30%;
+    //     flex: 0 0 30%;
+    //     max-width: 30%;
+    // }
 }
