@@ -20,15 +20,113 @@ section.Research {
         padding: 54px;
         ul {
             li {
-                padding-top: 31px;
+                padding-bottom: 31px;
+                color: map-get($mau, xam);
                 a {
+                    display: block;
+                    position: relative;
                     font-family: MYRIADPRO-BOLD;
                     color: map-get($mau, xam);
                     font-size: 17px;
+                    padding-bottom: 12px;
+                    width: 100%;
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 1px;
+                        background: #C8C8C8;
+                    }
                 }
-                &:first-child {
-                    padding-top: 0px;
+                &:last-child {
+                    padding-bottom: 0px;
                 }
+            }
+        }
+    }
+    .research__login.row {
+        margin-right: -100px;
+    }
+    .research__login {
+        padding-left: 100px;
+    }
+    .research__login--form {
+        border-radius: 15px;
+        padding: 20px 32px;
+        box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+        h3 {
+            font-family: UTM-COPPERPLATEB;
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            input,
+            textarea {
+                width: 100%;
+                border-radius: 20px;
+                outline: none;
+                border: none;
+                box-shadow: 0px 2px 6px rgba($color: #000000, $alpha: 0.16);
+                padding-left: 23px;
+                font-size: 16px;
+                font-family: MYRIADPRO-LIGHT;
+            }
+            input {
+                height: 46px;
+                margin-bottom: 23px;
+            }
+            textarea {
+                padding: 23px;
+                margin-bottom: 23px;
+                height: 185px;
+                resize: none;
+            }
+        }
+        .btn.btn-subResearch {
+            margin: 0 auto;
+            button {
+                border-radius: 10px;
+                border: none;
+                height: 26px;
+                width: 71px;
+            }
+            span {
+                font-size: 13px;
+                margin-left: 7px;
+                font-family: MYRIADPRO-BOLD;
+            }
+        }
+    }
+    .research__optItem {
+        display: block;
+        margin: 0 auto;
+        border-radius: 25px;
+        padding: 10px 20px;
+        width: fit-content;
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+        span {
+            font-family: MYRIADPRO-BOLDCOND;
+            font-size: 23px;
+            padding-left: 12px;
+        }
+        img {
+            padding-right: 12px;
+            vertical-align: text-bottom !important;
+            position: relative;
+            &::before {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background: #000000;
+                content: "";
             }
         }
     }
