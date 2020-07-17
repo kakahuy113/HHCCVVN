@@ -1,0 +1,35 @@
+section.Research {
+    padding: 86px 0;
+    // css list left
+    .research__list.col-3 {
+        padding: 0 0;
+    }
+    .research__list {
+        border-radius: 15px;
+    }
+    .research__list--title {
+        border-radius: 15px;
+        height: 52px;
+        h3 {
+            font-family: UTM-COPPERPLATEB;
+            font-size: 30px;
+            text-align: center;
+        }
+    }
+    .research__list--item {
+        padding: 54px;
+        ul {
+            li {
+                padding-top: 31px;
+                a {
+                    font-family: MYRIADPRO-BOLD;
+                    color: map-get($mau, xam);
+                    font-size: 17px;
+                }
+                &:first-child {
+                    padding-top: 0px;
+                }
+            }
+        }
+    }
+}

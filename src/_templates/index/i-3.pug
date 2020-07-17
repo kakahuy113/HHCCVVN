@@ -1,0 +1,26 @@
+section.home__news__event
+	.container
+		.home__news__event__wrapper.container-1365px
+			.home__news__event__wrapper--inner.row
+				.home__news.col-6
+					.home__news__wrapper
+						h3.tt-u
+							span Tin Tức
+						.news--inner
+							-for(var i = 0; i< 5; i++)
+								div.new--inner__wrapper
+									div.news--img
+										img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/news-${i + 1}.jpg`, alt="")
+									p.lcl.lcl-3.news--desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
+				.home__events.col-6
+					.home__events__wrapper
+						h3.tt-u 
+							span Sự Kiện
+						.events--inner
+							-for(var i = 0; i< 3; i++)
+								div
+									div.event--img
+										img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/event-${i + 1}.jpg`, alt="")
+										div.event--desc
+											p.lcl.lcl-1.events--desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
+

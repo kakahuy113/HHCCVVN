@@ -1,0 +1,12 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Giới thiệu chung | Hiệp hội công chứng';
+	- let bodyClass = 'introduct-page';
+
+block loading
+	include _templates/_layout/_loading
+block banner,breadcrumb
+block main
+	include _templates/introduct/i-1
+block scripts

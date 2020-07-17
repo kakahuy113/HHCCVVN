@@ -1,0 +1,13 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | News - Events - Detail';
+	- let bodyClass = 'index-page';
+
+block loading
+	include _templates/_layout/_loading
+block banner,breadcrumb
+	include _templates/_layout/_main-banner
+block main
+		include _templates/news-events-detail/n-1
+block scripts

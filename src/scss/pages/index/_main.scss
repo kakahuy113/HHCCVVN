@@ -1,1 +1,29 @@
-@import "i-1"
+section.index__wrapper {
+   color: #002F4B;;
+   h3 {
+      font-size: 30px;
+      font-weight: bold;
+      margin-bottom: 35px;
+      position: relative;
+      span {
+       padding-right: 40px;
+      }
+      &::after {
+          content: "";
+          position: absolute;
+          background: #C4851A;
+          width: 3px;
+          height: 21px;
+          top: 55%;
+          transform: translate(-50% , -50%);
+          
+      }
+      @media (max-width:1024px) {
+          margin-bottom: 15px;
+      }
+  }
+}
+@import "i-1";
+@import "i-2";
+@import "i-3";
+@import "i-4";
