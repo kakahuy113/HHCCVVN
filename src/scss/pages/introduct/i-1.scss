@@ -35,6 +35,8 @@ section.Introduct {
         }
         @media (max-width: 575.98px) {
             display: block;
+            margin-left: 0;
+            padding: 20px;
         }
     }
     .introduct__content {
@@ -50,6 +52,9 @@ section.Introduct {
         @media (max-width: 768.98px) {
             width: 775px;
             padding-top: 0;
+        }
+        @media (max-width: 575.98px) {
+            width: 100%;
         }
         h3 {
             text-transform: uppercase;
@@ -126,6 +131,9 @@ section.Introduct {
             margin-left: 15px;
         }
         width: 765px;
+        @media (max-width: 575.98px) {
+            width: 100%;
+        }
         height: 490px;
         @media (max-width: 1440.98px) {
             height: auto;
