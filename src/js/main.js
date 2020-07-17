@@ -80,6 +80,50 @@ const init_Image = () => {
 		},
 	});
 }
+function submitContact() {
+	$(".contact form .form-button").on("click", (e) => {
+		e.preventDefault();
+		const _form = $(e.currentTarget.parentElement);
+		
+
+	  });
+}
+
+const ajaxFormContact = () => {
+	$(".contact form .form-button").on('click', function(e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		$('.contact form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+
+		if ($(".contact form").valid() === true) {
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		} else {
+			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+		}
+	});
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -92,6 +136,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	init_Video();
 	// HOme swiper Image
 	init_Image();
+	// Submit Contact Form
+	ajaxFormContact();
 });
 
 document.addEventListener('DOMContentLoaded', () => {});

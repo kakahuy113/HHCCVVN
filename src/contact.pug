@@ -1,0 +1,24 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Liên hệ | Hiệp hội công chứng';
+	- let bodyClass = 'contact-page';
+
+block loading
+	include _templates/_layout/_loading
+block banner,breadcrumb
+block main
+	include _templates/contact/i-1
+block scripts
+	script.
+		var locationsInput = [
+			{
+				lat: 21.011568,
+				lng: 105.849071,
+				title: 'HHCCV VIETNAMESE',
+				icon: '/assets/images/icons/map.png'
+			},
+		]
+	script(src="./js/GoogleMapController.min.js")
+	//- This library's used to validate form before submit
+	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js")
