@@ -1,12 +1,10 @@
 section.news__events
 	.container
 		.news__events__wrapper.container-1365px
-			.tab-container
-				ul.list-tab.news__events--list
-					li.news--item.tt-u(toggle-for="item-1") Tin Tức 
-					li.events--item.tt-u(toggle-for="item-1") Sự Kiện
-				.tab-content
-					.content(tab-id="item-1")
+			ul.list-tab.news__events--list
+				li.news--item.tt-u Tin Tức 
+				li.events--item.tt-u Sự Kiện
+					.content
 						.inner--tab-content
 							-for(var i = 0; i<5; i++)
 								.news--item--inner--content
