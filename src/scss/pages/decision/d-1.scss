@@ -11,7 +11,7 @@ section.Decision {
             color: map-get($mau, main-2);
             text-transform: uppercase;
             margin-bottom: 50px;
-            font-family: UTM-COPPERPLATE;
+            font-family: UTM-COPPERPLATEB;
             @media (max-width: 1440.98px) {
                 margin-bottom: 30px;
             }
@@ -24,6 +24,7 @@ section.Decision {
             color: map-get($mau, xam);
             font-size: 20px;
             margin-bottom: 20px;
+            font-family: MYRIADPRO-SEMIBOLD;
             @media (max-width: 768.98px) {
                 margin-bottom: 15px;
                 font-size: 15px;
@@ -31,6 +32,7 @@ section.Decision {
         }
         p {
             font-size: 1rem;
+            font-family: MYRIADPRO-LIGHT;
             color: map-get($mau, xam);
             margin-bottom: 20px;
             @media (max-width: 768.98px) {
