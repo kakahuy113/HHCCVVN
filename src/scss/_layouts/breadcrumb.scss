@@ -1,39 +1,36 @@
 #breadcrumb-wrapper {
-	margin-top: 53px;
+	margin-bottom: 10px;
 
 	.breadcrumb {
-		list-style     : none;
-		display        : flex;
+		list-style: none;
+		display: flex;
 		justify-content: flex-start;
-		padding        : 0;
+		padding: 0;
 
 		li {
 			a {
-				color    : #777777;
-				font-size: 17px;
-				display  : inline-block;
+				font-family: MYRIADPRO-BOLD;
+				color: map-get($mau, trang);
+				font-size: 14px;
+				display: inline-block;
 			}
 
 			&.active {
 				a {
-					color: map-get($mau, main);
+					color: map-get($mau, main-2);
 				}
 			}
 
 			&+li {
 				&:before {
-					content : "/";
+					content: "/";
 					position: relative;
-					left    : 0;
-					top     : 0;
-					margin  : 0 12px;
-					color   : #777777;
+					left: 0;
+					top: 0;
+					margin: 0 12px;
+					color: map-get($mau, trang);
 				}
 			}
 		}
-	}
-
-	@media (max-width: 1024.98px) {
-		display: none;
 	}
 }

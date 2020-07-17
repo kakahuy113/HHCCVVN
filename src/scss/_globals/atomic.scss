@@ -1,166 +1,174 @@
 [hidden],
 .d-n,
 .hidden {
-    display: none !important;
+	display: none !important;
 }
 
 .dekstop {
-    @media (max-width: 1024px) {
-        display: none !important;
-    }
+	@media (max-width: 1024px) {
+		display: none !important;
+	}
 }
 
 .mobile {
-    @media (min-width: 1025px) {
-        display: none !important;
-    }
+	@media (min-width: 1025px) {
+		display: none !important;
+	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.h-100 {
+	height: 100%;
 }
 
 .d-b {
-    display: block;
+	display: block;
 }
 
 .d-ib {
-    display: inline-block;
+	display: inline-block;
 }
 
 .d-f {
-    display: flex;
+	display: flex;
 }
 
 .d-if {
-    display: inline-flex;
+	display: inline-flex;
 }
 
 .fw-w {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .ai-c {
-    align-items: center;
+	align-items: center;
 }
 
 .ai-fe {
-    align-items: flex-end;
+	align-items: flex-end;
 }
 
 .as-c {
-    align-self: center;
+	align-self: center;
 }
 
 .as-fe {
-    align-self: flex-end;
+	align-self: flex-end;
 }
 
 .jc-c {
-    justify-content: center;
+	justify-content: center;
 }
 
 .jc-fe {
-    justify-content: flex-end;
+	justify-content: flex-end;
 }
 
 .jc-sb {
-    justify-content: space-between;
+	justify-content: space-between;
 }
 
 .fcc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 // List, ul, ol, dl
 .lst-n {
-    list-style-type: none;
+	list-style-type: none;
 }
 
 // Margin
 .ml-at {
-    margin-left: auto;
+	margin-left: auto;
 }
 
 .mr-at {
-    margin-right: auto;
+	margin-right: auto;
 }
 
 .mx-at {
-    margin-right: auto;
-    margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .ov-h {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .fs-i {
-    font-style: italic;
+	font-style: italic;
 }
 
 .tt-u {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .tt-c {
-    text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .ta-c {
-    text-align: center;
+	text-align: center;
 }
 
 .td-u {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .cl-main-1 {
-    color: map-get($mau, main-1)
+	color: map-get($mau, main-1)
 }
 
 .cl-main-2 {
-    color: map-get($mau, main-2)
+	color: map-get($mau, main-2)
 }
 
 .cl-xanh-1 {
-    color: map-get($mau, xanh-1)
+	color: map-get($mau, xanh-1)
 }
 
 .cl-trang {
-    color: map-get($mau, trang)
+	color: map-get($mau, trang)
 }
 
 .cl-den {
-    color: map-get($mau, den)
+	color: map-get($mau, den)
 }
 
 .cl-xam {
-    color: map-get($mau, xam)
+	color: map-get($mau, xam)
 }
 
 .bg-main-1 {
-    background: map-get($mau, main-1)
+	background: map-get($mau, main-1)
 }
 
 .bg-main-2 {
-    background: map-get($mau, main-2)
+	background: map-get($mau, main-2)
 }
 
 .bg-xanh-1 {
-    background: map-get($mau, xanh-1)
+	background: map-get($mau, xanh-1)
 }
 
 .bg-trang {
-    background: map-get($mau, trang)
+	background: map-get($mau, trang)
 }
 
 .bg-den {
-    background: map-get($mau, den)
+	background: map-get($mau, den)
 }
 
 .bg-xam {
-    background: map-get($mau, xam)
+	background: map-get($mau, xam)
 }
 
 .bg-xam-1 {
-    background: map-get($mau, xam-1)
+	background: map-get($mau, xam-1)
 }

@@ -60,6 +60,7 @@ const init_Video = () => {
 		},
 	});
 };
+
 const init_Image = () => {
 	var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
 		spaceBetween: 10,
@@ -80,6 +81,7 @@ const init_Image = () => {
 		},
 	});
 }
+
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
