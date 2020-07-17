@@ -1,0 +1,45 @@
+.pagination {
+	width          : 100%;
+	display        : flex;
+	justify-content: flex-end;
+	list-style-type: none;
+	padding-left   : 0;
+
+	@media (max-width: 1024.98px) {
+		justify-content: center;
+	}
+
+	li {
+		margin: 0 5px;
+
+		a {
+			display        : flex;
+			justify-content: center;
+			align-items    : center;
+			color          : #000000;
+			padding        : 5px 10px;
+			border-radius  : 5px;
+			font-weight    : 400;
+			font-size      : 12px;
+			background     : #dddddd;
+			border         : 1px solid #FFFFFF;
+			transition     : all .2s cubic-bezier(.2, .5, .5, .8);
+		}
+
+		&:hover {
+			a {
+				text-decoration: none;
+				color          : #FFFFFF;
+				background     : map-get($mau, main);
+			}
+		}
+
+		&.active {
+			a {
+				color          : #FFFFFF;
+				background     : map-get($mau, main);
+				text-decoration: underline;
+			}
+		}
+	}
+}

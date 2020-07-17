@@ -1,0 +1,36 @@
+#breadcrumb-wrapper {
+	margin-bottom: 10px;
+
+	.breadcrumb {
+		list-style: none;
+		display: flex;
+		justify-content: flex-start;
+		padding: 0;
+
+		li {
+			a {
+				font-family: MYRIADPRO-BOLD;
+				color: map-get($mau, trang);
+				font-size: 14px;
+				display: inline-block;
+			}
+
+			&.active {
+				a {
+					color: map-get($mau, main-2);
+				}
+			}
+
+			&+li {
+				&:before {
+					content: "/";
+					position: relative;
+					left: 0;
+					top: 0;
+					margin: 0 12px;
+					color: map-get($mau, trang);
+				}
+			}
+		}
+	}
+}
