@@ -1,7 +1,6 @@
 .home--hotnews {
 	margin: 50px 0;
 	.home--hotnews__wrapper {
-		
 	}
 }
 .home--hotnews__wrapper--inner {
@@ -10,46 +9,45 @@
 		flex-direction: column !important;
 	}
 }
-.hotnews--item--1 {
+.first-news {
 	p {
 		font-size: 22px;
-		font-weight: bold;
+		font-family: MYRIADPRO-BOLD;
+		padding-top: 26px;
 	}
 	@media (max-width: 768px) {
 		max-width: 100%;
 	}
 }
-.hotnews--item--2 {
-	div.hotnews--item--2__wrapper {
-		display: flex;
-		padding: 10px 0;
+.another-news--item {
+	& > div {
+		padding: 13px 0;
 		border-bottom: 1px solid rgba($color: #707070, $alpha: 0.5);
-
-		.item--2--img {
-			img {
-				-ms-flex: 0 0 222px;
-				flex: 0 0 222px;
-				max-width: 222px;
-			}
-		}
-		p {
-			padding-left: 10px;
-			font-weight: bold;
-			font-size: 16px;
-        }
-        @media (max-width: 512px) {
-            flex-wrap: wrap;
-            p {
-                padding: 0;
-            }
-        }   
 	}
-	@media (max-width: 768px) {
-		max-width: 100%;
-    }
-    
+	div:first-child {
+		padding-top: 0;
+	}
+	.item__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+
+		.item--img {
+			-ms-flex: 0 0 222px;
+			flex: 0 0 222px;
+			max-width: 222px;
+		}
+		.item--desc {
+			padding-left: 32px;
+			-ms-flex-preferred-size: 0;
+			flex-basis: 0;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+			max-width: 100%;
+			font-family: MYRIADPRO-BOLD;
+		}
+	}
 }
-.hotnews--item--3 {
+/* .hotnews--item--3 {
 	background-image: url('../assets/images/index/hot-news/hot_news_last.png');
 	background-repeat: none;
 	background-size: 100% 100%;
@@ -62,5 +60,38 @@
 	height: 380px;
 	@media (max-width: 768px) {
 		max-width: 100%;
+	}
+}
+ */
+.hot-news-banner {
+	position: relative;
+	.banner--img {
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		img {
+			height: 380px;
+			
+		}
+	}
+	.banner-desc {
+		padding: 63px 0;
+		color: map-get($mau, trang);
+		text-align: center;
+		p.title {
+			font-size: 14px;
+			font-family: MYRIADPRO-BOLDCOND;
+		}
+		p.sub-title {
+			font-size: 11px;
+			font-family: MYRIADPRO-LIGHT;
+		}
+		p {
+			font-size: 29px;
+			font-family: MYRIADPRO-BOLDCOND;
+		}
+		& > div {
+			padding-bottom: 50px;
+		}
 	}
 }

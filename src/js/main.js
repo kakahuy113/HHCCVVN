@@ -46,8 +46,8 @@ const initMainBanner = () => {
         },
     });
 };
-
-const init_Video = () => {
+// swiper home page video
+const sliderHomeVideo = () => {
     var swiper = new Swiper('.swiper--left__wrapper .swiper-container', {
         // Enable lazy loading
         lazy: true,
@@ -57,8 +57,8 @@ const init_Video = () => {
         },
     });
 };
-
-const init_Image = () => {
+// swiper home page image
+const silderHomeImage = () => {
     var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
         spaceBetween: 10,
         slidesPerView: 4,
@@ -122,6 +122,42 @@ const checkLogin = () => {
     }
 }
 
+const ajaxNews = () => {
+    document.querySelector(".news--item").addEventListener("click", (e) => {
+        $.ajax({
+            url: 'get',
+            type: 'get',
+            data: 'something',
+            processData: false,
+            contentType: false,
+            success: (res) => {
+                console.log(res);
+            },
+            error: (res) => {
+                console.log(res);
+            }
+        });
+    })
+}
+const ajaxEvents = () => {
+    document.querySelector(".events--item").addEventListener("click", (e) => {
+        $.ajax({
+            url: 'get',
+            type: 'get',
+            data: 'something',
+            processData: false,
+            contentType: false,
+            success: (res) => {
+                console.log(res);
+            },
+            error: (res) => {
+                console.log(res);
+            }
+        });
+    })
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     Cookie();
     getSVGs();
@@ -131,13 +167,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // INIT CLASS SUB MENU
     initClassSubMenu();
     // Home swiper Video
-    init_Video();
+    sliderHomeVideo();
     // HOme swiper Image
-    init_Image();
+    silderHomeImage();
     // Submit Contact Form
     ajaxFormContact();
-    //checkLogin
-    checkLogin();
+    //Get News Content
+    ajaxNews()
+        // Get Event Content
+    ajaxEvents()
 });
 
 document.addEventListener('DOMContentLoaded', () => {});

@@ -1,0 +1,10 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | Member Detail';
+	- let bodyClass = 'member-detail-page';
+block banner,breadcrumb
+	include _templates/_layout/_main-banner
+block main
+		include _templates/member-detail/m-1
+block scripts
