@@ -4,8 +4,7 @@ import {
 } from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
-import CommonController from "./lib/CommonController";
-
+import CommonController from './lib/CommonController';
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -31,7 +30,6 @@ const initClassSubMenu = () => {
 	});
 };
 
-// INIT ELELEMENT BUTTON BACK SUB MENU
 const initElementButtonBackSubMenu = () => {
 	const menusLv1 = document.querySelectorAll('.navBar--lv1');
 	menusLv1.forEach((item) => {
@@ -52,7 +50,6 @@ const initElementButtonBackSubMenu = () => {
 	})
 }
 
-// SHOW SUB MENU
 const showSubMenuMobile = () => {
 	const btn = document.querySelector('.navBarHamburger__wrapper');
 	const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
@@ -134,16 +131,18 @@ const showBackToTop = () => {
 	})
 }
 
+// COPY DATA BY ATTR
 const copyDataByAttr = () => {
-	const items__copy = document.querySelectorAll('[data-copy]');
 	const items__paste = document.querySelectorAll('[data-paste]');
-	items__copy.forEach((itemCopy) => {
-		const valCopy = itemCopy.text;
-		const addressCopy = itemCopy.getAttribute('data-copy');
-	})
+	const items__copy = document.querySelectorAll('[data-copy]');
+
 	items__paste.forEach((itemPaste) => {
-		const addressPaste = itemPaste.getAttribute('data-paste');
-		console.log(addressPaste);
+		items__copy.forEach((itemCopy) => {
+			var data = itemCopy.getAttribute("data-copy");
+			if (data != null && data == itemPaste.getAttribute("data-paste")) {
+				itemPaste.text = itemCopy.text;
+			}
+		})
 	})
 }
 
@@ -244,6 +243,38 @@ const ajaxFormContact = () => {
 	});
 };
 
+const ajaxFormResearch = () => {
+	$('.btn.btn-subResearch button').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		const nameText = $(".research__login--form form .form-group textarea").attr('name');
+		const valText = $(".research__login--form form .form-group textarea").val();
+		$('.research__login--form form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		formData.append(nameText, valText);
+		$.ajax({
+			url: url,
+			type: 'post',
+			data: formData,
+			processData: false,
+			contentType: false,
+			beforeSend: function () {
+				_thisBtn.attr('disabled', 'disabled');
+			},
+			success: function (res) {
+				alert(`${res.Message}`);
+				window.location.reload();
+				_thisBtn.removeAttr('disabled');
+			},
+		});
+	})
+}
+
 const ajaxNews = () => {
 	if (document.querySelector('.news--item')) {
 		document.querySelector('.news--item').addEventListener('click', (e) => {
@@ -285,6 +316,7 @@ const ajaxEvents = () => {
 			});
 	}
 };
+
 //playvideo
 const playVideoIntroduct = () => {
 	$(".introduct__video--img").click(function (e) {
@@ -296,6 +328,7 @@ const playVideoIntroduct = () => {
 		}
 	});
 }
+
 //responses bg introduce
 const setHeightBgIntroduce = () => {
 	let h = $('.introduct__topContent').outerHeight();
@@ -463,6 +496,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	playVideoIntroduct();
 	//setHeightBgIntroduce
 	setHeightBgIntroduce();
+	//  GET 
+	ajaxFormResearch();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
