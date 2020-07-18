@@ -176,6 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ajaxNews()
         // Get Event Content
     ajaxEvents()
+        //checkLogin
+    checkLogin();
 });
 
 document.addEventListener('DOMContentLoaded', () => {});
