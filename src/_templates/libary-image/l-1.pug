@@ -1,0 +1,23 @@
+section.lib__page
+	.container_lib.no-gutters.p-0
+		.lib__page__wrapper
+			.tab-container
+				ul.lib--list
+					li.lib--item.item-image.tt-u(toggle-for="item-1") Hình Ảnh
+					li.lib--item.item-video.tt-u(toggle-for="item-2") Video
+					li.lib--item.item-document.tt-u(toggle-for="item-3") Hệ Thống Văn Bản
+				.tab-content
+					.content(tab-id="item-1")
+						.lib__page__img
+							.content--gallery.no-gutters.p-0
+								-for(var i = 0; i < 12; i++)
+									div.item-gallery
+										img.lazyload.blur-up(data-src=`./assets/images/lib-image/item.png`, alt="something")
+										div.desc-img
+											h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
+											p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
+					.content(tab-id="item-2")
+						
+		.see-more
+			img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
+			p Xem tất cả
