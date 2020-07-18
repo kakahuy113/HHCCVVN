@@ -175,7 +175,6 @@ textarea {
 	}
 }
 
-<<<<<<< HEAD
 .isVideo{
     position: relative;
     &::after{
@@ -200,10 +199,4 @@ textarea {
         background: url(../assets/images/lib-image/video-icon.png) no-repeat;
         pointer-events: none;
     }
-=======
-.isVideo {
-	position: relative;
-
-	&::after {}
->>>>>>> 2cda92fdf0ebec701dc9eb159d067bffc22b372b
 }

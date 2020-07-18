@@ -98,8 +98,22 @@
 	}
 }
 .member--item--inner {
-	&:hover {
-		background: linear-gradient(120deg, #fff, #c4851a);
+	@media (min-width: 1024.98px) {
+		&:hover {
+			color: #fff;
+			background: rgb(255,255,255);
+			background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(196,133,26,1) 100%);
+			.member--item--img {
+				img {
+					border-right: 1px solid #fff;
+				}
+			}
+			.member--item--desc {
+				h6 {
+					color: #fff;
+				}
+			}
+		}
 	}
 }
 .see-more {

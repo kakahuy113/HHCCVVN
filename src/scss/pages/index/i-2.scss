@@ -10,6 +10,7 @@
 	}
 }
 .first-news {
+	margin-right: 18px;
 	p {
 		font-size: 22px;
 		font-family: MYRIADPRO-BOLD;
@@ -64,7 +65,11 @@
 }
  */
 .hot-news-banner {
+	-ms-flex: 0 0 280px;
+	flex: 0 0 260px;
+	max-width: 280px;
 	position: relative;
+	text-align: left;
 	.banner--img {
 		position: absolute;
 		top: 0;
@@ -75,7 +80,8 @@
 		}
 	}
 	.banner-desc {
-		padding: 63px 0;
+		width: 260px;
+		padding: 63px 22px;
 		color: map-get($mau, trang);
 		text-align: center;
 		p.title {
@@ -86,7 +92,7 @@
 			font-size: 11px;
 			font-family: MYRIADPRO-LIGHT;
 		}
-		p {
+		p.desc {
 			font-size: 29px;
 			font-family: MYRIADPRO-BOLDCOND;
 		}

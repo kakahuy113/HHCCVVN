@@ -1,10 +1,12 @@
 extends _templates/_layout/_layout.pug
 
 block var
-	- let title = 'Page | News - Events - Detail';
-	- let bodyClass = 'index-page';
+	- let title = 'Page | News - Events';
+	- let bodyClass = 'news-events-page';
+	- let linkBanner = './assets/images/page-banners/news-event.png';
+	- let titleBanner = 'TIN TỨC - SỰ KIỆN';
 block banner,breadcrumb
-	include _templates/_layout/_main-banner
+	include _templates/_layout/_pages-banner
 block main
 		include _templates/news-events-detail/n-1
 		include _templates/re-detail-1/d-2

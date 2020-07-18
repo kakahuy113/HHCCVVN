@@ -1,0 +1,12 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Page | Libary';
+	- let bodyClass = 'lib-page';
+	- let linkBanner = './assets/images/page-banners/libary.png';
+	- let titleBanner = 'THƯ VIỆN';
+block banner,breadcrumb
+	include _templates/_layout/_pages-banner
+block main
+		include _templates/libary/l-1
+block scripts

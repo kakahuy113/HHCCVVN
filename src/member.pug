@@ -3,8 +3,10 @@ extends _templates/_layout/_layout.pug
 block var
 	- let title = 'Page | Member';
 	- let bodyClass = 'member-page';
+	- let linkBanner = './assets/images/page-banners/member.png';
+	- let titleBanner = 'THÀNH VIÊN';
 block banner,breadcrumb
-	include _templates/_layout/_main-banner
+	include _templates/_layout/_pages-banner
 block main
 		include _templates/member/m-1
 block scripts

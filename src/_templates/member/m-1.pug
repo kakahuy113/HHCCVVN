@@ -15,12 +15,13 @@ section.member__page
 				.member--list.row
 					-for(var i=0; i<12;i++)
 						.member--item.col-4.active
-							.member--item--inner.row.ov-h
-								.member--item--img
-									img.lazyload.blur-up(data-src=`./assets/images/member/logo.png`, alt="something")
-								.member--item--desc
-									h6.tt-u HIỆP HỘI CÔNG CHỨNG VIÊN TP.HCM
-									p.lcl.lcl-3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et...
+							a(href="member-detail.html")
+								.member--item--inner.row.ov-h
+									.member--item--img
+										img.lazyload.blur-up(data-src=`./assets/images/member/logo.png`, alt="something")
+									.member--item--desc
+										h6.tt-u HIỆP HỘI CÔNG CHỨNG VIÊN TP.HCM
+										p.lcl.lcl-3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et...
 				.see-more
 					img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
 					p Xem tất cả				
