@@ -4,9 +4,9 @@ AccountController = {
 	model: {
 		avatar: "",
 	},
-	init: function() {
-		Array.from(document.querySelectorAll('.btn-google')).forEach(function(btn) {
-			gapi.load('auth2', function() {
+	init: function () {
+		Array.from(document.querySelectorAll('.btn-google')).forEach(function (btn) {
+			gapi.load('auth2', function () {
 				// Retrieve the singleton for the GoogleAuth library and set up the client.
 				auth2 = gapi.auth2.init({
 					client_id: '261187886088-5o0va8g8ujg60pbd1r0mobfsc7jijjfj.apps.googleusercontent.com',
@@ -16,7 +16,7 @@ AccountController = {
 			});
 		});
 
-		window.fbAsyncInit = function() {
+		window.fbAsyncInit = function () {
 			FB.init({
 				appId: '1260704607376976',
 				cookie: true, // Enable cookies to allow the server to access the session.
@@ -25,7 +25,7 @@ AccountController = {
 			});
 		};
 
-		(function(d, s, id) { // Load the SDK asynchronously
+		(function (d, s, id) { // Load the SDK asynchronously
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s);
@@ -36,9 +36,10 @@ AccountController = {
 
 		$(".btn-facebook").click(AccountController.events.attachFBSignin);
 	},
+
 	events: {
-		attachFBSignin: function() {
-			FB.login(function(response) {
+		attachFBSignin: function () {
+			FB.login(function (response) {
 				// handle the response 
 				if (response.status === 'connected') {
 					// Logged into your webpage and Facebook.
@@ -60,7 +61,7 @@ AccountController = {
 		},
 		attachSignin(element) {
 			auth2.attachClickHandler(element, {},
-				function(googleUser) {
+				function (googleUser) {
 					var profile = googleUser.getBasicProfile();
 					AccountController.events.google({
 						id: profile.getId(),
@@ -71,21 +72,21 @@ AccountController = {
 						provider: "",
 					});
 				},
-				function(error) {
+				function (error) {
 					console.log(JSON.stringify(error, undefined, 2));
 				});
 		},
-		google: function(googleUser) {
+		google: function (googleUser) {
 			googleUser.provider = "GOOGLE";
 			if (googleUser != null) {
 				var auth2 = gapi.auth2.getAuthInstance();
-				auth2.signOut().then(function() {
+				auth2.signOut().then(function () {
 					$.ajax({
 						url: "/external-login",
 						type: "POST",
 						data: JSON.stringify(googleUser),
 						contentType: "application/json",
-						success: function(response) {
+						success: function (response) {
 							alert(response.Message);
 							if (response.Code == 200) {
 								window.location.reload();
@@ -95,13 +96,13 @@ AccountController = {
 				});
 			}
 		},
-		facebook: function(user) {
+		facebook: function (user) {
 			FB.api('/' + user.id + '/picture', 'GET', {
 				"redirect": "false"
-			}, function(response) {
+			}, function (response) {
 				if (response && !response.error) {
 					user.image = response.data.url;
-					FB.api('/me', function(response) {
+					FB.api('/me', function (response) {
 						if (response && !response.error) {
 							user.name = response.name;
 							$.ajax({
@@ -109,7 +110,7 @@ AccountController = {
 								type: "POST",
 								data: JSON.stringify(user),
 								contentType: "application/json",
-								success: function(response) {
+								success: function (response) {
 									alert(response.Message);
 									if (response.Code == 200) {
 										window.location.reload();

@@ -135,16 +135,37 @@ const showBackToTop = () => {
 }
 
 const copyDataByAttr = () => {
-	const items__copy = document.querySelectorAll('[data-copy]');
 	const items__paste = document.querySelectorAll('[data-paste]');
-	items__copy.forEach((itemCopy) => {
-		const valCopy = itemCopy.text;
-		const addressCopy = itemCopy.getAttribute('data-copy');
-	})
-	items__paste.forEach((itemPaste) => {
-		const addressPaste = itemPaste.getAttribute('data-paste');
-		console.log(addressPaste);
-	})
+	const items__copy = document.querySelectorAll('[data-copy]');
+
+	// GET ALL DATA COPY
+	const getAllDataCopy = () => {
+		const listItems = [];
+		items__copy.forEach((itemCopy) => {
+			listItems.push(itemCopy)
+		})
+		return listItems
+	}
+
+	// GET ALL ITEM PASTE
+	const getAllItemPaste = () => {
+		const listItems = [];
+		items__paste.forEach((itemPaste) => {
+			listItems.push(itemPaste)
+		})
+		return listItems
+	}
+
+	// SET DATA
+	const setData = (datasCopy, itemsPaste) => {
+		const listDataCopy = datasCopy();
+		const listItemPaste = itemsPaste();
+		console.log(listDataCopy);
+		console.log(listItemPaste);
+	}
+
+	// RUN !!!
+	setData(getAllDataCopy, getAllItemPaste)
 }
 
 // MAIN BANNER WEBSITE

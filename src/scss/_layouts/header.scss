@@ -269,12 +269,28 @@ header {
 .navSearch {
 	position: absolute;
 	right: 0;
-	top: 50%;
+	top: 35%;
 	transform: translateY(-50%);
 }
 
 .navSearch__btn {
 	cursor: pointer;
+
+	@media (min-width: 1025px) {
+		svg {
+			path {
+				transition: .3s all ease-in-out;
+			}
+		}
+
+		&:hover {
+			svg {
+				path {
+					fill: map-get($mau, main-2);
+				}
+			}
+		}
+	}
 }
 
 // SUB MENU HERE !!!
