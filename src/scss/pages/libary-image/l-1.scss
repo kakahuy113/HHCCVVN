@@ -3,32 +3,37 @@
 .lib__page__wrapper {
 }
 .lib--list {
-    margin: 79px 0;
-    display: flex;
+	margin: 79px 0;
+	display: flex;
 	list-style-type: none;
 	padding-left: 0;
     justify-content: center;
-    li {
-        display: flex;
+	li {
+		display: flex;
 		justify-content: center;
 		align-items: center;
 		background: #f1f0f0;
 		border-radius: 10px;
 		height: 63px;
-		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: .16);
+		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
 		border-radius: 7px;
-		font-family:UTM-COPPERPLATEB;
-		color: #002F4B;
-        font-size: 30px;
         padding: 13px 20px;
-    }
-    .item-video {
-        margin-left: 107px;
-        margin-right: 107px;
-    }
-    li.active {
-		background: #C4851A;
-		color: map-get($mau, trang);
+        min-width: 183px;
+		h3 {
+			font-family: UTM-COPPERPLATEB;
+			color: #002f4b;
+			font-size: 30px;
+		}
+	}
+	.item-video--tab {
+		margin-left: 107px;
+		margin-right: 107px;
+	}
+	li.active {
+		background: #c4851a;
+		h3 {
+            color: map-get($mau, trang);
+        }
 	}
 }
 
@@ -36,7 +41,7 @@
 }
 
 .lib__page__img {
-    margin-bottom: 55px;
+	margin-bottom: 55px;
 }
 
 .content--gallery {
@@ -45,31 +50,126 @@
 	grid-template-columns: auto auto auto auto;
 	padding: 10px;
 	& > div {
-        max-width: 480px;
-        padding-bottom: 10px;
-    }
-    .item-gallery {
-        position: relative;
-    }
+		max-width: 480px;
+		padding-bottom: 10px;
+	}
+	.item-gallery {
+		position: relative;
+	}
 	.desc-img {
 		position: absolute;
-        bottom: 20px;
-        left: 30px;
-        color: #fff;
-        max-width: 414px;
+		bottom: 20px;
+		left: 30px;
+		color: #fff;
+		max-width: 414px;
 		visibility: hidden;
 		opacity: 0;
-        transition: opacity 0.2s, visibility 0.2s;
-        h3 {
-            font-family:  UTM-COPPERPLATE;
-            font-size: 16px;
-        }
+		transition: opacity 0.2s, visibility 0.2s;
+		h3 {
+			font-family: UTM-COPPERPLATE;
+			font-size: 16px;
+		}
 	}
 	@media (min-width: 1025px) {
-        .item-gallery:hover .desc-img {
-            visibility: visible;
-            opacity: 1;
+		.item-gallery:hover .desc-img {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.lib__page__video {
+	margin-bottom: 75px;
+	.content--video {
+		display: grid;
+		grid-gap: 46px 16px;
+		grid-template-columns: auto auto auto;
+		padding: 10px;
+		.item-video {
+			position: relative;
+		}
+		.desc-video {
+			z-index: 999;
+			position: absolute;
+			bottom: 20px;
+			left: 30px;
+			color: #fff;
+			max-width: 414px;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.2s, visibility 0.2s;
+			h3 {
+				font-family: UTM-COPPERPLATE;
+				font-size: 16px;
+			}
+		}
+		@media (min-width: 1025px) {
+			.item-video:hover .desc-video {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+}
+.content[tab-id="item-3"] {
+    background: #F4F5F9;
+    padding-top: 56px;
+    .document--inner {
+        margin-bottom: 60px;
+        max-width: 748px;
+        h3.title {
+            font-family: UTM-COPPERPLATE;
+            font-size: 30px;
+            color: #C4851A;
+        }
+    }
+    .document-date {
+        margin-bottom: 23px;
+        margin-left: 60px;
+        display: inline-block;
+        span {
+            font-family: MYRIADPRO-REGULAR;
+            color: #C4851A;
+            font-size: 14px;
+        }  
+    }
+    .document--inner--content {
+        .item__wrapper {
+           width: 80%;
+           padding-bottom: 15px;
+           margin-bottom: 35px;
+           border-bottom: 1px solid rgba($color: #D6D6D6, $alpha: .5);
+        }
+        .item__wrapper--inner {
+            .col-10 {
+                h3 {
+                    font-size: 18px;
+                    color: #002F4B;
+                    font-family: MYRIADPRO-BOLD;
+                }
+                p {
+                    font-size: 14px;
+                    span {
+                        color: #002F4B;
+                    }
+                }
+            }
+            &:hover {
+                .col-1 {
+                    svg {
+                        path {
+                            fill: #C4851A; 
+                        }
+                    }
+                }
+                .col-10 {
+                    h3 {
+                        color: #C4851A;
+                    }
+                    p {
+                        color: #707070;
+                    }
+                }
+            }
         }
     }
 }
-

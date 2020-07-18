@@ -3,9 +3,12 @@ section.lib__page
 		.lib__page__wrapper
 			.tab-container
 				ul.lib--list
-					li.lib--item.item-image.tt-u(toggle-for="item-1") Hình Ảnh
-					li.lib--item.item-video.tt-u(toggle-for="item-2") Video
-					li.lib--item.item-document.tt-u(toggle-for="item-3") Hệ Thống Văn Bản
+					li.lib--item.item-image--tab.tt-u(toggle-for="item-1")
+						h3  Hình Ảnh
+					li.lib--item.item-video--tab.tt-u(toggle-for="item-2")
+						h3 Video
+					li.lib--item.item-document--tab.tt-u(toggle-for="item-3")
+						h3 Hệ Thống Văn Bản
 				.tab-content
 					.content(tab-id="item-1")
 						.lib__page__img
@@ -17,7 +20,38 @@ section.lib__page
 											h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
 											p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
 					.content(tab-id="item-2")
-						
+						.lib__page__video.container
+							.content--video
+								-for(var i = 0; i < 9; i++)
+									.isVideo
+										div.item-video
+											img.lazyload.blur-up(data-src=`./assets/images/lib-image/video.png`, alt="something")
+											div.desc-video
+												h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
+												p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
+					.content(tab-id="item-3")
+						.lib__page__document.container
+							.lib__page__document.container-1365px
+								.document--inner
+									h3.title xem và download tài liệu hệ thống văn bản
+									p.lcl.lcl-2.desc Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Dol Aenean massa. Cum sociis natoque penatibus et...
+								div.document-date
+									span 29/02/2020 
+								.document--inner--content.row
+									-for(var i = 0; i< 10;i ++)
+										div.item__wrapper.col-6
+											.item__wrapper--inner.row
+												div.col-1
+													img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
+												div.col-10
+													h3 Lorem ipsum dolor sit amet,  adipiscing elit.
+													p
+														!= "<span>Ngày cập nhật: </span>10/01/20"
+												div.col-1
+													div
+														img.lazyload.blur-up(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+											
+
 		.see-more
 			img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
 			p Xem tất cả
