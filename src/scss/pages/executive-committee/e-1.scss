@@ -1,15 +1,26 @@
 section.Executive-committee {
     padding-top: 56px;
+    @media (max-width: 1024.98px) {
+        padding-top: 30px;
+    }
     .committee__wrapper {
         margin: 0 auto;
     }
     .committee__intro {
         margin-bottom: 73px;
+        @media (max-width: 1024.98px) {
+            margin-bottom: 50px;
+            padding: 0 21px;
+        }
         h2 {
             font-size: 30px;
             color: map-get($mau, main-2);
             text-transform: uppercase;
             margin-bottom: 50px;
+            @media (max-width: 1440.98px) {
+                margin-bottom: 25px;
+                font-size: 25px;
+            }
             font-family: UTM-COPPERPLATEB;
             @media (max-width: 768.98px) {
                 margin-bottom: 25px;
@@ -21,16 +32,24 @@ section.Executive-committee {
             font-size: 20px;
             margin-bottom: 20px;
             font-family: MYRIADPRO-SEMIBOLD;
+            @media (max-width: 1440.98px) {
+                font-size: 17px;
+                margin-bottom: 15px;
+            }
             @media (max-width: 768.98px) {
                 margin-bottom: 15px;
                 font-size: 15px;
             }
         }
         p {
+            font-family: MYRIADPRO-LIGHT;
             font-size: 1rem;
             color: map-get($mau, xam);
             margin-bottom: 20px;
-            font-family: MYRIADPRO-LIGHT;
+            @media (max-width: 1440.98px) {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
             @media (max-width: 768.98px) {
                 font-size: 13px;
                 margin-bottom: 10px;
@@ -45,6 +64,23 @@ section.Executive-committee {
         margin-left: -41px;
         .col-4 {
             padding: 0 41px;
+            @media (max-width: 1024.98px) {
+                padding: 0 21px;
+            }
+        }
+        @media (max-width: 1024.98px) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+    .committee__member--row {
+        @media (max-width: 768.98px) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @media (max-width: 575.98px) {
+            flex: 0 0 100%;
+            max-width: 100%;
         }
     }
     .committee__member--item {
@@ -52,6 +88,12 @@ section.Executive-committee {
         background: map-get($mau, xam-1);
         padding: 20px;
         margin-bottom: 50px;
+        min-width: 296px;
+        min-height: 326px;
+        @media (max-width: 575.98px) {
+            width: 100%;
+            min-width: 100%;
+        }
         h3 {
             font-family: MYRIADPRO-SEMIBOLD;
             text-align: center;

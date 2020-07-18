@@ -1,44 +1,62 @@
 section.Research
 	.container
 		.research__wrapper.row
-			.research__list.col-3.bg-xam-1 
-				.research__list--title.bg-main-2
-					h3.tt-u.cl-trang các chuyên mục
-				.research__list--item
-					ul
-						li
-							a(href="") Lorem ipsum dolor sit amet
-						li
-							a(href="") Lorem ipsum dolor sit amet
-						li
-							a(href="") Lorem ipsum dolor sit amet
-						li
-							a(href="") Lorem ipsum dolor sit amet
-						li
-							a(href="") Lorem ipsum dolor sit amet
-						li
-							a(href="") Lorem ipsum dolor sit amet
-			.research__content.col-9
-				.research__login.row
-					.research__login--form.col-8.bg-xam-1
-						h3.tt-u.cl-main-2 ĐÓNG GÓP bÀI VIẾT
-						form.row(action="")
-							.form-group.col-12
-								input(type="text", name="" placeholder="Họ tên*")
-							.form-group.col-6
-								input(type="text", name="" placeholder="Email*")
-							.form-group.col-6
-								input(type="text", name="" placeholder="Số điện thoại*")
-							.form-group.col-12
-								textarea(name="", cols="30", rows="10" placeholder="Ý kiến đóng góp*")
-							.btn.btn-subResearch
-								button.bg-main-2
-									img(src="./assets/images/research/icon.png", alt="")
-									span.tt-u.cl-trang Gửi
-					.research__login--option.col-4
-						a.research__optItem.bg-main-2.cl-trang(href="")
-							img(src="./assets/images/research/f.png", alt="facebook")
-							span Đăng nhập với Facebook
-						a.research__optItem.bg-main-2.cl-trang(href="")
-							img(src="./assets/images/research/gg.png", alt="facebook")
-							span Đăng nhập với Google
+			.col-3
+				.research__list.bg-xam-1 
+					.research__list--title.bg-main-2
+						h3.tt-u.cl-trang các chuyên mục
+					.research__list--item
+						ul
+							li
+								a(href="") Lorem ipsum dolor sit amet
+							li
+								a(href="") Lorem ipsum dolor sit amet
+							li
+								a(href="") Lorem ipsum dolor sit amet
+							li
+								a(href="") Lorem ipsum dolor sit amet
+							li
+								a(href="") Lorem ipsum dolor sit amet
+							li
+								a(href="") Lorem ipsum dolor sit amet
+			.col-9
+				.research__content
+					.research__login.row
+						.col-8
+							.research__login--form.bg-xam-1
+								h3.tt-u.cl-main-2 ĐÓNG GÓP bÀI VIẾT
+								form.row(action="")
+									.form-group.col-12
+										input(type="text", name="" placeholder="Họ tên*")
+									.form-group.col-6
+										input(type="text", name="" placeholder="Email*")
+									.form-group.col-6
+										input(type="text", name="" placeholder="Số điện thoại*")
+									.form-group.col-12
+										textarea(name="", cols="30", rows="10" placeholder="Ý kiến đóng góp*")
+									.btn.btn-subResearch
+										button.bg-main-2
+											img(src="./assets/images/research/icon.png", alt="")
+											span.tt-u.cl-trang Gửi
+						.col-4
+							.research__login--option
+								a.research__optItem.bg-main-2.cl-trang(href="")
+									img(src="./assets/images/research/f.png", alt="facebook")
+									span Đăng nhập với Facebook
+								a.research__optItem.bg-main-2.cl-trang(href="")
+									img(src="./assets/images/research/gg.png", alt="facebook")
+									span Đăng nhập với Google
+						-for(var i=1;i<=12;i++)
+							.col-12.research__blog
+								.research__blog--item
+									.research__blogItem--img
+										//449x252
+										img(src="./assets/images/research/1.png", alt="blog")
+									.research__blogItem--content
+										h2 Lorem ipsum dolor sit amet, consectetuer adipiscingmt elit. Aenean commodo ligula eget dolor. Aenean massa.
+										h3 Người viết bài: 
+											span  Nguyen Thi Thu Suong
+										span 10/07/20
+										p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Dor Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridi... mus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore et suscipit odio aliquam ut esse eum saepe possimus, sint, facilis eligendi, natus repellendus. Autem, eaque exercitationem. Nobis saepe provident adipisci?
+										a.btn.btn--readMore(href="")
+											h4.cl-main-2 Xem thêm
