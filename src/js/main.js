@@ -175,6 +175,34 @@ const ajaxFormContact = () => {
     });
 };
 
+const ajaxFormResearch = () => {
+    $('.btn.btn-subResearch button').on('click', function(e) {
+        e.preventDefault();
+        const _thisBtn = $(this);
+        const url = _thisBtn.attr('data-url');
+        const formData = new FormData();
+        $('.research__login--form form .form-group input').each(function() {
+            const name = $(this).attr('name');
+            const value = $(this).val();
+            formData.append(name, value);
+        });
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: formData,
+            processData: false,
+            contentType: false,
+            beforeSend: function() {
+                _thisBtn.attr('disabled', 'disabled');
+            },
+            success: function(res) {
+                alert(`${res.Message}`);
+                window.location.reload();
+                _thisBtn.removeAttr('disabled');
+            },
+        });
+    })
+}
 const ajaxNews = () => {
     if (document.querySelector('.news--item')) {
         document.querySelector('.news--item').addEventListener('click', (e) => {
@@ -257,6 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
     playVideoIntroduct();
     //setHeightBgIntroduce
     setHeightBgIntroduce();
+    //
+    ajaxFormResearch();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });
