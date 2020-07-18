@@ -223,7 +223,7 @@ section.Research {
             position: absolute;
             width: calc(100% - 10px);
             height: 1px;
-            background: #707070;
+            background: rgba($color: #707070, $alpha: 0.4);
             bottom: 0;
             content: "";
             @media (max-width: 575.98px) {
@@ -336,6 +336,7 @@ section.Research {
                 font-family: MYRIADPRO-BOLD;
                 padding: 8px 20px;
                 position: relative;
+                line-height: 1;
                 @media (max-width: 768.98px) {
                     font-size: 14px;
                 }
@@ -360,6 +361,12 @@ section.Research {
             }
             border-radius: 7px;
             box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+        }
+    }
+    .research__pagination {
+        margin-top: 70px;
+        ul {
+            justify-content: start !important;
         }
     }
 }

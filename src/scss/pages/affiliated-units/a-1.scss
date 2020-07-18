@@ -44,6 +44,7 @@ section.Affiliated-units {
             font-size: 20px;
             margin-bottom: 20px;
             font-family: MYRIADPRO-SEMIBOLD;
+            word-break: break-word;
             @media (max-width: 1440.98px) {
                 font-size: 17px;
                 margin-bottom: 15px;
@@ -58,6 +59,7 @@ section.Affiliated-units {
             font-size: 1rem;
             color: map-get($mau, xam);
             margin-bottom: 20px;
+            word-break: break-word;
             @media (max-width: 1440.98px) {
                 font-size: 14px;
                 margin-bottom: 15px;
