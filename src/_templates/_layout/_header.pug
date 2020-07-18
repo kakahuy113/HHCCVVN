@@ -10,13 +10,13 @@ header
 				.navtop__wrapper
 					.header__informations
 						.information__item
-							a.information__link(href="#") đang cập nhật
+							a.information__link(href="#" data-paste="website") đang cập nhật
 						.information__item
-							a.information__link(href="#") đang cập nhật
-					.header__languages
-						.languages__item.active
+							a.information__link(href="#" data-paste="email") đang cập nhật
+					.header__languages.language
+						.languages__item.item(data-language="vi")
 							a.languages__link(href="#") Vietnamese
-						.languages__item
+						.languages__item.item(data-language="en")
 							a.languages__link(href="#") English
 					.header__login
 						.btn.btn-login
@@ -57,4 +57,4 @@ header
 					.navSearch
 						.navSearch__wrapper
 							.navSearch__btn
-								img.svg(src="./assets/icons/search.svg", alt="BUTTON SEARCH")
+								img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
