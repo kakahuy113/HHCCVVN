@@ -4,6 +4,7 @@ import {
 } from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
+import CommonController from './lib/CommonController';
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -243,35 +244,35 @@ const ajaxFormContact = () => {
 };
 
 const ajaxFormResearch = () => {
-    $('.btn.btn-subResearch button').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        const nameText = $(".research__login--form form .form-group textarea").attr('name');
-        const valText = $(".research__login--form form .form-group textarea").val();
-        $('.research__login--form form .form-group input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
-        formData.append(nameText, valText);
-        $.ajax({
-            url: url,
-            type: 'post',
-            data: formData,
-            processData: false,
-            contentType: false,
-            beforeSend: function() {
-                _thisBtn.attr('disabled', 'disabled');
-            },
-            success: function(res) {
-                alert(`${res.Message}`);
-                window.location.reload();
-                _thisBtn.removeAttr('disabled');
-            },
-        });
-    })
+	$('.btn.btn-subResearch button').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		const nameText = $(".research__login--form form .form-group textarea").attr('name');
+		const valText = $(".research__login--form form .form-group textarea").val();
+		$('.research__login--form form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		formData.append(nameText, valText);
+		$.ajax({
+			url: url,
+			type: 'post',
+			data: formData,
+			processData: false,
+			contentType: false,
+			beforeSend: function () {
+				_thisBtn.attr('disabled', 'disabled');
+			},
+			success: function (res) {
+				alert(`${res.Message}`);
+				window.location.reload();
+				_thisBtn.removeAttr('disabled');
+			},
+		});
+	})
 }
 
 const ajaxNews = () => {
@@ -339,7 +340,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	Loading();
 	// COMMON CONTROLLER
 	CommonController();
-	AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
 	// INIT CLASS SUB MENU
