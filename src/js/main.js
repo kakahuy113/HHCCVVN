@@ -5,6 +5,7 @@ import {
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from "./lib/CommonController";
+import AccountController from './lib/AccountController';
 
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
@@ -335,6 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
     Loading();
     // COMMON CONTROLLER
     CommonController();
+    //
+    AccountController();
     // MAIN BANNER WEBSITE
     initMainBanner();
     // INIT CLASS SUB MENU
