@@ -285,7 +285,22 @@ const ajaxEvents = () => {
 			});
 	}
 };
-
+//playvideo
+const playVideoIntroduct = () => {
+	$(".introduct__video--img").click(function (e) {
+		e.preventDefault();
+		$(this).addClass('active');
+		$("#introdcut--video").get(0).paused ? $("#introdcut--video").get(0).play() : $("#introdcut--video").get(0).pause();
+		if ($("#introdcut--video").get(0).paused) {
+			$(this).removeClass('active')
+		}
+	});
+}
+//responses bg introduce
+const setHeightBgIntroduce = () => {
+	let h = $('.introduct__topContent').outerHeight();
+	$("section.Introduct .introduct__bg img").css('height', h);
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -316,6 +331,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxNews();
 	// Get Event Content
 	ajaxEvents();
+	//
+	playVideoIntroduct();
+	//setHeightBgIntroduce
+	setHeightBgIntroduce();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });

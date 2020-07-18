@@ -174,3 +174,9 @@ textarea {
 		border: 0;
 	}
 }
+
+.isVideo {
+	position: relative;
+
+	&::after {}
+}
