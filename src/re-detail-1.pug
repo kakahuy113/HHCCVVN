@@ -2,12 +2,14 @@ extends _templates/_layout/_layout.pug
 
 block var
 	- let title = 'NGHIÊN CỨU - TRAO ĐỔI | Hiệp hội công chứng';
-	- let bodyClass = 'research-page';
+	- let bodyClass = 'introduct-page';
 	- let linkBanner = './assets/images/page-banners/introduct.png';
-	- let titleBanner = 'GIỚI THIỆU';
+	- let titleBanner = 'NGHIÊN CỨU - TRAO ĐỔI';
 block loading
 block banner,breadcrumb
 	include _templates/_layout/_pages-banner
 block main
-	include _templates/research/r-1
+	include _templates/re-detail-1/d-1
+	include _templates/re-detail-1/d-2
+	include _templates/re-detail-1/d-3
 block scripts
