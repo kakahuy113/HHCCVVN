@@ -1,12 +1,11 @@
-import {
-	getSVGs,
-	Loading
-} from './util/utilities';
+import { getSVGs, Loading } from './util/utilities';
 import Cookie from './lib/Cookie';
-
+import Tab from './lib/Tab';
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
-	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
+	const items__MainMenu = document.querySelectorAll(
+		'.navbottom__wrapper>.navBar>.navBar__item'
+	);
 
 	items__MainMenu.forEach((item) => {
 		const isHaveSub = item.querySelectorAll('.navBar');
@@ -16,16 +15,16 @@ const initClassSubMenu = () => {
 			item.classList.add('isHaveSubMenu');
 			// ADD CLASS LIST MENU LV1
 			isHaveSub.forEach((item) => {
-				item.classList.add('navBar--lv1')
-			})
+				item.classList.add('navBar--lv1');
+			});
 			// ADD CLASS ITEM MENU LV1
 			const items__MenuLv1 = item.querySelectorAll('.navBar__item');
 			items__MenuLv1.forEach((item) => {
-				item.classList.add('navBar__item--lv1')
-			})
+				item.classList.add('navBar__item--lv1');
+			});
 		}
-	})
-}
+	});
+};
 
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
@@ -77,10 +76,10 @@ const silderHomeImage = () => {
 			swiper: galleryThumbs,
 		},
 	});
-}
+};
 
 const ajaxFormContact = () => {
-	$(".contact form .form-button").on('click', function (e) {
+	$('.contact form .form-button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
@@ -91,8 +90,12 @@ const ajaxFormContact = () => {
 			formData.append(name, value);
 		});
 
-		if ($(".contact form").valid() === true) {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+		if ($('.contact form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+					' ' +
+					$('.contact form').valid()
+			);
 			$.ajax({
 				url: url,
 				type: 'post',
@@ -109,46 +112,55 @@ const ajaxFormContact = () => {
 				},
 			});
 		} else {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+					' ' +
+					$('.contact form').valid()
+			);
 		}
 	});
-}
+};
 
 const ajaxNews = () => {
-	document.querySelector(".news--item").addEventListener("click" , (e) => {
-		$.ajax({
-			url: 'get',
-			type: 'get',
-			data: 'something',
-			processData: false,
-			contentType: false,
-			success:  (res) => {
-				console.log(res);
-			},
-			error: (res) => {
-				console.log(res);
-			}
+	if (document.querySelector('.news--item')) {
+		document.querySelector('.news--item').addEventListener('click', (e) => {
+			$.ajax({
+				url: 'get',
+				type: 'get',
+				data: 'something',
+				processData: false,
+				contentType: false,
+				success: (res) => {
+					console.log(res);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
 		});
-	})
-}
+	}
+};
 const ajaxEvents = () => {
-	document.querySelector(".events--item").addEventListener("click" , (e) => {
-		$.ajax({
-			url: 'get',
-			type: 'get',
-			data: 'something',
-			processData: false,
-			contentType: false,
-			success:  (res) => {
-				console.log(res);
-			},
-			error: (res) => {
-				console.log(res);
-			}
-		});
-	})
-}
-
+	if (document.querySelector('.events--item')) {
+		document
+			.querySelector('.events--item')
+			.addEventListener('click', (e) => {
+				$.ajax({
+					url: 'get',
+					type: 'get',
+					data: 'something',
+					processData: false,
+					contentType: false,
+					success: (res) => {
+						console.log(res);
+					},
+					error: (res) => {
+						console.log(res);
+					},
+				});
+			});
+	}
+};
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -165,9 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
-	ajaxNews()
+	ajaxNews();
 	// Get Event Content
-	ajaxEvents()
+	ajaxEvents();
+
+	//TAB
+	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 document.addEventListener('DOMContentLoaded', () => {});
