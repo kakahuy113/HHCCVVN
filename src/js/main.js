@@ -222,9 +222,9 @@ const playVideoIntroduct = () => {
             e.preventDefault();
             $(this).addClass('active');
             $("#introdcut--video").get(0).paused ? $("#introdcut--video").get(0).play() : $("#introdcut--video").get(0).pause();
-            // if ($("#introdcut--video").val() == 'pause') {
-            //     $(this).removeClass("active");
-            // }
+            if ($("#introdcut--video").get(0).paused) {
+                $(this).removeClass('active')
+            }
         });
     }
     //responses bg introduce
