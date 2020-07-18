@@ -1,44 +1,45 @@
 .pagination {
-	width          : 100%;
-	display        : flex;
-	justify-content: flex-end;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	list-style-type: none;
-	padding-left   : 0;
-
-	@media (max-width: 1024.98px) {
-		justify-content: center;
-	}
+	padding-left: 0;
 
 	li {
 		margin: 0 5px;
 
 		a {
-			display        : flex;
+			display: flex;
 			justify-content: center;
-			align-items    : center;
-			color          : #000000;
-			padding        : 5px 10px;
-			border-radius  : 5px;
-			font-weight    : 400;
-			font-size      : 12px;
-			background     : #dddddd;
-			border         : 1px solid #FFFFFF;
-			transition     : all .2s cubic-bezier(.2, .5, .5, .8);
+			align-items: center;
+			color: #707070;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			font-weight: 700;
+			font-size: 18px;
+			transition: all .2s cubic-bezier(.2, .5, .5, .8);
 		}
 
 		&:hover {
 			a {
 				text-decoration: none;
-				color          : #FFFFFF;
-				background     : map-get($mau, main);
+				color: map-get($mau, main-1);
 			}
 		}
 
 		&.active {
 			a {
-				color          : #FFFFFF;
-				background     : map-get($mau, main);
-				text-decoration: underline;
+				color: #FFFFFF;
+				background: map-get($mau, main-2);
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		li {
+			a {
+				font-size: 14px;
 			}
 		}
 	}
