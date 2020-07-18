@@ -4,9 +4,6 @@ import {
 } from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
-import CommonController from "./lib/CommonController";
-import AccountController from './lib/AccountController';
-
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
     const items__MainMenu = document.querySelectorAll(
@@ -32,40 +29,26 @@ const initClassSubMenu = () => {
     });
 };
 
-// INIT ELELEMENT BUTTON BACK SUB MENU
 const initElementButtonBackSubMenu = () => {
     const menusLv1 = document.querySelectorAll('.navBar--lv1');
     menusLv1.forEach((item) => {
-        const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
         const htmlLang = document.querySelector('html').getAttribute('lang');
-        const btn__vi = mainMenu.getAttribute('data-btn-back-content-vi');
-        const btn__en = mainMenu.getAttribute('data-btn-back-content-en');
-        const btn__wrapper = document.createElement('div');
-        // GẮN NÚT MẶC ĐỊNH
-        btn__wrapper.classList.add('navBar__item', 'navBar__item--lv1', 'mobile')
-        item.prepend(btn__wrapper);
-        // NÚT TIẾNG VIỆT
-        if (htmlLang == 'en') {
-            btn__wrapper.innerHTML = `<div class="navBar__back">${btn__en}</div>`;
-        } else {
-            btn__wrapper.innerHTML = `<div class="navBar__back">${btn__vi}</div>`;
-        }
+        const btn__vi = item.getAttribute('data-btn-back-content-vi');
+        const btn__en = item.getAttribute('data-btn-back-content-en');
+        const btn__df = `<div class="navBar__item navBar__item--lv1"><div class="navBar__back">Trở về</div></div>`;
     })
 }
 
-// SHOW SUB MENU
 const showSubMenuMobile = () => {
     const btn = document.querySelector('.navBarHamburger__wrapper');
     const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
     const items__IsHaveSubMenu = document.querySelectorAll('.isHaveSubMenu');
-    const overlay = document.querySelector('#overlay');
+
     // SHOW MAIN MENU !!!
     if (btn) {
         btn.addEventListener('click', (e) => {
-            document.querySelector('body').classList.toggle('disabled');
             btn.classList.toggle('active');
             mainMenu.classList.toggle('show');
-            overlay.classList.toggle('show');
             // CLOSE ALL SUB MENU
             items__IsHaveSubMenu.forEach((item) => {
                 item.querySelector('.navBar--lv1').classList.remove('show');
@@ -93,80 +76,6 @@ const showSubMenuMobile = () => {
             console.log(`Không tồn tại element :=> .navBar__back`);
         }
     })
-
-    if (overlay) {
-        overlay.addEventListener('click', (e) => {
-            mainMenu.classList.remove('show');
-            overlay.classList.remove('show');
-            btn.classList.remove('active');
-            items__IsHaveSubMenu.forEach((item) => {
-                item.querySelector('.navBar--lv1').classList.remove('show');
-            })
-        })
-    }
-}
-
-// ACTIVE LANGGUAGE
-const activeLanguage = () => {
-    const htmlLang = document.querySelector('html').getAttribute('lang');
-    const items__language = document.querySelectorAll('.header__languages .languages__item')
-    items__language.forEach((item) => {
-        if (item.getAttribute('data-language') == htmlLang) {
-            item.classList.add('active')
-        }
-    })
-}
-
-// SHOW BACK TO TOP
-const showBackToTop = () => {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 800) {
-            $('#back_to_top').addClass('show');
-        } else {
-            $('#back_to_top').removeClass('show');
-        }
-    });
-
-    $("#back_to_top").on("click", function(e) {
-        e.preventDefault();
-        $("html,body").animate({
-            scrollTop: 0
-        })
-    })
-}
-
-const copyDataByAttr = () => {
-	const items__paste = document.querySelectorAll('[data-paste]');
-	const items__copy = document.querySelectorAll('[data-copy]');
-
-	// GET ALL DATA COPY
-	const getAllDataCopy = () => {
-		const listItems = [];
-		items__copy.forEach((itemCopy) => {
-			listItems.push(itemCopy)
-		})
-		return listItems
-	}
-
-	// GET ALL ITEM PASTE
-	const getAllItemPaste = () => {
-		const listItems = [];
-		items__paste.forEach((itemPaste) => {
-			listItems.push(itemPaste)
-		})
-		return listItems
-	}
-
-	// SET DATA
-	const setData = (datasCopy, itemsPaste) => {
-		const listDataCopy = datasCopy();
-		const listItemPaste = itemsPaste();
-		console.log(listDataCopy);
-		console.log(listItemPaste);
-	}
-
-	// RUN !!!
-	setData(getAllDataCopy, getAllItemPaste)
 }
 
 // MAIN BANNER WEBSITE
@@ -272,11 +181,14 @@ const ajaxFormResearch = () => {
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
         const formData = new FormData();
+        const nameText = $(".research__login--form form .form-group textarea").attr('name');
+        const valText = $(".research__login--form form .form-group textarea").val();
         $('.research__login--form form .form-group input').each(function() {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
         });
+        formData.append(nameText, valText);
         $.ajax({
             url: url,
             type: 'post',
@@ -355,10 +267,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Cookie();
     getSVGs();
     Loading();
-    // COMMON CONTROLLER
-    CommonController();
-    //
-    AccountController();
     // MAIN BANNER WEBSITE
     initMainBanner();
     // INIT CLASS SUB MENU
@@ -367,13 +275,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initElementButtonBackSubMenu();
     // SHOW SUB MENU MOBILE
     showSubMenuMobile();
-    // SHOW BACK TO TOP
-    showBackToTop();
-    // COPY DATA BY ATTR
-    copyDataByAttr();
-    // ACTIVE LANGGUAGE
-    activeLanguage();
-    // HOme swiper Video
     sliderHomeVideo();
     // HOme swiper Image
     silderHomeImage();
@@ -387,7 +288,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playVideoIntroduct();
     //setHeightBgIntroduce
     setHeightBgIntroduce();
-    //  GET 
+    //
     ajaxFormResearch();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
