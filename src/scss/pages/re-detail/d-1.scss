@@ -1,5 +1,8 @@
 section.reDetail {
     padding-top: 81px;
+    .reDetail__wrapper {
+        margin-bottom: 42px;
+    }
     .reDetail__topContent {
         margin-bottom: 40px;
     }
@@ -22,6 +25,13 @@ section.reDetail {
             margin-top: 35px;
             margin-bottom: 15px;
         }
+        h4 {
+            font-family: MYRIADPRO-BOLD;
+            color: map-get($mau, xam);
+            font-size: 18px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
         h5 {
             font-family: MYRIADPRO-BOLDIT;
             font-size: 16px;
@@ -41,6 +51,20 @@ section.reDetail {
                 margin-bottom: 0;
             }
         }
+        img {
+            width: 100%;
+            padding-top: 48px;
+            padding-bottom: 60px;
+        }
+    }
+    .reDetail__content--listImg {
+        margin-top: 27px;
+        img {
+            margin-right: 29px;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
     }
     .reDetail__content--img {
         padding-left: 20px;
@@ -52,12 +76,6 @@ section.reDetail {
             height: 100%;
             width: 100%;
             object-fit: cover;
-        }
-    }
-    .reDetail__content {
-        &:last-child {
-            padding-bottom: 54px;
-            border-bottom: 1px solid #707070;
         }
     }
 }

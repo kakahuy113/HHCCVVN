@@ -10,13 +10,13 @@ header
 				.navtop__wrapper
 					.header__informations
 						.information__item
-							a.information__link(href="#") đang cập nhật
+							a.information__link(href="#" data-paste="website") đang cập nhật
 						.information__item
-							a.information__link(href="#") đang cập nhật
-					.header__languages
-						.languages__item.active
+							a.information__link(href="#" data-paste="email") đang cập nhật
+					.header__languages.language
+						.languages__item.item(data-language="vi")
 							a.languages__link(href="#") Vietnamese
-						.languages__item
+						.languages__item.item(data-language="en")
 							a.languages__link(href="#") English
 					.header__login
 						.btn.btn-login
@@ -25,20 +25,20 @@ header
 				.navbottom__wrapper
 					.navBar(data-btn-back-content-vi="Trở về" data-btn-back-content-en="Back")
 						.navBar__item
-							a.navBar__link(href="#") GIỚI THIỆU
+							a.navBar__link(href="introduct.html") GIỚI THIỆU
 							.navBar
 								.navBar__item
-									a.navBar__link(href="#") Giới thiệu chung
+									a.navBar__link(href="introduct.html") Giới thiệu chung
 								.navBar__item
 									a.navBar__link(href="#") Sơ đồ tổ chức
 								.navBar__item
-									a.navBar__link(href="#") Quyết định thành lập
+									a.navBar__link(href="decision.html") Quyết định thành lập
 								.navBar__item
 									a.navBar__link(href="#") Điều lệ
 								.navBar__item
-									a.navBar__link(href="#") Các đơn vị trực thuộc
+									a.navBar__link(href="affiliated-units.html") Các đơn vị trực thuộc
 								.navBar__item
-									a.navBar__link(href="#") Ban chấp hành
+									a.navBar__link(href="executive-committee.html") Ban chấp hành
 								.navBar__item
 									a.navBar__link(href="#") Ban thường trực
 								.navBar__item
@@ -48,13 +48,13 @@ header
 						.navBar__item
 							a.navBar__link(href="#") THÀNH VIÊN
 						.navBar__item
-							a.navBar__link(href="#") NGHIÊN CỨU - TRAO ĐỔI
+							a.navBar__link(href="research.html") NGHIÊN CỨU - TRAO ĐỔI
 						.navBar__item
 							a.navBar__link(href="#") THƯ VIỆN
 						.navBar__item
-							a.navBar__link(href="#") LIÊN HỆ
+							a.navBar__link(href="contact.html") LIÊN HỆ
 					.navBarHamburger__wrapper.mobile
 					.navSearch
 						.navSearch__wrapper
 							.navSearch__btn
-								img.svg(src="./assets/icons/search.svg", alt="BUTTON SEARCH")
+								img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
