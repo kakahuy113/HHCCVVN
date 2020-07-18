@@ -2,8 +2,8 @@ section.news__events
 	.container
 		.news__events__wrapper.container-1365px
 			ul.list-tab.news__events--list
-				li.news--item.tt-u(toggle-for="item-1") Tin Tức 
-				li.events--item.tt-u(toggle-for="item-1") Sự Kiện
+				li.news--item.tt-u.active Tin Tức 
+				li.events--item.tt-u Sự Kiện
 			.tab-content
 				.content(tab-id="item-1")
 					.inner--tab-content
@@ -12,7 +12,9 @@ section.news__events
 								.news--item--img
 									img.lazyload.blur-up(data-src=`./assets/images/news-events/item-${i +1 }.png`, alt="")
 								.new--item--summary
-									h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ut fugiat expedita quidem vitae sit ullam alias velit voluptates minus temporibus impedit unde minima ducimus cum quod, earum magni culpa!
-									span 29/02/2020
-									p.lcl.lcl-2.desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid corporis dolor sapiente culpa velit ut, repellat deserunt nesciunt alias, veniam quisquam esse odio, dolores unde quibusdam tempora ab a!
-									a.btn(href="#") Xem Them
+									div
+										h3.title.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ut fugiat expedita quidem vitae sit ullam alias velit voluptates minus temporibus impedit unde minima ducimus cum quod, earum magni culpa!
+										span 29/02/2020
+									p.lcl.lcl-3.desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid corporis dolor sapiente culpa velit ut, repellat deserunt nesciunt alias, veniam quisquam esse odio, dolores unde quibusdam tempora ab a!
+									a.btn(href="#") Xem Thêm
+					include ../_layout/_pagination.pug

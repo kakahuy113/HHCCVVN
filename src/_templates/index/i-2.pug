@@ -4,17 +4,24 @@ section.home--hotnews
 			h3.tt-u 
 				span Điểm Tin
 			.home--hotnews__wrapper--inner.row
-				div.col-5.hotnews--item--1
+				div.col-5.first-news
 					img.lazyload.blur-up(data-src="./assets/images/index/hot-news/hot_news_first.jpg", alt="")
 					p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, qui? Quos voluptatem perferendis neque facere distinctio, repudiandae dignissimos autem, voluptates inventore eius sequi praesentium a nemo possimus voluptate iusto. Ad!
-				div.col-5.hotnews--item--2
+				div.col-5.another-news--item
 					-for(var i = 0; i < 3; i++)
-						div.hotnews--item--2__wrapper
-							div.item--2--img
-								img.lazyload.blur-up(data-src=`./assets/images/index/hot-news/hot-news-${i+1}.jpg`, alt="")
-							p.lcl.lcl-3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est odit recusandae magni dolorem. Magni adipisci voluptas sunt repellendus quos quis ipsa perferendis ducimus amet. Sed praesentium libero quasi odit?
-				div.col-2.hotnews--item--3
-					img.lazyload.blur-up(data-src="./assets/images/index/hot-news/logo.svg", alt="")
-					p HIỆP HỘI CÔNG CHỨNG VIÊN VIỆT NAM
-					p Kết giá trị, nối sức mạnh !
-					p THÀNH LẬP HIỆP HỘI 2020
+						div.item__wrapper
+							div.item--img
+								img.lazyload.blur-up(data-src=`./assets/images/index/hot-news/hot-news-${i+1}.jpg`, alt="something")
+							.item--desc
+								p.lcl.lcl-3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est odit recusandae magni dolorem. Magni adipisci voluptas sunt repellendus quos quis ipsa perferendis ducimus amet. Sed praesentium libero quasi odit?
+				div.col-2.hot-news-banner
+					.banner-desc
+						div
+							img.lazyload.blur-up(data-src="./assets/images/index/hot-news/logo.png", alt="something")
+						div
+							p.title HIỆP HỘI CÔNG CHỨNG VIÊN VIỆT NAM
+							p.sub-title Kết giá trị, nối sức mạnh !
+						div
+							p.desc THÀNH LẬP HIỆP HỘI 2020
+					.banner--img
+						img.lazyload.blur-up(data-src="./assets/images/index/hot-news/hot_news_last.png", alt="something")
