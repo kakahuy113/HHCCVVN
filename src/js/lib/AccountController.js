@@ -36,7 +36,6 @@ AccountController = {
 
 		$(".btn-facebook").click(AccountController.events.attachFBSignin);
 	},
-
 	events: {
 		attachFBSignin: function () {
 			FB.login(function (response) {
@@ -124,7 +123,6 @@ AccountController = {
 		}
 	}
 }
-
 
 function RegisterSuccess(response) {
 	alert(response.Message);
