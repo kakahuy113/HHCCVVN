@@ -1,12 +1,11 @@
-import {
-	getSVGs,
-	Loading
-} from './util/utilities';
+import { getSVGs, Loading } from './util/utilities';
 import Cookie from './lib/Cookie';
-
+import Tab from './lib/Tab';
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
-	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
+	const items__MainMenu = document.querySelectorAll(
+		'.navbottom__wrapper>.navBar>.navBar__item'
+	);
 
 	items__MainMenu.forEach((item) => {
 		const isHaveSub = item.querySelectorAll('.navBar');
@@ -16,16 +15,16 @@ const initClassSubMenu = () => {
 			item.classList.add('isHaveSubMenu');
 			// ADD CLASS LIST MENU LV1
 			isHaveSub.forEach((item) => {
-				item.classList.add('navBar--lv1')
-			})
+				item.classList.add('navBar--lv1');
+			});
 			// ADD CLASS ITEM MENU LV1
 			const items__MenuLv1 = item.querySelectorAll('.navBar__item');
 			items__MenuLv1.forEach((item) => {
-				item.classList.add('navBar__item--lv1')
-			})
+				item.classList.add('navBar__item--lv1');
+			});
 		}
-	})
-}
+	});
+};
 
 const initElementButtonBackSubMenu = () => {
 	const menusLv1 = document.querySelectorAll('.navBar--lv1');
@@ -128,10 +127,10 @@ const silderHomeImage = () => {
 			swiper: galleryThumbs,
 		},
 	});
-}
+};
 
 const ajaxFormContact = () => {
-	$(".contact form .form-button").on('click', function (e) {
+	$('.contact form .form-button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
@@ -142,8 +141,12 @@ const ajaxFormContact = () => {
 			formData.append(name, value);
 		});
 
-		if ($(".contact form").valid() === true) {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+		if ($('.contact form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+					' ' +
+					$('.contact form').valid()
+			);
 			$.ajax({
 				url: url,
 				type: 'post',
@@ -160,9 +163,33 @@ const ajaxFormContact = () => {
 				},
 			});
 		} else {
-			console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".contact form").valid());
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+					' ' +
+					$('.contact form').valid()
+			);
 		}
 	});
+<<<<<<< HEAD
+};
+
+const ajaxNews = () => {
+	if (document.querySelector('.news--item')) {
+		document.querySelector('.news--item').addEventListener('click', (e) => {
+			$.ajax({
+				url: 'get',
+				type: 'get',
+				data: 'something',
+				processData: false,
+				contentType: false,
+				success: (res) => {
+					console.log(res);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
+=======
 }
 //check login hidden login
 const checkLogin = () => {
@@ -187,10 +214,33 @@ const ajaxNews = () => {
 			error: (res) => {
 				console.log(res);
 			}
+>>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 		});
-	})
-}
+	}
+};
 const ajaxEvents = () => {
+<<<<<<< HEAD
+	if (document.querySelector('.events--item')) {
+		document
+			.querySelector('.events--item')
+			.addEventListener('click', (e) => {
+				$.ajax({
+					url: 'get',
+					type: 'get',
+					data: 'something',
+					processData: false,
+					contentType: false,
+					success: (res) => {
+						console.log(res);
+					},
+					error: (res) => {
+						console.log(res);
+					},
+				});
+			});
+	}
+};
+=======
 	document.querySelector(".events--item").addEventListener("click", (e) => {
 		$.ajax({
 			url: 'get',
@@ -208,6 +258,7 @@ const ajaxEvents = () => {
 	})
 }
 
+>>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -227,9 +278,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
-	ajaxNews()
+	ajaxNews();
 	// Get Event Content
-	ajaxEvents()
+	ajaxEvents();
+
+	//TAB
+	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 document.addEventListener('DOMContentLoaded', () => {});

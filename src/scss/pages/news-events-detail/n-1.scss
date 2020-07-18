@@ -70,7 +70,7 @@
 	div + div {
 		padding-left: 11px;
 	}
-	.share-posts {
+	a {
 		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
 		width: 122px;
 		height: 36px;
@@ -78,11 +78,16 @@
 		font-family: MYRIADPRO-REGULAR;
 		font-size: 14;
 		border-radius: 4px;
+		padding-left: 30px;;
+		color: #C4851A;
+	}
+	.share-posts {
+		
 		&::before {
 			position: absolute;
 			content: '';
 			top: 50%;
-			left: 10%;
+			left: 15px;
 			background: url(../assets/images/news-events-detail/share-icon.png)
 				no-repeat;
 			width: 23px;
@@ -93,18 +98,11 @@
 		}
 	}
 	.like-posts {
-		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
-		width: 122px;
-		height: 36px;
-		position: relative;
-		font-family: MYRIADPRO-REGULAR;
-		font-size: 14;
-		border-radius: 4px;
 		&::before {
 			position: absolute;
 			content: '';
 			top: 50%;
-			left: 10%;
+			left: 15px;
 			background: url(../assets/images/news-events-detail/like-icon.png)
 				no-repeat;
 			width: 23px;
