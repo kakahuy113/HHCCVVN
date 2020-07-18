@@ -170,7 +170,6 @@ const ajaxFormContact = () => {
 			);
 		}
 	});
-<<<<<<< HEAD
 };
 
 const ajaxNews = () => {
@@ -189,37 +188,10 @@ const ajaxNews = () => {
 					console.log(res);
 				},
 			});
-=======
-}
-//check login hidden login
-const checkLogin = () => {
-	if ($("#check_login input").attr("data-islogin") == 'true') {
-		$(".research__login--option").hide();
-	} else {
-		$(".research__login--option").show();
-	}
-}
-
-const ajaxNews = () => {
-	document.querySelector(".news--item").addEventListener("click", (e) => {
-		$.ajax({
-			url: 'get',
-			type: 'get',
-			data: 'something',
-			processData: false,
-			contentType: false,
-			success: (res) => {
-				console.log(res);
-			},
-			error: (res) => {
-				console.log(res);
-			}
->>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 		});
 	}
 };
 const ajaxEvents = () => {
-<<<<<<< HEAD
 	if (document.querySelector('.events--item')) {
 		document
 			.querySelector('.events--item')
@@ -240,25 +212,6 @@ const ajaxEvents = () => {
 			});
 	}
 };
-=======
-	document.querySelector(".events--item").addEventListener("click", (e) => {
-		$.ajax({
-			url: 'get',
-			type: 'get',
-			data: 'something',
-			processData: false,
-			contentType: false,
-			success: (res) => {
-				console.log(res);
-			},
-			error: (res) => {
-				console.log(res);
-			}
-		});
-	})
-}
-
->>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
