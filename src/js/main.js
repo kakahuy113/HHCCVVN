@@ -1,4 +1,7 @@
-import { getSVGs, Loading } from './util/utilities';
+import {
+	getSVGs,
+	Loading
+} from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 // INIT CLASS SUB MENU
@@ -33,8 +36,6 @@ const initElementButtonBackSubMenu = () => {
 		const btn__vi = item.getAttribute('data-btn-back-content-vi');
 		const btn__en = item.getAttribute('data-btn-back-content-en');
 		const btn__df = `<div class="navBar__item navBar__item--lv1"><div class="navBar__back">Trở về</div></div>`;
-		console.log(item);
-		$(item).appendTo(btn__df);
 	})
 }
 
@@ -96,6 +97,7 @@ const initMainBanner = () => {
 		},
 	});
 };
+
 // swiper home page video
 const sliderHomeVideo = () => {
 	var swiper = new Swiper('.swiper--left__wrapper .swiper-container', {
@@ -107,6 +109,7 @@ const sliderHomeVideo = () => {
 		},
 	});
 };
+
 // swiper home page image
 const silderHomeImage = () => {
 	var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
@@ -144,8 +147,8 @@ const ajaxFormContact = () => {
 		if ($('.contact form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -165,8 +168,8 @@ const ajaxFormContact = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 		}
 	});
@@ -191,6 +194,7 @@ const ajaxNews = () => {
 		});
 	}
 };
+
 const ajaxEvents = () => {
 	if (document.querySelector('.events--item')) {
 		document
