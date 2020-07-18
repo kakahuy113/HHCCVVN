@@ -1,0 +1,50 @@
+section.LikeAndShare {
+    padding-top: 34px;
+    padding-bottom: 45px;
+    .lAS__list {
+        display: flex;
+    }
+    .lAS__listItem {
+        display: block;
+        padding-right: 11px;
+        margin-right: 11px;
+        position: relative;
+        &:last-child {
+            padding-right: 0;
+            margin-right: 0;
+            &::before {
+                content: none;
+            }
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            width: 36px;
+            height: 1px;
+            top: 18px;
+            right: -18px;
+            transform: rotate(90deg);
+            background: #C8C8C8;
+        }
+    }
+    .lAS__list--item {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 122px;
+        height: 36px;
+        border-radius: 4px;
+        box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+        h4 {
+            font-family: MYRIADPRO-REGULAR;
+            font-size: 14px;
+            color: map-get($mau, main-2);
+            padding-left: 10px;
+            span {
+                font-family: MYRIADPRO-REGULAR;
+                font-size: 14px;
+                color: map-get($mau, main-2);
+            }
+        }
+    }
+}

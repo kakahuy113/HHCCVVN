@@ -1,0 +1,21 @@
+section.Related {
+    margin-bottom: 114px;
+    .related__wrapper {
+        padding-bottom: 54px;
+        border-bottom: 1px solid rgba($color: #707070, $alpha: 0.4);
+        h2 {
+            font-family: UTM-COPPERPLATEB;
+            font-size: 30px;
+            margin-bottom: 48px;
+        }
+    }
+    .related__col {
+        flex: 0 0 20%;
+        padding: 0 10px;
+        p {
+            font-family: MYRIADPRO-BOLD;
+            font-size: 16px;
+            color: map-get($mau, xam);
+        }
+    }
+}

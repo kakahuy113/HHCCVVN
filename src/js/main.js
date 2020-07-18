@@ -26,6 +26,57 @@ const initClassSubMenu = () => {
 	});
 };
 
+const initElementButtonBackSubMenu = () => {
+	const menusLv1 = document.querySelectorAll('.navBar--lv1');
+	menusLv1.forEach((item) => {
+		const htmlLang = document.querySelector('html').getAttribute('lang');
+		const btn__vi = item.getAttribute('data-btn-back-content-vi');
+		const btn__en = item.getAttribute('data-btn-back-content-en');
+		const btn__df = `<div class="navBar__item navBar__item--lv1"><div class="navBar__back">Trở về</div></div>`;
+		console.log(item);
+		$(item).appendTo(btn__df);
+	})
+}
+
+const showSubMenuMobile = () => {
+	const btn = document.querySelector('.navBarHamburger__wrapper');
+	const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
+	const items__IsHaveSubMenu = document.querySelectorAll('.isHaveSubMenu');
+
+	// SHOW MAIN MENU !!!
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			btn.classList.toggle('active');
+			mainMenu.classList.toggle('show');
+			// CLOSE ALL SUB MENU
+			items__IsHaveSubMenu.forEach((item) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			})
+		})
+	} else {
+		console.log(`Không tồn tại element :=> .navBarHamburger__wrapper`)
+	}
+
+	// SHOW SUB MENU
+	items__IsHaveSubMenu.forEach((item) => {
+		const menuLv1 = item.querySelector('.navBar--lv1');
+		const btnBack = menuLv1.querySelector('.navBar__back');
+		// SHOW MENU LV 1
+		item.addEventListener('click', (e) => {
+			menuLv1.classList.add('show');
+		});
+		// BACK TO MAIN MENU
+		if (btnBack) {
+			btnBack.addEventListener('click', (e) => {
+				e.stopPropagation();
+				menuLv1.classList.remove('show');
+			})
+		} else {
+			console.log(`Không tồn tại element :=> .navBar__back`);
+		}
+	})
+}
+
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
 	let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
@@ -119,6 +170,7 @@ const ajaxFormContact = () => {
 			);
 		}
 	});
+<<<<<<< HEAD
 };
 
 const ajaxNews = () => {
@@ -137,10 +189,37 @@ const ajaxNews = () => {
 					console.log(res);
 				},
 			});
+=======
+}
+//check login hidden login
+const checkLogin = () => {
+	if ($("#check_login input").attr("data-islogin") == 'true') {
+		$(".research__login--option").hide();
+	} else {
+		$(".research__login--option").show();
+	}
+}
+
+const ajaxNews = () => {
+	document.querySelector(".news--item").addEventListener("click", (e) => {
+		$.ajax({
+			url: 'get',
+			type: 'get',
+			data: 'something',
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			}
+>>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 		});
 	}
 };
 const ajaxEvents = () => {
+<<<<<<< HEAD
 	if (document.querySelector('.events--item')) {
 		document
 			.querySelector('.events--item')
@@ -161,6 +240,25 @@ const ajaxEvents = () => {
 			});
 	}
 };
+=======
+	document.querySelector(".events--item").addEventListener("click", (e) => {
+		$.ajax({
+			url: 'get',
+			type: 'get',
+			data: 'something',
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			}
+		});
+	})
+}
+
+>>>>>>> b0b44a11143055c1c5ab9518cdad3bf1774c405b
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -170,7 +268,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainBanner();
 	// INIT CLASS SUB MENU
 	initClassSubMenu();
-	// Home swiper Video
+	// INIT ELEMENT BUTTON BACK SUB MENU
+	initElementButtonBackSubMenu();
+	// SHOW SUB MENU MOBILE
+	showSubMenuMobile();
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();

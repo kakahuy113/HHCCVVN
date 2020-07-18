@@ -41,11 +41,14 @@ section.Research
 						.col-4
 							.research__login--option
 								a.research__optItem.bg-main-2.cl-trang(href="")
-									img(src="./assets/images/research/f.png", alt="facebook")
+									.research__optItem--img
+										img(src="./assets/images/research/f.png", alt="facebook")
 									span Đăng nhập với Facebook
 								a.research__optItem.bg-main-2.cl-trang(href="")
-									img(src="./assets/images/research/gg.png", alt="facebook")
+									.research__optItem--img
+										img(src="./assets/images/research/gg.png", alt="facebook")
 									span Đăng nhập với Google
+					.research__blogWrapper.row
 						-for(var i=1;i<=12;i++)
 							.col-12.research__blog
 								.research__blog--item
