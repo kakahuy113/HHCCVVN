@@ -3,8 +3,9 @@ header
 	.container
 		.header__wrapper.container-1365px
 			.header__logo
-				a(href="index.html")
-					img.lazyload.blur-up(data-src="./assets/logo.png", alt="")
+				a.headerLogo__link(href="index.html")
+					img.lazyload.blur-up.dekstop(data-src="./assets/logo.png", alt="")
+					img.lazyload.blur-up.mobile(data-src="./assets/logo-mobile.png", alt="")
 			.header__nav--top
 				.navtop__wrapper
 					.header__informations
@@ -22,7 +23,7 @@ header
 							h5.cl-main-2 Đăng nhập
 			.header__nav--bottom
 				.navbottom__wrapper
-					.navBar
+					.navBar(data-btn-back-content-vi="Trở về" data-btn-back-content-en="Back")
 						.navBar__item
 							a.navBar__link(href="#") GIỚI THIỆU
 							.navBar
@@ -52,6 +53,7 @@ header
 							a.navBar__link(href="#") THƯ VIỆN
 						.navBar__item
 							a.navBar__link(href="#") LIÊN HỆ
+					.navBarHamburger__wrapper.mobile
 					.navSearch
 						.navSearch__wrapper
 							.navSearch__btn

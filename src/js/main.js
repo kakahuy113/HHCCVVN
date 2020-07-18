@@ -27,6 +27,57 @@ const initClassSubMenu = () => {
 	})
 }
 
+const initElementButtonBackSubMenu = () => {
+	const menusLv1 = document.querySelectorAll('.navBar--lv1');
+	menusLv1.forEach((item) => {
+		const htmlLang = document.querySelector('html').getAttribute('lang');
+		const btn__vi = item.getAttribute('data-btn-back-content-vi');
+		const btn__en = item.getAttribute('data-btn-back-content-en');
+		const btn__df = `<div class="navBar__item navBar__item--lv1"><div class="navBar__back">Trở về</div></div>`;
+		console.log(item);
+		$(item).appendTo(btn__df);
+	})
+}
+
+const showSubMenuMobile = () => {
+	const btn = document.querySelector('.navBarHamburger__wrapper');
+	const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
+	const items__IsHaveSubMenu = document.querySelectorAll('.isHaveSubMenu');
+
+	// SHOW MAIN MENU !!!
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			btn.classList.toggle('active');
+			mainMenu.classList.toggle('show');
+			// CLOSE ALL SUB MENU
+			items__IsHaveSubMenu.forEach((item) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			})
+		})
+	} else {
+		console.log(`Không tồn tại element :=> .navBarHamburger__wrapper`)
+	}
+
+	// SHOW SUB MENU
+	items__IsHaveSubMenu.forEach((item) => {
+		const menuLv1 = item.querySelector('.navBar--lv1');
+		const btnBack = menuLv1.querySelector('.navBar__back');
+		// SHOW MENU LV 1
+		item.addEventListener('click', (e) => {
+			menuLv1.classList.add('show');
+		});
+		// BACK TO MAIN MENU
+		if (btnBack) {
+			btnBack.addEventListener('click', (e) => {
+				e.stopPropagation();
+				menuLv1.classList.remove('show');
+			})
+		} else {
+			console.log(`Không tồn tại element :=> .navBar__back`);
+		}
+	})
+}
+
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
 	let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
@@ -122,6 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainBanner();
 	// INIT CLASS SUB MENU
 	initClassSubMenu();
+	// INIT ELEMENT BUTTON BACK SUB MENU
+	initElementButtonBackSubMenu();
+	// SHOW SUB MENU MOBILE
+	showSubMenuMobile();
 	// Home swiper Video
 	init_Video();
 	// HOme swiper Image
