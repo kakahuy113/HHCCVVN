@@ -5,6 +5,7 @@ import {
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
+import AccountController from './lib/AccountController';
 
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
@@ -36,23 +37,18 @@ const initElementButtonBackSubMenu = () => {
     const menusLv1 = document.querySelectorAll('.navBar--lv1');
     menusLv1.forEach((item) => {
         const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
-        const htmlLang = document.querySelector('html').getAttribute('lang');
-        const btn__vi = mainMenu.getAttribute('data-btn-back-content-vi');
-        const btn__en = mainMenu.getAttribute('data-btn-back-content-en');
+        const btn__content = mainMenu.getAttribute('data-btn-back-content');
         const btn__wrapper = document.createElement('div');
         // GẮN NÚT MẶC ĐỊNH
         btn__wrapper.classList.add('navBar__item', 'navBar__item--lv1', 'mobile')
         item.prepend(btn__wrapper);
-        // NÚT TIẾNG VIỆT
-        if (htmlLang == 'en') {
-            btn__wrapper.innerHTML = `<div class="navBar__back">${btn__en}</div>`;
-        } else {
-            btn__wrapper.innerHTML = `<div class="navBar__back">${btn__vi}</div>`;
-        }
+        // INER HTML
+        btn__wrapper.innerHTML = `<div class="navBar__back">${btn__content}</div>`;
     })
 }
 
-const actionsLoggedPage = () => {
+// ACTIONS LOGIN PAGE
+const actionsLoginPage = () => {
     // Small functions here !!!
     const check = () => {
             let isLogin = document.querySelector('#check_login>input').getAttribute('data-isLogin');
@@ -67,14 +63,31 @@ const actionsLoggedPage = () => {
     const isLogin = check();
     const headerButtonLogin__wrapper = document.querySelector('.headerButtonLogin__wrapper');
     const headerLogged__wrapper = document.querySelector('.headerLogged__wrapper');
+    const headerLogOut = document.querySelector('.headerLogOut');
+    const research__login__option = document.querySelector('.research__login--option');
     // Action here !!!
     if (isLogin) {
         // ACTION FOR ISLOGIN = TRUE
         headerButtonLogin__wrapper.classList.add('isLogin');
         headerLogged__wrapper.classList.add('isLogin');
+        if (research__login__option) {
+            research__login__option.classList.add('isLogin');
+        }
     } else {
         // ACTION FOR ISLOGIN = FALSE
+        headerButtonLogin__wrapper.classList.remove('isLogin');
+        headerLogged__wrapper.classList.remove('isLogin');
+        if (research__login__option) {
+            research__login__option.classList.remove('isLogin');
+        }
     }
+    // LOGOUT
+    headerLogOut.addEventListener('click', (e) => {
+        const messege = headerLogOut.getAttribute('messege-logout');
+        document.querySelector('#check_login>input').setAttribute('data-isLogin', 'False');
+        actionsLoginPage();
+        alert(messege);
+    })
 }
 
 // SHOW SUB MENU MOBILE
@@ -193,6 +206,59 @@ const initMainBanner = () => {
         },
     });
 };
+
+// AJAX FORM FOOTER
+const ajaxFormFooter = () => {
+    $('.footer__forms .footer__submit').on('click', function(e) {
+        e.preventDefault();
+        const _thisBtn = $(this);
+        const url = _thisBtn.attr('data-url');
+        const formData = new FormData();
+        $('.footer__forms input').each(function() {
+            const name = $(this).attr('name');
+            const value = $(this).val();
+            formData.append(name, value);
+        });
+
+        if ($('.footer__forms form').valid() === true) {
+            console.log(
+                'Kết quả kiểm tra điều kiện là:' +
+                ' ' +
+                $('.footer__forms form').valid()
+            );
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    _thisBtn.attr('disabled', 'disabled');
+                },
+                success: function(res) {
+                    alert(`${res.Message}`);
+                    window.location.reload();
+                    _thisBtn.removeAttr('disabled');
+                },
+            });
+        } else {
+            console.log(
+                'Kết quả kiểm tra điều kiện là:' +
+                ' ' +
+                $('.footer__forms form').valid()
+            );
+        }
+    });
+};
+
+// OPEN TARGET LINK FOOTER
+const openTargetLinkFooter = () => {
+    const select__linkTarget = document.querySelector('.footer__forms .footer__select-control select');
+    select__linkTarget.addEventListener('change', (e) => {
+        const select__valute = select__linkTarget.value;
+        window.open(`${select__valute}`, '_blank');
+    })
+}
 
 // swiper home page video
 const sliderHomeVideo = () => {
@@ -489,8 +555,14 @@ document.addEventListener('DOMContentLoaded', () => {
     Loading();
     // COMMON CONTROLLER
     CommonController();
+    // ACCOUNT CONTROLLER
+    AccountController();
     // MAIN BANNER WEBSITE
     initMainBanner();
+    // AJAX FORM FOOTER
+    ajaxFormFooter();
+    // OPEN TARGET LINK FOOTER
+    openTargetLinkFooter();
     // INIT CLASS SUB MENU
     initClassSubMenu();
     // INIT ELEMENT BUTTON BACK SUB MENU
@@ -498,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SHOW SUB MENU MOBILE
     showSubMenuMobile();
     // CHECK LOGIN
-    actionsLoggedPage();
+    actionsLoginPage();
     // SHOW BACK TO TOP
     showBackToTop();
     // COPY DATA BY ATTR
