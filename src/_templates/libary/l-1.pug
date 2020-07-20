@@ -3,14 +3,14 @@ section.lib__page
 		.lib__page__wrapper
 			.tab-container
 				ul.lib--list
-					li.lib--item.item-image--tab.tt-u(toggle-for="item-1")
+					li.lib--item.item-image--tab.tt-u(toggle-for="item-1",data-url="")
 						h3  Hình Ảnh
-					li.lib--item.item-video--tab.tt-u(toggle-for="item-2")
+					li.lib--item.item-video--tab.tt-u(toggle-for="item-2",data-url="")
 						h3 Video
-					li.lib--item.item-document--tab.tt-u(toggle-for="item-3")
+					li.lib--item.item-document--tab.tt-u(toggle-for="item-3",data-url="")
 						h3 Hệ Thống Văn Bản
 				.tab-content
-					.content(tab-id="item-1")
+					.content(tab-id="item-1").image-content-tab
 						.lib__page__img
 							.content--gallery.no-gutters.p-0
 								-for(var i = 0; i < 12; i++)
@@ -19,7 +19,11 @@ section.lib__page
 										div.desc-img
 											h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
 											p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
-					.content(tab-id="item-2")
+						.see-more
+							.see-more-images(data-url="")
+								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
+								p Xem tất cả
+					.content(tab-id="item-2").video-content-tab
 						.lib__page__video.container
 							.content--video
 								-for(var i = 0; i < 9; i++)
@@ -29,7 +33,11 @@ section.lib__page
 											div.desc-video
 												h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
 												p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
-					.content(tab-id="item-3")
+						.see-more
+							.see-more-video(data-url="")
+								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
+								p Xem tất cả
+					.content(tab-id="item-3").document-content-tab
 						.lib__page__document.container
 							.lib__page__document.container-1365px
 								.document--inner
@@ -49,9 +57,10 @@ section.lib__page
 														!= "<span>Ngày cập nhật: </span>10/01/20"
 												div.col-1
 													div
-														img.lazyload.blur-up(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
-											
+														img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+						.see-more
+							.see-more-document(data-url="")
+								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
+								p Xem tất cả
 
-		.see-more
-			img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
-			p Xem tất cả
+		
