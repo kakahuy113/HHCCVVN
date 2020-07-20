@@ -5,6 +5,7 @@ import {
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
+
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -30,6 +31,7 @@ const initClassSubMenu = () => {
 	});
 };
 
+// INIT BUTTON BACK
 const initElementButtonBackSubMenu = () => {
 	const menusLv1 = document.querySelectorAll('.navBar--lv1');
 	menusLv1.forEach((item) => {
@@ -50,6 +52,7 @@ const initElementButtonBackSubMenu = () => {
 	})
 }
 
+// SHOW SUB MENU MOBILE
 const showSubMenuMobile = () => {
 	const btn = document.querySelector('.navBarHamburger__wrapper');
 	const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
@@ -100,6 +103,10 @@ const showSubMenuMobile = () => {
 			})
 		})
 	}
+}
+
+const showLoginForm = () => {
+
 }
 
 // ACTIVE LANGGUAGE
@@ -348,6 +355,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initElementButtonBackSubMenu();
 	// SHOW SUB MENU MOBILE
 	showSubMenuMobile();
+	// SHOW LOGIN FORM
+	showLoginForm();
 	// SHOW BACK TO TOP
 	showBackToTop();
 	// COPY DATA BY ATTR
