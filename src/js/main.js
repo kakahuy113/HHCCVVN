@@ -64,15 +64,22 @@ const actionsLoginPage = () => {
 	const headerButtonLogin__wrapper = document.querySelector('.headerButtonLogin__wrapper');
 	const headerLogged__wrapper = document.querySelector('.headerLogged__wrapper');
 	const headerLogOut = document.querySelector('.headerLogOut');
+	const research__login__option = document.querySelector('.research__login--option');
 	// Action here !!!
 	if (isLogin) {
 		// ACTION FOR ISLOGIN = TRUE
 		headerButtonLogin__wrapper.classList.add('isLogin');
 		headerLogged__wrapper.classList.add('isLogin');
+		if (research__login__option) {
+			research__login__option.classList.add('isLogin');
+		}
 	} else {
 		// ACTION FOR ISLOGIN = FALSE
 		headerButtonLogin__wrapper.classList.remove('isLogin');
 		headerLogged__wrapper.classList.remove('isLogin');
+		if (research__login__option) {
+			research__login__option.classList.remove('isLogin');
+		}
 	}
 	// LOGOUT
 	headerLogOut.addEventListener('click', (e) => {
