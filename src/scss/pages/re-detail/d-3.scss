@@ -13,10 +13,29 @@ section.Related {
     .related__col {
         flex: 0 0 20%;
         padding: 0 10px;
+        @media (max-width: 768.98px) {
+            flex: 0 0 50%;
+            margin-top: 10px;
+        }
         p {
             font-family: MYRIADPRO-BOLD;
             font-size: 16px;
             color: map-get($mau, xam);
+            overflow: hidden;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        .related__col--img {
+            @media (max-width: 768.98px) {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 }
