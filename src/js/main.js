@@ -52,6 +52,29 @@ const initElementButtonBackSubMenu = () => {
 	})
 }
 
+const actionsLoggedPage = () => {
+	// Small functions here !!!
+	const check = () => {
+		let isLogin = document.querySelector('#check_login>input').getAttribute('data-isLogin');
+		if (isLogin == "False") {
+			isLogin = false
+		} else {
+			isLogin = true
+		}
+		return isLogin
+	}
+	// Params gobals here !!
+	const isLogin = check();
+	const btnLogin__header = document.querySelector('.headerButtonLogin__wrapper');
+	// Action here !!!
+	if (isLogin) {
+		// ACTION FOR ISLOGIN = TRUE
+		btnLogin__header.classList.add('isLogin');
+	} else {
+		// ACTION FOR ISLOGIN = FALSE
+	}
+}
+
 // SHOW SUB MENU MOBILE
 const showSubMenuMobile = () => {
 	const btn = document.querySelector('.navBarHamburger__wrapper');
@@ -103,10 +126,6 @@ const showSubMenuMobile = () => {
 			})
 		})
 	}
-}
-
-const showLoginForm = () => {
-
 }
 
 // ACTIVE LANGGUAGE
@@ -292,10 +311,10 @@ const ajaxNews = () => {
 				processData: false,
 				contentType: false,
 				success: (res) => {
-					console.log(res);
+					// console.log(res);
 				},
 				error: (res) => {
-					console.log(res);
+					// console.log(res);
 				},
 			});
 		});
@@ -314,10 +333,10 @@ const ajaxEvents = () => {
 					processData: false,
 					contentType: false,
 					success: (res) => {
-						console.log(res);
+						// console.log(res);
 					},
 					error: (res) => {
-						console.log(res);
+						// console.log(res);
 					},
 				});
 			});
@@ -342,79 +361,81 @@ const setHeightBgIntroduce = () => {
 	$("section.Introduct .introduct__bg img").css('height', h);
 }
 
-
 const ajaxGetLibImage = () => {
-	if($(".item-image--tab")) {
+	if ($(".item-image--tab")) {
 		const url = $(".item-image--tab").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : url,
+			url: url,
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
-			} 
+				// console.log(res);
+			}
 		})
 	}
-		
-	
+
+
 }
+
 const ajaxGetLibVideo = () => {
-	if($(".item-video--tab")) {
+	if ($(".item-video--tab")) {
 		const url = $(".item-video--tab").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : url,
+			url: url,
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
-			} 
+				// console.log(res);
+			}
 		})
 	}
-	
-	
+
+
 }
+
 const ajaxGetLibDocument = () => {
-	if($(".item-document--tab")) {
+	if ($(".item-document--tab")) {
 		const url = $(".item-document--tab").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : url,
+			url: url,
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
-			} 
+				// console.log(res);
+			}
 		})
 	}
-	
-	
+
+
 }
+
 const ajaxGetMoreLibImage = () => {
 	$(".see-more-images").click(() => {
 		const url = $(".see-more-images").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : '../api/test.json',
+			url: '../api/test.json',
 			success: (res) => {
 				console.log(res);
 			},
 			error: (res) => {
 				console.log(res);
-			} 
+			}
 		})
 	})
-	
+
 
 }
 
@@ -423,7 +444,7 @@ const ajaxGetMoreLibVideo = () => {
 		const url = $(".see-more-video").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : url,
+			url: url,
 			processData: false,
 			contentType: false,
 			success: (res) => {
@@ -431,10 +452,10 @@ const ajaxGetMoreLibVideo = () => {
 			},
 			error: (res) => {
 				console.log(res);
-			} 
+			}
 		})
 	})
-	
+
 
 }
 
@@ -443,7 +464,7 @@ const ajaxGetMoreLibDocument = () => {
 		const url = $(".see-more-document").attr("data-url")
 		$.ajax({
 			type: 'get',
-			url : url,
+			url: url,
 			processData: false,
 			contentType: false,
 			success: (res) => {
@@ -451,12 +472,13 @@ const ajaxGetMoreLibDocument = () => {
 			},
 			error: (res) => {
 				console.log(res);
-			} 
+			}
 		})
 	})
-	
+
 
 }
+
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -471,8 +493,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initElementButtonBackSubMenu();
 	// SHOW SUB MENU MOBILE
 	showSubMenuMobile();
-	// SHOW LOGIN FORM
-	showLoginForm();
+	// CHECK LOGIN
+	actionsLoggedPage();
 	// SHOW BACK TO TOP
 	showBackToTop();
 	// COPY DATA BY ATTR

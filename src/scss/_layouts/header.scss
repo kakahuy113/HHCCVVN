@@ -485,6 +485,14 @@ header {
 	}
 }
 
+// BUTTON LOGIN
+
+.headerButtonLogin__wrapper {
+	&.isLogin {
+		display: none;
+	}
+}
+
 // LOGIN FORM
 
 .headerLogin__wrapper {
@@ -600,4 +608,42 @@ header {
 			}
 		}
 	}
+}
+
+// BLOCK INFO USER LOGGED
+
+.headerLogged__img {
+	-ms-flex: 0 0 41px;
+	flex: 0 0 41px;
+	max-width: 41px;
+	height: 41px;
+	border-radius: 50%;
+	background: map-get($mau, main-1);
+}
+
+.headerLogged__wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.headerLogged__name {
+	-ms-flex: 0 0 50px;
+	flex: 0 0 50px;
+	max-width: 50px;
+	margin: 0 10px;
+
+	p {
+		color: #707070;
+		font-family: MYRIADPRO-BOLD;
+		font-size: 9px;
+	}
+}
+
+.headerLogOut {
+	-ms-flex: 0 0 100%;
+	-webkit-box-flex: 0;
+	flex: 0 0 15px;
+	max-width: 15px;
+	cursor: pointer;
+	user-select: none;
 }
