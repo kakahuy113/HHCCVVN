@@ -413,22 +413,19 @@ const ajaxEvents = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-    let getID = $(".youtube-api").attr("id");
-    let url = $("#" + getID).attr('src');
     $(".introduct__video--img").click(function(e) {
         e.preventDefault();
         $(this).addClass('active');
+        let getID = $(".youtube-api").attr("id");
+        let url = $("#" + getID).attr('src');
         $("#" + getID).attr('src', url + '&autoplay=1');
     });
 }
 
 //responses bg introduce
 const setHeightBgIntroduce = () => {
-    $(window).resize(function() {
-        let h = $('.introduct__topContent').outerHeight();
-        $("section.Introduct .introduct__bg img").css('height', h);
-    });
-
+    let h = $('.introduct__topContent').outerHeight();
+    $("section.Introduct .introduct__bg img").css('height', h);
 }
 
 const ajaxGetLibImage = () => {
