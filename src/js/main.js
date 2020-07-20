@@ -65,11 +65,13 @@ const actionsLoggedPage = () => {
 	}
 	// Params gobals here !!
 	const isLogin = check();
-	const btnLogin__header = document.querySelector('.headerButtonLogin__wrapper');
+	const headerButtonLogin__wrapper = document.querySelector('.headerButtonLogin__wrapper');
+	const headerLogged__wrapper = document.querySelector('.headerLogged__wrapper');
 	// Action here !!!
 	if (isLogin) {
 		// ACTION FOR ISLOGIN = TRUE
-		btnLogin__header.classList.add('isLogin');
+		headerButtonLogin__wrapper.classList.add('isLogin');
+		headerLogged__wrapper.classList.add('isLogin');
 	} else {
 		// ACTION FOR ISLOGIN = FALSE
 	}

@@ -612,6 +612,15 @@ header {
 
 // BLOCK INFO USER LOGGED
 
+.headerLogged__wrapper {
+	display: none;
+	align-items: center;
+
+	&.isLogin {
+		display: flex;
+	}
+}
+
 .headerLogged__img {
 	-ms-flex: 0 0 41px;
 	flex: 0 0 41px;
@@ -619,23 +628,31 @@ header {
 	height: 41px;
 	border-radius: 50%;
 	background: map-get($mau, main-1);
-}
+	margin-right: 10px;
 
-.headerLogged__wrapper {
-	display: flex;
-	align-items: center;
+	@media (max-width: 1024.98px) {
+		-ms-flex: 0 0 100%;
+		-webkit-box-flex: 0;
+		flex: 0 0 34px;
+		max-width: 34px;
+		height: 34px;
+	}
 }
 
 .headerLogged__name {
 	-ms-flex: 0 0 50px;
 	flex: 0 0 50px;
 	max-width: 50px;
-	margin: 0 10px;
+	margin-right: 10px;
 
 	p {
 		color: #707070;
 		font-family: MYRIADPRO-BOLD;
 		font-size: 9px;
+	}
+
+	@media (max-width: 575.98px) {
+		display: none;
 	}
 }
 
