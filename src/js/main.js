@@ -341,6 +341,122 @@ const setHeightBgIntroduce = () => {
 	let h = $('.introduct__topContent').outerHeight();
 	$("section.Introduct .introduct__bg img").css('height', h);
 }
+
+
+const ajaxGetLibImage = () => {
+	if($(".item-image--tab")) {
+		const url = $(".item-image--tab").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : url,
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	}
+		
+	
+}
+const ajaxGetLibVideo = () => {
+	if($(".item-video--tab")) {
+		const url = $(".item-video--tab").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : url,
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	}
+	
+	
+}
+const ajaxGetLibDocument = () => {
+	if($(".item-document--tab")) {
+		const url = $(".item-document--tab").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : url,
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	}
+	
+	
+}
+const ajaxGetMoreLibImage = () => {
+	$(".see-more-images").click(() => {
+		const url = $(".see-more-images").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : '../api/test.json',
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	})
+	
+
+}
+
+const ajaxGetMoreLibVideo = () => {
+	$(".see-more-video").click(() => {
+		const url = $(".see-more-video").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : url,
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	})
+	
+
+}
+
+const ajaxGetMoreLibDocument = () => {
+	$(".see-more-document").click(() => {
+		const url = $(".see-more-document").attr("data-url")
+		$.ajax({
+			type: 'get',
+			url : url,
+			processData: false,
+			contentType: false,
+			success: (res) => {
+				console.log(res);
+			},
+			error: (res) => {
+				console.log(res);
+			} 
+		})
+	})
+	
+
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -373,6 +489,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxNews();
 	// Get Event Content
 	ajaxEvents();
+	//AJAX get Libary Image 
+	ajaxGetLibImage();
+	//AJAX get Libary Video 
+	ajaxGetLibVideo();
+	//AJAX gget Libary document
+	ajaxGetLibDocument();
+	// Ajax get more images
+	ajaxGetMoreLibImage();
+	// Ajax get more video
+	ajaxGetMoreLibVideo();
+	// Ajax get more document
+	ajaxGetMoreLibDocument();
 	//
 	playVideoIntroduct();
 	//setHeightBgIntroduce
