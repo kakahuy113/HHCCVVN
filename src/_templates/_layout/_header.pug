@@ -28,16 +28,16 @@ header
 							.headerLogin__form
 								.headerLogin__header
 									.headerLogin__logo
-										img(src="./assets/logo.png", alt="LOGO")
+										img.lazyload.blur-up(data-src="./assets/logo.png", alt="LOGO")
 								.headerLogin__body
-									.headerLogin__item
+									.headerLogin__item.btn-facebook
 										.item__icons
-											img(src="./assets/icons/facebook-white.svg", alt="FACEBOOK")
+											img.lazyload.blur-up.svg(data-src="./assets/icons/facebook-white.svg", alt="FACEBOOK")
 										.item__text
 											span Đăng nhập với Facebook
-									.headerLogin__item
+									.headerLogin__item.btn-google
 										.item__icons
-											img(src="./assets/icons/google-white.svg", alt="GOOGLE")
+											img.lazyload.blur-up.svg(data-src="./assets/icons/google-white.svg", alt="GOOGLE")
 										.item__text
 											span Đăng nhập với Google
 						// BLOCK INFO USER LOGGED
@@ -46,11 +46,11 @@ header
 								img.lazyload.blur-up.ofcv(data-src="./assets/avatar-default.png", alt="AVATAR")
 							.headerLogged__name
 								p.lcl.lcl-2 Nguyen Thi Thu Suong
-							.headerLogOut
+							.headerLogOut(messege-logout="Bạn đã đăng xuất !!!")
 								img.lazyload.blur-up(data-src="./assets/icons/logout.svg", alt="LOGOUT")
 			.header__nav--bottom
 				.navbottom__wrapper
-					.navBar(data-btn-back-content-vi="Trở về" data-btn-back-content-en="Back")
+					.navBar(data-btn-back-content="Trở về")
 						.navBar__item
 							a.navBar__link(href="introduct.html") GIỚI THIỆU
 							.navBar

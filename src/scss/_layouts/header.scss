@@ -538,6 +538,7 @@ header {
 
 .headerLogin__item {
 	cursor: pointer;
+	user-select: none;
 	position: relative;
 	display: flex;
 	flex-wrap: wrap;
@@ -627,7 +628,6 @@ header {
 	max-width: 41px;
 	height: 41px;
 	border-radius: 50%;
-	background: map-get($mau, main-1);
 	margin-right: 10px;
 
 	@media (max-width: 1024.98px) {
