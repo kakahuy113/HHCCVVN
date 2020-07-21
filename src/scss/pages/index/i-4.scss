@@ -189,55 +189,61 @@
 			}
 		}
 	}
+	.swiper-wrapper {
+		user-select: none;
+	}
+	.swiper-button-prev,
+	.swiper-container-rtl .swiper-button-next {
+		left: 45%;
+		width: 33px;
+		height: 33px;
+	}
+	.swiper-button-next,
+	.swiper-container-rtl .swiper-button-prev {
+		right: 45%;
+		width: 33px;
+		height: 33px;
+	}
+	.swiper-button-prev,
+		.swiper-button-next {
+			position: absolute;
+			top: 75% !important;
+			width: calc(var(--swiper-navigation-size) / 44 * 27);
+			height: var(--swiper-navigation-size);
+			margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+			z-index: 10;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--swiper-navigation-color, var(--swiper-theme-color));
+		}
 	.swiper-button-next:after,
 	.swiper-container-rtl .swiper-button-prev:after {
 		content: '';
 		position: absolute;
-		top: 280%;
-		right: 1075%;
-		width: calc(var(--swiper-navigation-size) / 44 * 27);
-		height: var(--swiper-navigation-size);
-		margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+		top: 50%;
+		left: 50%;
 		z-index: 10;
 		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--swiper-navigation-color, var(--swiper-theme-color));
 		background: url(../assets/images/index/video/next-right.png) no-repeat;
-		@media (max-width: 1600px) {
-			top: 280%;
-			right: 1030%;
-		}
-		@media (max-width: 1450px) {
-			top: 230%;
-			right: 830%;
-		}
+		width: 33px;
+		height: 33px;
+		transform: translate(-50%, -50%);
 	}
 	.swiper-button-prev:after,
 	.swiper-container-rtl .swiper-button-next:after {
 		content: '';
 		position: absolute;
-		top: 280%;
-		left: 1075%;
-		width: calc(var(--swiper-navigation-size) / 44 * 27);
-		height: var(--swiper-navigation-size);
-		margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+		top: 50%;
+		left: 50%;
 		z-index: 10;
+		width: 33px;
+		height: 33px;
 		cursor: pointer;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--swiper-navigation-color, var(--swiper-theme-color));
+		transform: translate(-50%, -50%);
 		background: url(../assets/images/index/video/next-left.png) no-repeat;
-		@media (max-width: 1600px) {
-			top: 280%;
-			left: 1030%;
-		}
-		@media (max-width: 1450px) {
-			top: 230%;
-			left: 840%;
-		}
+		
 	}
 }
 

@@ -49,8 +49,10 @@ div.new--inner__wrapper {
 			-ms-flex: 0 0 313px;
 			flex: 0 0 313px;
 			max-width: 313px;
+			transition: 1s all ease-in-out;
 		}
 		&::after {
+			pointer-events: none;
 			content: '';
 			position: absolute;
 			top: 0;
@@ -70,6 +72,14 @@ div.new--inner__wrapper {
 			font-weight: bold;
 			padding-left: 24px;
 			font-family: MYRIADPRO-BOLD;
+		}
+	}
+	@media (min-width: 1025px) {
+		&:hover {
+			cursor: pointer;
+			img {
+				transform: scale(1.1);
+			}
 		}
 	}
 	@media (max-width: 1024px) {
@@ -121,7 +131,9 @@ div.new--inner__wrapper {
 }
 div.event--img {
 	position: relative;
+	
 	&::after {
+		pointer-events: none;
 		content: '';
 		position: absolute;
 		top: 0;
@@ -130,8 +142,12 @@ div.event--img {
 		width: 100%;
 		height: 100%;
 		background-image: url(../assets/images/index/hot-news-events/events-after.png);
+		transition: 1s all ease-in-out;
 	}
-	div.event--desc {
+	img {
+		transition: 1s all ease-in-out;
+	}
+	.event--desc {
 		position: absolute;
 		bottom: 40px;
 		left: 15px;
@@ -141,6 +157,19 @@ div.event--img {
 			max-width: 510px;
 			color: map-get($mau, trang);
 		}
+	}
+	
+	@media (min-width: 1025px) {
+		&:hover {
+			cursor: pointer;
+			img {
+				transform: scale(1.1);
+			}
+			&::after {
+				max-width: 100%;
+			}
+		}
+		
 	}
 
 	@media (max-width: 768px) {
