@@ -51,24 +51,26 @@ section.lib__page
 								.document--inner
 									h3.title xem và download tài liệu hệ thống văn bản
 									p.lcl.lcl-2.desc Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Dol Aenean massa. Cum sociis natoque penatibus et...
-								div.document-date
-									span 29/02/2020 
 								.document--inner--content.row
 									-for(var i = 0; i< 10;i ++)
 										div.item__wrapper.col-6
-											.item__wrapper--inner.row
-												div.col-1
-													img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
-												div.col-11
-													div.dowload-document-content
-														h3.tt-u Lorem ipsum dolor sit amet,  adipiscing elit.
-														p
-															!= "Ngày cập nhật: 10/01/20"
-													div.dowload-document--btn
-														div
-															a(href="../downloads/test.pdf", dowload)
-																img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
-										.clear-fix
+											a( data-fancybox, data-src="#modal", href="javascript:;")
+												.item__wrapper--inner.row
+													div.col-1
+														img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
+													div.col-11
+														div.dowload-document-content
+															h3.tt-u Lorem ipsum dolor sit amet,  adipiscing elit.
+															p
+																!= "Ngày cập nhật: 10/01/20"
+														div.dowload-document--btn
+															div
+																a(href="../downloads/test.pdf", dowload)
+																	img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+											#modal(style='display: none;')
+												.container
+													.container-1365px
+														 
 						.see-more
 							.see-more-document(data-url="")
 								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
