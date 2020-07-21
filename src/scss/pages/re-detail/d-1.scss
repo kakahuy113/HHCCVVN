@@ -3,6 +3,9 @@ section.reDetail {
     @media (max-width: 1024.98px) {
         padding-top: 40px;
     }
+    @media (max-width: 575.98px) {
+        padding-top: 20px;
+    }
     .reDetail__wrapper {
         margin-bottom: 42px;
     }
@@ -58,6 +61,9 @@ section.reDetail {
                 font-size: 16px;
                 margin-bottom: 20px;
             }
+            @media (max-width: 575.98px) {
+                margin-bottom: 15px;
+            }
         }
         h5 {
             font-family: MYRIADPRO-BOLDIT;
@@ -92,14 +98,27 @@ section.reDetail {
             width: 100%;
             padding-top: 48px;
             padding-bottom: 60px;
+            @media (max-width: 1440.98px) {
+                padding-top: 25px;
+                padding-bottom: 30px;
+            }
+            @media (max-width: 575.98px) {
+                padding: 10px 0;
+            }
         }
     }
     .reDetail__content--listImg {
         margin-top: 27px;
+        display: flex;
+        justify-content: center;
         img {
             margin-right: 29px;
+            width: 32%;
             &:last-child {
                 margin-right: 0;
+            }
+            @media (max-width: 1719.98px) {
+                margin-right: 10px;
             }
         }
     }
