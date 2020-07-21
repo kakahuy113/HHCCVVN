@@ -429,7 +429,6 @@ const setHeightBgIntroduce = () => {
 }
 
 const ajaxGetLibImage = () => {
-<<<<<<< HEAD
 	if($(".item-image--tab")) {
 		const url = $(".item-image--tab").attr("data-url")
 		$.ajax({
@@ -447,29 +446,9 @@ const ajaxGetLibImage = () => {
 	}
 		
 	
-=======
-    if ($(".item-image--tab")) {
-        const url = $(".item-image--tab").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            success: (res) => {
-                // console.log(res);
-            },
-            error: (res) => {
-                // console.log(res);
-            }
-        })
-    }
-
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 }
 
 const ajaxGetLibVideo = () => {
-<<<<<<< HEAD
 	if($(".item-video--tab")) {
 		const url = $(".item-video--tab").attr("data-url")
 		$.ajax({
@@ -487,29 +466,9 @@ const ajaxGetLibVideo = () => {
 	}
 	
 	
-=======
-    if ($(".item-video--tab")) {
-        const url = $(".item-video--tab").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            success: (res) => {
-                // console.log(res);
-            },
-            error: (res) => {
-                // console.log(res);
-            }
-        })
-    }
-
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 }
 
 const ajaxGetLibDocument = () => {
-<<<<<<< HEAD
 	if($(".item-document--tab")) {
 		const url = $(".item-document--tab").attr("data-url")
 		$.ajax({
@@ -527,29 +486,9 @@ const ajaxGetLibDocument = () => {
 	}
 	
 	
-=======
-    if ($(".item-document--tab")) {
-        const url = $(".item-document--tab").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            success: (res) => {
-                // console.log(res);
-            },
-            error: (res) => {
-                // console.log(res);
-            }
-        })
-    }
-
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 }
 
 const ajaxGetMoreLibImage = () => {
-<<<<<<< HEAD
 	$(".see-more-images").click(() => {
 		const url = $(".see-more-images").attr("data-url")
 		$.ajax({
@@ -564,27 +503,10 @@ const ajaxGetMoreLibImage = () => {
 		})
 	})
 	
-=======
-    $(".see-more-images").click(() => {
-        const url = $(".see-more-images").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: '../api/test.json',
-            success: (res) => {
-                console.log(res);
-            },
-            error: (res) => {
-                console.log(res);
-            }
-        })
-    })
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 
 }
 
 const ajaxGetMoreLibVideo = () => {
-<<<<<<< HEAD
 	$(".see-more-video").click(() => {
 		const url = $(".see-more-video").attr("data-url")
 		$.ajax({
@@ -601,29 +523,10 @@ const ajaxGetMoreLibVideo = () => {
 		})
 	})
 	
-=======
-    $(".see-more-video").click(() => {
-        const url = $(".see-more-video").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            success: (res) => {
-                console.log(res);
-            },
-            error: (res) => {
-                console.log(res);
-            }
-        })
-    })
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 
 }
 
 const ajaxGetMoreLibDocument = () => {
-<<<<<<< HEAD
 	$(".see-more-document").click(() => {
 		const url = $(".see-more-document").attr("data-url")
 		$.ajax({
@@ -648,30 +551,11 @@ const AddClassToLibDocument = () => {
 				item.style.float = "right"
 			}
 		})
-=======
-    $(".see-more-document").click(() => {
-        const url = $(".see-more-document").attr("data-url")
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            success: (res) => {
-                console.log(res);
-            },
-            error: (res) => {
-                console.log(res);
-            }
-        })
-    })
-
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 
 	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-<<<<<<< HEAD
 	Cookie();
 	getSVGs();
 	Loading();
@@ -725,65 +609,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 	
 	
-=======
-    Cookie();
-    getSVGs();
-    Loading();
-    // COMMON CONTROLLER
-    CommonController();
-    // ACCOUNT CONTROLLER
-    AccountController();
-    // MAIN BANNER WEBSITE
-    initMainBanner();
-    // AJAX FORM FOOTER
-    ajaxFormFooter();
-    // OPEN TARGET LINK FOOTER
-    openTargetLinkFooter();
-    // INIT CLASS SUB MENU
-    initClassSubMenu();
-    // INIT ELEMENT BUTTON BACK SUB MENU
-    initElementButtonBackSubMenu();
-    // SHOW SUB MENU MOBILE
-    showSubMenuMobile();
-    // CHECK LOGIN
-    actionsLoginPage();
-    // SHOW BACK TO TOP
-    showBackToTop();
-    // COPY DATA BY ATTR
-    copyDataByAttr();
-    // ACTIVE LANGGUAGE
-    activeLanguage();
-    // HOme swiper Video
-    sliderHomeVideo();
-    // HOme swiper Image
-    silderHomeImage();
-    // Submit Contact Form
-    ajaxFormContact();
-    //Get News Content
-    ajaxNews();
-    // Get Event Content
-    ajaxEvents();
-    //AJAX get Libary Image 
-    ajaxGetLibImage();
-    //AJAX get Libary Video 
-    ajaxGetLibVideo();
-    //AJAX gget Libary document
-    ajaxGetLibDocument();
-    // Ajax get more images
-    ajaxGetMoreLibImage();
-    // Ajax get more video
-    ajaxGetMoreLibVideo();
-    // Ajax get more document
-    ajaxGetMoreLibDocument();
-    //
-    playVideoIntroduct();
-    //setHeightBgIntroduce
-    setHeightBgIntroduce();
-    //  GET 
-    ajaxFormResearch();
-    //TAB
-    const Libary__Tab = new Tab('.lib__page .tab-container');
->>>>>>> d532a98808875f85078b9bef8d1fe676c3e7bbe4
 });
 
 document.addEventListener('DOMContentLoaded', () => {});

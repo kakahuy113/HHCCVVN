@@ -70,6 +70,7 @@
 		visibility: hidden;
 		opacity: 0;
 		transition: opacity 0.2s, visibility 0.2s;
+		pointer-events: none;
 		h3 {
 			font-family: UTM-COPPERPLATEB;
 			font-size: 16px;
