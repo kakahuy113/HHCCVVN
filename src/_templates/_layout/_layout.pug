@@ -27,10 +27,11 @@ html(lang="vi")
 		#back_to_top
 			img.svg(src="./assets/icons/back-top-top.svg", alt="BACK-TO-TOP")
 		#check_login
-			input(type="text" hidden data-islogin="False")
+			input(type="text" hidden data-islogin="True")
 		#overlay
-		//- script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')
+		script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')
 		script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s")
+		script(src='https://apis.google.com/js/platform.js?onload=onLoadCallback')
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")
 		script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")

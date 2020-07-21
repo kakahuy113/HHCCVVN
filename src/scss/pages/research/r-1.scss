@@ -67,10 +67,13 @@ section.Research {
     .research__list--title {
         border-radius: 15px;
         height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         h3 {
             font-family: UTM-COPPERPLATEB;
             font-size: 30px;
-            text-align: center;
+            line-height: 1;
             @media (max-width: 1719.98px) {
                 font-size: 24px;
             }
@@ -245,6 +248,7 @@ section.Research {
         display: flex;
     }
     .research__blogItem--img {
+        flex: 0 0 50%;
         position: relative;
         max-width: 449px;
         width: 100%;
@@ -264,7 +268,10 @@ section.Research {
             object-fit: cover;
         }
         @media (max-width: 1719.98px) {
-            flex: 0 0 30%;
+            flex: 0 0 50%;
+        }
+        @media (max-width: 1440.98px) {
+            flex: 0 0 40%;
         }
         @media (max-width: 768.98px) {
             flex: 0 0 30%;

@@ -35,10 +35,8 @@
 		return c_value;
 	}
 
-	$(document).ready(function () {
-		$('.language .item').on('click', function () {
-			const language = $(this).attr('data-language');
-			ChangeCulture(language);
-		});
+	$('.language .item').on('click', function () {
+		const language = $(this).attr('data-language');
+		ChangeCulture(language);
 	});
 }
