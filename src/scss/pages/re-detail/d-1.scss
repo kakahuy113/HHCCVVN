@@ -92,6 +92,10 @@ section.reDetail {
             width: 100%;
             padding-top: 48px;
             padding-bottom: 60px;
+            @media (max-width: 1440.98px) {
+                padding-top: 25px;
+                padding-bottom: 30px;
+            }
         }
     }
     .reDetail__content--listImg {

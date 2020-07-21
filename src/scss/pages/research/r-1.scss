@@ -124,6 +124,11 @@ section.Research {
             }
         }
     }
+    .research__login--option {
+        &.isLogin {
+            display: none;
+        }
+    }
     .research__login--form {
         border-radius: 15px;
         padding: 20px 32px;
@@ -266,9 +271,6 @@ section.Research {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        @media (max-width: 1719.98px) {
-            flex: 0 0 50%;
         }
         @media (max-width: 1440.98px) {
             flex: 0 0 40%;

@@ -424,8 +424,8 @@ const playVideoIntroduct = () => {
 
 //responses bg introduce
 const setHeightBgIntroduce = () => {
-    let h = $('.introduct__topContent').outerHeight();
-    $("section.Introduct .introduct__bg img").css('height', h);
+    let heightBgIntroduct = $('.introduct__topContent').outerHeight();
+    $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
 }
 
 const ajaxGetLibImage = () => {
