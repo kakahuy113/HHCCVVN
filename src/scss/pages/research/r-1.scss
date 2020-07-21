@@ -16,7 +16,7 @@ section.Research {
                 max-width: 50%;
                 margin: 0 auto;
             }
-            @media (max-width: 575.98px) {
+            @media (max-width: 768.98px) {
                 flex: 0 0 95%;
                 max-width: 95%;
             }
@@ -233,6 +233,7 @@ section.Research {
         }
         &:last-child {
             margin-bottom: 0px;
+            padding-bottom: 0;
             &::before {
                 content: none;
             }
@@ -276,13 +277,10 @@ section.Research {
             flex: 0 0 40%;
         }
         @media (max-width: 768.98px) {
-            flex: 0 0 30%;
+            flex: 0 0 40%;
         }
         @media (max-width: 575.98px) {
             height: 210px;
-        }
-        @media (max-width: 425.98px) {
-            flex: 0 0 40%;
         }
     }
     .research__blogItem--content {
@@ -389,6 +387,9 @@ section.Research {
         margin-top: 70px;
         ul {
             justify-content: start !important;
+            @media (max-width: 1024.98px) {
+                justify-content: center !important;
+            }
         }
     }
 }

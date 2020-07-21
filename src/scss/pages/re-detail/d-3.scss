@@ -1,7 +1,13 @@
 section.Related {
     margin-bottom: 114px;
+    @media (max-width: 1024.98px) {
+        margin-bottom: 35px;
+    }
     .related__wrapper {
         padding-bottom: 54px;
+        @media (max-width: 1024.98px) {
+            padding-bottom: 20px;
+        }
         border-bottom: 1px solid rgba($color: #707070, $alpha: 0.4);
         h2 {
             font-family: UTM-COPPERPLATEB;
@@ -26,6 +32,9 @@ section.Related {
             text-overflow: ellipsis;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
+            @media (max-width: 575.98px) {
+                font-size: 10px;
+            }
         }
         .related__col--img {
             @media (max-width: 768.98px) {
