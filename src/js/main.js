@@ -416,9 +416,10 @@ const playVideoIntroduct = () => {
     $(".introduct__video--img").click(function(e) {
         e.preventDefault();
         $(this).addClass('active');
-        let getID = $(".youtube-api").attr("id");
-        let url = $("#" + getID).attr('src');
-        $("#" + getID).attr('src', url + '&autoplay=1');
+        $("#introdcut--video").get(0).paused ? $("#introdcut--video").get(0).play() : $("#introdcut--video").get(0).pause();
+        if ($("#introdcut--video").get(0).paused) {
+            $(this).removeClass('active')
+        }
     });
 }
 
@@ -495,10 +496,10 @@ const ajaxGetMoreLibImage = () => {
             type: 'get',
             url: '../api/test.json',
             success: (res) => {
-                console.log(res);
+                // console.log(res);
             },
             error: (res) => {
-                console.log(res);
+                // console.log(res);
             }
         })
     })
@@ -515,10 +516,10 @@ const ajaxGetMoreLibVideo = () => {
             processData: false,
             contentType: false,
             success: (res) => {
-                console.log(res);
+                // console.log(res);
             },
             error: (res) => {
-                console.log(res);
+                // console.log(res);
             }
         })
     })
@@ -535,15 +536,27 @@ const ajaxGetMoreLibDocument = () => {
             processData: false,
             contentType: false,
             success: (res) => {
-                console.log(res);
+                // console.log(res);
             },
             error: (res) => {
-                console.log(res);
+                // console.log(res);
             }
         })
     })
 
 
+}
+
+
+const AddClassToLibDocument = () => {
+    if (document.querySelector(".document--inner--content")) {
+        document.querySelectorAll(".item__wrapper--inner").forEach((item, index) => {
+            if (index % 2 != 0) {
+                item.style.float = "right"
+            }
+        })
+
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -602,6 +615,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setHeightBgIntroduce();
     //  GET 
     ajaxFormResearch();
+    // AddClass
+    AddClassToLibDocument();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });
