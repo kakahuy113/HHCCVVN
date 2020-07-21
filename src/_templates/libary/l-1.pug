@@ -14,11 +14,18 @@ section.lib__page
 						.lib__page__img
 							.content--gallery.no-gutters.p-0
 								-for(var i = 0; i < 12; i++)
-									div.item-gallery
-										img.lazyload.blur-up(data-src=`./assets/images/lib-image/item.png`, alt="something")
-										div.desc-img
-											h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
-											p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
+									.item-gallery(data-fancybox="images-preview" )
+										a(href='https://source.unsplash.com/sGEHs-HY-Oo/1500x1000', data-fancybox='images-preview'+ i, data-width='1000', data-height='600', data-thumbs='{"autoStart":true}')
+											img.lazyload.blur-up(data-src=`./assets/images/lib-image/item.png`, alt="something")
+										//- div.desc-img
+										//- 	h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
+										//- 	p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
+									div(style='display: none;')
+										a(href='https://source.unsplash.com/Ai2TRdvI6gM/1500x1000', data-fancybox='images-preview' + i, data-width='1500', data-height='1000', data-thumb='https://source.unsplash.com/Ai2TRdvI6gM/240x160')
+										a(href='https://source.unsplash.com/Hau6K6VP5vs/1500x1000', data-fancybox='images-preview' + i, data-width='1500', data-height='1000', data-thumb='https://source.unsplash.com/Hau6K6VP5vs/240x160')
+										a(href='https://source.unsplash.com/muFaKaGw0eE/1500x1000', data-fancybox='images-preview' + i, data-width='1500', data-height='1000', data-thumb='https://source.unsplash.com/muFaKaGw0eE/240x160')
+										a(href='https://source.unsplash.com/eXHeq48Z-Q4/1500x1000', data-fancybox='images-preview' + i, data-width='1500', data-height='1000', data-thumb='https://source.unsplash.com/eXHeq48Z-Q4/240x160')
+										a(href='https://source.unsplash.com/hBYzBU1xP6s/1500x1000', data-fancybox='images-preview' + i, data-width='1500', data-height='1000', data-thumb='https://source.unsplash.com/hBYzBU1xP6s/240x160')
 						.see-more
 							.see-more-images(data-url="")
 								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
@@ -28,11 +35,12 @@ section.lib__page
 							.content--video
 								-for(var i = 0; i < 9; i++)
 									.isVideo
-										div.item-video
-											img.lazyload.blur-up(data-src=`./assets/images/lib-image/video.png`, alt="something")
-											div.desc-video
-												h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
-												p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
+										a(data-fancybox data-width="640", data-height="360", href="https://www.youtube.com/watch?v=2mDPgVWG_Y8")
+											div.item-video
+												img.lazyload.blur-up(data-src=`./assets/images/lib-image/video.png`, alt="something")
+												div.desc-video
+													h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
+													p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
 						.see-more
 							.see-more-video(data-url="")
 								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")
@@ -51,13 +59,16 @@ section.lib__page
 											.item__wrapper--inner.row
 												div.col-1
 													img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
-												div.col-10
-													h3 Lorem ipsum dolor sit amet,  adipiscing elit.
-													p
-														!= "<span>Ngày cập nhật: </span>10/01/20"
-												div.col-1
-													div
-														img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+												div.col-11
+													div.dowload-document-content
+														h3.tt-u Lorem ipsum dolor sit amet,  adipiscing elit.
+														p
+															!= "Ngày cập nhật: 10/01/20"
+													div.dowload-document--btn
+														div
+															a(href="../downloads/test.pdf", dowload)
+																img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+										.clear-fix
 						.see-more
 							.see-more-document(data-url="")
 								img.lazyload.blur-up(data-src=`./assets/images/member/read-more.png`, alt="something")

@@ -345,10 +345,10 @@ const ajaxGetLibImage = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	}
@@ -364,10 +364,10 @@ const ajaxGetLibVideo = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	}
@@ -383,10 +383,10 @@ const ajaxGetLibDocument = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	}
@@ -400,10 +400,10 @@ const ajaxGetMoreLibImage = () => {
 			type: 'get',
 			url : '../api/test.json',
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	})
@@ -420,10 +420,10 @@ const ajaxGetMoreLibVideo = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	})
@@ -440,15 +440,24 @@ const ajaxGetMoreLibDocument = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			} 
 		})
 	})
-	
+}
 
+const AddClassToLibDocument = () => {
+	if(document.querySelector(".document--inner--content")) {
+		document.querySelectorAll(".item__wrapper--inner").forEach((item , index) => {
+			if(index % 2 != 0) {
+				item.style.float = "right"
+			}
+		})
+
+	}
 }
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -498,8 +507,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHeightBgIntroduce();
 	//  GET 
 	ajaxFormResearch();
+	//Add Class to lib
+	AddClassToLibDocument();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
+	
+	
 });
 
 document.addEventListener('DOMContentLoaded', () => {});
