@@ -439,8 +439,8 @@ const playVideoIntroduct = () => {
 
 //responses bg introduce
 const setHeightBgIntroduce = () => {
-	let h = $('.introduct__topContent').outerHeight();
-	$("section.Introduct .introduct__bg img").css('height', h);
+	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
+	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
 }
 
 const ajaxGetLibImage = () => {
@@ -510,10 +510,10 @@ const ajaxGetMoreLibImage = () => {
 			type: 'get',
 			url: '../api/test.json',
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			}
 		})
 	})
@@ -530,10 +530,10 @@ const ajaxGetMoreLibVideo = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			}
 		})
 	})
@@ -550,15 +550,27 @@ const ajaxGetMoreLibDocument = () => {
 			processData: false,
 			contentType: false,
 			success: (res) => {
-				console.log(res);
+				// console.log(res);
 			},
 			error: (res) => {
-				console.log(res);
+				// console.log(res);
 			}
 		})
 	})
 
 
+}
+
+
+const AddClassToLibDocument = () => {
+	if (document.querySelector(".document--inner--content")) {
+		document.querySelectorAll(".item__wrapper--inner").forEach((item, index) => {
+			if (index % 2 != 0) {
+				item.style.float = "right"
+			}
+		})
+
+	}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -617,6 +629,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHeightBgIntroduce();
 	//  GET 
 	ajaxFormResearch();
+	// AddClass
+	AddClassToLibDocument();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
