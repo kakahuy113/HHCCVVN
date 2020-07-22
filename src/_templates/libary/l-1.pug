@@ -21,7 +21,7 @@ section.lib__page
 											h3.title.lcl.lcl-1 Lorem ipsum dolor sit amet
 											p.desc.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, Aenean commodo ligula eget dolor. Dol Aenean massa. 
 									.modalimage(style='display: none;')
-										._main
+										.slider--popup_main
 											.swiper-container.gallery-top
 												.swiper-wrapper
 													.swiper-slide
@@ -35,7 +35,7 @@ section.lib__page
 											// Add Arrows
 											.swiper-button-next.swiper-button-white
 											.swiper-button-prev.swiper-button-white
-										._thumb
+										.slider--popup_thumb
 											.swiper-container
 												.swiper-wrapper
 													.swiper-slide
@@ -75,19 +75,19 @@ section.lib__page
 									.row
 										-for(var i = 0; i< 10;i ++)
 											div.item__wrapper.col-6
-												.item__wrapper--inner.row
-													div.book-icon
-														img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
-													div.title-desc
-														.dowload-document-content
-															a(data-fancybox, data-src="#modal", href="javascript:;")
-																h3.tt-u.lcl.lcl-1 Lorem ipsum dolor sit amet,  adipiscing elit.
-															p Ngày cập nhật: 10/01/20
-													div.dowload-document--btn
-														div
-															a(href="./downloads/test.pdf" download)
-																img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
-														#modal(style='display: none;')
+												.item__wrapper--inner
+														div.book-icon
+															img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
+														div.title-desc
+															.dowload-document-content
+																a.document--popup-link(data-fancybox, data-src="", href="javascript:;")
+																	h3.tt-u.lcl.lcl-1 Lorem ipsum dolor sit amet,  adipiscing elit.
+																p Ngày cập nhật: 10/01/20
+														div.dowload-document--btn
+															div
+																a(href="./downloads/test.pdf" download)
+																	img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+														.popup--document(style='display: none;')
 															.inner--document
 																h2.tt-u Hệ Thống Văn Bản
 																a(href="./downloads/test.pdf", download) Dowload tài liệu

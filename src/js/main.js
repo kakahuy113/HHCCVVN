@@ -581,7 +581,7 @@ const AddClassToLibDocument = () => {
 			});
 	}
 };
-
+// RamdomCode LibImage
 const randomCodePopupImage = () => {
 	let count = $('.modalimage');
 	var i,
@@ -594,10 +594,22 @@ const randomCodePopupImage = () => {
 			.attr('data-src', '#' + code[i]);
 	}
 };
-
+//Ramdom code Popup Document
+const randomCodePopupDocument = () => {
+	let count = $('.popup--document');
+	var i,
+		code = [];
+	for (i = 0; i < count.length; i++) {
+		code[i] = '_' + Math.random().toString(36).substr(2, 9);
+		$('.popup--document').eq(i).attr('id', code[i]);
+		$('.document--popup-link')
+			.eq(i)
+			.attr('data-src', '#' + code[i]);
+	}
+};
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
-	const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
+	const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
 		spaceBetween: 10,
 		slidesPerView: 3,
 		observer: true,
@@ -605,7 +617,7 @@ const Libary_Image_Popup = (id) => {
 		loopedSlides: 5,
 	});
 
-	const slider = new Swiper(`${id} ._main .swiper-container`, {
+	const slider = new Swiper(`${id} .slider--popup_main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
 		observeParents: true,
@@ -613,8 +625,8 @@ const Libary_Image_Popup = (id) => {
 		loop: true,
 		loopedSlides: 5,
 		navigation: {
-			nextEl: `${id} ._main .swiper-button-next`,
-			prevEl: `${id} ._main .swiper-button-prev`,
+			nextEl: `${id} .slider--popup_main .swiper-button-next`,
+			prevEl: `${id} .slider--popup_main .swiper-button-prev`,
 		},
 		thumbs: {
 			swiper: thumb
@@ -694,8 +706,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxFormResearch();
 	// AddClass
 	AddClassToLibDocument();
+	//  PopupSlider Image TAb
 	initializeLibImage__Slider_Popup();
+	//RandomCodePopUpImage
 	randomCodePopupImage();
+	//Random Code Popup Document
+	randomCodePopupDocument();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
