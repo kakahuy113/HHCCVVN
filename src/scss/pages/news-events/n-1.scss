@@ -16,7 +16,8 @@ ul.news__events--list {
 		align-items: center;
 		background: #f1f0f0;
 		border-radius: 10px;
-		min-width: 154px;
+		width: 100%;
+		max-width: 154px;
 		height: 63px;
 		box-shadow: 0 3px 6px rgba($color: #000000, $alpha: 0.16);
 		border-radius: 7px;
@@ -24,7 +25,7 @@ ul.news__events--list {
 		a {
 			font-family: UTM-COPPERPLATEB;
 			color: #002f4b;
-			font-size: 30px;
+			font-size: 24px;
 		}
 		+ .events--item {
 			margin-left: 130px;
@@ -67,9 +68,24 @@ ul.news__events--list {
 		flex-grow: 1;
 		max-width: 100%;
 		padding-left: 44px;
+	
 	}
 	@media (max-width: 512px) {
 		& > div {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
+	@media (max-width: 768px) {
+		.new--item--summary {
+			padding-left: 0;
+			p.desc {
+			margin-top: 0;
+			margin-bottom: 10px;
+			}
+		}
+		.news--item--img {
 			-ms-flex: 0 0 100%;
 			flex: 0 0 100%;
 			max-width: 100%;

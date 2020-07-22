@@ -15,10 +15,28 @@
 .member__page--banner {
 	margin-top: 60px;
 	display: flex;
+	flex-wrap: wrap;
 	& > div {
 		-ms-flex: 0 0 50%;
 		flex: 0 0 50%;
 		max-width: 50%;
+	}
+	@media (max-width: 767.98px) {
+		flex-direction: column;
+		& > div {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+		.banner-desc {
+			order: -1;
+		}
+		.banner--img {
+			align-self: center;
+		}
+		.banner-desc {
+			margin: 0;
+		}
 	}
 }
 .banner--img {
@@ -49,10 +67,31 @@
 		text-align: center;
 	}
 }
-.member--list {
+.member--list.row{
 	margin-left: -40px;
     margin-right: -40px;
-    margin-bottom: 85px;
+	margin-bottom: 85px;
+	& > div {
+		-ms-flex: 0 0 33.333333%;
+		flex: 0 0 33.333333%;
+		max-width: 33.333333%;
+	}
+	@media (max-width: 1024.98px) {
+		margin-left: -10px;
+		margin-right: -10px;
+		& > div {
+			-ms-flex: 0 0 50%;
+			flex: 0 0 50%;
+			max-width: 50%;
+		}
+	}
+	@media (max-width: 767.98px) {
+		& > div {
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
 }
 .member--item {
     padding: 40px;
