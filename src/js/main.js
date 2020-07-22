@@ -1,4 +1,7 @@
-import { getSVGs, Loading } from './util/utilities';
+import {
+	getSVGs,
+	Loading
+} from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
@@ -254,8 +257,8 @@ const ajaxFormFooter = () => {
 		if ($('.footer__forms form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.footer__forms form').valid()
+				' ' +
+				$('.footer__forms form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -275,8 +278,8 @@ const ajaxFormFooter = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.footer__forms form').valid()
+				' ' +
+				$('.footer__forms form').valid()
 			);
 		}
 	});
@@ -342,8 +345,8 @@ const ajaxFormContact = () => {
 		if ($('.contact form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -363,8 +366,8 @@ const ajaxFormContact = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 		}
 	});
@@ -453,9 +456,9 @@ const playVideoIntroduct = () => {
 	$('.introduct__video--img').click(function (e) {
 		e.preventDefault();
 		$(this).addClass('active');
-		$('#introdcut--video').get(0).paused
-			? $('#introdcut--video').get(0).play()
-			: $('#introdcut--video').get(0).pause();
+		$('#introdcut--video').get(0).paused ?
+			$('#introdcut--video').get(0).play() :
+			$('#introdcut--video').get(0).pause();
 		if ($('#introdcut--video').get(0).paused) {
 			$(this).removeClass('active');
 		}
@@ -607,21 +610,18 @@ const Libary_Image_Popup = (id) => {
 		observeParents: true,
 		spaceBetween: 10,
 		loop: true,
-		loopedSlides: 5, //looped slides should be the same
+		loopedSlides: 5,
 		navigation: {
 			nextEl: `${id} ._main .swiper-button-next`,
 			prevEl: `${id} ._main .swiper-button-prev`,
 		},
 		on: {
 			init: function () {
-			console.log('init fn');
 				const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
 					spaceBetween: 10,
 					slidesPerView: 3,
-					freeMode: true,
-					watchSlidesVisibility: true,
-					watchSlidesProgress: true,
-					loopedSlides: 5, //looped slides should be the same
+					observer: true,
+					observeParents: true,
 				});
 			},
 		},
