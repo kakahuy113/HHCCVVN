@@ -8,7 +8,9 @@ import AccountController from './lib/AccountController';
 const initClassSubMenu = () => {
 	// PARAMS
 	const header = document.querySelector('header');
-	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
+	const items__MainMenu = document.querySelectorAll(
+		'.navbottom__wrapper>.navBar>.navBar__item'
+	);
 	// ADD LOADING HEADER
 	header.setAttribute('loading', '');
 	// INIT FUNCTION
@@ -25,22 +27,24 @@ const initClassSubMenu = () => {
 						item.classList.add('navBar--lv1');
 					});
 					// ADD CLASS ITEM MENU LV1
-					const items__MenuLv1 = item.querySelectorAll('.navBar__item');
+					const items__MenuLv1 = item.querySelectorAll(
+						'.navBar__item'
+					);
 					items__MenuLv1.forEach((item) => {
 						item.classList.add('navBar__item--lv1');
 					});
 				}
 			});
 			resolve();
-		})
-	}
+		});
+	};
 
 	init().then(() => {
 		setTimeout(() => {
 			header.removeAttribute('loading');
 			header.setAttribute('loaded', '');
 		}, 300);
-	})
+	});
 };
 
 // INIT BUTTON BACK
@@ -461,8 +465,8 @@ const playVideoIntroduct = () => {
 //responses bg introduce
 const setHeightBgIntroduce = () => {
 	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
-	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
-}
+	$('section.Introduct .introduct__bg img').css('height', heightBgIntroduct);
+};
 
 const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
@@ -597,17 +601,7 @@ const randomCodePopupImage = () => {
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
-	var thumb = new Swiper(`${id} ._thumb .swiper-container`, {
-		observer: true,
-		observeParents: true,
-		spaceBetween: 10,
-		slidesPerView: 3,
-		freeMode: true,
-		watchSlidesVisibility: true,
-		watchSlidesProgress: true,
-		loopedSlides: 5, //looped slides should be the same
-	});
-	return new Swiper(`${id} ._main .swiper-container`, {
+	const slider = new Swiper(`${id} ._main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
 		observeParents: true,
@@ -618,10 +612,22 @@ const Libary_Image_Popup = (id) => {
 			nextEl: `${id} ._main .swiper-button-next`,
 			prevEl: `${id} ._main .swiper-button-prev`,
 		},
-		thumbs: {
-			swiper: thumb,
+		on: {
+			init: function () {
+			console.log('init fn');
+				const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
+					spaceBetween: 10,
+					slidesPerView: 3,
+					freeMode: true,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					loopedSlides: 5, //looped slides should be the same
+				});
+			},
 		},
 	});
+
+	return slider;
 };
 
 // Lib Image SLIDER POPUP
@@ -631,7 +637,7 @@ const initializeLibImage__Slider_Popup = () => {
 	);
 	btn.forEach((item) => {
 		item.addEventListener('click', () => {
-			var id = item.getAttribute("data-src"); 
+			var id = item.getAttribute('data-src');
 			Libary_Image_Popup(id);
 		});
 	});
