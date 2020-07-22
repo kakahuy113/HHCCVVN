@@ -1,7 +1,4 @@
-import {
-	getSVGs,
-	Loading
-} from './util/utilities';
+import { getSVGs, Loading } from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
@@ -11,9 +8,7 @@ import AccountController from './lib/AccountController';
 const initClassSubMenu = () => {
 	// PARAMS
 	const header = document.querySelector('header');
-	const items__MainMenu = document.querySelectorAll(
-		'.navbottom__wrapper>.navBar>.navBar__item'
-	);
+	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
 	// ADD LOADING HEADER
 	header.setAttribute('loading', '');
 	// INIT FUNCTION
@@ -30,24 +25,22 @@ const initClassSubMenu = () => {
 						item.classList.add('navBar--lv1');
 					});
 					// ADD CLASS ITEM MENU LV1
-					const items__MenuLv1 = item.querySelectorAll(
-						'.navBar__item'
-					);
+					const items__MenuLv1 = item.querySelectorAll('.navBar__item');
 					items__MenuLv1.forEach((item) => {
 						item.classList.add('navBar__item--lv1');
 					});
 				}
 			});
 			resolve();
-		});
-	};
+		})
+	}
 
 	init().then(() => {
 		setTimeout(() => {
 			header.removeAttribute('loading');
 			header.setAttribute('loaded', '');
 		}, 300);
-	});
+	})
 };
 
 // INIT BUTTON BACK
@@ -257,8 +250,8 @@ const ajaxFormFooter = () => {
 		if ($('.footer__forms form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.footer__forms form').valid()
+					' ' +
+					$('.footer__forms form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -278,8 +271,8 @@ const ajaxFormFooter = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.footer__forms form').valid()
+					' ' +
+					$('.footer__forms form').valid()
 			);
 		}
 	});
@@ -345,8 +338,8 @@ const ajaxFormContact = () => {
 		if ($('.contact form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.contact form').valid()
+					' ' +
+					$('.contact form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -366,8 +359,8 @@ const ajaxFormContact = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.contact form').valid()
+					' ' +
+					$('.contact form').valid()
 			);
 		}
 	});
@@ -456,9 +449,9 @@ const playVideoIntroduct = () => {
 	$('.introduct__video--img').click(function (e) {
 		e.preventDefault();
 		$(this).addClass('active');
-		$('#introdcut--video').get(0).paused ?
-			$('#introdcut--video').get(0).play() :
-			$('#introdcut--video').get(0).pause();
+		$('#introdcut--video').get(0).paused
+			? $('#introdcut--video').get(0).play()
+			: $('#introdcut--video').get(0).pause();
 		if ($('#introdcut--video').get(0).paused) {
 			$(this).removeClass('active');
 		}
@@ -468,8 +461,8 @@ const playVideoIntroduct = () => {
 //responses bg introduce
 const setHeightBgIntroduce = () => {
 	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
-	$('section.Introduct .introduct__bg img').css('height', heightBgIntroduct);
-};
+	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
+}
 
 const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
@@ -604,6 +597,14 @@ const randomCodePopupImage = () => {
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
+	const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
+		spaceBetween: 10,
+		slidesPerView: 3,
+		observer: true,
+		observeParents: true,
+		loopedSlides: 5,
+	});
+
 	const slider = new Swiper(`${id} ._main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
@@ -615,18 +616,10 @@ const Libary_Image_Popup = (id) => {
 			nextEl: `${id} ._main .swiper-button-next`,
 			prevEl: `${id} ._main .swiper-button-prev`,
 		},
-		on: {
-			init: function () {
-				const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
-					spaceBetween: 10,
-					slidesPerView: 3,
-					observer: true,
-					observeParents: true,
-				});
-			},
+		thumbs: {
+			swiper: thumb
 		},
 	});
-
 	return slider;
 };
 
@@ -637,7 +630,7 @@ const initializeLibImage__Slider_Popup = () => {
 	);
 	btn.forEach((item) => {
 		item.addEventListener('click', () => {
-			var id = item.getAttribute('data-src');
+			var id = item.getAttribute("data-src"); 
 			Libary_Image_Popup(id);
 		});
 	});
