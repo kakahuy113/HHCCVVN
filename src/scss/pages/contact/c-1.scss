@@ -1,9 +1,4 @@
 .contact {
-    #map {
-        width: 745px;
-        height: 650px;
-    }
-
     .gm-style-iw-t {
         .gm-style-iw {
             background-color: #002F4B;
@@ -27,11 +22,19 @@
         }
     }
 
+    .col-lg-6:nth-child(1) {
+        width: 100%;
+
+        #map {
+            height: 100%;
+        }
+    }
     .col-lg-6:nth-child(2) {
         font-size: 16px;
         color: #838383;
         font-weight: bold;
         padding-top: 50px;
+        padding-bottom: 50px;
 
         .contact-form__wrapper {
             margin-left: 40px;
@@ -108,19 +111,12 @@
         .col-lg-6:nth-child(1){
             order: 2;
             margin-top: 50px;
-
-            #map {
-                width: unset;
-            }
+            padding-bottom: unset;
         }
     }
     @media (max-width: 767.98px) {
         .col-lg-6:nth-child(1){
             order: 2;
-
-            #map {
-                width: unset;
-            }
         }
 
         .col-lg-6:nth-child(2) {
@@ -133,11 +129,6 @@
     @media (max-width: 575.98px) {
         .col-lg-6:nth-child(1){
             order: 2;
-
-            #map {
-                width: unset;
-                height: 500px;
-            }
         }
 
         .col-lg-6:nth-child(2) {
