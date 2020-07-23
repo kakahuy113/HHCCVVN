@@ -479,11 +479,13 @@ const ajaxEvents = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-	const id = $(".youtube-api").attr('id');
-	let url = $('#' + id).attr('src');
-	console.log(id);
+
+	// const imageThumbnail = `http://i3.ytimg.com/vi/${id}/hqdefault.jpg`;
+	// $(this).find('.img img').attr('src', imageThumbnail);
 	$(".introduct__video--img").click(function (e) {
 		e.preventDefault();
+		const id = $(".youtube-api").attr('id');
+		let url = $('#' + id).attr('src');
 		$(this).addClass('active');
 		$('#' + id).attr('src', url + "&autoplay=1");
 	});
