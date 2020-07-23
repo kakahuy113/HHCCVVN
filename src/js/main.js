@@ -68,7 +68,7 @@ const initElementButtonBackSubMenu = () => {
 // INIT Smooth Scrollbar
 const initSmoothScrollbar = () => {
 	var Scrollbar = window.Scrollbar;
-	Scrollbar.init(document.querySelector('#body-smoothScroll'));
+	// Scrollbar.init(document.querySelector('#body-smoothScroll'));
 }
 
 // ACTIONS LOGIN PAGE

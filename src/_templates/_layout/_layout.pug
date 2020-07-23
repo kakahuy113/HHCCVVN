@@ -17,21 +17,21 @@ html(lang="vi")
 		block loading
 		block header
 			include _header.pug
-		section#body-smoothScroll
-			block banner,breadcrumb
-			main
-				block main
-				#js-page-verify(class=bodyClass hidden)
-			block footer
-				include _footer.pug
-			#back_to_top
-				img.lazyload.blur-up(data-src="./assets/icons/back-top-top.svg", alt="BACK-TO-TOP")
-			#check_login
-				input(type="text" hidden data-islogin="True")
-			#overlay
+		block banner,breadcrumb
+		main
+			block main
+			#js-page-verify(class=bodyClass hidden)
+		block footer
+			include _footer.pug
+		#back_to_top
+			img.lazyload.blur-up(data-src="./assets/icons/back-top-top.svg", alt="BACK-TO-TOP")
+		#check_login
+			input(type="text" hidden data-islogin="True")
+		#overlay
 		script(type="text/javascript", src='https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.3')
 		script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s")
 		script(src='https://apis.google.com/js/platform.js?onload=onLoadCallback')
 		script(type="text/javascript", src="./js/core.min.js")
 		script(type="text/javascript", src="./js/main.min.js")
+		
 		block scripts
