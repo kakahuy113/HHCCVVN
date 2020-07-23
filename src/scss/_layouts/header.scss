@@ -297,10 +297,28 @@ header {
 	right: 0;
 	top: 35%;
 	transform: translateY(-50%);
+
+	@media (max-width: 1024.98px) {
+		top: 45%;
+	}
 }
 
 .navSearch__btn {
 	cursor: pointer;
+
+	&.active {
+		.icon-close {
+			display: block;
+		}
+
+		.icon-search {
+			display: none;
+		}
+	}
+
+	.icon-close {
+		display: none;
+	}
 
 	@media (min-width: 1025px) {
 		svg {
@@ -310,12 +328,91 @@ header {
 		}
 
 		&:hover {
-			svg {
-				path {
-					fill: map-get($mau, main-2);
+			.icon-search {
+				svg {
+					path {
+						fill: map-get($mau, main-2);
+					}
+				}
+			}
+
+			.icon-close {
+				svg {
+					path {
+						stroke: map-get($mau, main-2);
+					}
 				}
 			}
 		}
+	}
+}
+
+.navSearch__input {
+	position: absolute;
+	top: 100%;
+	right: 100%;
+	margin-top: 14px;
+	// HIDDEN
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s all ease-in-out;
+
+	&.show {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	@media (max-width: 1024.98px) {
+		top: -5px;
+		right: calc(100% + 70px);
+		margin-top: 0;
+	}
+
+	@media (max-width: 445.98px) {
+		right: calc(100% + 15px);
+	}
+}
+
+.search-input {
+	user-select: none;
+
+	input {
+		font-size: 14px;
+		padding-left: 15px;
+		padding-right: 50px;
+		height: 35px;
+		width: 300px;
+		border: 1px solid map-get($mau, main-1);
+		border-radius: 5px;
+	}
+
+	@media (max-width: 575.98px) {
+		input {
+			width: 200px;
+			padding-right: 35px;
+		}
+	}
+
+	@media (max-width: 365.98px) {
+		input {
+			width: 150px;
+		}
+	}
+}
+
+.search-submit {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+
+	button {
+		border: 0;
+		background: transparent;
+	}
+
+	@media (max-width: 575.98px) {
+		right: 5px;
 	}
 }
 

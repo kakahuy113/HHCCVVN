@@ -15,9 +15,9 @@ header
 							a.information__link(href="#" data-paste="email") đang cập nhật
 					.header__languages.language
 						.languages__item.item(data-language="vi")
-							a.languages__link(href="#") Vietnamese
+							a.languages__link(data_content--pc="Vietnamese" data_content--mobile="VIE" href="#") Vietnamese
 						.languages__item.item(data-language="en")
-							a.languages__link(href="#") English
+							a.languages__link(data_content--pc="English" data_content--mobile="ENG" href="#") English
 					.header__login
 						// BUTTON SHOW POPUP LOGIN
 						.headerButtonLogin__wrapper
@@ -84,4 +84,14 @@ header
 					.navSearch
 						.navSearch__wrapper
 							.navSearch__btn
-								img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
+								.icon-search
+									img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
+								.icon-close
+									img.svg(data-src="./assets/icons/close.svg", alt="BUTTON SEARCH")
+							.navSearch__input
+								form(action="#")
+									.search-input
+										input(type="search" placeholder="Nhập để tìm kiếm")
+									.search-submit
+										button
+											img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")

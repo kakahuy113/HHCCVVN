@@ -1,4 +1,7 @@
-import { getSVGs, Loading } from './util/utilities';
+import {
+	getSVGs,
+	Loading
+} from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
@@ -168,6 +171,18 @@ const showSubMenuMobile = () => {
 	}
 };
 
+// SHOW INPUT SEARCH
+const showInputSearch = () => {
+	const btn = document.querySelector('.navSearch__btn');
+	const navSearch__input = document.querySelector('.navSearch__input')
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			btn.classList.toggle('active');
+			navSearch__input.classList.toggle('show');
+		})
+	}
+}
+
 // ACTIVE LANGGUAGE
 const activeLanguage = () => {
 	const htmlLang = document.querySelector('html').getAttribute('lang');
@@ -214,6 +229,24 @@ const copyDataByAttr = () => {
 	});
 };
 
+// CHANGE CONTENT TABLE MOBILE
+const changeContentMobile = () => {
+	const contentsMobile = document.querySelectorAll('[data_content--mobile]');
+	const contentsPc = document.querySelectorAll('[data_content--pc]');
+	const isChange = window.innerWidth < 1025;
+	if (isChange == true) {
+		contentsMobile.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--mobile');
+			item.innerHTML = valueContent;
+		})
+	} else {
+		contentsPc.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--pc');
+			item.innerHTML = valueContent;
+		})
+	}
+}
+
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
 	let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
@@ -250,8 +283,8 @@ const ajaxFormFooter = () => {
 		if ($('.footer__forms form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.footer__forms form').valid()
+				' ' +
+				$('.footer__forms form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -271,8 +304,8 @@ const ajaxFormFooter = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.footer__forms form').valid()
+				' ' +
+				$('.footer__forms form').valid()
 			);
 		}
 	});
@@ -338,8 +371,8 @@ const ajaxFormContact = () => {
 		if ($('.contact form').valid() === true) {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 			$.ajax({
 				url: url,
@@ -359,8 +392,8 @@ const ajaxFormContact = () => {
 		} else {
 			console.log(
 				'Kết quả kiểm tra điều kiện là:' +
-					' ' +
-					$('.contact form').valid()
+				' ' +
+				$('.contact form').valid()
 			);
 		}
 	});
@@ -446,17 +479,15 @@ const ajaxEvents = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-	$('.introduct__video--img').click(function (e) {
+	const id = $(".youtube-api").attr('id');
+	let url = $('#' + id).attr('src');
+	console.log(id);
+	$(".introduct__video--img").click(function (e) {
 		e.preventDefault();
 		$(this).addClass('active');
-		$('#introdcut--video').get(0).paused
-			? $('#introdcut--video').get(0).play()
-			: $('#introdcut--video').get(0).pause();
-		if ($('#introdcut--video').get(0).paused) {
-			$(this).removeClass('active');
-		}
+		$('#' + id).attr('src', url + "&autoplay=1");
 	});
-};
+}
 
 //responses bg introduce
 const setHeightBgIntroduce = () => {
@@ -642,7 +673,7 @@ const initializeLibImage__Slider_Popup = () => {
 	);
 	btn.forEach((item) => {
 		item.addEventListener('click', () => {
-			var id = item.getAttribute("data-src"); 
+			var id = item.getAttribute("data-src");
 			Libary_Image_Popup(id);
 		});
 	});
@@ -668,6 +699,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initElementButtonBackSubMenu();
 	// SHOW SUB MENU MOBILE
 	showSubMenuMobile();
+	// SHOW INPUT SEARCH
+	showInputSearch();
 	// CHECK LOGIN
 	actionsLoginPage();
 	// SHOW BACK TO TOP
@@ -716,7 +749,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
-document.addEventListener('DOMContentLoaded', () => {});
+window.addEventListener('resize', () => {
+	// CHANGE CONTENT TABLE MOBILE
+	changeContentMobile();
+});
 
 // CHECK FORM VALID
 // if ($("form").valid() === true) {}
