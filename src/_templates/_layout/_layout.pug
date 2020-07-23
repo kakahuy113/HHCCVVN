@@ -25,7 +25,7 @@ html(lang="vi")
 		block footer
 			include _footer.pug
 		#back_to_top
-			img.svg(src="./assets/icons/back-top-top.svg", alt="BACK-TO-TOP")
+			img.lazyload.blur-up(data-src="./assets/icons/back-top-top.svg", alt="BACK-TO-TOP")
 		#check_login
 			input(type="text" hidden data-islogin="True")
 		#overlay

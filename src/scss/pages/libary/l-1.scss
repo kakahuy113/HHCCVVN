@@ -374,19 +374,18 @@
 				.dowload-document-content {
 					padding-right: 42px;
 				}
-
-				
 			}
-			.dowload-document--btn {
+			.download-document--btn {
 				align-self: center;
-				border-left: 1px solid rgba($color: #002f4b, $alpha: 0.25);
-				padding-left: 15px;
+				a {
+					border-left: 1px solid rgba($color: #002f4b, $alpha: 0.25);
+					padding-left: 15px;
+				}
 			}
 			@media (min-width: 1025px) {
 				&:hover {
 					cursor: pointer;
-
-					.col-1 {
+					.book-icon {
 						svg {
 							path {
 								fill: #c4851a;
@@ -398,7 +397,7 @@
 						}
 					}
 
-					.col-11 {
+					.title-desc {
 						h3 {
 							color: #c4851a;
 						}
@@ -406,19 +405,20 @@
 						p {
 							color: #707070 !important;
 						}
-
-						svg {
-							path {
-								fill: #c4851a;
-							}
-
-							rect {
-								fill: #c4851a;
-							}
-						}
-
-						.dowload-document--btn {
+						
+					}
+					.download-document--btn {
+						a {
 							border-left: 1px solid rgba($color: #c4851a, $alpha: 0.25);
+							svg {
+								path {
+									fill: #c4851a;
+								}
+	
+								rect {
+									fill: #c4851a;
+								}
+							}
 						}
 					}
 				}
