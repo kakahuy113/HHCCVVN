@@ -11,9 +11,7 @@ import AccountController from './lib/AccountController';
 const initClassSubMenu = () => {
 	// PARAMS
 	const header = document.querySelector('header');
-	const items__MainMenu = document.querySelectorAll(
-		'.navbottom__wrapper>.navBar>.navBar__item'
-	);
+	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
 	// ADD LOADING HEADER
 	header.setAttribute('loading', '');
 	// INIT FUNCTION
@@ -30,24 +28,22 @@ const initClassSubMenu = () => {
 						item.classList.add('navBar--lv1');
 					});
 					// ADD CLASS ITEM MENU LV1
-					const items__MenuLv1 = item.querySelectorAll(
-						'.navBar__item'
-					);
+					const items__MenuLv1 = item.querySelectorAll('.navBar__item');
 					items__MenuLv1.forEach((item) => {
 						item.classList.add('navBar__item--lv1');
 					});
 				}
 			});
 			resolve();
-		});
-	};
+		})
+	}
 
 	init().then(() => {
 		setTimeout(() => {
 			header.removeAttribute('loading');
 			header.setAttribute('loaded', '');
 		}, 300);
-	});
+	})
 };
 
 // INIT BUTTON BACK
@@ -483,23 +479,21 @@ const ajaxEvents = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-	$('.introduct__video--img').click(function (e) {
+	const id = $(".youtube-api").attr('id');
+	let url = $('#' + id).attr('src');
+	console.log(id);
+	$(".introduct__video--img").click(function (e) {
 		e.preventDefault();
 		$(this).addClass('active');
-		$('#introdcut--video').get(0).paused ?
-			$('#introdcut--video').get(0).play() :
-			$('#introdcut--video').get(0).pause();
-		if ($('#introdcut--video').get(0).paused) {
-			$(this).removeClass('active');
-		}
+		$('#' + id).attr('src', url + "&autoplay=1");
 	});
-};
+}
 
 //responses bg introduce
 const setHeightBgIntroduce = () => {
 	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
-	$('section.Introduct .introduct__bg img').css('height', heightBgIntroduct);
-};
+	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
+}
 
 const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
@@ -618,7 +612,7 @@ const AddClassToLibDocument = () => {
 			});
 	}
 };
-
+// RamdomCode LibImage
 const randomCodePopupImage = () => {
 	let count = $('.modalimage');
 	var i,
@@ -631,17 +625,30 @@ const randomCodePopupImage = () => {
 			.attr('data-src', '#' + code[i]);
 	}
 };
-
+//Ramdom code Popup Document
+const randomCodePopupDocument = () => {
+	let count = $('.popup--document');
+	var i,
+		code = [];
+	for (i = 0; i < count.length; i++) {
+		code[i] = '_' + Math.random().toString(36).substr(2, 9);
+		$('.popup--document').eq(i).attr('id', code[i]);
+		$('.document--popup-link')
+			.eq(i)
+			.attr('data-src', '#' + code[i]);
+	}
+};
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
-	const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
+	const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
 		spaceBetween: 10,
 		slidesPerView: 3,
 		observer: true,
 		observeParents: true,
+		loopedSlides: 5,
 	});
 
-	const slider = new Swiper(`${id} ._main .swiper-container`, {
+	const slider = new Swiper(`${id} .slider--popup_main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
 		observeParents: true,
@@ -649,14 +656,13 @@ const Libary_Image_Popup = (id) => {
 		loop: true,
 		loopedSlides: 5,
 		navigation: {
-			nextEl: `${id} ._main .swiper-button-next`,
-			prevEl: `${id} ._main .swiper-button-prev`,
+			nextEl: `${id} .slider--popup_main .swiper-button-next`,
+			prevEl: `${id} .slider--popup_main .swiper-button-prev`,
 		},
 		thumbs: {
 			swiper: thumb
 		},
 	});
-
 	return slider;
 };
 
@@ -667,7 +673,7 @@ const initializeLibImage__Slider_Popup = () => {
 	);
 	btn.forEach((item) => {
 		item.addEventListener('click', () => {
-			var id = item.getAttribute('data-src');
+			var id = item.getAttribute("data-src");
 			Libary_Image_Popup(id);
 		});
 	});
@@ -683,8 +689,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
-	// SHOW INPUT SEARCH
-	showInputSearch();
 	// AJAX FORM FOOTER
 	ajaxFormFooter();
 	// OPEN TARGET LINK FOOTER
@@ -695,14 +699,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	initElementButtonBackSubMenu();
 	// SHOW SUB MENU MOBILE
 	showSubMenuMobile();
+	// SHOW INPUT SEARCH
+	showInputSearch();
 	// CHECK LOGIN
 	actionsLoginPage();
 	// SHOW BACK TO TOP
 	showBackToTop();
 	// COPY DATA BY ATTR
 	copyDataByAttr();
-	// CHANGE CONTENT TABLE MOBILE
-	changeContentMobile();
 	// ACTIVE LANGGUAGE
 	activeLanguage();
 	// HOme swiper Video
@@ -735,8 +739,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxFormResearch();
 	// AddClass
 	AddClassToLibDocument();
+	//  PopupSlider Image TAb
 	initializeLibImage__Slider_Popup();
+	//RandomCodePopUpImage
 	randomCodePopupImage();
+	//Random Code Popup Document
+	randomCodePopupDocument();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });

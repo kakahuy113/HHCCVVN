@@ -252,6 +252,9 @@ section.Research {
     }
     .research__blog--item {
         display: flex;
+        @media (max-width: 575.98px) {
+            display: block;
+        }
     }
     .research__blogItem--img {
         flex: 0 0 50%;
@@ -281,6 +284,7 @@ section.Research {
         }
         @media (max-width: 575.98px) {
             height: 210px;
+            display: block;
         }
     }
     .research__blogItem--content {
