@@ -413,13 +413,13 @@ const ajaxEvents = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
+    const id = $(".youtube-api").attr('id');
+    let url = $('#' + id).attr('src');
+    console.log(id);
     $(".introduct__video--img").click(function(e) {
         e.preventDefault();
         $(this).addClass('active');
-        $("#introdcut--video").get(0).paused ? $("#introdcut--video").get(0).play() : $("#introdcut--video").get(0).pause();
-        if ($("#introdcut--video").get(0).paused) {
-            $(this).removeClass('active')
-        }
+        $('#' + id).attr('src', url + "&autoplay=1");
     });
 }
 
