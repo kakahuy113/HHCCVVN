@@ -175,6 +175,18 @@ const showSubMenuMobile = () => {
 	}
 };
 
+// SHOW INPUT SEARCH
+const showInputSearch = () => {
+	const btn = document.querySelector('.navSearch__btn');
+	const navSearch__input = document.querySelector('.navSearch__input')
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			btn.classList.toggle('active');
+			navSearch__input.classList.toggle('show');
+		})
+	}
+}
+
 // ACTIVE LANGGUAGE
 const activeLanguage = () => {
 	const htmlLang = document.querySelector('html').getAttribute('lang');
@@ -220,6 +232,24 @@ const copyDataByAttr = () => {
 		});
 	});
 };
+
+// CHANGE CONTENT TABLE MOBILE
+const changeContentMobile = () => {
+	const contentsMobile = document.querySelectorAll('[data_content--mobile]');
+	const contentsPc = document.querySelectorAll('[data_content--pc]');
+	const isChange = window.innerWidth < 1025;
+	if (isChange == true) {
+		contentsMobile.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--mobile');
+			item.innerHTML = valueContent;
+		})
+	} else {
+		contentsPc.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--pc');
+			item.innerHTML = valueContent;
+		})
+	}
+}
 
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
@@ -604,6 +634,13 @@ const randomCodePopupImage = () => {
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
+	const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
+		spaceBetween: 10,
+		slidesPerView: 3,
+		observer: true,
+		observeParents: true,
+	});
+
 	const slider = new Swiper(`${id} ._main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
@@ -615,15 +652,8 @@ const Libary_Image_Popup = (id) => {
 			nextEl: `${id} ._main .swiper-button-next`,
 			prevEl: `${id} ._main .swiper-button-prev`,
 		},
-		on: {
-			init: function () {
-				const thumb = new Swiper(`${id} ._thumb .swiper-container`, {
-					spaceBetween: 10,
-					slidesPerView: 3,
-					observer: true,
-					observeParents: true,
-				});
-			},
+		thumbs: {
+			swiper: thumb
 		},
 	});
 
@@ -653,6 +683,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
+	// SHOW INPUT SEARCH
+	showInputSearch();
 	// AJAX FORM FOOTER
 	ajaxFormFooter();
 	// OPEN TARGET LINK FOOTER
@@ -669,6 +701,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	showBackToTop();
 	// COPY DATA BY ATTR
 	copyDataByAttr();
+	// CHANGE CONTENT TABLE MOBILE
+	changeContentMobile();
 	// ACTIVE LANGGUAGE
 	activeLanguage();
 	// HOme swiper Video
@@ -707,7 +741,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
-document.addEventListener('DOMContentLoaded', () => {});
+window.addEventListener('resize', () => {
+	// CHANGE CONTENT TABLE MOBILE
+	changeContentMobile();
+});
 
 // CHECK FORM VALID
 // if ($("form").valid() === true) {}
