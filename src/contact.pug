@@ -3,12 +3,15 @@ extends _templates/_layout/_layout.pug
 block var
 	- let title = 'Liên hệ | Hiệp hội công chứng';
 	- let bodyClass = 'contact-page';
+	- let linkBanner = './assets/images/page-banners/introduct.png';
+	- let titleBanner = 'LIÊN HỆ';
 
 block loading
 	include _templates/_layout/_loading
 block banner,breadcrumb
+	include _templates/_layout/_pages-banner
 block main
-	include _templates/contact/i-1
+	include _templates/contact/c-1
 block scripts
 	script.
 		var locationsInput = [

@@ -1,9 +1,4 @@
 .contact {
-    #map {
-        width: 745px;
-        height: 545px;
-    }
-
     .gm-style-iw-t {
         .gm-style-iw {
             background-color: #002F4B;
@@ -27,17 +22,29 @@
         }
     }
 
-    .col-6:nth-child(2) {
+    .col-lg-6:nth-child(1) {
+        width: 100%;
+
+        #map {
+            height: 100%;
+        }
+    }
+    .col-lg-6:nth-child(2) {
         font-size: 16px;
         color: #838383;
         font-weight: bold;
-        padding-top: 25px;
-        padding-left: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .contact-form__wrapper {
+            margin-left: 40px;
+        }
 
         h2 {
             color: #002F4B;
             position: relative;
             padding-bottom: 5px;
+            font-family: UTM-COPPERPLATEB;
 
             &:before {
                 width: 60px;
@@ -51,6 +58,7 @@
 
         .info {
             margin-top: 30px;
+            line-height: 30px;
         }
 
         .form {
@@ -58,6 +66,7 @@
 
             h3 {
                 color: #002F4B;
+                font-family: UTM-COPPERPLATEB;
             }
 
             form {
@@ -93,6 +102,57 @@
                     span {
                         color: #FFFFFF;
                         margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media (max-width: 1024.98px) {
+        .col-lg-6:nth-child(1){
+            order: 2;
+            margin-top: 50px;
+            padding-bottom: unset;
+        }
+    }
+    @media (max-width: 767.98px) {
+        .col-lg-6:nth-child(1){
+            order: 2;
+        }
+
+        .col-lg-6:nth-child(2) {
+
+            .form form {
+                max-width: 90%;
+            }
+        }
+    }
+    @media (max-width: 575.98px) {
+        .col-lg-6:nth-child(1){
+            order: 2;
+        }
+
+        .col-lg-6:nth-child(2) {
+            padding-top: 25px;
+
+            .info {
+                font-size: 12px;
+                margin-right: 20px;
+                line-height: 25px;
+            }
+
+            .form {
+                h3 {
+                    font-size: 15px;
+                }
+
+                form {
+                    input {
+                        width: 90%;
+                        margin-left: 15px;
+                    }
+
+                    .form-button {
+                        margin-left: 15px;
                     }
                 }
             }

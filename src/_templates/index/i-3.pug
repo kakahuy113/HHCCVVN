@@ -9,7 +9,7 @@ section.home__news__event
 						.news--inner
 							-for(var i = 0; i< 5; i++)
 								div.new--inner__wrapper
-									div.news--img
+									div.news--img.ov-h
 										img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/news-${i + 1}.jpg`, alt="")
 									div.news--desc
 										p.lcl.lcl-3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
@@ -21,8 +21,9 @@ section.home__news__event
 						.events--inner
 							-for(var i = 0; i< 3; i++)
 								div
-									div.event--img
-										img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/event-${i + 1}.jpg`, alt="")
-										div.event--desc
-											p.lcl.lcl-2.events--desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
+									a(href="#")
+										div.event--img.ov-h
+											img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/event-${i + 1}.jpg`, alt="")
+											div.event--desc
+												p.lcl.lcl-2.events--desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
 

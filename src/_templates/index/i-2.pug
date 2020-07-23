@@ -4,24 +4,20 @@ section.home--hotnews
 			h3.tt-u 
 				span Điểm Tin
 			.home--hotnews__wrapper--inner.row
-				div.col-5.first-news
-					img.lazyload.blur-up(data-src="./assets/images/index/hot-news/hot_news_first.jpg", alt="")
-					p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, qui? Quos voluptatem perferendis neque facere distinctio, repudiandae dignissimos autem, voluptates inventore eius sequi praesentium a nemo possimus voluptate iusto. Ad!
-				div.col-4.another-news--item
+				.col-5
+					.first-news.ov-h
+						a(href="#")
+							img.lazyload.blur-up.ofcv(data-src="./assets/images/index/hot-news/hot-news-0.jpg", alt="")
+							p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, qui? Quos voluptatem perferendis neque facere distinctio, repudiandae dignissimos autem, voluptates inventore eius sequi praesentium a nemo possimus voluptate iusto. Ad!
+				.col-4.another-news--item
 					-for(var i = 0; i < 3; i++)
 						div.item__wrapper
-							div.item--img
-								img.lazyload.blur-up(data-src=`./assets/images/index/hot-news/hot-news-${i+1}.jpg`, alt="something")
-							.item--desc
-								p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est odit recusandae magni dolorem. Magni adipisci voluptas sunt repellendus quos quis ipsa perferendis ducimus amet. Sed praesentium libero quasi odit?
-				div.col-3.hot-news-banner
-					.banner-desc
-						div
-							img.lazyload.blur-up(data-src="./assets/images/index/hot-news/logo.png", alt="something")
-						div
-							p.title HIỆP HỘI CÔNG CHỨNG VIÊN VIỆT NAM
-							p.sub-title Kết giá trị, nối sức mạnh !
-						div
-							p.desc THÀNH LẬP HIỆP HỘI 2020
-					.banner--img
-						img.lazyload.blur-up(data-src="./assets/images/index/hot-news/hot_news_last.png", alt="something")
+								div.item--img.ov-h
+									a(href="#")
+										img.lazyload.blur-up(data-src=`./assets/images/index/hot-news/hot-news-${i+1}.jpg`, alt="something")
+								.item--desc
+									a(href="#")
+										p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident est odit recusandae magni dolorem. Magni adipisci voluptas sunt repellendus quos quis ipsa perferendis ducimus amet. Sed praesentium libero quasi odit?
+				.col-3
+					.hot-news-banner
+						img.lazyload.blur-up(src="./assets/images/index/hot-news/banner.png", alt="")
