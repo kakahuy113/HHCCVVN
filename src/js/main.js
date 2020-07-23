@@ -65,6 +65,12 @@ const initElementButtonBackSubMenu = () => {
 	});
 };
 
+// INIT Smooth Scrollbar
+const initSmoothScrollbar = () => {
+	var Scrollbar = window.Scrollbar;
+	Scrollbar.init(document.querySelector('#body-smoothScroll'));
+}
+
 // ACTIONS LOGIN PAGE
 const actionsLoginPage = () => {
 	// Small functions here !!!
@@ -691,6 +697,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
+	// INIT Smooth Scrollbar
+	initSmoothScrollbar();
 	// AJAX FORM FOOTER
 	ajaxFormFooter();
 	// OPEN TARGET LINK FOOTER

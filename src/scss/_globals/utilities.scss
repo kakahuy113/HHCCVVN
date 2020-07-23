@@ -1,9 +1,14 @@
 body {
-	overflow-x: hidden;
+	overflow: hidden;
 
 	&.disabled {
 		overflow: hidden;
 	}
+}
+
+#body-smoothScroll {
+	max-height: 100vh;
+	height: 100%;
 }
 
 input,
