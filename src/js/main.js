@@ -65,6 +65,12 @@ const initElementButtonBackSubMenu = () => {
     });
 };
 
+// INIT Smooth Scrollbar
+const initSmoothScrollbar = () => {
+    var Scrollbar = window.Scrollbar;
+    // Scrollbar.init(document.querySelector('#body-smoothScroll'));
+}
+
 // ACTIONS LOGIN PAGE
 const actionsLoginPage = () => {
     // Small functions here !!!
@@ -697,6 +703,8 @@ document.addEventListener('DOMContentLoaded', () => {
     AccountController();
     // MAIN BANNER WEBSITE
     initMainBanner();
+    // INIT Smooth Scrollbar
+    initSmoothScrollbar();
     // AJAX FORM FOOTER
     ajaxFormFooter();
     // OPEN TARGET LINK FOOTER
@@ -753,8 +761,6 @@ document.addEventListener('DOMContentLoaded', () => {
     randomCodePopupImage();
     //Random Code Popup Document
     randomCodePopupDocument();
-    //downRowContent
-    downRowContent();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });

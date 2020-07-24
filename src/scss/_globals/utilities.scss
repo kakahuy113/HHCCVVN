@@ -6,6 +6,11 @@ body {
 	}
 }
 
+#body-smoothScroll {
+	max-height: 100vh;
+	height: 100%;
+}
+
 input,
 select,
 textarea {

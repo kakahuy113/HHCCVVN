@@ -1,4 +1,4 @@
-footer {
+.footer__wrapper {
 	background-image: url(../assets/bg-footer.png);
 	background-size: 100% 100%;
 	padding: 50px 0 60px;
@@ -151,4 +151,13 @@ footer {
 	border-radius: 0 5px 5px 0;
 	background: map-get($mau, main-2);
 	color: map-get($mau, trang);
+}
+
+.footer__copyright {
+	padding: 10px 0;
+
+	p {
+		color: map-get($mau, trang);
+		font-size: 14px;
+	}
 }
