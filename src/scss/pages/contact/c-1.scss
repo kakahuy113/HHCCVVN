@@ -1,161 +1,163 @@
 .contact {
-    .gm-style-iw-t {
-        .gm-style-iw {
-            background-color: #002F4B;
-            color: #FFFFFF;
-    
-            button {
-                display: none !important;
-            }
+	.gm-style-iw-t {
+		.gm-style-iw {
+			background-color: #002f4b;
+			color: #ffffff;
 
-            .gm-style-iw-d {
-                overflow: unset !important;
-                max-height: unset !important;
-                height: 50px;
-                width: 165px;
-                padding-top: 10px;
-            }
-        }
+			button {
+				display: none !important;
+			}
 
-        &:after {
-            display: none;
-        }
-    }
+			.gm-style-iw-d {
+				overflow: unset !important;
+				max-height: unset !important;
+				height: 50px;
+				width: 165px;
+				padding-top: 10px;
+			}
+		}
 
-    .col-lg-6:nth-child(1) {
-        width: 100%;
+		&:after {
+			display: none;
+		}
+	}
 
-        #map {
-            height: 100%;
-        }
-    }
-    .col-lg-6:nth-child(2) {
-        font-size: 16px;
-        color: #838383;
-        font-weight: bold;
-        padding-top: 50px;
-        padding-bottom: 50px;
+	.col-lg-6:nth-child(1) {
+		width: 100%;
 
-        .contact-form__wrapper {
-            margin-left: 40px;
-        }
+		#map {
+			height: 100%;
+		}
+	}
+	.col-lg-6:nth-child(2) {
+		font-size: 16px;
+		color: #838383;
+		font-weight: bold;
 
-        h2 {
-            color: #002F4B;
-            position: relative;
-            padding-bottom: 5px;
-            font-family: UTM-COPPERPLATEB;
+		.contact-form__wrapper {
+			margin-top: 5%;
+			margin-left: 10%;
+			margin-bottom: 15%;
+		}
 
-            &:before {
-                width: 60px;
-                height: 5px;
-                content: '';
-                position: absolute;
-                bottom: 0;
-                background-color: #C4851A;
-            }
-        }
+		h2 {
+			color: #002f4b;
+			position: relative;
+			padding-bottom: 5px;
+			font-family: UTM-COPPERPLATEB;
 
-        .info {
-            margin-top: 30px;
-            line-height: 30px;
-        }
+			&:before {
+				width: 60px;
+				height: 5px;
+				content: '';
+				position: absolute;
+				bottom: 0;
+				background-color: #c4851a;
+			}
+		}
 
-        .form {
-            margin-top: 30px;
+		.info {
+			margin-top: 30px;
+			line-height: 30px;
+		}
 
-            h3 {
-                color: #002F4B;
-                font-family: UTM-COPPERPLATEB;
-            }
+		.form {
+			margin-top: 30px;
 
-            form {
-                background-color: #F4F5F9;
-                border-radius: 20px;
-                margin-top: 20px;
-                max-width: 75%;
-                height: 255px;
-                box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: .16);
+			h3 {
+				color: #002f4b;
+				font-family: UTM-COPPERPLATEB;
+			}
 
-                input {
-                    margin-top: 20px;
-                    margin-left: 30px;
-                    width: 85%;
-                    line-height: 40px;
-                    border-radius: 17px;
-                    padding: 0 15px;
-                    box-shadow: 0px 2px 6px rgba($color: (#000000), $alpha: .16);
-                }
+			form {
+				background-color: #f4f5f9;
+				border-radius: 20px;
+				margin-top: 20px;
+				max-width: 75%;
+				height: 255px;
+				box-shadow: 0px 3px 6px #000000 0.16;
 
-                .form-button {
-                    margin-left: 30px;
-                    margin-top: 20px;
-                    padding-left: 10px;
-                    padding-top: 3px;
-                    background-color: #C4851A;
-                    border-radius: 10px;
-                    width: 85px;
-                    height: 32px;
-                    box-shadow: 0px 2px 6px rgba($color: (#000000), $alpha: .16);
-                    cursor: pointer;
+				input {
+					margin-top: 20px;
+					margin-left: 30px;
+					width: 85%;
+					line-height: 40px;
+					border-radius: 17px;
+					padding: 0 15px;
+					box-shadow: 0px 2px 6px#000000 0.16
+				}
 
-                    span {
-                        color: #FFFFFF;
-                        margin-left: 10px;
-                    }
-                }
-            }
-        }
-    }
-    @media (max-width: 1024.98px) {
-        .col-lg-6:nth-child(1){
-            order: 2;
-            margin-top: 50px;
-            padding-bottom: unset;
-        }
-    }
-    @media (max-width: 767.98px) {
-        .col-lg-6:nth-child(1){
-            order: 2;
-        }
+				.form-button {
+					margin-left: 30px;
+					margin-top: 20px;
+					padding-left: 10px;
+					padding-top: 3px;
+					background-color: #c4851a;
+					border-radius: 10px;
+					width: 85px;
+					height: 32px;
+					box-shadow: 0px 2px 6px #000000 0.16;
+					cursor: pointer;
 
-        .col-lg-6:nth-child(2) {
+					span {
+						color: #ffffff;
+						margin-left: 10px;
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 1024.98px) {
+		.col-lg-6:nth-child(1) {
+			order: 2;
+			margin-top: 50px;
+		}
 
-            .form form {
-                max-width: 90%;
-            }
-        }
-    }
-    @media (max-width: 575.98px) {
-        .col-lg-6:nth-child(1){
-            order: 2;
-        }
+		.col-lg-6:nth-child(2) {
+			.contact-form__wrapper {
+				margin-bottom: 5%;
+			}
+		}
+	}
+	@media (max-width: 767.98px) {
+		.col-lg-6:nth-child(1) {
+			order: 2;
+		}
 
-        .col-lg-6:nth-child(2) {
-            padding-top: 25px;
+		.col-lg-6:nth-child(2) {
+			.form form {
+				max-width: 90%;
+			}
+		}
+	}
+	@media (max-width: 575.98px) {
+		.col-lg-6:nth-child(1) {
+			order: 2;
+		}
 
-            .info {
-                font-size: 12px;
-                margin-right: 20px;
-                line-height: 25px;
-            }
+		.col-lg-6:nth-child(2) {
+			.info {
+				font-size: 12px;
+				margin-right: 20px;
+				line-height: 25px;
+			}
 
-            .form {
-                h3 {
-                    font-size: 15px;
-                }
+			.form {
+				h3 {
+					font-size: 15px;
+				}
 
-                form {
-                    input {
-                        width: 90%;
-                        margin-left: 15px;
-                    }
+				form {
+					input {
+						width: 90%;
+						margin-left: 15px;
+					}
 
-                    .form-button {
-                        margin-left: 15px;
-                    }
-                }
-            }
-        }
-    }
+					.form-button {
+						margin-left: 15px;
+					}
+				}
+			}
+		}
+	}
 }
