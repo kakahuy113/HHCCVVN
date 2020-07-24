@@ -111,6 +111,10 @@
 		.col-lg-6:nth-child(1) {
 			order: 2;
 			margin-top: 50px;
+
+			#map {
+				height: 350px;
+			}
 		}
 
 		.col-lg-6:nth-child(2) {
