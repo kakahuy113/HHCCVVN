@@ -769,20 +769,23 @@ const downRowContent = () => {
 const activeLinkMenu = () => {
         var link = "";
         var url = window.location.pathname.split('/');
-        if (url[(url.length - 1)] == "") {
-            link = url[(url.length - 2)];
-        } else {
-            link = url[(url.length - 1)];
-        }
-        $('.navBar__item  a').each(function() {
-            var getHref = $(this).attr('href');
-            var href = getHref.split('/').pop();
-            if (href === link) {
-                $(this).addClass('active');
-                $(this).parent().addClass('active');
-                $(this).parent().parent().parent().addClass('active');
+        if (url.length !== 4) {
+            if (url[(url.length - 1)] == "") {
+                link = url[(url.length - 2)];
+            } else {
+                link = url[(url.length - 1)];
             }
-        });
+            $('.navBar__item  a').each(function() {
+                var getHref = $(this).attr('href');
+                var href = getHref.split('/').pop();
+                if (href === link) {
+                    $(this).parent().addClass('active');
+                    $(this).parent().parent().parent().addClass('active');
+                }
+            });
+        } else {
+            $(".navBar__item").removeClass("active");
+        }
     }
     //google recaptcha
 const recaptchaGoogle = () => {
