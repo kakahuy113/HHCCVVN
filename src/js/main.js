@@ -697,22 +697,48 @@ const downRowContent = () => {
     }
     //active menu
 const activeLinkMenu = () => {
-    var link = "";
-    var url = window.location.pathname.split('/');
-    if (url[(url.length - 1)] == "") {
-        link = url[(url.length - 2)];
-    } else {
-        link = url[(url.length - 1)];
-    }
-    $('.navBar__item  a').each(function() {
-        var getHref = $(this).attr('href');
-        var href = getHref.split('/').pop();
-        if (href === link) {
-            $(this).addClass('active');
-            $(this).parent().addClass('active');
-            $(this).parent().parent().parent().addClass('active');
+        var link = "";
+        var url = window.location.pathname.split('/');
+        if (url[(url.length - 1)] == "") {
+            link = url[(url.length - 2)];
+        } else {
+            link = url[(url.length - 1)];
         }
+        $('.navBar__item  a').each(function() {
+            var getHref = $(this).attr('href');
+            var href = getHref.split('/').pop();
+            if (href === link) {
+                $(this).addClass('active');
+                $(this).parent().addClass('active');
+                $(this).parent().parent().parent().addClass('active');
+            }
+        });
+    }
+    //google recaptcha
+const recaptchaGoogle = () => {
+    $('#research__form').click(function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function(token) {
+                $("#research__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
+            });
+        });
     });
+    $('#contact__form').click(function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function(token) {
+                $("#contact__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
+            });
+        });
+    });
+
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -787,6 +813,8 @@ document.addEventListener('DOMContentLoaded', () => {
     downRowContent();
     //activeLinkMenu
     activeLinkMenu();
+    //recaptchaGoogle
+    recaptchaGoogle();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });
