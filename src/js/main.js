@@ -73,61 +73,61 @@ const initSmoothScrollbar = () => {
 
 // ACTIONS LOGIN PAGE
 const actionsLoginPage = () => {
-	// Small functions here !!!
-	const check = () => {
-		let isLogin = document
-			.querySelector('#check_login>input')
-			.getAttribute('data-isLogin');
-		if (isLogin == 'False') {
-			isLogin = false;
-		} else {
-			isLogin = true;
-		}
-		return isLogin;
-	};
-	// Params gobals here !!
-	const isLogin = check();
-	const headerButtonLogin__wrapper = document.querySelector(
-		'.headerButtonLogin__wrapper'
-	);
-	const headerLogged__wrapper = document.querySelector(
-		'.headerLogged__wrapper'
-	);
-	const headerLogOut = document.querySelector('.headerLogOut');
-	const research__login__option = document.querySelector(
-		'.research__login--option'
-	);
-	// Action here !!!
-	if (isLogin) {
-		// ACTION FOR ISLOGIN = TRUE
-		headerButtonLogin__wrapper.classList.add('isLogin');
-		headerLogged__wrapper.classList.add('isLogin');
-		if (research__login__option) {
-			research__login__option.classList.add('isLogin');
-		}
-		$('.likeqwe').on('click', function (e) {
-			e.preventDefault();
-			const url = $(this).attr('data-url');
-		});
-	} else {
-		// ACTION FOR ISLOGIN = FALSE
-		headerButtonLogin__wrapper.classList.remove('isLogin');
-		headerLogged__wrapper.classList.remove('isLogin');
-		if (research__login__option) {
-			research__login__option.classList.remove('isLogin');
-		}
-	}
-	// LOGOUT
-	headerLogOut.addEventListener('click', (e) => {
-		const messege = headerLogOut.getAttribute('messege-logout');
-		document
-			.querySelector('#check_login>input')
-			.setAttribute('data-isLogin', 'False');
-		actionsLoginPage();
-		alert(messege);
-	});
+    // Small functions here !!!
+    const check = () => {
+        let isLogin = document
+            .querySelector('#check_login>input')
+            .getAttribute('data-isLogin');
+        if (isLogin == 'False') {
+            isLogin = false;
+        } else {
+            isLogin = true;
+        }
+        return isLogin;
+    };
+    // Params gobals here !!
+    const isLogin = check();
+    const headerButtonLogin__wrapper = document.querySelector(
+        '.headerButtonLogin__wrapper'
+    );
+    const headerLogged__wrapper = document.querySelector(
+        '.headerLogged__wrapper'
+    );
+    const headerLogOut = document.querySelector('.headerLogOut');
+    const research__login__option = document.querySelector(
+        '.research__login--option'
+    );
+    // Action here !!!
+    if (isLogin) {
+        // ACTION FOR ISLOGIN = TRUE
+        headerButtonLogin__wrapper.classList.add('isLogin');
+        headerLogged__wrapper.classList.add('isLogin');
+        if (research__login__option) {
+            research__login__option.classList.add('isLogin');
+        }
+        $('.likeqwe').on('click', function(e) {
+            e.preventDefault();
+            const url = $(this).attr('data-url');
+        });
+    } else {
+        // ACTION FOR ISLOGIN = FALSE
+        headerButtonLogin__wrapper.classList.remove('isLogin');
+        headerLogged__wrapper.classList.remove('isLogin');
+        if (research__login__option) {
+            research__login__option.classList.remove('isLogin');
+        }
+    }
+    // LOGOUT
+    headerLogOut.addEventListener('click', (e) => {
+        const messege = headerLogOut.getAttribute('messege-logout');
+        document
+            .querySelector('#check_login>input')
+            .setAttribute('data-isLogin', 'False');
+        actionsLoginPage();
+        alert(messege);
+    });
 };
- 
+
 // SHOW SUB MENU MOBILE
 const showSubMenuMobile = () => {
     const btn = document.querySelector('.navBarHamburger__wrapper');
@@ -368,68 +368,68 @@ const silderHomeImage = () => {
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-	var swiper = new Swiper(".home--hotnews .swiper-container" , {
-		loop: true,
-		autoplay: {
-			delay: 1500,
-			disableOnInteraction: false,	
-		},
-		simulateTouch: false
-	})
+    var swiper = new Swiper(".home--hotnews .swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        simulateTouch: false
+    })
 }
 
 //Swiper banner design home 1
 const sliderVideoBanner1 = () => {
-	var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-1 .swiper-container", {
-		loop: true,
-		autoplay: {
-			delay: 1500,
-			disableOnInteraction: false,	
-		},
-		simulateTouch: false
-	})
+    var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-1 .swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        simulateTouch: false
+    })
 }
 
 //Swiper banner design home 2
 const sliderVideoBanner2 = () => {
-	var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
-		loop: true,
-		autoplay: {
-			delay: 1500,
-			disableOnInteraction: false,	
-		},
-		simulateTouch: false
-	})
+    var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        simulateTouch: false
+    })
 }
 const SliderHomeMemberSection = () => {
-	var slider = new Swiper(".home__member .swiper-container", {
-		loop: true,
-		slidesPerView: 6,
-		spaceBetween: 30,
-		autoplay: {
-			delay: 1500,
-			disableOnInteraction: false,	
-		},	
-		breakpoints: {
-			100: {
-				slidesPerView: 2,
-				spaceBetween: 10
-			},
-			700: {
-				slidesPerView: 3,
-				spaceBetween: 10
-			},
-			1000: {
-				slidesPerView: 5,
-				spaceBetween: 10
-			},
-			1450: {
-				slidesPerView: 6,
-				spaceBetween: 30
-			}
-		},
-		simulateTouch: false,
-	})
+    var slider = new Swiper(".home__member .swiper-container", {
+        loop: true,
+        slidesPerView: 6,
+        spaceBetween: 30,
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            100: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            },
+            700: {
+                slidesPerView: 3,
+                spaceBetween: 10
+            },
+            1000: {
+                slidesPerView: 5,
+                spaceBetween: 10
+            },
+            1450: {
+                slidesPerView: 6,
+                spaceBetween: 30
+            }
+        },
+        simulateTouch: false,
+    })
 }
 const ajaxFormContact = () => {
     $('.contact form .form-button').on('click', function(e) {
@@ -767,22 +767,48 @@ const downRowContent = () => {
     }
     //active menu
 const activeLinkMenu = () => {
-    var link = "";
-    var url = window.location.pathname.split('/');
-    if (url[(url.length - 1)] == "") {
-        link = url[(url.length - 2)];
-    } else {
-        link = url[(url.length - 1)];
-    }
-    $('.navBar__item  a').each(function() {
-        var getHref = $(this).attr('href');
-        var href = getHref.split('/').pop();
-        if (href === link) {
-            $(this).addClass('active');
-            $(this).parent().addClass('active');
-            $(this).parent().parent().parent().addClass('active');
+        var link = "";
+        var url = window.location.pathname.split('/');
+        if (url[(url.length - 1)] == "") {
+            link = url[(url.length - 2)];
+        } else {
+            link = url[(url.length - 1)];
         }
+        $('.navBar__item  a').each(function() {
+            var getHref = $(this).attr('href');
+            var href = getHref.split('/').pop();
+            if (href === link) {
+                $(this).addClass('active');
+                $(this).parent().addClass('active');
+                $(this).parent().parent().parent().addClass('active');
+            }
+        });
+    }
+    //google recaptcha
+const recaptchaGoogle = () => {
+    $('#research__form').click(function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function(token) {
+                $("#research__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
+            });
+        });
     });
+    $('#contact__form').click(function(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function(token) {
+                $("#contact__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
+            });
+        });
+    });
+
 }
 
 
@@ -857,15 +883,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //downRowContent
     downRowContent();
     //activeLinkMenu
-	activeLinkMenu();
-	//Swiper Home banner
-	sliderHotnewsHome();
-	//Swiper home lib section
-	sliderVideoBanner1();
-	//Swiper home lib section 2
-	sliderVideoBanner2();
-	//Swiper home member section
-	SliderHomeMemberSection();
+    activeLinkMenu();
+    //Swiper Home banner
+    sliderHotnewsHome();
+    //Swiper home lib section
+    sliderVideoBanner1();
+    //Swiper home lib section 2
+    sliderVideoBanner2();
+    //Swiper home member section
+    SliderHomeMemberSection();
+    //recaptchaGoogle
+    recaptchaGoogle();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });

@@ -25,7 +25,9 @@ section.Research
 						.col-8
 							.research__login--form.bg-xam-1
 								h3.tt-u.cl-main-2 ĐÓNG GÓP bÀI VIẾT
-								form.row(action="")
+								form.row#research__form(action="")
+									.form-group.col-12
+										input#research__recaptcha(name="g-recaptcha-response" hidden)
 									.form-group.col-12
 										input(type="text", name="name" placeholder="Họ tên*")
 									.form-group.col-6
