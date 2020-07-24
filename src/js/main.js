@@ -685,15 +685,34 @@ const initializeLibImage__Slider_Popup = () => {
 };
 //down row content
 const downRowContent = () => {
-    const list = document.querySelectorAll(".committee__member--item p");
-    let listT = [];
-    list.forEach((item, index) => {
-        listT.push(item.outerText);
-    });
-    for (var i = 0; i < listT.length; i++) {
-        listT[i] = listT[i].replace(",", "<br>");
-        $(".committee__member--item p").eq(i).html(listT[i]);
+        const list = document.querySelectorAll(".committee__member--item p");
+        let listT = [];
+        list.forEach((item, index) => {
+            listT.push(item.outerText);
+        });
+        for (var i = 0; i < listT.length; i++) {
+            listT[i] = listT[i].replace(",", "<br>");
+            $(".committee__member--item p").eq(i).html(listT[i]);
+        }
     }
+    //active menu
+const activeLinkMenu = () => {
+    var link = "";
+    var url = window.location.pathname.split('/');
+    if (url[(url.length - 1)] == "") {
+        link = url[(url.length - 2)];
+    } else {
+        link = url[(url.length - 1)];
+    }
+    $('.navBar__item  a').each(function() {
+        var getHref = $(this).attr('href');
+        var href = getHref.split('/').pop();
+        if (href === link) {
+            $(this).addClass('active');
+            $(this).parent().addClass('active');
+            $(this).parent().parent().parent().addClass('active');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -766,6 +785,8 @@ document.addEventListener('DOMContentLoaded', () => {
     randomCodePopupDocument();
     //downRowContent
     downRowContent();
+    //activeLinkMenu
+    activeLinkMenu();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });
@@ -777,4 +798,5 @@ window.addEventListener('resize', () => {
 
 // CHECK FORM VALID
 // if ($("form").valid() === true) {}
+// console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".block-send-mail form").valid());
 // console.log('Kết quả kiểm tra điều kiện là:' + ' ' + $(".block-send-mail form").valid());
