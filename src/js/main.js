@@ -686,11 +686,14 @@ const initializeLibImage__Slider_Popup = () => {
 //down row content
 const downRowContent = () => {
     const list = document.querySelectorAll(".committee__member--item p");
+    let listT = [];
     list.forEach((item, index) => {
-        item.textContent.forEach(function(value) {
-            item.textContent.replace(",", "<br>");
-        })
+        listT.push(item.outerText);
     });
+    for (var i = 0; i < listT.length; i++) {
+        listT[i] = listT[i].replace(",", "<br>");
+        $(".committee__member--item p").eq(i).html(listT[i]);
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -761,6 +764,8 @@ document.addEventListener('DOMContentLoaded', () => {
     randomCodePopupImage();
     //Random Code Popup Document
     randomCodePopupDocument();
+    //downRowContent
+    downRowContent();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });
