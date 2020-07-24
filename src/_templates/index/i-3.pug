@@ -20,10 +20,10 @@ section.home__news__event
 							span Sự Kiện
 						.events--inner
 							-for(var i = 0; i< 3; i++)
-								div
+								div.events--inner--item.ov-h
 									a(href="#")
-										div.event--img.ov-h
-											img.lazyload.blur-up.ofcv(data-src=`./assets/images/index/hot-news-events/event-${i + 1}.jpg`, alt="")
+										div.event--img.ov-h.clearfix
+											img.lazyload.blur-up(data-src=`./assets/images/index/hot-news-events/event-${i + 1}.jpg`, alt="")
 											div.event--desc
 												p.lcl.lcl-2.events--desc Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis iusto minus beatae soluta molestias porro placeat eius temporibus molestiae dolorem laboriosam voluptatibus cumque, dolores alias doloremque sit tempora. Esse, nostrum.
 

@@ -103,6 +103,16 @@
 		max-width: 100%;
 	}
 }
+.hot-news-banner {
+	.swiper-slide {
+		img {
+			height: 382px;
+			@media (max-width: 1200px) {
+				height: 100%;
+			}
+		}
+	}
+}
 .another-news--item {
 	& > div {
 		padding: 13px 0;
