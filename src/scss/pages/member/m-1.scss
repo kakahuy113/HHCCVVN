@@ -70,7 +70,7 @@
 .member--list.row {
 	margin-left: -40px;
 	margin-right: -40px;
-	margin-bottom: 85px;
+	margin-bottom: 45px;
 	& > div {
 		-ms-flex: 0 0 33.333333%;
 		flex: 0 0 33.333333%;
@@ -95,7 +95,7 @@
 }
 .member--item {
 	padding: 40px;
-	border-bottom: 1px solid #707070;
+	border-bottom: .5px solid rgba($color: #707070, $alpha: 0.3);
 	&:nth-last-child(1) {
 		border: none;
 	}
@@ -114,15 +114,14 @@
 		justify-content: center;
 		padding: 0 10px;
 		.member--item--img {
-			-ms-flex: 0 0 100px;
-			flex: 0 0 100px;
-			max-width: 100px;
-			img {
-				border-right: 1px solid #002f4b;
-				padding-right: 10px;
-			}
+			-ms-flex: 0 0 92px;
+			flex: 0 0 92px;
+			max-width: 92px;
+			padding-right: 10px;
 		}
 		.member--item--desc {
+			border-left: 1px solid #002f4b;
+			padding-left: 20px;
 			-ms-flex-preferred-size: 0;
 			flex-basis: 0;
 			-ms-flex-positive: 1;
@@ -165,13 +164,9 @@
 	}
 	@media (min-width: 1024.98px) {
 		&:hover {
-			
-			.member--item--img {
-				img {
-					border-right: 1px solid #fff;
-				}
-			}
 			.member--item--desc {
+				border-left: 1px solid #fff;
+
 				h6 {
 					color: #fff;
 				}
@@ -186,6 +181,8 @@
 	}
 }
 .see-more {
+	cursor: pointer;
+	user-select: none;
 	text-align: center;
 	color: #c4851a;
 	font-family: MYRIADPRO-REGULAR;

@@ -10,7 +10,7 @@
 			Array.from(document.querySelectorAll('.btn-google')).forEach(function (btn) {
 				gapi.load('auth2', function () {
 					auth2 = gapi.auth2.init({
-						client_id: '261187886088-5o0va8g8ujg60pbd1r0mobfsc7jijjfj.apps.googleusercontent.com',
+						client_id: '111231613981-4ar5t5o0nmb5aon7f4eal155954didl4.apps.googleusercontent.com',
 						cookiepolicy: 'single_host_origin',
 					});
 					AccountController.events.attachGGSignin(btn);

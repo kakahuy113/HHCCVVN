@@ -2,7 +2,7 @@
 	margin: 50px 0;
 }
 .home--hotnews__wrapper--inner {
-	@media (max-width: 768px) {
+	@media (max-width: 1024.98px) {
 		display: flex;
 		flex-direction: column !important;
 		.col-5 {
@@ -11,53 +11,75 @@
 			max-width: 100%;
 			margin-bottom: 10px;
 		}
-		.col-4 {
-			-ms-flex: 0 0 100% !important;
-			flex: 0 0 100% !important;
-			max-width: 100% !important;
-			margin-bottom: 10px;
-			.item__wrapper {
-				.item--img {
-					-ms-flex: 0 0 222px;
-					flex: 0 0 222px;
-					max-width: 222px;
-				}
-				.item--desc {
-					padding-left: 31px;
-				}
-			}
-		}
-		.col-3 {
+		.col-7 {
 			-ms-flex: 0 0 100%;
 			flex: 0 0 100%;
 			max-width: 100%;
-			text-align: center;
-		}
-	}
-	@media (max-width: 575.98px) {
-		.col-5 {
-			p {
-				font-size: 14px;
-				padding: 0;
-			}
-		}
-		.col-4 {
-			.item__wrapper {
-				flex-direction: column;
-				.item--img {
-					-ms-flex: 0 0 100%;
-					flex: 0 0 100%;
-					max-width: 100%;
+			
+			.col-8 {
+				-ms-flex: 0 0 65%;
+				flex: 0 0 65%;
+				max-width: 65%;
+				.another-news--item {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					.item--img {
+						-ms-flex: 0 0 220px;
+						flex: 0 0 220px;
+						max-width: 220px;
+					}
 				}
-				.item--desc {
-					padding-left: 0px;
-					p {
-						font-size: 14px;
+			}
+			.col.4 {
+				-ms-flex-preferred-size: 0;
+				flex-basis: 0;
+				-ms-flex-positive: 1;
+				flex-grow: 1;
+				max-width: 100%;
+			}
+			@media (max-width: 767.98px) {
+				.row {
+					flex-direction: column;
+					.col-8 {
+						-ms-flex: 0 0 100%;
+						flex: 0 0 100%;
+						max-width: 100%;
+					}
+					.col-4 {
+						-ms-flex: 0 0 100%;
+						flex: 0 0 100%;
+						max-width: 100%;
 					}
 				}
 			}
 		}
 	}
+	// @media (max-width: 575.98px) {
+	// 	.col-5 {
+	// 		p {
+	// 			font-size: 14px;
+	// 			padding: 0;
+	// 		}
+	// 	}
+	// 	.col-4 {
+	// 		.item__wrapper {
+	// 			flex-direction: column;
+	// 			.item--img {
+	// 				-ms-flex: 0 0 100%;
+	// 				flex: 0 0 100%;
+	// 				max-width: 100%;
+	// 			}
+	// 			.item--desc {
+	// 				padding-left: 0px;
+	// 				p {
+	// 					font-size: 14px;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
 .first-news {
 	p {
@@ -119,8 +141,6 @@
 			a {
 				color: #002f4b;
 				font-family: MYRIADPRO-BOLD;
-			}
-			@media (max-width: 1025px) {
 			}
 			@media (min-width: 1025px) {
 				&:hover {
