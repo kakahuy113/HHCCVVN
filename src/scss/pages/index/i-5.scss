@@ -1,0 +1,35 @@
+.home__member {
+	background: #002f4b;
+	padding-top: 26px;
+	padding-bottom: 50px;
+	h2 {
+		color: #fff;
+		font-size: 30px;
+		font-family: UTM-COPPERPLATEB;
+		margin: 0 0 54px 0;
+	}
+	.home__member__wrapper--inner {
+		.home__member--item {
+			display: inline-flex;
+			width: 190px;
+			height: 110px;
+			background: #fff;
+			border-radius: 16px;
+			.item-img__wrapper {
+				align-self: center;
+				margin: 0 auto;
+			}
+			@media (max-width: 575.98px) {
+				width: 160px;
+				height: 90px;
+			}
+		}
+		@media (max-width: 1024.98px) {
+			.swiper-wrapper {
+				.swiper-slide {
+					text-align: center !important;
+				}
+			}
+		}
+	}
+}
