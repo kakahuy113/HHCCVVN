@@ -97,6 +97,11 @@ section.Affiliated-units {
                 }
             }
             ul {
+                &.no-pd {
+                    @media (max-width: 768.98px) {
+                        padding-inline-start: 0;
+                    }
+                }
                 list-style-type: none;
                 &.dot {
                     padding-left: 0;

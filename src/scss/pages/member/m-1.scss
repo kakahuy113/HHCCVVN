@@ -181,6 +181,8 @@
 	}
 }
 .see-more {
+	cursor: pointer;
+	user-select: none;
 	text-align: center;
 	color: #c4851a;
 	font-family: MYRIADPRO-REGULAR;

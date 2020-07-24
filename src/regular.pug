@@ -1,0 +1,13 @@
+extends _templates/_layout/_layout.pug
+
+block var
+	- let title = 'Ban thường trực | Hiệp hội công chứng';
+	- let bodyClass = 'executive-committee-page';
+	- let linkBanner = './assets/images/page-banners/introduct.png';
+	- let titleBanner = 'GIỚI THIỆU';
+block loading
+block banner,breadcrumb
+	include _templates/_layout/_pages-banner
+block main
+	include _templates/executive-committee/e-2
+block scripts
