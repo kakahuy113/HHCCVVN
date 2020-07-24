@@ -1,14 +1,4 @@
 section.home__Lib__video
-	//- div.home__lib__video--banner.ov-h
-		div.main__banner
-			img.lazyload.blur-up.ofcv(data-src="./assets/images/index/video/banner_team.png", alt="")
-		div.above__banner
-			img.lazyload.blur-up.ofcv(data-src="./assets/images/index/video/banner_zindex.png", alt="")
-		div.banner--content
-			h4.title 
-				!= "ĐỘI NGŨ <span>CHUYÊN NGHIỆP</span>"
-			p.sub-title Lorem ipsum dolor amet consectetuer
-			p.quaranty 100% chất lượng 
 	img.home__lib__video__banner(src="./assets/images/index/video/banner_video_lib.png", alt="")
 	.container
 		.home__lib__video__wrapper.container-1365px
@@ -17,35 +7,26 @@ section.home__Lib__video
 			.home__lib__video__wrapper--inner.row
 				.lib__video--left.col-6
 					.swiper--left__wrapper
-						// Swiper
 						.swiper-container
 							.swiper-wrapper
 								.swiper-slide
-									// Required swiper-lazy class and image source specified in data-src attribute
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-										// Preloader image
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 								.swiper-slide
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 								.swiper-slide
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 								.swiper-slide
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 								.swiper-slide
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 								.swiper-slide
 									.img.ov-h
-										img.swiper-lazy.ofcv(data-src='./assets/images/index/video/swiper_left-1.png')
-									.swiper-lazy-preloader.swiper-lazy-preloader-white
+										img.ofcv(src='./assets/images/index/video/swiper_left-1.png')
 						// Navigation
 						.swiper-button-next.swiper-button-white
 						.swiper-button-prev.swiper-button-white
@@ -55,13 +36,13 @@ section.home__Lib__video
 							.swiper-container.gallery-top
 								.swiper-wrapper
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 							// Add Arrows
 							.swiper-button-next.swiper-button-white
 							.swiper-button-prev.swiper-button-white
@@ -69,12 +50,18 @@ section.home__Lib__video
 							.swiper-container.gallery-thumbs
 								.swiper-wrapper
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 									.swiper-slide
-										img.lazyload.blur-up(data-src='./assets/images/index/video/eventos-1.png')
+										img(src='./assets/images/index/video/eventos-1.png')
 				.home__lib__video__banner--design-1
-					img(src="./assets/images/index/video/banner_design-1.png", alt="")
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img(src="./assets/images/index/video/banner_design-1.png", alt="")
 				.home__lib__video__banner--design-2
-					img(src="./assets/images/index/video/banner_design-2.png", alt="")
+					.swiper-container
+						.swiper-wrapper
+							.swiper-slide
+								img(src="./assets/images/index/video/banner_design-2.png", alt="")

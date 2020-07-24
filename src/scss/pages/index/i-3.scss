@@ -32,7 +32,7 @@ div.new--inner__wrapper {
 	display: flex;
 	flex-wrap: wrap;
 	padding: 10px 0;
-	border-bottom: 1px solid rgba($color: #707070, $alpha: 0.5);
+	border-bottom: 0.5px solid rgba($color: #707070, $alpha: 0.5);
 
 	div.news--img {
 		position: relative;
@@ -135,7 +135,6 @@ div.new--inner__wrapper {
 }
 div.event--img {
 	position: relative;
-
 	&::after {
 		pointer-events: none;
 		content: '';

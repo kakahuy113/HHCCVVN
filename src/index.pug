@@ -3,6 +3,8 @@ extends _templates/_layout/_layout.pug
 block var
 	- let title = 'Page | Index';
 	- let bodyClass = 'index-page';
+block loading
+	include _templates/_layout/_loading.pug
 block banner,breadcrumb
 	include _templates/_layout/_main-banner
 block main
@@ -11,4 +13,5 @@ block main
 		include _templates/index/i-2
 		include _templates/index/i-3
 		include _templates/index/i-4
+		include _templates/index/i-5
 block scripts
