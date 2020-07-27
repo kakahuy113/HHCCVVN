@@ -1,9 +1,18 @@
+// SLIDER INIT WHEN #js-page-verify have class "index-page"
 section.MainSlider__Banners
 	.swiper-container
 		.swiper-wrapper
-			-for(i=1;i<4;i++)
-				.swiper-slide
-					a.main_banner__link(href="#")
-						// image-size: 1920x960
-						img(src="./assets/images/banners/banner-main--1.png", alt="main-banner")
+			.swiper-slide
+				a.main_banner__link(href="#")
+					// image-size: 1920x965 (index)
+					// image-size: 665x665px (subpage)
+					.main_banner__img.ov-h
+						img.ofcv(src=`${linkBanner}`, alt="BANNER")
+				.pagesBanner__content
+					.container.h-100
+						.container-1365px.h-100
+							.pagesBanner__content__wrapper
+								include _breadcrumb
+								.pagesBanner__title
+									h1=`${titleBanner}`
 		.swiper-pagination
