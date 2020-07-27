@@ -1,4 +1,6 @@
 .contact {
+	height: 800px;
+
 	.gm-style-iw-t {
 		.gm-style-iw {
 			background-color: #002f4b;
@@ -35,9 +37,8 @@
 		font-weight: bold;
 
 		.contact-form__wrapper {
-			margin-top: 5%;
-			margin-left: 10%;
-			margin-bottom: 15%;
+			margin-left: 130px;
+			margin-top: 70px;
 		}
 
 		h2 {
@@ -57,12 +58,12 @@
 		}
 
 		.info {
-			margin-top: 30px;
+			margin-top: 60px;
 			line-height: 30px;
 		}
 
 		.form {
-			margin-top: 30px;
+			margin-top: 50px;
 
 			h3 {
 				color: #002f4b;
@@ -72,34 +73,36 @@
 			form {
 				background-color: #f4f5f9;
 				border-radius: 20px;
-				margin-top: 20px;
+				margin-top: 40px;
 				max-width: 75%;
-				height: 255px;
-				box-shadow: 0px 3px 6px #000000 0.16;
+				height: 300px;
+				box-shadow: 0px 3px 6px rgba($color:#000000, $alpha: 0.16);
 
 				input {
-					margin-top: 20px;
+					margin-top: 25px;
 					margin-left: 30px;
 					width: 85%;
-					line-height: 40px;
+					line-height: 45px;
 					border-radius: 17px;
 					padding: 0 15px;
-					box-shadow: 0px 2px 6px#000000 0.16
+					box-shadow: 0px 2px 6px rgba($color: #000000, $alpha: 0.16);
 				}
 
 				.form-button {
 					margin-left: 30px;
-					margin-top: 20px;
+					margin-top: 25px;
 					padding-left: 10px;
 					padding-top: 3px;
+					padding-right: 10px;
 					background-color: #c4851a;
 					border-radius: 10px;
 					width: 85px;
 					height: 32px;
-					box-shadow: 0px 2px 6px #000000 0.16;
+					box-shadow: 0px 2px 6px rgba($color:#000000, $alpha: 0.16);
 					cursor: pointer;
 
 					span {
+						font-family: MYRIADPRO-BOLD;
 						color: #ffffff;
 						margin-left: 10px;
 					}
@@ -108,18 +111,14 @@
 		}
 	}
 	@media (max-width: 1024.98px) {
+		height: unset;
+
 		.col-lg-6:nth-child(1) {
 			order: 2;
 			margin-top: 50px;
 
 			#map {
-				height: 350px;
-			}
-		}
-
-		.col-lg-6:nth-child(2) {
-			.contact-form__wrapper {
-				margin-bottom: 5%;
+				height: 500px;
 			}
 		}
 	}
@@ -129,8 +128,22 @@
 		}
 
 		.col-lg-6:nth-child(2) {
-			.form form {
-				max-width: 90%;
+			.contact-form__wrapper {
+				margin-left: 10px;
+				margin-top: 20px;
+			}
+
+			.info {
+				margin-top: 20px;
+			}
+
+			.form {
+				margin-top: 20px;
+
+				form {
+					margin-top: 20px;
+					max-width: 95%;
+				}
 			}
 		}
 	}
@@ -140,26 +153,25 @@
 		}
 
 		.col-lg-6:nth-child(2) {
+			.contact-form__wrapper {
+				margin-left: 10px;
+				margin-top: 20px;
+			}
+
 			.info {
-				font-size: 12px;
-				margin-right: 20px;
-				line-height: 25px;
+				margin-top: 20px;
 			}
 
 			.form {
+				margin-top: 20px;
+
 				h3 {
-					font-size: 15px;
+					font-size: 18px;
 				}
 
 				form {
-					input {
-						width: 90%;
-						margin-left: 15px;
-					}
-
-					.form-button {
-						margin-left: 15px;
-					}
+					margin-top: 20px;
+					max-width: 100%;
 				}
 			}
 		}
