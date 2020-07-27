@@ -354,6 +354,7 @@ const silderHomeImage = () => {
     });
 
     var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+        spaceBetween: 10,
         navigation: {
             nextEl: '.lib__images--right .swiper-button-next',
             prevEl: '.lib__images--right .swiper-button-prev',
@@ -508,17 +509,39 @@ const ajaxFormResearch = () => {
     });
 };
 
-const NewsAddClass = () => {
-    if (document.querySelector('.news--item a')) {
-        var temp = document.querySelectorAll('.news--item');
-        temp.forEach((item) => {
-            item.addEventListener('click' , () => {
-                temp.forEach(item => {
-                    item.classList.remove("active");
-                })
-                item.classList.add("active");
-            })
-        })
+const ajaxNews = () => {
+    if (document.querySelector('.news--item')) {
+        var temp = document.querySelector('.news--item')
+        temp.addEventListener('click', (e) => {
+            // $.ajax({
+            //     url: 'get',
+            //     type: 'get',
+            //     data: 'something',
+            //     processData: false,
+            //     contentType: false,
+            //     success: (res) => {
+            //         // console.log(res);
+            //     },
+            //     error: (res) => {
+            //         // console.log(res);
+            //     },
+            // });
+            temp.classList.add("active")
+            document
+            .querySelector('.events--item').classList.remove("active")
+        });
+    }
+};
+
+const ajaxEvents = () => {
+    if (document.querySelector('.events--item')) {
+        document
+            .querySelector('.events--item')
+            .addEventListener('click', (e) => {
+                document.querySelector('.events--item').classList.add("active")
+                document
+                .querySelector('.news--item').classList.remove("active")
+            });
     }
 };
 
@@ -824,12 +847,6 @@ const SeeMoreMember = () => {
     })
 }
 
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
-    })
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     Cookie();
     getSVGs();
@@ -869,7 +886,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Submit Contact Form
     ajaxFormContact();
     //Get News Content
-    NewsAddClass();
+    ajaxNews();
+    // Get Event Content
+    ajaxEvents();
     //AJAX get Libary Image
     ajaxGetLibImage();
     //AJAX get Libary Video

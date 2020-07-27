@@ -346,7 +346,6 @@ const sliderHomeVideo = () => {
 // swiper home page image
 const silderHomeImage = () => {
     var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
-        spaceBetween: 10,
         slidesPerView: 4,
         freeMode: true,
         watchSlidesVisibility: true,
@@ -821,12 +820,6 @@ const SeeMoreMember = () => {
         document.querySelectorAll(".member--item").forEach((item , index) => {
             item.style.display = "block"
         })
-    })
-}
-
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
     })
 }
 

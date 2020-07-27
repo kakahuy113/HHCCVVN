@@ -104,6 +104,15 @@
 .member--item {
 	padding: 40px;
 	border-bottom: .5px solid rgba($color: #707070, $alpha: 0.3);
+	&:nth-last-child(1) {
+		border: none;
+	}
+	&:nth-last-child(2) {
+		border: none;
+	}
+	&:nth-last-child(3) {
+		border: none;
+	}
 	.member--item--inner {
 		background: #fff;
 		border-radius: 16px;

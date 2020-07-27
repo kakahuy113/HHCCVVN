@@ -354,6 +354,7 @@ const silderHomeImage = () => {
     });
 
     var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+        spaceBetween: 10,
         navigation: {
             nextEl: '.lib__images--right .swiper-button-next',
             prevEl: '.lib__images--right .swiper-button-prev',
@@ -508,9 +509,9 @@ const ajaxFormResearch = () => {
     });
 };
 
-const NewsAddClass = () => {
-    if (document.querySelector('.news--item a')) {
-        var temp = document.querySelectorAll('.news--item');
+const ajaxNews = () => {
+    if (document.querySelector('.news--item')) {
+        var temp = document.querySelectorAll('.news--item')
         temp.forEach((item) => {
             item.addEventListener('click' , () => {
                 temp.forEach(item => {
@@ -519,8 +520,27 @@ const NewsAddClass = () => {
                 item.classList.add("active");
             })
         })
+        // temp.addEventListener('click', (e) => {
+        //     // $.ajax({
+        //     //     url: 'get',
+        //     //     type: 'get',
+        //     //     data: 'something',
+        //     //     processData: false,
+        //     //     contentType: false,
+        //     //     success: (res) => {
+        //     //         // console.log(res);
+        //     //     },
+        //     //     error: (res) => {
+        //     //         // console.log(res);
+        //     //     },
+        //     // });
+        //     document
+        //     .querySelectorAll('.news--item')
+        //     temp.classList.add("active")
+        // });
     }
 };
+
 
 //playvideo
 const playVideoIntroduct = () => {
@@ -824,12 +844,6 @@ const SeeMoreMember = () => {
     })
 }
 
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
-    })
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     Cookie();
     getSVGs();
@@ -869,7 +883,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Submit Contact Form
     ajaxFormContact();
     //Get News Content
-    NewsAddClass();
+    ajaxNews();
+    // Get Event Content
+    ajaxEvents();
     //AJAX get Libary Image
     ajaxGetLibImage();
     //AJAX get Libary Video

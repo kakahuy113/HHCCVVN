@@ -30,7 +30,6 @@
     max-width: 674px;
 }
 .member-detail__wrapper--content {
-    padding-top: 25px;
     max-height: 447px;
     overflow: hidden;
     -ms-flex-preferred-size: 0;
@@ -50,7 +49,10 @@
         }
     }
     p.desc {
-        margin-bottom: 15px;
+        margin-bottom: 31px;
+        @media(max-width: 1450px) {
+            margin-bottom: 15px;
+        }
     }
     .info {
         max-width: 143px;

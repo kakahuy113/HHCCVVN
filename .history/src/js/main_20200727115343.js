@@ -346,7 +346,6 @@ const sliderHomeVideo = () => {
 // swiper home page image
 const silderHomeImage = () => {
     var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
-        spaceBetween: 10,
         slidesPerView: 4,
         freeMode: true,
         watchSlidesVisibility: true,
@@ -354,6 +353,7 @@ const silderHomeImage = () => {
     });
 
     var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+        spaceBetween: 10,
         navigation: {
             nextEl: '.lib__images--right .swiper-button-next',
             prevEl: '.lib__images--right .swiper-button-prev',
@@ -821,12 +821,6 @@ const SeeMoreMember = () => {
         document.querySelectorAll(".member--item").forEach((item , index) => {
             item.style.display = "block"
         })
-    })
-}
-
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
     })
 }
 

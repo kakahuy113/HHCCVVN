@@ -354,6 +354,7 @@ const silderHomeImage = () => {
     });
 
     var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+        spaceBetween: 10,
         navigation: {
             nextEl: '.lib__images--right .swiper-button-next',
             prevEl: '.lib__images--right .swiper-button-prev',
@@ -509,7 +510,7 @@ const ajaxFormResearch = () => {
 };
 
 const NewsAddClass = () => {
-    if (document.querySelector('.news--item a')) {
+    if (document.querySelector('.news--item')) {
         var temp = document.querySelectorAll('.news--item');
         temp.forEach((item) => {
             item.addEventListener('click' , () => {
@@ -821,12 +822,6 @@ const SeeMoreMember = () => {
         document.querySelectorAll(".member--item").forEach((item , index) => {
             item.style.display = "block"
         })
-    })
-}
-
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
     })
 }
 

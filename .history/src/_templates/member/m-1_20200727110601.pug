@@ -28,11 +28,11 @@ section.member__page
 				//- 		div
 				.member--list.row
 					-for(var i=0; i<15;i++)
-						.member--item
+						.member--item.active
 							a(href="member-detail.html")
 								.member--item--inner.ov-h
 									.member--item--img
-										img.ofcv(src=`./assets/images/member/logo.png`, alt="something")
+										img.ofcv(data-src=`./assets/images/member/logo.png`, alt="something")
 									.member--item--desc
 										h6.tt-u HIỆP HỘI CÔNG CHỨNG VIÊN TP.HCM
 										p.lcl.lcl-3 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et...

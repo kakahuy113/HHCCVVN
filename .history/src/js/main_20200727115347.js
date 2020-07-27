@@ -824,12 +824,6 @@ const SeeMoreMember = () => {
     })
 }
 
-const addClasstoMember = () => {
-    document.querySelectorAll(".member--item").forEach((item,index )=> {
-
-    })
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     Cookie();
     getSVGs();

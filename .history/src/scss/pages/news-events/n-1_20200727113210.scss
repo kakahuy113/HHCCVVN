@@ -25,10 +25,10 @@ ul.news__events--list {
 			color: #002f4b;
 			font-size: 24px;
 		}
-		&:last-child {
-			margin-left: 130px;
+		&:first-child {
+			margin-right: 130px;
 			@media (max-width: 767.98px) {
-				margin-left:30px;
+				margin-right:30px;
 			}
 		}
 		@media (max-width: 512px) {
@@ -133,7 +133,7 @@ ul.news__events--list {
 			padding-right: 14px;
 			h4 {
 				font-size: 20px;
-				font-family: MYRIADPRO-BOLDIT;
+				font-family: MYRIADPRO-BOLD;
 				padding: 8px 20px;
 				position: relative;
 				@media (max-width: 768.98px) {
