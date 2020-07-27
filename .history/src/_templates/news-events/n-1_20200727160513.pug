@@ -10,7 +10,7 @@ section.news__events
 				.content(tab-id="item-1")
 					.inner--tab-content
 						-for(var i = 0; i<5; i++)
-							a.news--item--inner--content(href="news-events-detail.html")
+							a(href="news-events-detail.html").news--item--inner--content
 								.news--item--img
 									img(src=`./assets/images/news-events/item-${i +1 }.png`, alt="")
 								.new--item--summary

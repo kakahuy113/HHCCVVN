@@ -832,9 +832,6 @@ const OpenFileViewer = () => {
 			item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
 		})
 	}
-	$(".document--popup-link").click(() => {
-		console.log($(this));
-	})
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -876,6 +873,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//File Viewer
 	OpenFileViewer();
 	// Submit Contact Form
+
 	ajaxFormContact();
 	//Get News Content
 	NewsAddClass();
@@ -919,6 +917,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	SliderHomeMemberSection();
 	//recaptchaGoogle
 	recaptchaGoogle();
+	//PlayVideoHome
+	playVideoHome();
 	loadding();
 	SeeMoreMember();
 	//TAB

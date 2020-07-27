@@ -107,7 +107,8 @@
 }
 
 .swiper--left__wrapper {
-
+	.swiper-container {
+	}
 	.swiper-button-next {
 		right: -15px;
 	}
@@ -117,8 +118,9 @@
 	}
 
 	.swiper-slide {
+		position: relative;
+	
 		.img {
-			position: relative;
 			&::before {
 				position: absolute;
 				width: 66px;

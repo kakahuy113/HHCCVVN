@@ -832,11 +832,7 @@ const OpenFileViewer = () => {
 			item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
 		})
 	}
-	$(".document--popup-link").click(() => {
-		console.log($(this));
-	})
 }
-
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -873,8 +869,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();
-	//File Viewer
-	OpenFileViewer();
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
@@ -919,8 +913,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	SliderHomeMemberSection();
 	//recaptchaGoogle
 	recaptchaGoogle();
+	//PlayVideoHome
+	playVideoHome();
 	loadding();
 	SeeMoreMember();
+	OpenFileViewer();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });

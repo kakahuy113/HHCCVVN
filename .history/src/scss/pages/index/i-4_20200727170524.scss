@@ -117,8 +117,9 @@
 	}
 
 	.swiper-slide {
+		position: relative;
+	
 		.img {
-			position: relative;
 			&::before {
 				position: absolute;
 				width: 66px;

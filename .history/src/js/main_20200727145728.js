@@ -826,17 +826,8 @@ const SeeMoreMember = () => {
 }
 
 const OpenFileViewer = () => {
-	if(document.querySelector(".lib__page__document")) {
-		document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-			var temp =item.getAttribute("src")
-			item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
-		})
-	}
-	$(".document--popup-link").click(() => {
-		console.log($(this));
-	})
+	console.log($(".wrapper--content--iframe iframe"));
 }
-
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -873,8 +864,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();
-	//File Viewer
-	OpenFileViewer();
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
@@ -919,8 +908,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	SliderHomeMemberSection();
 	//recaptchaGoogle
 	recaptchaGoogle();
+	//PlayVideoHome
+	playVideoHome();
 	loadding();
 	SeeMoreMember();
+	OpenFileViewer();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });

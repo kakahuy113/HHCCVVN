@@ -833,7 +833,7 @@ const OpenFileViewer = () => {
 		})
 	}
 	$(".document--popup-link").click(() => {
-		console.log($(this));
+		
 	})
 }
 
@@ -919,6 +919,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	SliderHomeMemberSection();
 	//recaptchaGoogle
 	recaptchaGoogle();
+	//PlayVideoHome
+	playVideoHome();
 	loadding();
 	SeeMoreMember();
 	//TAB
