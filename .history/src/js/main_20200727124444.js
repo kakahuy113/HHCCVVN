@@ -825,6 +825,9 @@ const SeeMoreMember = () => {
 	})
 }
 
+const addClasstoMember = () => {
+	document.querySelectorAll(".member--item").length
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();

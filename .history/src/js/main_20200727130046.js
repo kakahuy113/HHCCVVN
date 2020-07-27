@@ -825,7 +825,6 @@ const SeeMoreMember = () => {
 	})
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();

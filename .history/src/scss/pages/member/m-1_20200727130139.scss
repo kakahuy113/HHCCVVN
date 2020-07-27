@@ -3,7 +3,7 @@
 }
 .container-1476px {
 	position: relative;
-	overflow: hidden;
+
 	@media (min-width: 1440px) {
 		max-width: 1476px;
 		margin: 0 auto;
@@ -70,8 +70,8 @@
 .member--list.row {
 	margin-bottom: 45px;
 	position: relative;
-	margin-left: -40px;
-	margin-right: -40px;
+	margin-left: 41px;
+	margin-right: 41px;
 	& > div {
 		-ms-flex: 0 0 33.333333%;
 		flex: 0 0 33.333333%;

@@ -825,6 +825,16 @@ const SeeMoreMember = () => {
 	})
 }
 
+const addClasstoMember = () => {
+	var temp = document.querySelectorAll(".member--item")
+	for(var i = 0; i < temp.length; i++) {
+		if(i > 0) {
+			if(i % 3 == 0) {
+				temp[i-1].style.padding = 0;
+			}
+		}
+	}
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -910,6 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	playVideoHome();
 	loadding();
 	SeeMoreMember();
+	addClasstoMember()
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
