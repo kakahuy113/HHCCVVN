@@ -39,8 +39,6 @@
 	}
 }
 	a {
-		text-decoration: none;
-
 		div.new--inner__wrapper {
 			display: flex;
 			flex-wrap: wrap;
@@ -73,7 +71,6 @@
 				flex-grow: 1;
 				max-width: 100%;
 				p {
-					color: #002F4B;
 					padding-left: 24px;
 					font-family: MYRIADPRO-BOLD;
 					@media (max-width: 1024.98px) {

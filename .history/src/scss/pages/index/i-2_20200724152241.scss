@@ -89,7 +89,7 @@
 		color: #002f4b;
 	}
 	img {
-		transition: .7s all ease-in-out;
+		transition: 1s all ease-in-out;
 	}
 	@media (min-width: 1025px) {
 		img:hover {
@@ -130,7 +130,7 @@
 			flex: 0 0 222px;
 			max-width: 222px;
 			img {
-				transition: .7s all ease-in-out;
+				transition: 1s all ease-in-out;
 			}
 			@media (min-width: 1025px) {
 				&:hover {
