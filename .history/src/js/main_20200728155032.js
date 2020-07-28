@@ -508,6 +508,8 @@ const ajaxFormResearch = () => {
                     _thisBtn.removeAttr('disabled');
                 },
             });
+        } else {
+
         }
     });
 };

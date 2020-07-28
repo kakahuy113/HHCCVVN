@@ -492,7 +492,7 @@ const ajaxFormResearch = () => {
             formData.append(name, value);
         });
         formData.append(nameText, valText);
-        if ($('.research__login--form form').valid() === true) {
+        if ($('.contact form').valid() === true) {
             $.ajax({
                 url: url,
                 type: 'post',
@@ -509,6 +509,7 @@ const ajaxFormResearch = () => {
                 },
             });
         }
+
     });
 };
 
