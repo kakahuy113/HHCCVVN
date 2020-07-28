@@ -10,7 +10,7 @@ section.news__events
 				.content(tab-id="item-1")
 					.inner--tab-content
 						-for(var i = 0; i<5; i++)
-							a.news--item--inner--content(href="news-events-detail.html")
+							a(href="news-events-detail.html").news--item--inner--content
 								.news--item--img
 									img(src=`./assets/images/news-events/item-${i +1 }.png`, alt="")
 								.new--item--summary
@@ -18,6 +18,6 @@ section.news__events
 										h3.title.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ut fugiat expedita quidem vitae sit ullam alias velit voluptates minus temporibus impedit unde minima ducimus cum quod, earum magni culpa!
 										span 29/02/2020
 									p.lcl.lcl-3.desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero aliquid corporis dolor sapiente culpa velit ut, repellat deserunt nesciunt alias, veniam quisquam esse odio, dolores unde quibusdam tempora ab a!
-									div.btn.btn--readMore(href="news-events-detail.html")
+									a.btn.btn--readMore(href="news-events-detail.html")
 											h4.cl-main-2 Xem thêm
 					include ../_layout/_pagination.pug

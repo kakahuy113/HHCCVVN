@@ -6,7 +6,6 @@ import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
 import AccountController from './lib/AccountController';
-
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
 	// PARAMS
@@ -105,7 +104,7 @@ const actionsLoginPage = () => {
 		if (research__login__option) {
 			research__login__option.classList.add('isLogin');
 		}
-		$('.likeqwe').on('click', function (e) {
+		$('.likeqwe').on('click', function(e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
 		});
@@ -208,7 +207,7 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-	$(window).scroll(function () {
+	$(window).scroll(function() {
 		if ($(this).scrollTop() > 800) {
 			$('#back_to_top').addClass('show');
 		} else {
@@ -216,7 +215,7 @@ const showBackToTop = () => {
 		}
 	});
 
-	$('#back_to_top').on('click', function (e) {
+	$('#back_to_top').on('click', function(e) {
 		e.preventDefault();
 		$('html,body').animate({
 			scrollTop: 0,
@@ -259,37 +258,32 @@ const changeContentMobile = () => {
 
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
-	const namePage = document.querySelector('#js-page-verify');
-	const mainBanner = document.querySelector('.MainSlider__Banners');
-	if (namePage.className == "index-page") {
-		mainBanner.classList.add('isIndex');
-		return new Swiper('.MainSlider__Banners .swiper-container', {
-			effect: 'fade',
-			fadeEffect: {
-				crossFade: true,
-			},
-			speed: 1000,
-			autoplay: {
-				delay: 5000,
-				disableOnInteraction: false,
-			},
-			pagination: {
-				el: '.MainSlider__Banners .swiper-pagination',
-				type: 'bullets',
-				clickable: true,
-			},
-		});
-	};
+	let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
+		effect: 'fade',
+		fadeEffect: {
+			crossFade: true,
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: '.MainSlider__Banners .swiper-pagination',
+			type: 'bullets',
+			clickable: true,
+		},
+	});
 };
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-	$('.footer__forms .footer__submit').on('click', function (e) {
+	$('.footer__forms .footer__submit').on('click', function(e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
-		$('.footer__forms input').each(function () {
+		$('.footer__forms input').each(function() {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -307,10 +301,10 @@ const ajaxFormFooter = () => {
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function () {
+				beforeSend: function() {
 					_thisBtn.attr('disabled', 'disabled');
 				},
-				success: function (res) {
+				success: function(res) {
 					alert(`${res.Message}`);
 					window.location.reload();
 					_thisBtn.removeAttr('disabled');
@@ -405,7 +399,6 @@ const sliderVideoBanner2 = () => {
 		simulateTouch: false
 	})
 }
-
 const SliderHomeMemberSection = () => {
 	var slider = new Swiper(".home__member .swiper-container", {
 		loop: true,
@@ -436,14 +429,13 @@ const SliderHomeMemberSection = () => {
 		simulateTouch: false,
 	})
 }
-
 const ajaxFormContact = () => {
-	$('.contact form .form-button').on('click', function (e) {
+	$('.contact form .form-button').on('click', function(e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
-		$('.contact form .form-group input').each(function () {
+		$('.contact form .form-group input').each(function() {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -461,10 +453,10 @@ const ajaxFormContact = () => {
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function () {
+				beforeSend: function() {
 					_thisBtn.attr('disabled', 'disabled');
 				},
-				success: function (res) {
+				success: function(res) {
 					alert(`${res.Message}`);
 					window.location.reload();
 					_thisBtn.removeAttr('disabled');
@@ -481,7 +473,7 @@ const ajaxFormContact = () => {
 };
 
 const ajaxFormResearch = () => {
-	$('.btn.btn-subResearch button').on('click', function (e) {
+	$('.btn.btn-subResearch button').on('click', function(e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
@@ -492,7 +484,7 @@ const ajaxFormResearch = () => {
 		const valText = $(
 			'.research__login--form form .form-group textarea'
 		).val();
-		$('.research__login--form form .form-group input').each(function () {
+		$('.research__login--form form .form-group input').each(function() {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -504,10 +496,10 @@ const ajaxFormResearch = () => {
 			data: formData,
 			processData: false,
 			contentType: false,
-			beforeSend: function () {
+			beforeSend: function() {
 				_thisBtn.attr('disabled', 'disabled');
 			},
-			success: function (res) {
+			success: function(res) {
 				alert(`${res.Message}`);
 				window.location.reload();
 				_thisBtn.removeAttr('disabled');
@@ -520,7 +512,7 @@ const NewsAddClass = () => {
 	if (document.querySelector('.news--item a')) {
 		var temp = document.querySelectorAll('.news--item');
 		temp.forEach((item) => {
-			item.addEventListener('click', () => {
+			item.addEventListener('click' , () => {
 				temp.forEach(item => {
 					item.classList.remove("active");
 				})
@@ -532,7 +524,7 @@ const NewsAddClass = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-	$(".introduct__video--img").click(function (e) {
+	$(".introduct__video--img").click(function(e) {
 		e.preventDefault();
 		const id = $(".youtube-api").attr('id');
 		let url = $('#' + id).attr('src');
@@ -542,7 +534,7 @@ const playVideoIntroduct = () => {
 }
 //playvideo
 const playVideoHome = () => {
-	$(".swiper-slide .img").click(function (e) {
+	$(".swiper-slide .img").click(function(e) {
 		e.preventDefault();
 		const id = $(".youtube-api").attr('id');
 		let url = $('#' + id).attr('src');
@@ -687,7 +679,6 @@ const randomCodePopupImage = () => {
 			.attr('data-src', '#' + code[i]);
 	}
 };
-
 //Ramdom code Popup Document
 const randomCodePopupDocument = () => {
 	let count = $('.popup--document');
@@ -701,7 +692,6 @@ const randomCodePopupDocument = () => {
 			.attr('data-src', '#' + code[i]);
 	}
 };
-
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
 	const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
@@ -742,62 +732,59 @@ const initializeLibImage__Slider_Popup = () => {
 		});
 	});
 };
-
 //down row content
 const downRowContent = () => {
-	const list = document.querySelectorAll(".committee__member--item p");
-	let listT = [];
-	list.forEach((item, index) => {
-		listT.push(item.outerText);
-	});
-	for (var i = 0; i < listT.length; i++) {
-		listT[i] = listT[i].replace(",", "<br>");
-		$(".committee__member--item p").eq(i).html(listT[i]);
-	}
-}
-
-//active menu
-const activeLinkMenu = () => {
-	var link = "";
-	var url = window.location.pathname.split('/');
-	if (url.length !== 4) {
-		if (url[(url.length - 1)] == "") {
-			link = url[(url.length - 2)];
-		} else {
-			link = url[(url.length - 1)];
-		}
-		$('.navBar__item  a').each(function () {
-			var getHref = $(this).attr('href');
-			var href = getHref.split('/').pop();
-			if (href === link) {
-				$(this).parent().addClass('active');
-				$(this).parent().parent().parent().addClass('active');
-			}
+		const list = document.querySelectorAll(".committee__member--item p");
+		let listT = [];
+		list.forEach((item, index) => {
+			listT.push(item.outerText);
 		});
-	} else {
-		$(".navBar__item").removeClass("active");
+		for (var i = 0; i < listT.length; i++) {
+			listT[i] = listT[i].replace(",", "<br>");
+			$(".committee__member--item p").eq(i).html(listT[i]);
+		}
 	}
-}
-
-//google recaptcha
+	//active menu
+const activeLinkMenu = () => {
+		var link = "";
+		var url = window.location.pathname.split('/');
+		if (url.length !== 4) {
+			if (url[(url.length - 1)] == "") {
+				link = url[(url.length - 2)];
+			} else {
+				link = url[(url.length - 1)];
+			}
+			$('.navBar__item  a').each(function() {
+				var getHref = $(this).attr('href');
+				var href = getHref.split('/').pop();
+				if (href === link) {
+					$(this).parent().addClass('active');
+					$(this).parent().parent().parent().addClass('active');
+				}
+			});
+		} else {
+			$(".navBar__item").removeClass("active");
+		}
+	}
+	//google recaptcha
 const recaptchaGoogle = () => {
-	$('#research__form').click(function (e) {
+	$('#research__form').click(function(e) {
 		e.preventDefault();
-		grecaptcha.ready(function () {
+		grecaptcha.ready(function() {
 			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
 				action: 'submit'
-			}).then(function (token) {
+			}).then(function(token) {
 				$("#research__recaptcha").val(token);
 				// Add your logic to submit to your backend server here.
 			});
 		});
 	});
-	$('#contact__form').click(function (e) {
+	$('#contact__form').click(function(e) {
 		e.preventDefault();
-		grecaptcha.ready(function () {
+		grecaptcha.ready(function() {
 			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
 				action: 'submit'
-			}).then(function (token) {
+			}).then(function(token) {
 				$("#contact__recaptcha").val(token);
 				// Add your logic to submit to your backend server here.
 			});
@@ -815,41 +802,32 @@ const loadding = () => {
 	}, 1000);
 	document.querySelectorAll(".lib--list .lib--item").forEach((item) => {
 		item.addEventListener('click', () => {
-			$(".lib__page .tab-content").css("display", "none")
-			$(".lib__page .loading--spinner").css("display", "flex")
+			$(".lib__page .tab-content").css("display" , "none")
+			$(".lib__page .loading--spinner").css("display" , "flex")
 			setTimeout(() => {
-				$(".lib__page .tab-content").css("display", "block")
-				$(".lib__page .loading--spinner").css("display", "none")
+				$(".lib__page .tab-content").css("display" , "block")
+				$(".lib__page .loading--spinner").css("display" , "none")
 			}, 1000);
 		});
 	});
 }
 
 const SeeMoreMember = () => {
-	document.querySelectorAll(".member--item").forEach((item, index) => {
-		if (index > 11) {
+	document.querySelectorAll(".member--item").forEach((item , index) => {
+		if(index > 11) {
 			item.style.display = "none"
 		}
 	})
-	$(".member__page .see-more").click(() => {
-		document.querySelectorAll(".member--item").forEach((item, index) => {
+	$(".member__page .see-more").click( () => {
+		document.querySelectorAll(".member--item").forEach((item , index) => {
 			item.style.display = "block"
 		})
 	})
 }
 
 const OpenFileViewer = () => {
-	if(document.querySelector(".lib__page__document")) {
-		document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-			var temp =item.getAttribute("src")
-			item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
-		})
-	}
-	$(".document--popup-link").click(() => {
-		console.log($(this));
-	})
+	console.log($(".wrapper--content--iframe iframe").getAttribute("src"));
 }
-
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -886,8 +864,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();
-	//File Viewer
-	OpenFileViewer();
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
@@ -932,8 +908,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	SliderHomeMemberSection();
 	//recaptchaGoogle
 	recaptchaGoogle();
+	//PlayVideoHome
+	playVideoHome();
 	loadding();
 	SeeMoreMember();
+	OpenFileViewer();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
