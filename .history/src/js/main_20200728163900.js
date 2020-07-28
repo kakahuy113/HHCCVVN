@@ -105,7 +105,7 @@ const actionsLoginPage = () => {
         if (research__login__option) {
             research__login__option.classList.add('isLogin');
         }
-        $('.likeqwe').on('click', function(e) {
+        $('.likeqwe').on('click', function (e) {
             e.preventDefault();
             const url = $(this).attr('data-url');
         });
@@ -208,7 +208,7 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 800) {
             $('#back_to_top').addClass('show');
         } else {
@@ -216,7 +216,7 @@ const showBackToTop = () => {
         }
     });
 
-    $('#back_to_top').on('click', function(e) {
+    $('#back_to_top').on('click', function (e) {
         e.preventDefault();
         $('html,body').animate({
             scrollTop: 0,
@@ -233,7 +233,8 @@ const copyDataByAttr = () => {
         items__copy.forEach((itemCopy) => {
             var data = itemCopy.getAttribute('data-copy');
             if (data != null && data == itemPaste.getAttribute('data-paste')) {
-                itemPaste.textContent = itemCopy.textContent;
+                console.log(itemPaste.text);
+                itemPaste.text = itemCopy.text;
             }
         });
     });
@@ -284,12 +285,12 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-    $('.footer__forms .footer__submit').on('click', function(e) {
+    $('.footer__forms .footer__submit').on('click', function (e) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
         const formData = new FormData();
-        $('.footer__forms input').each(function() {
+        $('.footer__forms input').each(function () {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
@@ -307,10 +308,10 @@ const ajaxFormFooter = () => {
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function() {
+                beforeSend: function () {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -438,12 +439,12 @@ const SliderHomeMemberSection = () => {
 }
 
 const ajaxFormContact = () => {
-    $('.contact form .form-button').on('click', function(e) {
+    $('.contact form .form-button').on('click', function (e) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
         const formData = new FormData();
-        $('.contact form .form-group input').each(function() {
+        $('.contact form .form-group input').each(function () {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
@@ -461,10 +462,10 @@ const ajaxFormContact = () => {
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function() {
+                beforeSend: function () {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -481,7 +482,7 @@ const ajaxFormContact = () => {
 };
 
 const ajaxFormResearch = () => {
-    $('.btn.btn-subResearch button').on('click', function(e) {
+    $('.btn.btn-subResearch button').on('click', function (e) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
@@ -492,7 +493,7 @@ const ajaxFormResearch = () => {
         const valText = $(
             '.research__login--form form .form-group textarea'
         ).val();
-        $('.research__login--form form .form-group input').each(function() {
+        $('.research__login--form form .form-group input').each(function () {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
@@ -505,10 +506,10 @@ const ajaxFormResearch = () => {
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function() {
+                beforeSend: function () {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -534,25 +535,25 @@ const NewsAddClass = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-        $(".introduct__video--img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //playvideo
+    $(".introduct__video--img").click(function (e) {
+        e.preventDefault();
+        const id = $(".youtube-api").attr('id');
+        let url = $('#' + id).attr('src');
+        $(this).addClass('active');
+        $('#' + id).attr('src', url + "&autoplay=1");
+    });
+}
+//playvideo
 const playVideoHome = () => {
-        $(".swiper-slide .img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //responses bg introduce
+    $(".swiper-slide .img").click(function (e) {
+        e.preventDefault();
+        const id = $(".youtube-api").attr('id');
+        let url = $('#' + id).attr('src');
+        $(this).addClass('active');
+        $('#' + id).attr('src', url + "&autoplay=1");
+    });
+}
+//responses bg introduce
 const setHeightBgIntroduce = () => {
     let heightBgIntroduct = $('.introduct__topContent').outerHeight();
     $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
@@ -768,7 +769,7 @@ const activeLinkMenu = () => {
         } else {
             link = url[(url.length - 1)];
         }
-        $('.navBar__item  a').each(function() {
+        $('.navBar__item  a').each(function () {
             var getHref = $(this).attr('href');
             var href = getHref.split('/').pop();
             if (href === link) {
@@ -783,23 +784,23 @@ const activeLinkMenu = () => {
 
 //google recaptcha
 const recaptchaGoogle = () => {
-    $('#research__form').click(function(e) {
+    $('#research__form').click(function (e) {
         e.preventDefault();
-        grecaptcha.ready(function() {
+        grecaptcha.ready(function () {
             grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
                 action: 'submit'
-            }).then(function(token) {
+            }).then(function (token) {
                 $("#research__recaptcha").val(token);
                 // Add your logic to submit to your backend server here.
             });
         });
     });
-    $('#contact__form').click(function(e) {
+    $('#contact__form').click(function (e) {
         e.preventDefault();
-        grecaptcha.ready(function() {
+        grecaptcha.ready(function () {
             grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
                 action: 'submit'
-            }).then(function(token) {
+            }).then(function (token) {
                 $("#contact__recaptcha").val(token);
                 // Add your logic to submit to your backend server here.
             });

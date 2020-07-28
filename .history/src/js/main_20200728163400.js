@@ -230,10 +230,11 @@ const copyDataByAttr = () => {
     const items__copy = document.querySelectorAll('[data-copy]');
 
     items__paste.forEach((itemPaste) => {
+        console.log(itemPaste);
         items__copy.forEach((itemCopy) => {
             var data = itemCopy.getAttribute('data-copy');
             if (data != null && data == itemPaste.getAttribute('data-paste')) {
-                itemPaste.textContent = itemCopy.textContent;
+                itemPaste.text = itemCopy.text;
             }
         });
     });

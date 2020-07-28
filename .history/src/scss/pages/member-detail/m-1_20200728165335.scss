@@ -31,7 +31,7 @@
 }
 
 .member-detail__wrapper--content {
-    max-height: 467px;
+    max-height: 447px;
     overflow: hidden;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -51,7 +51,7 @@
         }
     }
     p {
-        // margin-bottom: 15px;
+        margin-bottom: 15px;
         verflow: hidden;
         display: -webkit-box;
         text-overflow: ellipsis;
@@ -64,6 +64,7 @@
             display: flex;
             &:last-child {
                 padding-bottom: 5px;
+                display: block;
             }
         }
         .info-icon {

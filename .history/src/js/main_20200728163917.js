@@ -233,7 +233,8 @@ const copyDataByAttr = () => {
         items__copy.forEach((itemCopy) => {
             var data = itemCopy.getAttribute('data-copy');
             if (data != null && data == itemPaste.getAttribute('data-paste')) {
-                itemPaste.textContent = itemCopy.textContent;
+                console.log(itemPaste.textContent);
+                itemPaste.text = itemCopy.text;
             }
         });
     });

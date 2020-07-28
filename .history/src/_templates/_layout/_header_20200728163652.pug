@@ -1,0 +1,97 @@
+header
+	.header__after
+	.container
+		.header__wrapper.container-1365px
+			.header__logo
+				a.headerLogo__link(href="index.html")
+					img.lazyload.blur-up.dekstop(data-src="./assets/logo.png", alt="")
+					img.lazyload.blur-up.mobile(data-src="./assets/logo-mobile.png", alt="")
+			.header__nav--top
+				.navtop__wrapper
+					.header__informations
+						.information__item
+							//- a.information__link(href="#" data-paste="website") đang cập nhật
+						.information__item
+							//- a.information__link(href="#" data-paste="email") đang cập nhật
+					.header__languages.language
+						.languages__item.item(data-language="vi")
+							a.languages__link(data_content--pc="Vietnamese" data_content--mobile="VIE" href="#") Vietnamese
+						.languages__item.item(data-language="en")
+							a.languages__link(data_content--pc="English" data_content--mobile="ENG" href="#") English
+					.header__login
+						// BUTTON SHOW POPUP LOGIN
+						.headerButtonLogin__wrapper
+							a.btn.btn-login(data-fancybox data-src="#form__login" data-options='{"touch" : false}' href="javascript:;")
+								h5.cl-main-2 Đăng nhập
+						// BLOCK POPUP LOGIN
+						.headerLogin__wrapper#form__login(style="display: none;")
+							.headerLogin__form
+								.headerLogin__header
+									.headerLogin__logo
+										img.lazyload.blur-up(data-src="./assets/logo.png", alt="LOGO")
+								.headerLogin__body
+									.headerLogin__item.btn-facebook
+										.item__icons
+											img.lazyload.blur-up.svg(data-src="./assets/icons/facebook-white.svg", alt="FACEBOOK")
+										.item__text
+											span Đăng nhập với Facebook
+									.headerLogin__item.btn-google
+										.item__icons
+											img.lazyload.blur-up.svg(data-src="./assets/icons/google-white.svg", alt="GOOGLE")
+										.item__text
+											span Đăng nhập với Google
+						// BLOCK INFO USER LOGGED
+						.headerLogged__wrapper
+							.headerLogged__img.ov-h
+								img.lazyload.blur-up.ofcv(data-src="./assets/avatar-default.png", alt="AVATAR")
+							.headerLogged__name
+								p.lcl.lcl-2 Nguyen Thi Thu Suong
+							.headerLogOut(messege-logout="Bạn đã đăng xuất !!!")
+								img.lazyload.blur-up(data-src="./assets/icons/logout.svg", alt="LOGOUT")
+			.header__nav--bottom
+				.navbottom__wrapper
+					.navBar(data-btn-back-content="Trở về")
+						.navBar__item
+							a.navBar__link(href="introduct.html") GIỚI THIỆU
+							.navBar
+								.navBar__item
+									a.navBar__link(href="introduct.html") Giới thiệu chung
+								.navBar__item
+									a.navBar__link(href="organization.html") Sơ đồ tổ chức
+								.navBar__item
+									a.navBar__link(href="decision.html") Quyết định thành lập
+								.navBar__item
+									a.navBar__link(href="rule.html") Điều lệ
+								.navBar__item
+									a.navBar__link(href="affiliated-units.html") Các đơn vị trực thuộc
+								.navBar__item
+									a.navBar__link(href="executive-committee.html") Ban chấp hành
+								.navBar__item
+									a.navBar__link(href="regular.html") Ban thường trực
+								.navBar__item
+									a.navBar__link(href="check.html") Ban kiểm tra
+						.navBar__item
+							a.navBar__link(href="news-events.html") TIN TỨC - SỰ KIỆN
+						.navBar__item
+							a.navBar__link(href="member.html") THÀNH VIÊN
+						.navBar__item
+							a.navBar__link(href="research.html") NGHIÊN CỨU - TRAO ĐỔI
+						.navBar__item
+							a.navBar__link(href="libary.html") THƯ VIỆN
+						.navBar__item
+							a.navBar__link(href="contact.html") LIÊN HỆ
+					.navBarHamburger__wrapper.mobile
+					.navSearch
+						.navSearch__wrapper
+							.navSearch__btn
+								.icon-search
+									img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
+								.icon-close
+									img.svg(data-src="./assets/icons/close.svg", alt="BUTTON SEARCH")
+							.navSearch__input
+								form(action="#")
+									.search-input
+										input(type="search" placeholder="Nhập để tìm kiếm")
+									.search-submit
+										button
+											img.svg(data-src="./assets/icons/search.svg", alt="BUTTON SEARCH")
