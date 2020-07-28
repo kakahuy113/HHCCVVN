@@ -259,27 +259,22 @@ const changeContentMobile = () => {
 
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
-    const namePage = document.querySelector('#js-page-verify');
-    const mainBanner = document.querySelector('.MainSlider__Banners');
-    if (namePage.className == "index-page") {
-        mainBanner.classList.add('isIndex');
-        return new Swiper('.MainSlider__Banners .swiper-container', {
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true,
-            },
-            speed: 1000,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.MainSlider__Banners .swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-        });
-    };
+    let mainBanner = new Swiper('.MainSlider__Banners .swiper-container', {
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true,
+        },
+        speed: 1000,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.MainSlider__Banners .swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+        },
+    });
 };
 
 // AJAX FORM FOOTER
@@ -360,6 +355,7 @@ const silderHomeImage = () => {
     });
 
     var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+        spaceBetween: 10,
         navigation: {
             nextEl: '.lib__images--right .swiper-button-next',
             prevEl: '.lib__images--right .swiper-button-prev',
@@ -375,7 +371,7 @@ const sliderHotnewsHome = () => {
     var swiper = new Swiper(".home--hotnews .swiper-container", {
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
         },
         simulateTouch: false
@@ -387,7 +383,7 @@ const sliderVideoBanner1 = () => {
     var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-1 .swiper-container", {
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
         },
         simulateTouch: false
@@ -399,20 +395,19 @@ const sliderVideoBanner2 = () => {
     var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
         },
         simulateTouch: false
     })
 }
-
 const SliderHomeMemberSection = () => {
     var slider = new Swiper(".home__member .swiper-container", {
         loop: true,
         slidesPerView: 6,
         spaceBetween: 30,
         autoplay: {
-            delay: 2500,
+            delay: 1500,
             disableOnInteraction: false,
         },
         breakpoints: {
@@ -436,7 +431,6 @@ const SliderHomeMemberSection = () => {
         simulateTouch: false,
     })
 }
-
 const ajaxFormContact = () => {
     $('.contact form .form-button').on('click', function(e) {
         e.preventDefault();
@@ -514,45 +508,66 @@ const ajaxFormResearch = () => {
                     _thisBtn.removeAttr('disabled');
                 },
             });
+        } else {
+
         }
     });
 };
 
-const NewsAddClass = () => {
-    if (document.querySelector('.news--item a')) {
-        var temp = document.querySelectorAll('.news--item');
-        temp.forEach((item) => {
-            item.addEventListener('click', () => {
-                temp.forEach(item => {
-                    item.classList.remove("active");
-                })
-                item.classList.add("active");
-            })
-        })
+const ajaxNews = () => {
+    if (document.querySelector('.news--item')) {
+        document.querySelector('.news--item').addEventListener('click', (e) => {
+            $.ajax({
+                url: 'get',
+                type: 'get',
+                data: 'something',
+                processData: false,
+                contentType: false,
+                success: (res) => {
+                    // console.log(res);
+                },
+                error: (res) => {
+                    // console.log(res);
+                },
+            });
+        });
+    }
+};
+
+const ajaxEvents = () => {
+    if (document.querySelector('.events--item')) {
+        document
+            .querySelector('.events--item')
+            .addEventListener('click', (e) => {
+                $.ajax({
+                    url: 'get',
+                    type: 'get',
+                    data: 'something',
+                    processData: false,
+                    contentType: false,
+                    success: (res) => {
+                        // console.log(res);
+                    },
+                    error: (res) => {
+                        // console.log(res);
+                    },
+                });
+            });
     }
 };
 
 //playvideo
 const playVideoIntroduct = () => {
-        $(".introduct__video--img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //playvideo
-const playVideoHome = () => {
-        $(".swiper-slide .img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //responses bg introduce
+    $(".introduct__video--img").click(function(e) {
+        e.preventDefault();
+        const id = $(".youtube-api").attr('id');
+        let url = $('#' + id).attr('src');
+        $(this).addClass('active');
+        $('#' + id).attr('src', url + "&autoplay=1");
+    });
+}
+
+//responses bg introduce
 const setHeightBgIntroduce = () => {
     let heightBgIntroduct = $('.introduct__topContent').outerHeight();
     $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
@@ -689,7 +704,6 @@ const randomCodePopupImage = () => {
             .attr('data-src', '#' + code[i]);
     }
 };
-
 //Ramdom code Popup Document
 const randomCodePopupDocument = () => {
     let count = $('.popup--document');
@@ -703,7 +717,6 @@ const randomCodePopupDocument = () => {
             .attr('data-src', '#' + code[i]);
     }
 };
-
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
     const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
@@ -744,44 +757,41 @@ const initializeLibImage__Slider_Popup = () => {
         });
     });
 };
-
 //down row content
 const downRowContent = () => {
-    const list = document.querySelectorAll(".committee__member--item p");
-    let listT = [];
-    list.forEach((item, index) => {
-        listT.push(item.outerText);
-    });
-    for (var i = 0; i < listT.length; i++) {
-        listT[i] = listT[i].replace(",", "<br>");
-        $(".committee__member--item p").eq(i).html(listT[i]);
-    }
-}
-
-//active menu
-const activeLinkMenu = () => {
-    var link = "";
-    var url = window.location.pathname.split('/');
-    if (url.length !== 4) {
-        if (url[(url.length - 1)] == "") {
-            link = url[(url.length - 2)];
-        } else {
-            link = url[(url.length - 1)];
-        }
-        $('.navBar__item  a').each(function() {
-            var getHref = $(this).attr('href');
-            var href = getHref.split('/').pop();
-            if (href === link) {
-                $(this).parent().addClass('active');
-                $(this).parent().parent().parent().addClass('active');
-            }
+        const list = document.querySelectorAll(".committee__member--item p");
+        let listT = [];
+        list.forEach((item, index) => {
+            listT.push(item.outerText);
         });
-    } else {
-        $(".navBar__item").removeClass("active");
+        for (var i = 0; i < listT.length; i++) {
+            listT[i] = listT[i].replace(",", "<br>");
+            $(".committee__member--item p").eq(i).html(listT[i]);
+        }
     }
-}
-
-//google recaptcha
+    //active menu
+const activeLinkMenu = () => {
+        var link = "";
+        var url = window.location.pathname.split('/');
+        if (url.length !== 4) {
+            if (url[(url.length - 1)] == "") {
+                link = url[(url.length - 2)];
+            } else {
+                link = url[(url.length - 1)];
+            }
+            $('.navBar__item  a').each(function() {
+                var getHref = $(this).attr('href');
+                var href = getHref.split('/').pop();
+                if (href === link) {
+                    $(this).parent().addClass('active');
+                    $(this).parent().parent().parent().addClass('active');
+                }
+            });
+        } else {
+            $(".navBar__item").removeClass("active");
+        }
+    }
+    //google recaptcha
 const recaptchaGoogle = () => {
     $('#research__form').click(function(e) {
         e.preventDefault();
@@ -808,49 +818,6 @@ const recaptchaGoogle = () => {
 
 }
 
-const loadding = () => {
-    $(".member__wrapper--inner .loading--spinner").css("display", "flex")
-    $(".member--list").css("display", "none")
-    setTimeout(() => {
-        $(".member--list").css("display", "flex")
-        $(".member__wrapper--inner .loading--spinner").css("display", "none")
-    }, 1000);
-    document.querySelectorAll(".lib--list .lib--item").forEach((item) => {
-        item.addEventListener('click', () => {
-            $(".lib__page .tab-content").css("display", "none")
-            $(".lib__page .loading--spinner").css("display", "flex")
-            setTimeout(() => {
-                $(".lib__page .tab-content").css("display", "block")
-                $(".lib__page .loading--spinner").css("display", "none")
-            }, 1000);
-        });
-    });
-}
-
-const SeeMoreMember = () => {
-    document.querySelectorAll(".member--item").forEach((item, index) => {
-        if (index > 11) {
-            item.style.display = "none"
-        }
-    })
-    $(".member__page .see-more").click(() => {
-        document.querySelectorAll(".member--item").forEach((item, index) => {
-            item.style.display = "block"
-        })
-    })
-}
-
-const OpenFileViewer = () => {
-    if (document.querySelector(".lib__page__document")) {
-        document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-            var temp = item.getAttribute("src")
-            item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
-        })
-    }
-    $(".document--popup-link").click(() => {
-        console.log($(this));
-    })
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     Cookie();
@@ -888,12 +855,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sliderHomeVideo();
     // HOme swiper Image
     silderHomeImage();
-    //File Viewer
-    OpenFileViewer();
     // Submit Contact Form
     ajaxFormContact();
     //Get News Content
-    NewsAddClass();
+    ajaxNews();
+    // Get Event Content
+    ajaxEvents();
     //AJAX get Libary Image
     ajaxGetLibImage();
     //AJAX get Libary Video
@@ -934,8 +901,6 @@ document.addEventListener('DOMContentLoaded', () => {
     SliderHomeMemberSection();
     //recaptchaGoogle
     recaptchaGoogle();
-    loadding();
-    SeeMoreMember();
     //TAB
     const Libary__Tab = new Tab('.lib__page .tab-container');
 });

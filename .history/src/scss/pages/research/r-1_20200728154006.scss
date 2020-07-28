@@ -86,11 +86,12 @@ section.Research {
     .research__list--item {
         padding: 54px;
         padding-bottom: 26px;
-        @media (max-width: 1719.98px) {
-            padding: 30px;
-        }
+        // @media (max-width: 1719.98px) {
+        //     padding-left: 10px;
+        // }
         @media (max-width: 1440.98px) {
             padding: 20px;
+            padding-left: 0px;
         }
         ul {
             list-style-type: none;
