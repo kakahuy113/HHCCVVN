@@ -122,7 +122,7 @@ const actionsLoginPage = () => {
 
                 },
                 success: (res) => {
-
+					
                 },
                 error: (res) => {
 
@@ -641,12 +641,14 @@ const ajaxGetLibDocument = () => {
                     loadToWaitRequest(true);
                 },
                 complete: () => {
-                    loadToWaitRequest(false);
+					loadToWaitRequest(false);
+					getSVGs();
                 },
                 success: (res) => {
-                    const item = res;
+                    const item = res.Result.Message;
                     const currentItem = $(".tab-content");
-                    currentItem.html(item);
+					currentItem.html(item);
+					
                 },
                 error: (res) => {
                     console.log(res);
@@ -867,25 +869,11 @@ const loadToWaitRequest = (boolean) => {
         if (boolean === true) {
             $(".lib__page .loading--spinner").css("display", "flex")
             $(".lib__page .tab-content").css("display", "none")
-                // setTimeout(() => {
-                //     $(".member--list").css("display", "flex")
-                //     $(".member__wrapper--inner .loading--spinner").css("display", "none")
-                // }, 1000);
         }
         if (boolean === false) {
             $(".lib__page .tab-content").css("display", "block")
             $(".lib__page .loading--spinner").css("display", "none")
         }
-        // document.querySelectorAll(".lib--list .lib--item").forEach((item) => {
-        // 	item.addEventListener('click', () => {
-        // 		$(".lib__page .tab-content").css("display", "none")
-        // 		$(".lib__page .loading--spinner").css("display", "flex")
-        // 		setTimeout(() => {
-        // 			$(".lib__page .tab-content").css("display", "block")
-        // 			$(".lib__page .loading--spinner").css("display", "none")
-        // 		}, 1000);
-        // 	});
-        // });
     }
     // See All Member
 const seeMoreMember = () => {
@@ -935,10 +923,10 @@ const customPopupDocument = () => {
 const stateOfLikeButton = () => {
         var likeBtn = $(".lAS__listItem.like")
         var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
-        if (stateOfBtn = false) {
+        if (stateOfBtn == false) {
             $(likeBtn).find("h4").html("Thích <span>0</span>")
         }
-        if (stateOfBtn = true) {
+        if (stateOfBtn == true) {
             $(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
         }
     }
