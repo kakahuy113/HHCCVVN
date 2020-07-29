@@ -551,71 +551,85 @@ const setHeightBgIntroduce = () => {
 // Ajax Get Lib Image
 const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
-		const url = $('.item-image--tab').attr('data-url');
-		loadToWaitRequest(true);
-		$.ajax({
-			type: 'get',
-			url: "../api/test.json",
-			processData: false,
-			contentType: false,
-			complete: () => {
-				loadToWaitRequest(false);
-			},
-			success: (res) => {
-				console.log(res);
-			},
-			error: (res) => {
-				// console.log(res);
-			},
-		});
+		$('.item-image--tab').click(() => {
+			console.log("get ajax image tab");
+			const url = $('.item-image--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+				},
+				success: (res) => {
+					if(res) {
+						$(".lib__page__img .slider--popup_main .swiper-wrapper").append(res.Result)
+						$(".lib__page__img .slider--popup_thumb .swiper-wrapper").append(res.Result)
+					}
+				},
+				error: (res) => {
+					// console.log(res);
+				},
+			});
+		})
 	}
 };
 // Ajax Get Lib Video
 const ajaxGetLibVideo = () => {
 	if ($('.item-video--tab')) {
-		const url = $('.item-video--tab').attr('data-url');
-		$.ajax({
-			type: 'get',
-			url: url,
-			processData: false,
-			contentType: false,
-			beforeSend: () => {
-				loadToWaitRequest(true);
-			},
-			complete: () => {
-				loadToWaitRequest(false);
-			},
-			success: (res) => {
-				// console.log(res);
-			},
-			error: (res) => {
-				// console.log(res);
-			},
-		});
+		$('.item-video--tab').click(() => {
+			console.log("get ajax video tab");
+			const url = $('.item-video--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+				},
+				success: (res) => {
+					// console.log(res);
+				},
+				error: (res) => {
+					// console.log(res);
+				},
+			});
+		})
 	}
 };
 // Ajax Get Lib Document
 const ajaxGetLibDocument = () => {
 	if ($('.item-document--tab')) {
-		const url = $('.item-document--tab').attr('data-url');
-		$.ajax({
-			type: 'get',
-			url: url,
-			processData: false,
-			contentType: false,
-			beforeSend: () => {
-				loadToWaitRequest(true);
-			},
-			complete: () => {
-				loadToWaitRequest(false);
-			},
-			success: (res) => {
-				// console.log(res);
-			},
-			error: (res) => {
-				// console.log(res);
-			}
-		});
+		$('.item-document--tab').click(() => {
+			console.log("get ajax document tab");
+			const url = $('.item-document--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+				},
+				success: (res) => {
+					// console.log(res);
+				},
+				error: (res) => {
+					// console.log(res);
+				}
+			});
+		})
 	}
 };
 // Ajax Get all Lib Image
