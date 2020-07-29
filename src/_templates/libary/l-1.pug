@@ -27,7 +27,7 @@ section.lib__page
 					.content(tab-id="item-1").image-content-tab
 						.lib__page__img
 							.content--gallery.no-gutters.p-0
-								-for(var i = 0; i< 12; i++)	
+								-for(var i = 0; i< 12; i++)
 									.item-gallery.ov-h
 										a.item-gallery--popup(data-fancybox, data-src="", data-options='{"touch" : false}'  href="javascript:;")
 											img(src=`./assets/images/lib-image/item.png`, alt="something")
@@ -86,34 +86,33 @@ section.lib__page
 								.document--inner
 									h3.title xem và download tài liệu hệ thống văn bản
 									p.lcl.lcl-2.desc Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Dol Aenean massa. Cum sociis natoque penatibus et...
-								.document--inner--content
-									.row
-										-for(var i = 0; i< 10;i ++)
-											div.item__wrapper.col-6
-												.item__wrapper--inner
-														div.book-icon
-															img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
-														div.title-desc
-															.dowload-document-content
-																a.document--popup-link(data-fancybox, data-src="", href="javascript:;")
-																	h3.tt-u.lcl.lcl-1 Lorem ipsum dolor sit amet,  adipiscing elit.
-																p 
-																	!= "<span>Ngày cập nhật:</span> 10/01/20 "
-														div.download-document--btn
-															a(href="./downloads/test.pdf" download)
-																img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
-														.popup--document(style='display: none;')
-															.inner--document
-																h2.tt-u Hệ Thống Văn Bản
-																a(href="./downloads/test.pdf", download) Dowload tài liệu
-																	img.lazyload.blur-up(data-src="./assets/images/lib-image/dowload-icon.png", alt="something")
-																.wrapper--content--iframe.ov-h
-																	.top-header-bg
-																	.wrapper--content
-																		p.header--content lorem ipsum dolor sit amet adipiscing elit - 29/02/2020 
-																		h3.title.tt-u Lorem Ipsum
-																		h6.sub-title.tt-u Dolor Sit Amet
-																		iframe(src='http://207.148.69.88:8003/assets/bao-long-update.pdf&embedded=true',  width="100%" ,height="500px")
+								.document--inner--content.row
+									-for(var i = 0; i< 10;i ++)
+										div.item__wrapper.col-6
+											.item__wrapper--inner
+													div.book-icon
+														img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
+													div.title-desc
+														.dowload-document-content
+															a.document--popup-link(data-fancybox, data-src="#popup--document",data-url="http://207.148.69.88:8003/assets/bao-long-update.pdf&embedded=true", href="javascript:;")
+																h3.tt-u.lcl.lcl-1 Lorem ipsum dolor sit amet,  adipiscing elit.
+															p 
+																!= "<span>Ngày cập nhật:</span> 10/01/20 "
+													div.download-document--btn
+														a(href="./downloads/test.pdf" download)
+															img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
+									#popup--document(style='display: none;')
+										.inner--document
+											h2.tt-u Hệ Thống Văn Bản
+											a(href="./downloads/test.pdf", download) Dowload tài liệu
+												img.lazyload.blur-up(data-src="./assets/images/lib-image/dowload-icon.png", alt="something")
+											.wrapper--content--iframe.ov-h
+												.top-header-bg
+												.wrapper--content
+													p.header--content lorem ipsum dolor sit amet adipiscing elit - 29/02/2020 
+													h3.title.tt-u Lorem Ipsum
+													h6.sub-title.tt-u Dolor Sit Amet
+													iframe(src="",  width="100%" ,height="500px")
 						.see-more
 							.see-more-document(data-url="")
 								img(src=`./assets/images/member/read-more.png`, alt="something")

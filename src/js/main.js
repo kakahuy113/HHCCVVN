@@ -6,6 +6,8 @@ import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
 import AccountController from './lib/AccountController';
+import { utimes } from 'graceful-fs';
+import { post } from 'jquery';
 
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
@@ -105,9 +107,28 @@ const actionsLoginPage = () => {
 		if (research__login__option) {
 			research__login__option.classList.add('isLogin');
 		}
-		$('.likeqwe').on('click', function(e) {
+		$('.news__events--detail .lAS__listItem.like').on('click', function(e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
+			$.ajax({
+				type: 'post',
+				url: url,
+				data: {
+					isLike: true,
+					accountID: 1234 
+				},
+				contentType: false,
+				processData: false,
+				beforeSend:() => {
+
+				},
+				success: () => {
+
+				},
+				error: () => {
+
+				}
+			})
 		});
 	} else {
 		// ACTION FOR ISLOGIN = FALSE
@@ -566,13 +587,12 @@ const ajaxGetLibImage = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					if(res) {
-						$(".lib__page__img .slider--popup_main .swiper-wrapper").append(res.Result)
-						$(".lib__page__img .slider--popup_thumb .swiper-wrapper").append(res.Result)
-					}
+					const itemGallery = $(res).find(".content--gallery");
+					const currentItem = $(".image-content-tab .content--gallery");
+					currentItem.html(itemGallery.html());
 				},
 				error: (res) => {
-					// console.log(res);
+					console.log(res);
 				},
 			});
 		})
@@ -596,10 +616,12 @@ const ajaxGetLibVideo = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					// console.log(res);
+					const itemVideo = $(res).find(".content--video");
+					const currentItem = $(".video-content-tab .content--video");
+					currentItem.html(itemVideo.html());
 				},
 				error: (res) => {
-					// console.log(res);
+					console.log(res);
 				},
 			});
 		})
@@ -623,10 +645,12 @@ const ajaxGetLibDocument = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					// console.log(res);
+					const itemDocument = $(res).find(".document--inner--content");
+					const currentItem = $(".document-content-tab .document--inner--content");
+					currentItem.html(itemDocument.html());
 				},
 				error: (res) => {
-					// console.log(res);
+					console.log(res);
 				}
 			});
 		})
@@ -646,10 +670,12 @@ const ajaxGetMoreLibImage = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				// console.log(res);
+				const itemGallery = $(res).find(".content--gallery");
+				const currentItem = $(".image-content-tab .content--gallery");
+				currentItem.html(itemGallery.html());
 			},
 			error: (res) => {
-				// console.log(res);
+				console.log(res);
 			},
 		});
 	});
@@ -670,10 +696,12 @@ const ajaxGetMoreLibVideo = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				// console.log(res);
+				const itemVideo = $(res).find(".content--video");
+				const currentItem = $(".video-content-tab .content--video");
+				currentItem.html(itemVideo.html());
 			},
 			error: (res) => {
-				// console.log(res);
+				console.log(res);
 			},
 		});
 	});
@@ -694,10 +722,12 @@ const ajaxGetMoreLibDocument = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				// console.log(res);
+				const itemDocument = $(res).find(".document--inner--content");
+				const currentItem = $(".document-content-tab .document--inner--content");
+				currentItem.html(itemDocument.html());
 			},
 			error: (res) => {
-				// console.log(res);
+				console.log(res);
 			},
 		});
 	});
@@ -729,19 +759,6 @@ const randomCodePopupImage = () => {
 	}
 };
 
-//Ramdom code Popup Document
-const randomCodePopupDocument = () => {
-	let count = $('.popup--document');
-	var i,
-		code = [];
-	for (i = 0; i < count.length; i++) {
-		code[i] = '_' + Math.random().toString(36).substr(2, 9);
-		$('.popup--document').eq(i).attr('id', code[i]);
-		$('.document--popup-link')
-			.eq(i)
-			.attr('data-src', '#' + code[i]);
-	}
-};
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
@@ -903,6 +920,19 @@ const openFileViewer = () => {
 		console.log($(this));
 	})
 }
+//Popup Document Lib 
+const customPopupDocument = () => {
+	if(document.querySelector(".lib__page")) {
+		var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
+		listDocument.forEach(item => {
+			item.addEventListener("click",  ()=> {
+				const url = item.getAttribute("data-url");
+				$("#popup--document iframe").attr("src" , `${url}`);
+				openFileViewer();
+			})
+		})
+	}
+}
 
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -940,8 +970,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();
-	//File Viewer Document Lib
-	openFileViewer();
+	// //File Viewer Document Lib
+	// openFileViewer();
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
@@ -970,8 +1000,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initializeLibImage__Slider_Popup();
 	//RandomCodePopUpImage
 	randomCodePopupImage();
-	//Random Code Popup Document
-	randomCodePopupDocument();
+	// //Random Code Popup Document
+	// randomCodePopupDocument();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
@@ -988,6 +1018,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	recaptchaGoogle();
 	//See All Member
 	seeMoreMember();
+	customPopupDocument();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
