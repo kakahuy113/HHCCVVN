@@ -59,15 +59,15 @@
 		margin-left: 0;
 		margin-top: 10px;
 	}
+
+	+.footer__forms {
+		margin-top: 15px;
+	}
 }
 
 .footer__form-group {
 	display: flex;
 	flex-wrap: wrap;
-
-	+.footer__form-group {
-		margin-top: 15px;
-	}
 }
 
 .footer__label {
