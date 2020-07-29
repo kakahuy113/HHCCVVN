@@ -105,7 +105,7 @@ const actionsLoginPage = () => {
 		if (research__login__option) {
 			research__login__option.classList.add('isLogin');
 		}
-		$('.likeqwe').on('click', function(e) {
+		$('.likeqwe').on('click', function (e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
 		});
@@ -208,7 +208,7 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 		if ($(this).scrollTop() > 800) {
 			$('#back_to_top').addClass('show');
 		} else {
@@ -216,7 +216,7 @@ const showBackToTop = () => {
 		}
 	});
 
-	$('#back_to_top').on('click', function(e) {
+	$('#back_to_top').on('click', function (e) {
 		e.preventDefault();
 		$('html,body').animate({
 			scrollTop: 0,
@@ -284,12 +284,12 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-	$('.footer__forms .footer__submit').on('click', function(e) {
+	$('.footer__forms .footer__submit').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
-		$('.footer__forms input').each(function() {
+		$('.footer__forms input').each(function () {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -307,10 +307,10 @@ const ajaxFormFooter = () => {
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function() {
+				beforeSend: function () {
 					_thisBtn.attr('disabled', 'disabled');
 				},
-				success: function(res) {
+				success: function (res) {
 					alert(`${res.Message}`);
 					window.location.reload();
 					_thisBtn.removeAttr('disabled');
@@ -372,7 +372,7 @@ const silderHomeImage = () => {
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-	var swiper = new Swiper(".home--hotnews .swiper-container", {
+	var swiper = new Swiper(".hot-news-banner .swiper-container", {
 		loop: true,
 		autoplay: {
 			delay: 2500,
@@ -438,12 +438,12 @@ const SliderHomeMemberSection = () => {
 }
 
 const ajaxFormContact = () => {
-	$('.contact form .form-button').on('click', function(e) {
+	$('.contact form .form-button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
-		$('.contact form .form-group input').each(function() {
+		$('.contact form .form-group input').each(function () {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -461,10 +461,10 @@ const ajaxFormContact = () => {
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function() {
+				beforeSend: function () {
 					_thisBtn.attr('disabled', 'disabled');
 				},
-				success: function(res) {
+				success: function (res) {
 					alert(`${res.Message}`);
 					window.location.reload();
 					_thisBtn.removeAttr('disabled');
@@ -481,7 +481,7 @@ const ajaxFormContact = () => {
 };
 
 const ajaxFormResearch = () => {
-	$('.btn.btn-subResearch button').on('click', function(e) {
+	$('.btn.btn-subResearch button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr('data-url');
@@ -492,7 +492,7 @@ const ajaxFormResearch = () => {
 		const valText = $(
 			'.research__login--form form .form-group textarea'
 		).val();
-		$('.research__login--form form .form-group input').each(function() {
+		$('.research__login--form form .form-group input').each(function () {
 			const name = $(this).attr('name');
 			const value = $(this).val();
 			formData.append(name, value);
@@ -505,10 +505,10 @@ const ajaxFormResearch = () => {
 				data: formData,
 				processData: false,
 				contentType: false,
-				beforeSend: function() {
+				beforeSend: function () {
 					_thisBtn.attr('disabled', 'disabled');
 				},
-				success: function(res) {
+				success: function (res) {
 					alert(`${res.Message}`);
 					window.location.reload();
 					_thisBtn.removeAttr('disabled');
@@ -566,7 +566,7 @@ const ajaxGetLibImage = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					if(res) {
+					if (res) {
 						$(".lib__page__img .slider--popup_main .swiper-wrapper").append(res.Result)
 						$(".lib__page__img .slider--popup_thumb .swiper-wrapper").append(res.Result)
 					}
@@ -807,7 +807,7 @@ const activeLinkMenu = () => {
 		} else {
 			link = url[(url.length - 1)];
 		}
-		$('.navBar__item  a').each(function() {
+		$('.navBar__item  a').each(function () {
 			var getHref = $(this).attr('href');
 			var href = getHref.split('/').pop();
 			if (href === link) {
@@ -822,23 +822,23 @@ const activeLinkMenu = () => {
 
 //google recaptcha
 const recaptchaGoogle = () => {
-	$('#research__form').click(function(e) {
+	$('#research__form').click(function (e) {
 		e.preventDefault();
-		grecaptcha.ready(function() {
+		grecaptcha.ready(function () {
 			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
 				action: 'submit'
-			}).then(function(token) {
+			}).then(function (token) {
 				$("#research__recaptcha").val(token);
 				// Add your logic to submit to your backend server here.
 			});
 		});
 	});
-	$('#contact__form').click(function(e) {
+	$('#contact__form').click(function (e) {
 		e.preventDefault();
-		grecaptcha.ready(function() {
+		grecaptcha.ready(function () {
 			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
 				action: 'submit'
-			}).then(function(token) {
+			}).then(function (token) {
 				$("#contact__recaptcha").val(token);
 				// Add your logic to submit to your backend server here.
 			});
@@ -848,7 +848,7 @@ const recaptchaGoogle = () => {
 }
 // Loading For Request
 const loadToWaitRequest = (boolean) => {
-	if(boolean === true) {
+	if (boolean === true) {
 		$(".lib__page .loading--spinner").css("display", "flex")
 		$(".lib__page .tab-content").css("display", "none")
 		// setTimeout(() => {
@@ -856,7 +856,7 @@ const loadToWaitRequest = (boolean) => {
 		//     $(".member__wrapper--inner .loading--spinner").css("display", "none")
 		// }, 1000);
 	}
-	if(boolean === false ) {
+	if (boolean === false) {
 		$(".lib__page .tab-content").css("display", "block")
 		$(".lib__page .loading--spinner").css("display", "none")
 	}
@@ -873,9 +873,9 @@ const loadToWaitRequest = (boolean) => {
 }
 // See All Member
 const seeMoreMember = () => {
-	if(document.querySelector(".member__page")) {
+	if (document.querySelector(".member__page")) {
 		var listMember = document.querySelectorAll(".member--item")
-		if(listMember.length > 12) {
+		if (listMember.length > 12) {
 			var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
 			$(".member__wrapper--inner").append(temp)
 		}
@@ -893,9 +893,9 @@ const seeMoreMember = () => {
 }
 // doc file Viewer Lib Document
 const openFileViewer = () => {
-	if(document.querySelector(".lib__page__document")) {
+	if (document.querySelector(".lib__page__document")) {
 		document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-			var temp =item.getAttribute("src")
+			var temp = item.getAttribute("src")
 			item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
 		})
 	}
