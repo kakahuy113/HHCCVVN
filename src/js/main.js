@@ -605,7 +605,7 @@ const ajaxGetLibVideo = () => {
 			const url = $('.item-video--tab').attr('data-url');
 			$.ajax({
 				type: 'get',
-				url: " 192.168.0.104/get-gallery?type=2",
+				url: url,
 				processData: false,
 				contentType: false,
 				beforeSend: () => {
@@ -661,7 +661,7 @@ const ajaxGetMoreLibImage = () => {
 		const url = $('.see-more-images').attr('data-url');
 		$.ajax({
 			type: 'get',
-			url: '../api/test.json',
+			url: url,
 			beforeSend: () => {
 				loadToWaitRequest(true);
 			},
@@ -978,8 +978,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderHomeVideo();
 	// HOme swiper Image
 	silderHomeImage();
-	// //File Viewer Document Lib
-	// openFileViewer();
 	// Submit Contact Form
 	ajaxFormContact();
 	//Get News Content
@@ -1008,8 +1006,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	initializeLibImage__Slider_Popup();
 	//RandomCodePopUpImage
 	randomCodePopupImage();
-	// //Random Code Popup Document
-	// randomCodePopupDocument();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
