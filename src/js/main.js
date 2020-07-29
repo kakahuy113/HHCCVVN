@@ -110,22 +110,22 @@ const actionsLoginPage = () => {
 		$('.news__events--detail .lAS__listItem.like').on('click', function(e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
+			const isLike = $(this).attr('isLike');
 			$.ajax({
 				type: 'post',
 				url: url,
 				data: {
-					isLike: true,
-					accountID: 1234 
+					isLike: isLike,
 				},
 				contentType: false,
 				processData: false,
 				beforeSend:() => {
 
 				},
-				success: () => {
+				success: (res) => {
 
 				},
-				error: () => {
+				error: (res) => {
 
 				}
 			})
@@ -587,8 +587,8 @@ const ajaxGetLibImage = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemGallery = $(res).find(".content--gallery");
-					const currentItem = $(".image-content-tab .content--gallery");
+					const itemGallery = $(res).find(".image-content-tab");
+					const currentItem = $(".tab-content .image-content-tab");
 					currentItem.html(itemGallery.html());
 				},
 				error: (res) => {
@@ -616,8 +616,8 @@ const ajaxGetLibVideo = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemVideo = $(res).find(".content--video");
-					const currentItem = $(".video-content-tab .content--video");
+					const itemVideo = $(res).find(".video-content-tab");
+					const currentItem = $(".tab-content .video-content-tab");
 					currentItem.html(itemVideo.html());
 				},
 				error: (res) => {
@@ -645,8 +645,8 @@ const ajaxGetLibDocument = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemDocument = $(res).find(".document--inner--content");
-					const currentItem = $(".document-content-tab .document--inner--content");
+					const itemDocument = $(res).find(".document-content-tab");
+					const currentItem = $(".tab-content .document-content-tab");
 					currentItem.html(itemDocument.html());
 				},
 				error: (res) => {
@@ -670,8 +670,8 @@ const ajaxGetMoreLibImage = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemGallery = $(res).find(".content--gallery");
-				const currentItem = $(".image-content-tab .content--gallery");
+				const itemGallery = $(res).find(".image-content-tab");
+				const currentItem = $(".tab-content .image-content-tab");
 				currentItem.html(itemGallery.html());
 			},
 			error: (res) => {
@@ -696,8 +696,8 @@ const ajaxGetMoreLibVideo = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemVideo = $(res).find(".content--video");
-				const currentItem = $(".video-content-tab .content--video");
+				const itemVideo = $(res).find(".video-content-tab");
+				const currentItem = $(".tab-content .video-content-tab");
 				currentItem.html(itemVideo.html());
 			},
 			error: (res) => {
@@ -722,9 +722,9 @@ const ajaxGetMoreLibDocument = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemDocument = $(res).find(".document--inner--content");
-				const currentItem = $(".document-content-tab .document--inner--content");
-				currentItem.html(itemDocument.html());
+				const itemVideo = $(res).find(".video-content-tab");
+					const currentItem = $(".tab-content .video-content-tab");
+					currentItem.html(itemVideo.html());
 			},
 			error: (res) => {
 				console.log(res);
@@ -933,7 +933,16 @@ const customPopupDocument = () => {
 		})
 	}
 }
-
+const stateOfLikeButton = () => {
+	var likeBtn = $(".lAS__listItem.like")
+	var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
+	if(stateOfBtn = false) {
+		$(likeBtn).find("h4").html("Thích <span>0</span>")
+	}
+	if(stateOfBtn = true) {
+		$(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
+	}
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -1018,7 +1027,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	recaptchaGoogle();
 	//See All Member
 	seeMoreMember();
+	//Popup Document
 	customPopupDocument();
+	//state of Like Btn
+	stateOfLikeButton();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
