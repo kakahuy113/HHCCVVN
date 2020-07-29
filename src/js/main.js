@@ -599,32 +599,32 @@ const ajaxGetLibImage = () => {
 };
 // Ajax Get Lib Video
 const ajaxGetLibVideo = () => {
-    if ($('.item-video--tab')) {
-        $('.item-video--tab').click(() => {
-            console.log("get ajax video tab");
-            const url = $('.item-video--tab').attr('data-url');
-            $.ajax({
-                type: 'get',
-                url: " 192.168.0.104/get-gallery?type=2",
-                processData: false,
-                contentType: false,
-                beforeSend: () => {
-                    loadToWaitRequest(true);
-                },
-                complete: () => {
-                    loadToWaitRequest(false);
-                },
-                success: (res) => {
-                    const item = res;
-                    const currentItem = $(".tab-content");
-                    currentItem.html(item);
-                },
-                error: (res) => {
-                    console.log(res);
-                },
-            });
-        })
-    }
+	if ($('.item-video--tab')) {
+		$('.item-video--tab').click(() => {
+			console.log("get ajax video tab");
+			const url = $('.item-video--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+				},
+				success: (res) => {
+					const item =res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
+		})
+	}
 };
 // Ajax Get Lib Document
 const ajaxGetLibDocument = () => {
@@ -657,27 +657,27 @@ const ajaxGetLibDocument = () => {
 };
 // Ajax Get all Lib Image
 const ajaxGetMoreLibImage = () => {
-    $('.see-more-images').click(() => {
-        const url = $('.see-more-images').attr('data-url');
-        $.ajax({
-            type: 'get',
-            url: '../api/test.json',
-            beforeSend: () => {
-                loadToWaitRequest(true);
-            },
-            complete: () => {
-                loadToWaitRequest(false);
-            },
-            success: (res) => {
-                const item = res;
-                const currentItem = $(".tab-content");
-                currentItem.html(item);
-            },
-            error: (res) => {
-                console.log(res);
-            },
-        });
-    });
+	$('.see-more-images').click(() => {
+		const url = $('.see-more-images').attr('data-url');
+		$.ajax({
+			type: 'get',
+			url: url,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+			},
+			success: (res) => {
+				const item =res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
 };
 // Ajax Get all Lib Video
 const ajaxGetMoreLibVideo = () => {
@@ -949,97 +949,93 @@ const getBreadcrumbTitle = () => {
     $(".pagesBanner__title h1").text(title);
 }
 document.addEventListener('DOMContentLoaded', () => {
-    Cookie();
-    getSVGs();
-    Loading();
-    // COMMON CONTROLLER
-    CommonController();
-    // ACCOUNT CONTROLLER
-    AccountController();
-    // MAIN BANNER WEBSITE
-    initMainBanner();
-    // INIT Smooth Scrollbar
-    initSmoothScrollbar();
-    // AJAX FORM FOOTER
-    ajaxFormFooter();
-    // OPEN TARGET LINK FOOTER
-    openTargetLinkFooter();
-    // INIT CLASS SUB MENU
-    initClassSubMenu();
-    // INIT ELEMENT BUTTON BACK SUB MENU
-    initElementButtonBackSubMenu();
-    // SHOW SUB MENU MOBILE
-    showSubMenuMobile();
-    // SHOW INPUT SEARCH
-    showInputSearch();
-    // CHECK LOGIN
-    actionsLoginPage();
-    // SHOW BACK TO TOP
-    showBackToTop();
-    // COPY DATA BY ATTR
-    copyDataByAttr();
-    // ACTIVE LANGGUAGE
-    activeLanguage();
-    // HOme swiper Video
-    sliderHomeVideo();
-    // HOme swiper Image
-    silderHomeImage();
-    // //File Viewer Document Lib
-    // openFileViewer();
-    // Submit Contact Form
-    ajaxFormContact();
-    //Get News Content
-    NewsAddClass();
-    //AJAX get Libary Image
-    ajaxGetLibImage();
-    //AJAX get Libary Video
-    ajaxGetLibVideo();
-    //AJAX gget Libary document
-    ajaxGetLibDocument();
-    // Ajax get more images
-    ajaxGetMoreLibImage();
-    // Ajax get more video
-    ajaxGetMoreLibVideo();
-    // Ajax get more document
-    ajaxGetMoreLibDocument();
-    //play video
-    playVideoIntroduct();
-    //setHeightBgIntroduce
-    setHeightBgIntroduce();
-    //GET
-    ajaxFormResearch();
-    // AddClass
-    AddClassToLibDocument();
-    //  PopupSlider Image TAb
-    initializeLibImage__Slider_Popup();
-    //RandomCodePopUpImage
-    randomCodePopupImage();
-    // //Random Code Popup Document
-    // randomCodePopupDocument();
-    //downRowContent
-    downRowContent();
-    //activeLinkMenu
-    activeLinkMenu();
-    //Swiper Home banner
-    sliderHotnewsHome();
-    //Swiper home lib section
-    sliderVideoBanner1();
-    //Swiper home lib section 2
-    sliderVideoBanner2();
-    //Swiper home member section
-    SliderHomeMemberSection();
-    //recaptchaGoogle
-    recaptchaGoogle();
-    //See All Member
-    seeMoreMember();
-    //Popup Document
-    customPopupDocument();
-    //state of Like Btn
-    stateOfLikeButton();
-    //getBreadcrumbTitle
+	Cookie();
+	getSVGs();
+	Loading();
+	// COMMON CONTROLLER
+	CommonController();
+	// ACCOUNT CONTROLLER
+	AccountController();
+	// MAIN BANNER WEBSITE
+	initMainBanner();
+	// INIT Smooth Scrollbar
+	initSmoothScrollbar();
+	// AJAX FORM FOOTER
+	ajaxFormFooter();
+	// OPEN TARGET LINK FOOTER
+	openTargetLinkFooter();
+	// INIT CLASS SUB MENU
+	initClassSubMenu();
+	// INIT ELEMENT BUTTON BACK SUB MENU
+	initElementButtonBackSubMenu();
+	// SHOW SUB MENU MOBILE
+	showSubMenuMobile();
+	// SHOW INPUT SEARCH
+	showInputSearch();
+	// CHECK LOGIN
+	actionsLoginPage();
+	// SHOW BACK TO TOP
+	showBackToTop();
+	// COPY DATA BY ATTR
+	copyDataByAttr();
+	// ACTIVE LANGGUAGE
+	activeLanguage();
+	// HOme swiper Video
+	sliderHomeVideo();
+	// HOme swiper Image
+	silderHomeImage();
+	// Submit Contact Form
+	ajaxFormContact();
+	//Get News Content
+	NewsAddClass();
+	//AJAX get Libary Image
+	ajaxGetLibImage();
+	//AJAX get Libary Video
+	ajaxGetLibVideo();
+	//AJAX gget Libary document
+	ajaxGetLibDocument();
+	// Ajax get more images
+	ajaxGetMoreLibImage();
+	// Ajax get more video
+	ajaxGetMoreLibVideo();
+	// Ajax get more document
+	ajaxGetMoreLibDocument();
+	//play video
+	playVideoIntroduct();
+	//setHeightBgIntroduce
+	setHeightBgIntroduce();
+	//GET
+	ajaxFormResearch();
+	// AddClass
+	AddClassToLibDocument();
+	//  PopupSlider Image TAb
+	initializeLibImage__Slider_Popup();
+	//RandomCodePopUpImage
+	randomCodePopupImage();
+	//downRowContent
+	downRowContent();
+	//activeLinkMenu
+	activeLinkMenu();
+	//Swiper Home banner
+	sliderHotnewsHome();
+	//Swiper home lib section
+	sliderVideoBanner1();
+	//Swiper home lib section 2
+	sliderVideoBanner2();
+	//Swiper home member section
+	SliderHomeMemberSection();
+	//recaptchaGoogle
+	recaptchaGoogle();
+	//See All Member
+	seeMoreMember();
+	//Popup Document
+	customPopupDocument();
+	//state of Like Btn
+	stateOfLikeButton();
+	//getBreadcrumbTitle
     getBreadcrumbTitle();
-    //TAB
-    const Libary__Tab = new Tab('.lib__page .tab-container');
+	//TAB
+	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 window.addEventListener('resize', () => {
