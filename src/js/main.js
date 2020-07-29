@@ -228,20 +228,20 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 800) {
-            $('#back_to_top').addClass('show');
-        } else {
-            $('#back_to_top').removeClass('show');
-        }
-    });
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 800) {
+			$('#back_to_top').addClass('show');
+		} else {
+			$('#back_to_top').removeClass('show');
+		}
+	});
 
-    $('#back_to_top').on('click', function(e) {
-        e.preventDefault();
-        $('html,body').animate({
-            scrollTop: 0,
-        });
-    });
+	$('#back_to_top').on('click', function (e) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
 };
 
 // COPY DATA BY ATTR
@@ -304,46 +304,46 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-    $('.footer__forms .footer__submit').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        $('.footer__forms input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
+	$('.footer__forms .footer__submit').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		$('.footer__forms input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
 
-        if ($('.footer__forms form').valid() === true) {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    _thisBtn.attr('disabled', 'disabled');
-                },
-                success: function(res) {
-                    alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
-                },
-            });
-        } else {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-        }
-    });
+		if ($('.footer__forms form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		} else {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+		}
+	});
 };
 
 // OPEN TARGET LINK FOOTER
@@ -392,14 +392,14 @@ const silderHomeImage = () => {
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-    var swiper = new Swiper(".home--hotnews .swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        simulateTouch: false
-    })
+	var swiper = new Swiper(".hot-news-banner .swiper-container", {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		simulateTouch: false
+	})
 }
 
 //Swiper banner design home 1
