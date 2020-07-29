@@ -6,8 +6,7 @@ import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
 import AccountController from './lib/AccountController';
-import { utimes } from 'graceful-fs';
-import { post } from 'jquery';
+
 
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
@@ -587,9 +586,9 @@ const ajaxGetLibImage = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemGallery = $(res).find(".image-content-tab");
-					const currentItem = $(".tab-content .image-content-tab");
-					currentItem.html(itemGallery.html());
+					const item =res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
 				},
 				error: (res) => {
 					console.log(res);
@@ -606,7 +605,7 @@ const ajaxGetLibVideo = () => {
 			const url = $('.item-video--tab').attr('data-url');
 			$.ajax({
 				type: 'get',
-				url: url,
+				url: " 192.168.0.104/get-gallery?type=2",
 				processData: false,
 				contentType: false,
 				beforeSend: () => {
@@ -616,9 +615,9 @@ const ajaxGetLibVideo = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemVideo = $(res).find(".video-content-tab");
-					const currentItem = $(".tab-content .video-content-tab");
-					currentItem.html(itemVideo.html());
+					const item =res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
 				},
 				error: (res) => {
 					console.log(res);
@@ -645,9 +644,9 @@ const ajaxGetLibDocument = () => {
 					loadToWaitRequest(false);
 				},
 				success: (res) => {
-					const itemDocument = $(res).find(".document-content-tab");
-					const currentItem = $(".tab-content .document-content-tab");
-					currentItem.html(itemDocument.html());
+					const item =res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
 				},
 				error: (res) => {
 					console.log(res);
@@ -670,9 +669,9 @@ const ajaxGetMoreLibImage = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemGallery = $(res).find(".image-content-tab");
-				const currentItem = $(".tab-content .image-content-tab");
-				currentItem.html(itemGallery.html());
+				const item =res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
 			},
 			error: (res) => {
 				console.log(res);
@@ -696,9 +695,9 @@ const ajaxGetMoreLibVideo = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemVideo = $(res).find(".video-content-tab");
-				const currentItem = $(".tab-content .video-content-tab");
-				currentItem.html(itemVideo.html());
+				const item =res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
 			},
 			error: (res) => {
 				console.log(res);
@@ -722,9 +721,9 @@ const ajaxGetMoreLibDocument = () => {
 				loadToWaitRequest(false);
 			},
 			success: (res) => {
-				const itemVideo = $(res).find(".video-content-tab");
-					const currentItem = $(".tab-content .video-content-tab");
-					currentItem.html(itemVideo.html());
+				const item =res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
 			},
 			error: (res) => {
 				console.log(res);
