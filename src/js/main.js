@@ -583,7 +583,8 @@ const ajaxGetLibImage = () => {
                     loadToWaitRequest(true);
                 },
                 complete: () => {
-                    loadToWaitRequest(false);
+					loadToWaitRequest(false);
+					randomCodePopupImage();
                 },
                 success: (res) => {
                     const item = res;
@@ -613,6 +614,7 @@ const ajaxGetLibVideo = () => {
 				},
 				complete: () => {
 					loadToWaitRequest(false);
+					
 				},
 				success: (res) => {
 					const item =res;
@@ -669,6 +671,7 @@ const ajaxGetMoreLibImage = () => {
 			},
 			complete: () => {
 				loadToWaitRequest(false);
+				randomCodePopupImage();
 			},
 			success: (res) => {
 				const item =res;
@@ -998,8 +1001,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	AddClassToLibDocument();
 	//  PopupSlider Image TAb
 	initializeLibImage__Slider_Popup();
-	//RandomCodePopUpImage
-	randomCodePopupImage();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
