@@ -122,7 +122,7 @@ const actionsLoginPage = () => {
 
                 },
                 success: (res) => {
-
+					
                 },
                 error: (res) => {
 
@@ -228,20 +228,20 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 800) {
-            $('#back_to_top').addClass('show');
-        } else {
-            $('#back_to_top').removeClass('show');
-        }
-    });
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 800) {
+			$('#back_to_top').addClass('show');
+		} else {
+			$('#back_to_top').removeClass('show');
+		}
+	});
 
-    $('#back_to_top').on('click', function(e) {
-        e.preventDefault();
-        $('html,body').animate({
-            scrollTop: 0,
-        });
-    });
+	$('#back_to_top').on('click', function (e) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
 };
 
 // COPY DATA BY ATTR
@@ -304,46 +304,46 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-    $('.footer__forms .footer__submit').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        $('.footer__forms input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
+	$('.footer__forms .footer__submit').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		$('.footer__forms input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
 
-        if ($('.footer__forms form').valid() === true) {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    _thisBtn.attr('disabled', 'disabled');
-                },
-                success: function(res) {
-                    alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
-                },
-            });
-        } else {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-        }
-    });
+		if ($('.footer__forms form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		} else {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+		}
+	});
 };
 
 // OPEN TARGET LINK FOOTER
@@ -392,14 +392,14 @@ const silderHomeImage = () => {
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-    var swiper = new Swiper(".home--hotnews .swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        simulateTouch: false
-    })
+	var swiper = new Swiper(".hot-news-banner .swiper-container", {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		simulateTouch: false
+	})
 }
 
 //Swiper banner design home 1
@@ -583,7 +583,8 @@ const ajaxGetLibImage = () => {
                     loadToWaitRequest(true);
                 },
                 complete: () => {
-                    loadToWaitRequest(false);
+					loadToWaitRequest(false);
+					randomCodePopupImage();
                 },
                 success: (res) => {
                     const item = res;
@@ -613,6 +614,7 @@ const ajaxGetLibVideo = () => {
 				},
 				complete: () => {
 					loadToWaitRequest(false);
+					
 				},
 				success: (res) => {
 					const item =res;
@@ -641,12 +643,14 @@ const ajaxGetLibDocument = () => {
                     loadToWaitRequest(true);
                 },
                 complete: () => {
-                    loadToWaitRequest(false);
+					loadToWaitRequest(false);
+					getSVGs();
                 },
                 success: (res) => {
-                    const item = res;
+                    const item = res.Result.Message;
                     const currentItem = $(".tab-content");
-                    currentItem.html(item);
+					currentItem.html(item);
+					
                 },
                 error: (res) => {
                     console.log(res);
@@ -667,6 +671,7 @@ const ajaxGetMoreLibImage = () => {
 			},
 			complete: () => {
 				loadToWaitRequest(false);
+				randomCodePopupImage();
 			},
 			success: (res) => {
 				const item =res;
@@ -867,25 +872,11 @@ const loadToWaitRequest = (boolean) => {
         if (boolean === true) {
             $(".lib__page .loading--spinner").css("display", "flex")
             $(".lib__page .tab-content").css("display", "none")
-                // setTimeout(() => {
-                //     $(".member--list").css("display", "flex")
-                //     $(".member__wrapper--inner .loading--spinner").css("display", "none")
-                // }, 1000);
         }
         if (boolean === false) {
             $(".lib__page .tab-content").css("display", "block")
             $(".lib__page .loading--spinner").css("display", "none")
         }
-        // document.querySelectorAll(".lib--list .lib--item").forEach((item) => {
-        // 	item.addEventListener('click', () => {
-        // 		$(".lib__page .tab-content").css("display", "none")
-        // 		$(".lib__page .loading--spinner").css("display", "flex")
-        // 		setTimeout(() => {
-        // 			$(".lib__page .tab-content").css("display", "block")
-        // 			$(".lib__page .loading--spinner").css("display", "none")
-        // 		}, 1000);
-        // 	});
-        // });
     }
     // See All Member
 const seeMoreMember = () => {
@@ -935,10 +926,10 @@ const customPopupDocument = () => {
 const stateOfLikeButton = () => {
         var likeBtn = $(".lAS__listItem.like")
         var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
-        if (stateOfBtn = false) {
+        if (stateOfBtn == false) {
             $(likeBtn).find("h4").html("Thích <span>0</span>")
         }
-        if (stateOfBtn = true) {
+        if (stateOfBtn == true) {
             $(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
         }
     }
@@ -1010,8 +1001,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	AddClassToLibDocument();
 	//  PopupSlider Image TAb
 	initializeLibImage__Slider_Popup();
-	//RandomCodePopUpImage
-	randomCodePopupImage();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
