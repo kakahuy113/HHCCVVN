@@ -106,7 +106,7 @@ const actionsLoginPage = () => {
         if (research__login__option) {
             research__login__option.classList.add('isLogin');
         }
-        $('.news__events--detail .lAS__listItem.like').on('click', function(e) {
+        $('.news__events--detail .lAS__listItem.like').on('click', function (e) {
             e.preventDefault();
             const url = $(this).attr('data-url');
             const isLike = $(this).attr('isLike');
@@ -122,7 +122,7 @@ const actionsLoginPage = () => {
 
                 },
                 success: (res) => {
-					
+
                 },
                 error: (res) => {
 
@@ -228,20 +228,20 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 800) {
-			$('#back_to_top').addClass('show');
-		} else {
-			$('#back_to_top').removeClass('show');
-		}
-	});
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 800) {
+            $('#back_to_top').addClass('show');
+        } else {
+            $('#back_to_top').removeClass('show');
+        }
+    });
 
-	$('#back_to_top').on('click', function (e) {
-		e.preventDefault();
-		$('html,body').animate({
-			scrollTop: 0,
-		});
-	});
+    $('#back_to_top').on('click', function (e) {
+        e.preventDefault();
+        $('html,body').animate({
+            scrollTop: 0,
+        });
+    });
 };
 
 // COPY DATA BY ATTR
@@ -304,46 +304,46 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-	$('.footer__forms .footer__submit').on('click', function (e) {
-		e.preventDefault();
-		const _thisBtn = $(this);
-		const url = _thisBtn.attr('data-url');
-		const formData = new FormData();
-		$('.footer__forms input').each(function () {
-			const name = $(this).attr('name');
-			const value = $(this).val();
-			formData.append(name, value);
-		});
+    $('.footer__forms .footer__submit').on('click', function (e) {
+        e.preventDefault();
+        const _thisBtn = $(this);
+        const url = _thisBtn.attr('data-url');
+        const formData = new FormData();
+        $('.footer__forms input').each(function () {
+            const name = $(this).attr('name');
+            const value = $(this).val();
+            formData.append(name, value);
+        });
 
-		if ($('.footer__forms form').valid() === true) {
-			console.log(
-				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.footer__forms form').valid()
-			);
-			$.ajax({
-				url: url,
-				type: 'post',
-				data: formData,
-				processData: false,
-				contentType: false,
-				beforeSend: function () {
-					_thisBtn.attr('disabled', 'disabled');
-				},
-				success: function (res) {
-					alert(`${res.Message}`);
-					window.location.reload();
-					_thisBtn.removeAttr('disabled');
-				},
-			});
-		} else {
-			console.log(
-				'Kết quả kiểm tra điều kiện là:' +
-				' ' +
-				$('.footer__forms form').valid()
-			);
-		}
-	});
+        if ($('.footer__forms form').valid() === true) {
+            console.log(
+                'Kết quả kiểm tra điều kiện là:' +
+                ' ' +
+                $('.footer__forms form').valid()
+            );
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function () {
+                    _thisBtn.attr('disabled', 'disabled');
+                },
+                success: function (res) {
+                    alert(`${res.Message}`);
+                    window.location.reload();
+                    _thisBtn.removeAttr('disabled');
+                },
+            });
+        } else {
+            console.log(
+                'Kết quả kiểm tra điều kiện là:' +
+                ' ' +
+                $('.footer__forms form').valid()
+            );
+        }
+    });
 };
 
 // OPEN TARGET LINK FOOTER
@@ -373,7 +373,7 @@ const sliderHomeVideo = () => {
 const silderHomeImage = () => {
     var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
         spaceBetween: 10,
-        slidesPerView: 4,
+        slidesPerView: 3,
         freeMode: true,
         watchSlidesVisibility: true,
         watchSlidesProgress: true,
@@ -392,14 +392,14 @@ const silderHomeImage = () => {
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-	var swiper = new Swiper(".hot-news-banner .swiper-container", {
-		loop: true,
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
-		},
-		simulateTouch: false
-	})
+    var swiper = new Swiper(".hot-news-banner .swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        simulateTouch: false
+    })
 }
 
 //Swiper banner design home 1
@@ -416,16 +416,16 @@ const sliderVideoBanner1 = () => {
 
 //Swiper banner design home 2
 const sliderVideoBanner2 = () => {
-        var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            simulateTouch: false
-        })
-    }
-    //Silder Home Page Member Section
+    var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        simulateTouch: false
+    })
+}
+//Silder Home Page Member Section
 const SliderHomeMemberSection = () => {
     var slider = new Swiper(".home__member .swiper-container", {
         loop: true,
@@ -458,12 +458,12 @@ const SliderHomeMemberSection = () => {
 }
 
 const ajaxFormContact = () => {
-    $('.contact form .form-button').on('click', function(e) {
+    $('.contact form .form-button').on('click', function (e) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
         const formData = new FormData();
-        $('.contact form .form-group input').each(function() {
+        $('.contact form .form-group input').each(function () {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
@@ -481,10 +481,10 @@ const ajaxFormContact = () => {
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function() {
+                beforeSend: function () {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -501,7 +501,7 @@ const ajaxFormContact = () => {
 };
 
 const ajaxFormResearch = () => {
-    $('.btn.btn-subResearch button').on('click', function(e) {
+    $('.btn.btn-subResearch button').on('click', function (e) {
         e.preventDefault();
         const _thisBtn = $(this);
         const url = _thisBtn.attr('data-url');
@@ -512,7 +512,7 @@ const ajaxFormResearch = () => {
         const valText = $(
             '.research__login--form form .form-group textarea'
         ).val();
-        $('.research__login--form form .form-group input').each(function() {
+        $('.research__login--form form .form-group input').each(function () {
             const name = $(this).attr('name');
             const value = $(this).val();
             formData.append(name, value);
@@ -525,10 +525,10 @@ const ajaxFormResearch = () => {
                 data: formData,
                 processData: false,
                 contentType: false,
-                beforeSend: function() {
+                beforeSend: function () {
                     _thisBtn.attr('disabled', 'disabled');
                 },
-                success: function(res) {
+                success: function (res) {
                     alert(`${res.Message}`);
                     window.location.reload();
                     _thisBtn.removeAttr('disabled');
@@ -555,20 +555,20 @@ const NewsAddClass = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-        $(".introduct__video--img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //responses bg introduce
+    $(".introduct__video--img").click(function (e) {
+        e.preventDefault();
+        const id = $(".youtube-api").attr('id');
+        let url = $('#' + id).attr('src');
+        $(this).addClass('active');
+        $('#' + id).attr('src', url + "&autoplay=1");
+    });
+}
+//responses bg introduce
 const setHeightBgIntroduce = () => {
-        let heightBgIntroduct = $('.introduct__topContent').outerHeight();
-        $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
-    }
-    // Ajax Get Lib Image
+    let heightBgIntroduct = $('.introduct__topContent').outerHeight();
+    $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
+}
+// Ajax Get Lib Image
 const ajaxGetLibImage = () => {
     if ($('.item-image--tab')) {
         $('.item-image--tab').click(() => {
@@ -831,7 +831,7 @@ const activeLinkMenu = () => {
         } else {
             link = url[(url.length - 1)];
         }
-        $('.navBar__item  a').each(function() {
+        $('.navBar__item  a').each(function () {
             var getHref = $(this).attr('href');
             var href = getHref.split('/').pop();
             if (href === link) {
@@ -846,74 +846,74 @@ const activeLinkMenu = () => {
 
 //google recaptcha
 const recaptchaGoogle = () => {
-        $('#research__form').click(function(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
-                    action: 'submit'
-                }).then(function(token) {
-                    $("#research__recaptcha").val(token);
-                    // Add your logic to submit to your backend server here.
-                });
+    $('#research__form').click(function (e) {
+        e.preventDefault();
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function (token) {
+                $("#research__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
             });
         });
-        $('#contact__form').click(function(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
-                    action: 'submit'
-                }).then(function(token) {
-                    $("#contact__recaptcha").val(token);
-                    // Add your logic to submit to your backend server here.
-                });
+    });
+    $('#contact__form').click(function (e) {
+        e.preventDefault();
+        grecaptcha.ready(function () {
+            grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+                action: 'submit'
+            }).then(function (token) {
+                $("#contact__recaptcha").val(token);
+                // Add your logic to submit to your backend server here.
             });
         });
+    });
 
-    }
-    // Loading For Request
+}
+// Loading For Request
 const loadToWaitRequest = (boolean) => {
-        if (boolean === true) {
-            $(".lib__page .loading--spinner").css("display", "flex")
-            $(".lib__page .tab-content").css("display", "none")
-        }
-        if (boolean === false) {
-            $(".lib__page .tab-content").css("display", "block")
-            $(".lib__page .loading--spinner").css("display", "none")
-        }
+    if (boolean === true) {
+        $(".lib__page .loading--spinner").css("display", "flex")
+        $(".lib__page .tab-content").css("display", "none")
     }
-    // See All Member
+    if (boolean === false) {
+        $(".lib__page .tab-content").css("display", "block")
+        $(".lib__page .loading--spinner").css("display", "none")
+    }
+}
+// See All Member
 const seeMoreMember = () => {
-        if (document.querySelector(".member__page")) {
-            var listMember = document.querySelectorAll(".member--item")
-            if (listMember.length > 12) {
-                var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
-                $(".member__wrapper--inner").append(temp)
+    if (document.querySelector(".member__page")) {
+        var listMember = document.querySelectorAll(".member--item")
+        if (listMember.length > 12) {
+            var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
+            $(".member__wrapper--inner").append(temp)
+        }
+        listMember.forEach((item, index) => {
+            if (index > 11) {
+                item.style.display = "none"
             }
-            listMember.forEach((item, index) => {
-                if (index > 11) {
-                    item.style.display = "none"
-                }
+        })
+        $(".member__page .see-more").click(() => {
+            document.querySelectorAll(".member--item").forEach((item, index) => {
+                item.style.display = "block"
             })
-            $(".member__page .see-more").click(() => {
-                document.querySelectorAll(".member--item").forEach((item, index) => {
-                    item.style.display = "block"
-                })
-            })
-        }
-    }
-    // doc file Viewer Lib Document
-const openFileViewer = () => {
-        if (document.querySelector(".lib__page__document")) {
-            document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-                var temp = item.getAttribute("src")
-                item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
-            })
-        }
-        $(".document--popup-link").click(() => {
-            console.log($(this));
         })
     }
-    //Popup Document Lib 
+}
+// doc file Viewer Lib Document
+const openFileViewer = () => {
+    if (document.querySelector(".lib__page__document")) {
+        document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
+            var temp = item.getAttribute("src")
+            item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
+        })
+    }
+    $(".document--popup-link").click(() => {
+        console.log($(this));
+    })
+}
+//Popup Document Lib 
 const customPopupDocument = () => {
     if (document.querySelector(".lib__page")) {
         var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
@@ -927,16 +927,16 @@ const customPopupDocument = () => {
     }
 }
 const stateOfLikeButton = () => {
-        var likeBtn = $(".lAS__listItem.like")
-        var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
-        if (stateOfBtn == false) {
-            $(likeBtn).find("h4").html("Thích <span>0</span>")
-        }
-        if (stateOfBtn == true) {
-            $(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
-        }
+    var likeBtn = $(".lAS__listItem.like")
+    var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
+    if (stateOfBtn == false) {
+        $(likeBtn).find("h4").html("Thích <span>0</span>")
     }
-    //get breadcrumb title
+    if (stateOfBtn == true) {
+        $(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
+    }
+}
+//get breadcrumb title
 const getBreadcrumbTitle = () => {
     let title = $("#breadcrumb-wrapper ul li").last().text();
     $("#breadcrumb-wrapper ul li").last().addClass('active');
@@ -1022,8 +1022,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	stateOfLikeButton();
 	//getBreadcrumbTitle
     getBreadcrumbTitle();
-	//TAB
-	const Libary__Tab = new Tab('.lib__page .tab-container');
+    //TAB
+    const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 window.addEventListener('resize', () => {
