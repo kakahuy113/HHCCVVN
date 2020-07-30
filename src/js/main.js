@@ -585,6 +585,7 @@ const ajaxGetLibImage = () => {
                 complete: () => {
 					loadToWaitRequest(false);
 					randomCodePopupImage();
+					initializeLibImage__Slider_Popup();
                 },
                 success: (res) => {
                     const item = res;
@@ -614,7 +615,6 @@ const ajaxGetLibVideo = () => {
 				},
 				complete: () => {
 					loadToWaitRequest(false);
-					
 				},
 				success: (res) => {
 					const item =res;
@@ -644,13 +644,13 @@ const ajaxGetLibDocument = () => {
                 },
                 complete: () => {
 					loadToWaitRequest(false);
-					getSVGs();
+                    getSVGs();
+                    customPopupDocument();
                 },
                 success: (res) => {
-                    const item = res.Result.Message;
+                    const item = res;
                     const currentItem = $(".tab-content");
 					currentItem.html(item);
-					
                 },
                 error: (res) => {
                     console.log(res);
@@ -671,7 +671,8 @@ const ajaxGetMoreLibImage = () => {
 			},
 			complete: () => {
 				loadToWaitRequest(false);
-				randomCodePopupImage();
+                randomCodePopupImage();
+                initializeLibImage__Slider_Popup();
 			},
 			success: (res) => {
 				const item =res;
@@ -724,6 +725,8 @@ const ajaxGetMoreLibDocument = () => {
             },
             complete: () => {
                 loadToWaitRequest(false);
+                getSVGs();
+                customPopupDocument();
             },
             success: (res) => {
                 const item = res;
@@ -999,8 +1002,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxFormResearch();
 	// AddClass
 	AddClassToLibDocument();
-	//  PopupSlider Image TAb
-	initializeLibImage__Slider_Popup();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
@@ -1017,8 +1018,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	recaptchaGoogle();
 	//See All Member
 	seeMoreMember();
-	//Popup Document
-	customPopupDocument();
 	//state of Like Btn
 	stateOfLikeButton();
 	//getBreadcrumbTitle
