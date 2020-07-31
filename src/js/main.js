@@ -145,6 +145,10 @@ const actionsLoginPage = () => {
 		// ACTION FOR ISLOGIN = FALSE
 		headerButtonLogin__wrapper.classList.remove('isLogin');
 		headerLogged__wrapper.classList.remove('isLogin');
+		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
+			e.preventDefault();
+			$.fancybox.open('<div class="pop-up-warrning"><div class="warning"><h1>WARNING!</h1><p>You need to login before like.</p></div><div class="btn-popup"><button class="btn" data-fancybox-close>Okey</button></div></div>');
+		})
 		if (research__login__option) {
 			research__login__option.classList.remove('isLogin');
 		}
@@ -1031,6 +1035,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//getBreadcrumbTitle
 	getBreadcrumbTitle();
 	//TAB
+
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 

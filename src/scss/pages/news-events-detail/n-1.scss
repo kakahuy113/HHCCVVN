@@ -90,3 +90,29 @@
         }
 	}
 }
+.pop-up-warrning {
+	background-color: #d74a50;
+	width: 500px;
+	padding: 40px 0 0 0;
+	border-radius: 10px;
+	box-shadow: 2px 4px 8px hsla(0deg, 0%, 0%, 0.5);
+	text-align: center;
+	.warning {
+		color: #fff;
+	}
+	.btn-popup {
+		background-color: #fff;
+		.btn {
+			width: 120px;
+			margin: 20px 0;
+			box-shadow: 2px 4px 8px hsla(0deg, 0%, 0%, 0.5);
+			padding: 10px;
+			background-color: #C8C8C8;
+			border-radius: 10px;
+			color: #fff;
+			&:hover {
+				background-color: #d74a50;
+			}
+		}
+	}
+}
