@@ -608,7 +608,7 @@ const ajaxGetLibImage = () => {
 					ajaxGetMoreLibImage();
 				},
 				success: (res) => {
-					const item = res;
+					const item = res.Result.lib;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
@@ -959,7 +959,7 @@ const stateOfLikeButton = () => {
 //get breadcrumb title
 const getBreadcrumbTitle = () => {
 	let title = $("#breadcrumb-wrapper ul li").eq(1).text();
-	$("#breadcrumb-wrapper ul li").eq(1).addClass('active');
+	$("#breadcrumb-wrapper ul li").last().addClass('active');
 	$(".pagesBanner__title h1").text(title);
 }
 document.addEventListener('DOMContentLoaded', () => {
