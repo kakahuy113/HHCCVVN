@@ -607,7 +607,7 @@ const ajaxGetLibImage = () => {
 					ajaxGetMoreLibImage();
 				},
 				success: (res) => {
-					const item = res.Result.lib;
+					const item = res;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
