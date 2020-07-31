@@ -72,6 +72,7 @@ section.Affiliated-units {
     }
     .unit__row--list {
         ul {
+            margin-bottom: 30px;
             flex: 0 0 50%;
             @media (max-width: 768.98px) {
                 flex: 0 0 100%;
