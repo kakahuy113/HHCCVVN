@@ -63,9 +63,11 @@ section.Executive-committee {
         margin-right: -41px;
         margin-left: -41px;
         .col-4 {
-            padding: 0 41px;
+            padding-left: 41px;
+            padding-right: 41px;
             @media (max-width: 1024.98px) {
-                padding: 0 21px;
+                padding-left: 10px;
+                padding-right: 10px;
             }
         }
         @media (max-width: 1024.98px) {
@@ -73,7 +75,7 @@ section.Executive-committee {
             margin-left: 0;
         }
     }
-    .committee__member--row {
+    .committee__member--col {
         margin-bottom: 50px;
         @media (max-width: 768.98px) {
             flex: 0 0 50%;
@@ -87,10 +89,14 @@ section.Executive-committee {
     .committee__member--item {
         box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.18);
         background: map-get($mau, xam-1);
-        padding: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
         min-width: 296px;
         min-height: 326px;
         height: 100%;
+        @media (max-width: 1024.98px) {
+            min-width: 100%;
+        }
         @media (max-width: 575.98px) {
             width: 100%;
             min-width: 100%;
