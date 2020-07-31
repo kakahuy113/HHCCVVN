@@ -192,6 +192,9 @@ section.Research {
                 padding-left: 23px;
                 font-size: 16px;
                 font-family: MYRIADPRO-LIGHT;
+                &:focus {
+                    box-shadow: 0px 2px 6px rgba($color: #002F4B, $alpha: 0.6);
+                }
             }
             input {
                 height: 46px;
@@ -302,7 +305,7 @@ section.Research {
                 .btn {
                     &.btn--readMore {
                         background: map-get($mau, main-2);
-                        // transition: 1s all ease-in;
+                        transition: 1s all ease-in-out;
                         h4 {
                             color: white;
                             &::before {
