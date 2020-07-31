@@ -128,17 +128,16 @@ const actionsLoginPage = () => {
 					stateOfLikeButton();
 				},
 				success: (res) => {
-					if(res.Result == true) {
+					if (res.Result == true) {
 						$(this).attr('isLike', true);
 						$(this).find("span").html(`${likeNum + 1}`);
 					}
-					if(res.Result == false) {
+					if (res.Result == false) {
 						$(this).attr('isLike', false);
 						$(this).find("span").html(`${likeNum - 1}`);
 					}
 				},
-				error: (res) => {
-				}
+				error: (res) => {}
 			})
 		});
 	} else {
@@ -147,7 +146,9 @@ const actionsLoginPage = () => {
 		headerLogged__wrapper.classList.remove('isLogin');
 		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
 			e.preventDefault();
-			$.fancybox.open({src : '#form__login'});
+			$.fancybox.open({
+				src: '#form__login'
+			});
 		})
 		if (research__login__option) {
 			research__login__option.classList.remove('isLogin');
@@ -244,20 +245,20 @@ const activeLanguage = () => {
 
 // SHOW BACK TO TOP
 const showBackToTop = () => {
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 800) {
-            $('#back_to_top').addClass('show');
-        } else {
-            $('#back_to_top').removeClass('show');
-        }
-    });
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 800) {
+			$('#back_to_top').addClass('show');
+		} else {
+			$('#back_to_top').removeClass('show');
+		}
+	});
 
-    $('#back_to_top').on('click', function(e) {
-        e.preventDefault();
-        $('html,body').animate({
-            scrollTop: 0,
-        });
-    });
+	$('#back_to_top').on('click', function (e) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
 };
 
 // COPY DATA BY ATTR
@@ -320,46 +321,46 @@ const initMainBanner = () => {
 
 // AJAX FORM FOOTER
 const ajaxFormFooter = () => {
-    $('.footer__forms .footer__submit').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        $('.footer__forms input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
+	$('.footer__forms .footer__submit').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		$('.footer__forms input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
 
-        if ($('.footer__forms form').valid() === true) {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    _thisBtn.attr('disabled', 'disabled');
-                },
-                success: function(res) {
-                    alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
-                },
-            });
-        } else {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.footer__forms form').valid()
-            );
-        }
-    });
+		if ($('.footer__forms form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		} else {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.footer__forms form').valid()
+			);
+		}
+	});
 };
 
 // OPEN TARGET LINK FOOTER
@@ -387,7 +388,7 @@ const sliderHomeVideo = () => {
 
 // swiper home page image
 const silderHomeImage = () => {
-	
+
 	var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
 		spaceBetween: 10,
 		slidesPerView: 3,
@@ -475,84 +476,84 @@ const SliderHomeMemberSection = () => {
 }
 
 const ajaxFormContact = () => {
-    $('.contact form .form-button').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        $('.contact form .form-group input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
+	$('.contact form .form-button').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		$('.contact form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
 
-        if ($('.contact form').valid() === true) {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.contact form').valid()
-            );
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    _thisBtn.attr('disabled', 'disabled');
-                },
-                success: function(res) {
-                    alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
-                },
-            });
-        } else {
-            console.log(
-                'Kết quả kiểm tra điều kiện là:' +
-                ' ' +
-                $('.contact form').valid()
-            );
-        }
-    });
+		if ($('.contact form').valid() === true) {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.contact form').valid()
+			);
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		} else {
+			console.log(
+				'Kết quả kiểm tra điều kiện là:' +
+				' ' +
+				$('.contact form').valid()
+			);
+		}
+	});
 };
 
 const ajaxFormResearch = () => {
-    $('.btn.btn-subResearch button').on('click', function(e) {
-        e.preventDefault();
-        const _thisBtn = $(this);
-        const url = _thisBtn.attr('data-url');
-        const formData = new FormData();
-        const nameText = $(
-            '.research__login--form form .form-group textarea'
-        ).attr('name');
-        const valText = $(
-            '.research__login--form form .form-group textarea'
-        ).val();
-        $('.research__login--form form .form-group input').each(function() {
-            const name = $(this).attr('name');
-            const value = $(this).val();
-            formData.append(name, value);
-        });
-        formData.append(nameText, valText);
-        if ($('.research__login--form form').valid() === true) {
-            $.ajax({
-                url: url,
-                type: 'post',
-                data: formData,
-                processData: false,
-                contentType: false,
-                beforeSend: function() {
-                    _thisBtn.attr('disabled', 'disabled');
-                },
-                success: function(res) {
-                    alert(`${res.Message}`);
-                    window.location.reload();
-                    _thisBtn.removeAttr('disabled');
-                },
-            });
-        }
-    });
+	$('.btn.btn-subResearch button').on('click', function (e) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		const nameText = $(
+			'.research__login--form form .form-group textarea'
+		).attr('name');
+		const valText = $(
+			'.research__login--form form .form-group textarea'
+		).val();
+		$('.research__login--form form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		formData.append(nameText, valText);
+		if ($('.research__login--form form').valid() === true) {
+			$.ajax({
+				url: url,
+				type: 'post',
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr('disabled', 'disabled');
+				},
+				success: function (res) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr('disabled');
+				},
+			});
+		}
+	});
 };
 // Add Class to active news page
 const NewsAddClass = () => {
@@ -572,20 +573,20 @@ const NewsAddClass = () => {
 
 //playvideo
 const playVideoIntroduct = () => {
-        $(".introduct__video--img").click(function(e) {
-            e.preventDefault();
-            const id = $(".youtube-api").attr('id');
-            let url = $('#' + id).attr('src');
-            $(this).addClass('active');
-            $('#' + id).attr('src', url + "&autoplay=1");
-        });
-    }
-    //responses bg introduce
+	$(".introduct__video--img").click(function (e) {
+		e.preventDefault();
+		const id = $(".youtube-api").attr('id');
+		let url = $('#' + id).attr('src');
+		$(this).addClass('active');
+		$('#' + id).attr('src', url + "&autoplay=1");
+	});
+}
+//responses bg introduce
 const setHeightBgIntroduce = () => {
-        let heightBgIntroduct = $('.introduct__topContent').outerHeight();
-        $("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
-    }
-    // Ajax Get Lib Image
+	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
+	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
+}
+// Ajax Get Lib Image
 const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
 		$('.item-image--tab').click(() => {
@@ -636,7 +637,7 @@ const ajaxGetLibVideo = () => {
 					ajaxGetMoreLibVideo();
 				},
 				success: (res) => {
-					const item =res;
+					const item = res;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
@@ -697,7 +698,7 @@ const ajaxGetMoreLibImage = () => {
 				initializeLibImage__Slider_Popup();
 			},
 			success: (res) => {
-				const item =res;
+				const item = res;
 				const currentItem = $(".tab-content");
 				currentItem.html(item);
 			},
@@ -791,7 +792,7 @@ const randomCodePopupImage = () => {
 const EditAtrr = () => {
 	document.querySelectorAll(".item__wrapper--inner").forEach(item => {
 		const url = item.querySelector(".document--popup-link").getAttribute("data-url")
-		item.querySelector(".download-document--btn a").setAttribute("href" , `https://drive.google.com/u/0/uc?id=${url}&export=download`)
+		item.querySelector(".download-document--btn a").setAttribute("href", `https://drive.google.com/u/0/uc?id=${url}&export=download`)
 	})
 }
 
@@ -848,86 +849,86 @@ const downRowContent = () => {
 
 //active menu
 const activeLinkMenu = () => {
-    var link = "";
-    var url = window.location.pathname.split('/');
-    if (url.length !== 4) {
-        if (url[(url.length - 1)] == "") {
-            link = url[(url.length - 2)];
-        } else {
-            link = url[(url.length - 1)];
-        }
-        $('.navBar__item  a').each(function() {
-            var getHref = $(this).attr('href');
-            var href = getHref.split('/').pop();
-            if (href === link) {
-                $(this).parent().addClass('active');
-                $(this).parent().parent().parent().addClass('active');
-            }
-        });
-    } else {
-        $(".navBar__item").removeClass("active");
-    }
+	var link = "";
+	var url = window.location.pathname.split('/');
+	if (url.length !== 4) {
+		if (url[(url.length - 1)] == "") {
+			link = url[(url.length - 2)];
+		} else {
+			link = url[(url.length - 1)];
+		}
+		$('.navBar__item  a').each(function () {
+			var getHref = $(this).attr('href');
+			var href = getHref.split('/').pop();
+			if (href === link) {
+				$(this).parent().addClass('active');
+				$(this).parent().parent().parent().addClass('active');
+			}
+		});
+	} else {
+		$(".navBar__item").removeClass("active");
+	}
 }
 
 //google recaptcha
 const recaptchaGoogle = () => {
-        $('#research__form').click(function(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
-                    action: 'submit'
-                }).then(function(token) {
-                    $("#research__recaptcha").val(token);
-                    // Add your logic to submit to your backend server here.
-                });
-            });
-        });
-        $('#contact__form').click(function(e) {
-            e.preventDefault();
-            grecaptcha.ready(function() {
-                grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
-                    action: 'submit'
-                }).then(function(token) {
-                    $("#contact__recaptcha").val(token);
-                    // Add your logic to submit to your backend server here.
-                });
-            });
-        });
+	$('#research__form').click(function (e) {
+		e.preventDefault();
+		grecaptcha.ready(function () {
+			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+				action: 'submit'
+			}).then(function (token) {
+				$("#research__recaptcha").val(token);
+				// Add your logic to submit to your backend server here.
+			});
+		});
+	});
+	$('#contact__form').click(function (e) {
+		e.preventDefault();
+		grecaptcha.ready(function () {
+			grecaptcha.execute('6LdderUZAAAAABSFUFr5dsSa_yWZgVhFsHnFy03d', {
+				action: 'submit'
+			}).then(function (token) {
+				$("#contact__recaptcha").val(token);
+				// Add your logic to submit to your backend server here.
+			});
+		});
+	});
 
-    }
-    // Loading For Request
+}
+// Loading For Request
 const loadToWaitRequest = (boolean) => {
-        if (boolean === true) {
-            $(".lib__page .loading--spinner").css("display", "flex")
-            $(".lib__page .tab-content").css("display", "none")
-        }
-        if (boolean === false) {
-            $(".lib__page .tab-content").css("display", "block")
-            $(".lib__page .loading--spinner").css("display", "none")
-        }
-    }
-    // See All Member
+	if (boolean === true) {
+		$(".lib__page .loading--spinner").css("display", "flex")
+		$(".lib__page .tab-content").css("display", "none")
+	}
+	if (boolean === false) {
+		$(".lib__page .tab-content").css("display", "block")
+		$(".lib__page .loading--spinner").css("display", "none")
+	}
+}
+// See All Member
 const seeMoreMember = () => {
-        if (document.querySelector(".member__page")) {
-            var listMember = document.querySelectorAll(".member--item")
-            if (listMember.length > 12) {
-                var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
-                $(".member__wrapper--inner").append(temp)
-            }
-            listMember.forEach((item, index) => {
-                if (index > 11) {
-                    item.style.display = "none"
-                }
-            })
-            $(".member__page .see-more").click(() => {
-                document.querySelectorAll(".member--item").forEach((item, index) => {
-                    item.style.display = "block"
-				})
-				$(".member__page .see-more").remove();
-            })
-        }
-    }
-    //Popup Document Lib 
+	if (document.querySelector(".member__page")) {
+		var listMember = document.querySelectorAll(".member--item")
+		if (listMember.length > 12) {
+			var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
+			$(".member__wrapper--inner").append(temp)
+		}
+		listMember.forEach((item, index) => {
+			if (index > 11) {
+				item.style.display = "none"
+			}
+		})
+		$(".member__page .see-more").click(() => {
+			document.querySelectorAll(".member--item").forEach((item, index) => {
+				item.style.display = "block"
+			})
+			$(".member__page .see-more").remove();
+		})
+	}
+}
+//Popup Document Lib 
 const customPopupDocument = () => {
 	if (document.querySelector(".lib__page")) {
 		var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
@@ -938,7 +939,7 @@ const customPopupDocument = () => {
 				$("#popup--document a").attr("href", `https://drive.google.com/u/0/uc?id=${url}&export=download`);
 				$("#popup--document .title").html(`${item.querySelector("h3").innerHTML}`)
 				$("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
-				
+
 			})
 		})
 	}
@@ -956,8 +957,8 @@ const stateOfLikeButton = () => {
 }
 //get breadcrumb title
 const getBreadcrumbTitle = () => {
-	let title = $("#breadcrumb-wrapper ul li").last().text();
-	$("#breadcrumb-wrapper ul li").last().addClass('active');
+	let title = $("#breadcrumb-wrapper ul li").eq(1).text();
+	$("#breadcrumb-wrapper ul li").eq(1).addClass('active');
 	$(".pagesBanner__title h1").text(title);
 }
 document.addEventListener('DOMContentLoaded', () => {
