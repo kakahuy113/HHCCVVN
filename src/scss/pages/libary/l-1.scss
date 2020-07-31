@@ -129,12 +129,10 @@
 				background: url(../assets/images/lib-image/hover-img.png) no-repeat;
 				background-size: cover;
 			}
-
 			img {
 				transform: scale(1.1);
 			}
 		}
-
 		.item-gallery:hover .desc-img {
 			visibility: visible;
 			opacity: 1;
@@ -173,14 +171,14 @@
 			user-select: none;
 			border: 5px solid rgb(255, 255, 255);
 			&::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-image: url(../assets/images/lib-image/after-img.png);
-            }
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-image: url(../assets/images/lib-image/after-img.png);
+			}
 		}
 		.swiper-container {
 			padding: 0 10px
