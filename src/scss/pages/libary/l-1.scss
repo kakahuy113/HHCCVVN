@@ -85,7 +85,7 @@
 	grid-row-gap: 10px;
 	width: 100%;
 	@media (max-width: 1024.98px) {
-		grid-template-columns:auto auto auto;
+		grid-template-columns:33.33% 33.33% 33.33%;
 	}
 	.item-gallery {
 		position: relative;
@@ -465,7 +465,16 @@
 
 	.slider--popup_main {
 		padding-bottom: 50px;
-
+		.swiper-slide {
+			img {
+				width: 100%;
+				max-height: 535px;
+				object-fit: cover;
+				object-position: center;
+				font-family: 'object-fit: cover, object-position: center';
+				background-size: cover;
+			}
+		}
 		.swiper-button-prev,
 		.swiper-button-next {
 			position: absolute;
@@ -491,6 +500,7 @@
 		.swiper-slide {
 			max-height: 532px;
 			border: 5px solid rgb(255, 255, 255);
+			border-bottom: none;
 			img {
 				width: 100%;
 				height: 100%;
@@ -499,12 +509,24 @@
 				font-family: 'object-fit: cover, object-position: center';
 				background-size: cover;
 			}
+			
+		}
+		@media (max-width: 575.98px) {
+			bottom: 20px;
+			.swiper-slide {
+				border: 3px solid rgb(255, 255, 255);
+				border-bottom: none;
+			}
 		}
 	}
 
 	.fancybox-button {
-		width: 41px !important;
-		height: 41px !important;
+		width: 41px;
+		height: 41px ;
+		@media (max-width: 765.98px) {
+			width: 30px !important;
+			height: 30px !important;
+		}
 	}
 
 	.fancybox-button.fancybox-close-small {
