@@ -110,11 +110,13 @@ const actionsLoginPage = () => {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
 			const isLike = $(this).attr('isLike');
+			const id = $(this).attr('id');
 			$.ajax({
 				type: 'post',
 				url: url,
 				data: {
 					isLike: isLike,
+					id: id
 				},
 				contentType: false,
 				processData: false,
@@ -738,6 +740,7 @@ const ajaxGetMoreLibDocument = () => {
 				loadToWaitRequest(false);
 				getSVGs();
 				customPopupDocument();
+				EditAtrr();
 			},
 			success: (res) => {
 				const item = res;
