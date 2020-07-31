@@ -111,6 +111,7 @@ const actionsLoginPage = () => {
 			const url = $(this).attr('data-url');
 			const isLike = $(this).attr('isLike');
 			const id = $(this).attr('id');
+			const likeNum = parseInt($(this).find("span").html())
 			$.ajax({
 				type: 'post',
 				url: url,
@@ -129,11 +130,11 @@ const actionsLoginPage = () => {
 				success: (res) => {
 					if(res.Result == true) {
 						$(this).attr('isLike', true);
-						$(this).find("span").html(`${res.numberLike}`)
+						$(this).find("span").html(`${likeNum + 1}`);
 					}
 					if(res.Result == false) {
 						$(this).attr('isLike', false);
-						$(this).find("span").html(`${this.numberLike}`)
+						$(this).find("span").html(`${likeNum - 1}`);
 					}
 				},
 				error: (res) => {
@@ -144,6 +145,10 @@ const actionsLoginPage = () => {
 		// ACTION FOR ISLOGIN = FALSE
 		headerButtonLogin__wrapper.classList.remove('isLogin');
 		headerLogged__wrapper.classList.remove('isLogin');
+		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
+			e.preventDefault();
+			$.fancybox.open('<div class="pop-up-warrning"><div class="warning"><h1>WARNING!</h1><p>You need to login before like.</p></div><div class="btn-popup"><button class="btn" data-fancybox-close>Okey</button></div></div>');
+		})
 		if (research__login__option) {
 			research__login__option.classList.remove('isLogin');
 		}
@@ -382,15 +387,16 @@ const sliderHomeVideo = () => {
 
 // swiper home page image
 const silderHomeImage = () => {
+	
 	var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
 		spaceBetween: 10,
 		slidesPerView: 3,
-		freeMode: true,
 		watchSlidesVisibility: true,
 		watchSlidesProgress: true,
 	});
 
 	var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+		spaceBetween: 10,
 		navigation: {
 			nextEl: '.lib__images--right .swiper-button-next',
 			prevEl: '.lib__images--right .swiper-button-prev',
@@ -597,9 +603,10 @@ const ajaxGetLibImage = () => {
 					loadToWaitRequest(false);
 					randomCodePopupImage();
 					initializeLibImage__Slider_Popup();
+					ajaxGetMoreLibImage();
 				},
 				success: (res) => {
-					const item = res.Result.lib;
+					const item = res;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
@@ -626,6 +633,7 @@ const ajaxGetLibVideo = () => {
 				},
 				complete: () => {
 					loadToWaitRequest(false);
+					ajaxGetMoreLibVideo();
 				},
 				success: (res) => {
 					const item =res;
@@ -658,6 +666,7 @@ const ajaxGetLibDocument = () => {
 					getSVGs();
 					customPopupDocument();
 					EditAtrr();
+					ajaxGetMoreLibDocument();
 				},
 				success: (res) => {
 					const item = res;
@@ -675,6 +684,7 @@ const ajaxGetLibDocument = () => {
 const ajaxGetMoreLibImage = () => {
 	$('.see-more-images').click(() => {
 		const url = $('.see-more-images').attr('data-url');
+		console.log(url);
 		$.ajax({
 			type: 'get',
 			url: url,
@@ -726,7 +736,7 @@ const ajaxGetMoreLibVideo = () => {
 // Ajax Get all Lib Document
 const ajaxGetMoreLibDocument = () => {
 	$('.see-more-document').click(() => {
-		const url = $('.see-more-document').attr('data-url');
+		const url = $(".see-more-document").attr("data-url");
 		$.ajax({
 			type: 'get',
 			url: url,
@@ -793,15 +803,12 @@ const Libary_Image_Popup = (id) => {
 		slidesPerView: 3,
 		observer: true,
 		observeParents: true,
-		loopedSlides: 5,
 	});
 
 	const slider = new Swiper(`${id} .slider--popup_main .swiper-container`, {
 		spaceBetween: 10,
 		observer: true,
 		observeParents: true,
-		spaceBetween: 10,
-		loopedSlides: 5,
 		navigation: {
 			nextEl: `${id} .slider--popup_main .swiper-button-next`,
 			prevEl: `${id} .slider--popup_main .swiper-button-prev`,
@@ -915,21 +922,10 @@ const seeMoreMember = () => {
             $(".member__page .see-more").click(() => {
                 document.querySelectorAll(".member--item").forEach((item, index) => {
                     item.style.display = "block"
-                })
+				})
+				$(".member__page .see-more").remove();
             })
         }
-    }
-    // doc file Viewer Lib Document
-const openFileViewer = () => {
-        if (document.querySelector(".lib__page__document")) {
-            document.querySelectorAll(".wrapper--content--iframe iframe").forEach((item) => {
-                var temp = item.getAttribute("src")
-                item.setAttribute("src", "https://docs.google.com/viewer?url=" + temp)
-            })
-        }
-        $(".document--popup-link").click(() => {
-            console.log($(this));
-        })
     }
     //Popup Document Lib 
 const customPopupDocument = () => {
@@ -947,6 +943,7 @@ const customPopupDocument = () => {
 		})
 	}
 }
+//state of like button
 const stateOfLikeButton = () => {
 	var likeBtn = $(".lAS__listItem.like")
 	var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
@@ -1009,12 +1006,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxGetLibVideo();
 	//AJAX gget Libary document
 	ajaxGetLibDocument();
-	// Ajax get more images
-	ajaxGetMoreLibImage();
-	// Ajax get more video
-	ajaxGetMoreLibVideo();
-	// Ajax get more document
-	ajaxGetMoreLibDocument();
 	//play video
 	playVideoIntroduct();
 	//setHeightBgIntroduce
@@ -1044,6 +1035,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	//getBreadcrumbTitle
 	getBreadcrumbTitle();
 	//TAB
+
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 

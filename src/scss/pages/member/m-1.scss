@@ -1,5 +1,6 @@
 .member__page {
 	color: #002f4b;
+	margin-top: 60px;
 }
 .container-1476px {
 	position: relative;
@@ -13,7 +14,6 @@
 	max-width: 965px;
 }
 .member__page--banner {
-	margin-top: 60px;
 	display: flex;
 	flex-wrap: wrap;
 	& > div {
@@ -60,12 +60,12 @@
 	h3 {
 		font-family: UTM-COPPERPLATE;
 		font-size: 30px;
-		margin-bottom: 48px;
+		margin-bottom: 88px;
 		text-align: center;
 	}
 }
 .member--list.row {
-	margin-bottom: 45px;
+	margin-bottom: 5px;
 	position: relative;
 	margin-left: -15px;
 	margin-right: -15px;
@@ -94,14 +94,15 @@
 		content: "";
 		position: absolute;
 		width: 100%;
-		height: 3px;
+		height: 70px;
 		background: #f4f5f9;
 		bottom: 0;
 		left: 0;
 	}
 }
 .member--item {
-	padding: 40px 15px 40px 15px;
+	padding: 0px 15px 40px 15px;
+	margin-bottom: 40px;
 	border-bottom: .5px solid rgba($color: #707070, $alpha: 0.3);
 	.member--item--inner {
 		background: #fff;
@@ -125,6 +126,8 @@
 			-ms-flex-positive: 1;
 			flex-grow: 1;
 			max-width: 100%;
+			overflow-y: auto;
+			max-height: 100px;
 			h6 {
 				font-size: 17px;
 				color: #002f4b;
@@ -186,4 +189,7 @@
 	font-family: MYRIADPRO-REGULAR;
 	font-size: 18px;
 	padding-bottom: 95px;
+	& > div {
+		display: inline-block;
+	}
 }
