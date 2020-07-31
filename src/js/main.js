@@ -112,15 +112,16 @@ const actionsLoginPage = () => {
 			const isLike = $(this).attr('isLike');
 			const id = $(this).attr('id');
 			const likeNum = parseInt($(this).find("span").html())
+			console.log(url );
+			console.log(isLike);
+			console.log(id);
 			$.ajax({
 				type: 'post',
 				url: url,
 				data: {
-					isLike: isLike,
-					id: id
+					id: id,
+					like: isLike
 				},
-				contentType: false,
-				processData: false,
 				beforeSend: () => {
 
 				},
