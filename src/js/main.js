@@ -968,7 +968,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// COMMON CONTROLLER
 	CommonController();
 	// ACCOUNT CONTROLLER
-	// AccountController();
+	AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
 	// INIT Smooth Scrollbar
