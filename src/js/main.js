@@ -127,17 +127,16 @@ const actionsLoginPage = () => {
 					stateOfLikeButton();
 				},
 				success: (res) => {
-					if(res == true) {
+					if(res.Result == true) {
 						$(this).attr('isLike', true);
 						$(this).find("span").html(`${res.numberLike}`)
 					}
-					if(res == false) {
+					if(res.Result == false) {
 						$(this).attr('isLike', false);
 						$(this).find("span").html(`${this.numberLike}`)
 					}
 				},
 				error: (res) => {
-
 				}
 			})
 		});
@@ -600,7 +599,7 @@ const ajaxGetLibImage = () => {
 					initializeLibImage__Slider_Popup();
 				},
 				success: (res) => {
-					const item = res;
+					const item = res.Result.lib;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
