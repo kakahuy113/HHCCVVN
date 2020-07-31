@@ -300,15 +300,16 @@ section.Research {
                     }
                 }
                 .btn {
-                    // &.btn--readMore {
-                    //     background: map-get($mau, main-2);
-                    //     transition: 1s all ease-in;
-                    //     h4 {
-                    //         color: white;
-                    //         &::before {
-                    //         }
-                    //     }
-                    // }
+                    &.btn--readMore {
+                        background: map-get($mau, main-2);
+                        // transition: 1s all ease-in;
+                        h4 {
+                            color: white;
+                            &::before {
+                                background: url(../assets/images/news-events/hover-readmore.png);
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -419,7 +420,7 @@ section.Research {
             padding-right: 14px;
             h4 {
                 font-size: 20px;
-                font-family: MYRIADPRO-BOLD;
+                font-family: MYRIADPRO-BOLDIT;
                 padding: 8px 20px;
                 position: relative;
                 line-height: 1;
