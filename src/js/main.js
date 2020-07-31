@@ -1,6 +1,6 @@
 import {
-    getSVGs,
-    Loading
+	getSVGs,
+	Loading
 } from './util/utilities';
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
@@ -10,220 +10,232 @@ import AccountController from './lib/AccountController';
 
 // INIT CLASS SUB MENU
 const initClassSubMenu = () => {
-    // PARAMS
-    const header = document.querySelector('header');
-    const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
-    // ADD LOADING HEADER
-    header.setAttribute('loading', '');
-    // INIT FUNCTION
-    const init = () => {
-        return new Promise((resolve, reject) => {
-            items__MainMenu.forEach((item) => {
-                const isHaveSub = item.querySelectorAll('.navBar');
-                // CHECK MAIN MENU IS HAVE SUB ???
-                if (isHaveSub.length > 0) {
-                    // ADD CLASS IS HAVE SUB
-                    item.classList.add('isHaveSubMenu');
-                    // ADD CLASS LIST MENU LV1
-                    isHaveSub.forEach((item) => {
-                        item.classList.add('navBar--lv1');
-                    });
-                    // ADD CLASS ITEM MENU LV1
-                    const items__MenuLv1 = item.querySelectorAll('.navBar__item');
-                    items__MenuLv1.forEach((item) => {
-                        item.classList.add('navBar__item--lv1');
-                    });
-                }
-            });
-            resolve();
-        })
-    }
+	// PARAMS
+	const header = document.querySelector('header');
+	const items__MainMenu = document.querySelectorAll('.navbottom__wrapper>.navBar>.navBar__item');
+	// ADD LOADING HEADER
+	header.setAttribute('loading', '');
+	// INIT FUNCTION
+	const init = () => {
+		return new Promise((resolve, reject) => {
+			items__MainMenu.forEach((item) => {
+				const isHaveSub = item.querySelectorAll('.navBar');
+				// CHECK MAIN MENU IS HAVE SUB ???
+				if (isHaveSub.length > 0) {
+					// ADD CLASS IS HAVE SUB
+					item.classList.add('isHaveSubMenu');
+					// ADD CLASS LIST MENU LV1
+					isHaveSub.forEach((item) => {
+						item.classList.add('navBar--lv1');
+					});
+					// ADD CLASS ITEM MENU LV1
+					const items__MenuLv1 = item.querySelectorAll('.navBar__item');
+					items__MenuLv1.forEach((item) => {
+						item.classList.add('navBar__item--lv1');
+					});
+				}
+			});
+			resolve();
+		})
+	}
 
-    init().then(() => {
-        setTimeout(() => {
-            header.removeAttribute('loading');
-            header.setAttribute('loaded', '');
-        }, 300);
-    })
+	init().then(() => {
+		setTimeout(() => {
+			header.removeAttribute('loading');
+			header.setAttribute('loaded', '');
+		}, 300);
+	})
 };
 
 // INIT BUTTON BACK
 const initElementButtonBackSubMenu = () => {
-    const menusLv1 = document.querySelectorAll('.navBar--lv1');
-    menusLv1.forEach((item) => {
-        const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
-        const btn__content = mainMenu.getAttribute('data-btn-back-content');
-        const btn__wrapper = document.createElement('div');
-        // GẮN NÚT MẶC ĐỊNH
-        btn__wrapper.classList.add(
-            'navBar__item',
-            'navBar__item--lv1',
-            'mobile'
-        );
-        item.prepend(btn__wrapper);
-        // INER HTML
-        btn__wrapper.innerHTML = `<div class="navBar__back">${btn__content}</div>`;
-    });
+	const menusLv1 = document.querySelectorAll('.navBar--lv1');
+	menusLv1.forEach((item) => {
+		const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
+		const btn__content = mainMenu.getAttribute('data-btn-back-content');
+		const btn__wrapper = document.createElement('div');
+		// GẮN NÚT MẶC ĐỊNH
+		btn__wrapper.classList.add(
+			'navBar__item',
+			'navBar__item--lv1',
+			'mobile'
+		);
+		item.prepend(btn__wrapper);
+		// INER HTML
+		btn__wrapper.innerHTML = `<div class="navBar__back">${btn__content}</div>`;
+	});
 };
 
 // INIT Smooth Scrollbar
 const initSmoothScrollbar = () => {
-    var Scrollbar = window.Scrollbar;
-    // Scrollbar.init(document.querySelector('#body-smoothScroll'));
+	var Scrollbar = window.Scrollbar;
+	// Scrollbar.init(document.querySelector('#body-smoothScroll'));
 }
 
 // ACTIONS LOGIN PAGE
 const actionsLoginPage = () => {
-    // Small functions here !!!
-    const check = () => {
-        let isLogin = document
-            .querySelector('#check_login>input')
-            .getAttribute('data-isLogin');
-        if (isLogin == 'False') {
-            isLogin = false;
-        } else {
-            isLogin = true;
-        }
-        return isLogin;
-    };
-    // Params gobals here !!
-    const isLogin = check();
-    const headerButtonLogin__wrapper = document.querySelector(
-        '.headerButtonLogin__wrapper'
-    );
-    const headerLogged__wrapper = document.querySelector(
-        '.headerLogged__wrapper'
-    );
-    const headerLogOut = document.querySelector('.headerLogOut');
-    const research__login__option = document.querySelector(
-        '.research__login--option'
-    );
-    // Action here !!!
-    if (isLogin) {
-        // ACTION FOR ISLOGIN = TRUE
-        headerButtonLogin__wrapper.classList.add('isLogin');
-        headerLogged__wrapper.classList.add('isLogin');
-        if (research__login__option) {
-            research__login__option.classList.add('isLogin');
-        }
-        $('.news__events--detail .lAS__listItem.like').on('click', function(e) {
-            e.preventDefault();
-            const url = $(this).attr('data-url');
-            const isLike = $(this).attr('isLike');
-            $.ajax({
-                type: 'post',
-                url: url,
-                data: {
-                    isLike: isLike,
-                },
-                contentType: false,
-                processData: false,
-                beforeSend: () => {
+	// Small functions here !!!
+	const check = () => {
+		let isLogin = document
+			.querySelector('#check_login>input')
+			.getAttribute('data-isLogin');
+		if (isLogin == 'False') {
+			isLogin = false;
+		} else {
+			isLogin = true;
+		}
+		return isLogin;
+	};
+	// Params gobals here !!
+	const isLogin = check();
+	const headerButtonLogin__wrapper = document.querySelector(
+		'.headerButtonLogin__wrapper'
+	);
+	const headerLogged__wrapper = document.querySelector(
+		'.headerLogged__wrapper'
+	);
+	const headerLogOut = document.querySelector('.headerLogOut');
+	const research__login__option = document.querySelector(
+		'.research__login--option'
+	);
+	// Action here !!!
+	if (isLogin) {
+		// ACTION FOR ISLOGIN = TRUE
+		headerButtonLogin__wrapper.classList.add('isLogin');
+		headerLogged__wrapper.classList.add('isLogin');
+		if (research__login__option) {
+			research__login__option.classList.add('isLogin');
+		}
+		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
+			e.preventDefault();
+			const url = $(this).attr('data-url');
+			const isLike = $(this).attr('isLike');
+			const id = $(this).attr('id');
+			$.ajax({
+				type: 'post',
+				url: url,
+				data: {
+					isLike: isLike,
+					id: id
+				},
+				contentType: false,
+				processData: false,
+				beforeSend: () => {
 
-                },
-                success: (res) => {
+				},
+				complete: () => {
+					stateOfLikeButton();
+				},
+				success: (res) => {
+					if(res == true) {
+						$(this).attr('isLike', true);
+						$(this).find("span").html(`${res.numberLike}`)
+					}
+					if(res == false) {
+						$(this).attr('isLike', false);
+						$(this).find("span").html(`${this.numberLike}`)
+					}
+				},
+				error: (res) => {
 
-                },
-                error: (res) => {
-
-                }
-            })
-        });
-    } else {
-        // ACTION FOR ISLOGIN = FALSE
-        headerButtonLogin__wrapper.classList.remove('isLogin');
-        headerLogged__wrapper.classList.remove('isLogin');
-        if (research__login__option) {
-            research__login__option.classList.remove('isLogin');
-        }
-    }
-    // LOGOUT
-    headerLogOut.addEventListener('click', (e) => {
-        const messege = headerLogOut.getAttribute('messege-logout');
-        document
-            .querySelector('#check_login>input')
-            .setAttribute('data-isLogin', 'False');
-        actionsLoginPage();
-        alert(messege);
-    });
+				}
+			})
+		});
+	} else {
+		// ACTION FOR ISLOGIN = FALSE
+		headerButtonLogin__wrapper.classList.remove('isLogin');
+		headerLogged__wrapper.classList.remove('isLogin');
+		if (research__login__option) {
+			research__login__option.classList.remove('isLogin');
+		}
+	}
+	// LOGOUT
+	headerLogOut.addEventListener('click', (e) => {
+		const messege = headerLogOut.getAttribute('messege-logout');
+		document
+			.querySelector('#check_login>input')
+			.setAttribute('data-isLogin', 'False');
+		actionsLoginPage();
+		alert(messege);
+	});
 };
 
 // SHOW SUB MENU MOBILE
 const showSubMenuMobile = () => {
-    const btn = document.querySelector('.navBarHamburger__wrapper');
-    const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
-    const items__IsHaveSubMenu = document.querySelectorAll('.isHaveSubMenu');
-    const overlay = document.querySelector('#overlay');
-    // SHOW MAIN MENU !!!
-    if (btn) {
-        btn.addEventListener('click', (e) => {
-            document.querySelector('body').classList.toggle('disabled');
-            btn.classList.toggle('active');
-            mainMenu.classList.toggle('show');
-            overlay.classList.toggle('show');
-            // CLOSE ALL SUB MENU
-            items__IsHaveSubMenu.forEach((item) => {
-                item.querySelector('.navBar--lv1').classList.remove('show');
-            });
-        });
-    } else {
-        console.log(`Không tồn tại element :=> .navBarHamburger__wrapper`);
-    }
+	const btn = document.querySelector('.navBarHamburger__wrapper');
+	const mainMenu = document.querySelector('.navbottom__wrapper>.navBar');
+	const items__IsHaveSubMenu = document.querySelectorAll('.isHaveSubMenu');
+	const overlay = document.querySelector('#overlay');
+	// SHOW MAIN MENU !!!
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			document.querySelector('body').classList.toggle('disabled');
+			btn.classList.toggle('active');
+			mainMenu.classList.toggle('show');
+			overlay.classList.toggle('show');
+			// CLOSE ALL SUB MENU
+			items__IsHaveSubMenu.forEach((item) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			});
+		});
+	} else {
+		console.log(`Không tồn tại element :=> .navBarHamburger__wrapper`);
+	}
 
-    // SHOW SUB MENU
-    items__IsHaveSubMenu.forEach((item) => {
-        const menuLv1 = item.querySelector('.navBar--lv1');
-        const btnBack = menuLv1.querySelector('.navBar__back');
-        // SHOW MENU LV 1
-        item.addEventListener('click', (e) => {
-            menuLv1.classList.add('show');
-        });
-        // BACK TO MAIN MENU
-        if (btnBack) {
-            btnBack.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menuLv1.classList.remove('show');
-            });
-        } else {
-            console.log(`Không tồn tại element :=> .navBar__back`);
-        }
-    });
+	// SHOW SUB MENU
+	items__IsHaveSubMenu.forEach((item) => {
+		const menuLv1 = item.querySelector('.navBar--lv1');
+		const btnBack = menuLv1.querySelector('.navBar__back');
+		// SHOW MENU LV 1
+		item.addEventListener('click', (e) => {
+			menuLv1.classList.add('show');
+		});
+		// BACK TO MAIN MENU
+		if (btnBack) {
+			btnBack.addEventListener('click', (e) => {
+				e.stopPropagation();
+				menuLv1.classList.remove('show');
+			});
+		} else {
+			console.log(`Không tồn tại element :=> .navBar__back`);
+		}
+	});
 
-    if (overlay) {
-        overlay.addEventListener('click', (e) => {
-            mainMenu.classList.remove('show');
-            overlay.classList.remove('show');
-            btn.classList.remove('active');
-            items__IsHaveSubMenu.forEach((item) => {
-                item.querySelector('.navBar--lv1').classList.remove('show');
-            });
-        });
-    }
+	if (overlay) {
+		overlay.addEventListener('click', (e) => {
+			mainMenu.classList.remove('show');
+			overlay.classList.remove('show');
+			btn.classList.remove('active');
+			items__IsHaveSubMenu.forEach((item) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			});
+		});
+	}
 };
 
 // SHOW INPUT SEARCH
 const showInputSearch = () => {
-    const btn = document.querySelector('.navSearch__btn');
-    const navSearch__input = document.querySelector('.navSearch__input')
-    if (btn) {
-        btn.addEventListener('click', (e) => {
-            btn.classList.toggle('active');
-            navSearch__input.classList.toggle('show');
-        })
-    }
+	const btn = document.querySelector('.navSearch__btn');
+	const navSearch__input = document.querySelector('.navSearch__input')
+	if (btn) {
+		btn.addEventListener('click', (e) => {
+			btn.classList.toggle('active');
+			navSearch__input.classList.toggle('show');
+		})
+	}
 }
 
 // ACTIVE LANGGUAGE
 const activeLanguage = () => {
-    const htmlLang = document.querySelector('html').getAttribute('lang');
-    const items__language = document.querySelectorAll(
-        '.header__languages .languages__item'
-    );
-    items__language.forEach((item) => {
-        if (item.getAttribute('data-language') == htmlLang) {
-            item.classList.add('active');
-        }
-    });
+	const htmlLang = document.querySelector('html').getAttribute('lang');
+	const items__language = document.querySelectorAll(
+		'.header__languages .languages__item'
+	);
+	items__language.forEach((item) => {
+		if (item.getAttribute('data-language') == htmlLang) {
+			item.classList.add('active');
+		}
+	});
 };
 
 // SHOW BACK TO TOP
@@ -246,60 +258,60 @@ const showBackToTop = () => {
 
 // COPY DATA BY ATTR
 const copyDataByAttr = () => {
-    const items__paste = document.querySelectorAll('[data-paste]');
-    const items__copy = document.querySelectorAll('[data-copy]');
+	const items__paste = document.querySelectorAll('[data-paste]');
+	const items__copy = document.querySelectorAll('[data-copy]');
 
-    items__paste.forEach((itemPaste) => {
-        items__copy.forEach((itemCopy) => {
-            var data = itemCopy.getAttribute('data-copy');
-            if (data != null && data == itemPaste.getAttribute('data-paste')) {
-                itemPaste.textContent = itemCopy.textContent;
-            }
-        });
-    });
+	items__paste.forEach((itemPaste) => {
+		items__copy.forEach((itemCopy) => {
+			var data = itemCopy.getAttribute('data-copy');
+			if (data != null && data == itemPaste.getAttribute('data-paste')) {
+				itemPaste.textContent = itemCopy.textContent;
+			}
+		});
+	});
 };
 
 // CHANGE CONTENT TABLE MOBILE
 const changeContentMobile = () => {
-    const contentsMobile = document.querySelectorAll('[data_content--mobile]');
-    const contentsPc = document.querySelectorAll('[data_content--pc]');
-    const isChange = window.innerWidth < 1025;
-    if (isChange == true) {
-        contentsMobile.forEach((item) => {
-            const valueContent = item.getAttribute('data_content--mobile');
-            item.innerHTML = valueContent;
-        })
-    } else {
-        contentsPc.forEach((item) => {
-            const valueContent = item.getAttribute('data_content--pc');
-            item.innerHTML = valueContent;
-        })
-    }
+	const contentsMobile = document.querySelectorAll('[data_content--mobile]');
+	const contentsPc = document.querySelectorAll('[data_content--pc]');
+	const isChange = window.innerWidth < 1025;
+	if (isChange == true) {
+		contentsMobile.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--mobile');
+			item.innerHTML = valueContent;
+		})
+	} else {
+		contentsPc.forEach((item) => {
+			const valueContent = item.getAttribute('data_content--pc');
+			item.innerHTML = valueContent;
+		})
+	}
 }
 
 // MAIN BANNER WEBSITE
 const initMainBanner = () => {
-    const namePage = document.querySelector('#js-page-verify');
-    const mainBanner = document.querySelector('.MainSlider__Banners');
-    if (namePage.className == "index-page") {
-        mainBanner.classList.add('isIndex');
-        return new Swiper('.MainSlider__Banners .swiper-container', {
-            effect: 'fade',
-            fadeEffect: {
-                crossFade: true,
-            },
-            speed: 1000,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.MainSlider__Banners .swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-        });
-    };
+	const namePage = document.querySelector('#js-page-verify');
+	const mainBanner = document.querySelector('.MainSlider__Banners');
+	if (namePage.className == "index-page") {
+		mainBanner.classList.add('isIndex');
+		return new Swiper('.MainSlider__Banners .swiper-container', {
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true,
+			},
+			speed: 1000,
+			autoplay: {
+				delay: 5000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.MainSlider__Banners .swiper-pagination',
+				type: 'bullets',
+				clickable: true,
+			},
+		});
+	};
 };
 
 // AJAX FORM FOOTER
@@ -348,113 +360,113 @@ const ajaxFormFooter = () => {
 
 // OPEN TARGET LINK FOOTER
 const openTargetLinkFooter = () => {
-    const select__linkTarget = document.querySelector(
-        '.footer__forms .footer__select-control select'
-    );
-    select__linkTarget.addEventListener('change', (e) => {
-        const select__valute = select__linkTarget.value;
-        window.open(`${select__valute}`, '_blank');
-    });
+	const select__linkTarget = document.querySelector(
+		'.footer__forms .footer__select-control select'
+	);
+	select__linkTarget.addEventListener('change', (e) => {
+		const select__valute = select__linkTarget.value;
+		window.open(`${select__valute}`, '_blank');
+	});
 };
 
 // swiper home page video
 const sliderHomeVideo = () => {
-    var swiper = new Swiper('.swiper--left__wrapper .swiper-container', {
-        // Enable lazy loading
-        lazy: true,
-        navigation: {
-            nextEl: '.swiper--left__wrapper .swiper-button-next',
-            prevEl: '.swiper--left__wrapper .swiper-button-prev',
-        },
-    });
+	var swiper = new Swiper('.swiper--left__wrapper .swiper-container', {
+		// Enable lazy loading
+		lazy: true,
+		navigation: {
+			nextEl: '.swiper--left__wrapper .swiper-button-next',
+			prevEl: '.swiper--left__wrapper .swiper-button-prev',
+		},
+	});
 };
 
 // swiper home page image
 const silderHomeImage = () => {
-    var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
-        spaceBetween: 10,
-        slidesPerView: 3,
-        freeMode: true,
-        watchSlidesVisibility: true,
-        watchSlidesProgress: true,
-    });
+	var galleryThumbs = new Swiper('.lib__images--right .gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 3,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	});
 
-    var galleryTop = new Swiper('.lib__images--right .gallery-top', {
-        navigation: {
-            nextEl: '.lib__images--right .swiper-button-next',
-            prevEl: '.lib__images--right .swiper-button-prev',
-        },
-        thumbs: {
-            swiper: galleryThumbs,
-        },
-    });
+	var galleryTop = new Swiper('.lib__images--right .gallery-top', {
+		navigation: {
+			nextEl: '.lib__images--right .swiper-button-next',
+			prevEl: '.lib__images--right .swiper-button-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbs,
+		},
+	});
 };
 
 //Swiper Hot News HOME
 const sliderHotnewsHome = () => {
-    var swiper = new Swiper(".hot-news-banner .swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        simulateTouch: false
-    })
+	var swiper = new Swiper(".hot-news-banner .swiper-container", {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		simulateTouch: false
+	})
 }
 
 //Swiper banner design home 1
 const sliderVideoBanner1 = () => {
-    var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-1 .swiper-container", {
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        simulateTouch: false
-    })
+	var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-1 .swiper-container", {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		simulateTouch: false
+	})
 }
 
 //Swiper banner design home 2
 const sliderVideoBanner2 = () => {
-        var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            simulateTouch: false
-        })
-    }
-    //Silder Home Page Member Section
+	var swiper = new Swiper(".home__Lib__video .home__lib__video__banner--design-2 .swiper-container", {
+		loop: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		simulateTouch: false
+	})
+}
+//Silder Home Page Member Section
 const SliderHomeMemberSection = () => {
-    var slider = new Swiper(".home__member .swiper-container", {
-        loop: true,
-        slidesPerView: 6,
-        spaceBetween: 30,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            100: {
-                slidesPerView: 2,
-                spaceBetween: 10
-            },
-            700: {
-                slidesPerView: 3,
-                spaceBetween: 10
-            },
-            1000: {
-                slidesPerView: 5,
-                spaceBetween: 10
-            },
-            1450: {
-                slidesPerView: 6,
-                spaceBetween: 30
-            }
-        },
-        simulateTouch: false,
-    })
+	var slider = new Swiper(".home__member .swiper-container", {
+		loop: true,
+		slidesPerView: 6,
+		spaceBetween: 30,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		breakpoints: {
+			100: {
+				slidesPerView: 2,
+				spaceBetween: 10
+			},
+			700: {
+				slidesPerView: 3,
+				spaceBetween: 10
+			},
+			1000: {
+				slidesPerView: 5,
+				spaceBetween: 10
+			},
+			1450: {
+				slidesPerView: 6,
+				spaceBetween: 30
+			}
+		},
+		simulateTouch: false,
+	})
 }
 
 const ajaxFormContact = () => {
@@ -539,18 +551,18 @@ const ajaxFormResearch = () => {
 };
 // Add Class to active news page
 const NewsAddClass = () => {
-    if (document.querySelector('.news--item')) {
-        var temp = document.querySelectorAll('.news--item');
-        temp[0].classList.add("active");
-        temp.forEach((item) => {
-            item.addEventListener('click', () => {
-                temp.forEach(item => {
-                    item.classList.remove("active");
-                })
-                item.classList.add("active");
-            })
-        })
-    }
+	if (document.querySelector('.news--item')) {
+		var temp = document.querySelectorAll('.news--item');
+		temp[0].classList.add("active");
+		temp.forEach((item) => {
+			item.addEventListener('click', () => {
+				temp.forEach(item => {
+					item.classList.remove("active");
+				})
+				item.classList.add("active");
+			})
+		})
+	}
 };
 
 //playvideo
@@ -570,34 +582,34 @@ const setHeightBgIntroduce = () => {
     }
     // Ajax Get Lib Image
 const ajaxGetLibImage = () => {
-    if ($('.item-image--tab')) {
-        $('.item-image--tab').click(() => {
-            console.log("get ajax image tab");
-            const url = $('.item-image--tab').attr('data-url');
-            $.ajax({
-                type: 'get',
-                url: url,
-                processData: false,
-                contentType: false,
-                beforeSend: () => {
-                    loadToWaitRequest(true);
-                },
-                complete: () => {
+	if ($('.item-image--tab')) {
+		$('.item-image--tab').click(() => {
+			console.log("get ajax image tab");
+			const url = $('.item-image--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
 					loadToWaitRequest(false);
 					randomCodePopupImage();
 					initializeLibImage__Slider_Popup();
-                },
-                success: (res) => {
-                    const item = res;
-                    const currentItem = $(".tab-content");
-                    currentItem.html(item);
-                },
-                error: (res) => {
-                    console.log(res);
-                },
-            });
-        })
-    }
+				},
+				success: (res) => {
+					const item = res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
+		})
+	}
 };
 // Ajax Get Lib Video
 const ajaxGetLibVideo = () => {
@@ -630,34 +642,35 @@ const ajaxGetLibVideo = () => {
 };
 // Ajax Get Lib Document
 const ajaxGetLibDocument = () => {
-    if ($('.item-document--tab')) {
-        $('.item-document--tab').click(() => {
-            console.log("get ajax document tab");
-            const url = $('.item-document--tab').attr('data-url');
-            $.ajax({
-                type: 'get',
-                url: url,
-                processData: false,
-                contentType: false,
-                beforeSend: () => {
-                    loadToWaitRequest(true);
-                },
-                complete: () => {
+	if ($('.item-document--tab')) {
+		$('.item-document--tab').click(() => {
+			console.log("get ajax document tab");
+			const url = $('.item-document--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
 					loadToWaitRequest(false);
-                    getSVGs();
-                    customPopupDocument();
-                },
-                success: (res) => {
-                    const item = res;
-                    const currentItem = $(".tab-content");
+					getSVGs();
+					customPopupDocument();
+					EditAtrr();
+				},
+				success: (res) => {
+					const item = res;
+					const currentItem = $(".tab-content");
 					currentItem.html(item);
-                },
-                error: (res) => {
-                    console.log(res);
-                }
-            });
-        })
-    }
+				},
+				error: (res) => {
+					console.log(res);
+				}
+			});
+		})
+	}
 };
 // Ajax Get all Lib Image
 const ajaxGetMoreLibImage = () => {
@@ -671,8 +684,8 @@ const ajaxGetMoreLibImage = () => {
 			},
 			complete: () => {
 				loadToWaitRequest(false);
-                randomCodePopupImage();
-                initializeLibImage__Slider_Popup();
+				randomCodePopupImage();
+				initializeLibImage__Slider_Popup();
 			},
 			success: (res) => {
 				const item =res;
@@ -687,138 +700,144 @@ const ajaxGetMoreLibImage = () => {
 };
 // Ajax Get all Lib Video
 const ajaxGetMoreLibVideo = () => {
-    $('.see-more-video').click(() => {
-        const url = $('.see-more-video').attr('data-url');
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            beforeSend: () => {
-                loadToWaitRequest(true);
-            },
-            complete: () => {
-                loadToWaitRequest(false);
-            },
-            success: (res) => {
-                const item = res;
-                const currentItem = $(".tab-content");
-                currentItem.html(item);
-            },
-            error: (res) => {
-                console.log(res);
-            },
-        });
-    });
+	$('.see-more-video').click(() => {
+		const url = $('.see-more-video').attr('data-url');
+		$.ajax({
+			type: 'get',
+			url: url,
+			processData: false,
+			contentType: false,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+			},
+			success: (res) => {
+				const item = res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
 };
 // Ajax Get all Lib Document
 const ajaxGetMoreLibDocument = () => {
-    $('.see-more-document').click(() => {
-        const url = $('.see-more-document').attr('data-url');
-        $.ajax({
-            type: 'get',
-            url: url,
-            processData: false,
-            contentType: false,
-            beforeSend: () => {
-                loadToWaitRequest(true);
-            },
-            complete: () => {
-                loadToWaitRequest(false);
-                getSVGs();
-                customPopupDocument();
-            },
-            success: (res) => {
-                const item = res;
-                const currentItem = $(".tab-content");
-                currentItem.html(item);
-            },
-            error: (res) => {
-                console.log(res);
-            },
-        });
-    });
+	$('.see-more-document').click(() => {
+		const url = $('.see-more-document').attr('data-url');
+		$.ajax({
+			type: 'get',
+			url: url,
+			processData: false,
+			contentType: false,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+				getSVGs();
+				customPopupDocument();
+				EditAtrr();
+			},
+			success: (res) => {
+				const item = res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
 };
 // Add Class To lib Document
 const AddClassToLibDocument = () => {
-    if (document.querySelector('.document--inner--content')) {
-        document
-            .querySelectorAll('.item__wrapper--inner')
-            .forEach((item, index) => {
-                if (index % 2 != 0) {
-                    item.style.float = 'right';
-                }
-            });
-    }
+	if (document.querySelector('.document--inner--content')) {
+		document
+			.querySelectorAll('.item__wrapper--inner')
+			.forEach((item, index) => {
+				if (index % 2 != 0) {
+					item.style.float = 'right';
+				}
+			});
+	}
 };
-
 // RamdomCode LibImage
 const randomCodePopupImage = () => {
-    let count = $('.modalimage');
-    var i,
-        code = [];
-    for (i = 0; i < count.length; i++) {
-        code[i] = '_' + Math.random().toString(36).substr(2, 9);
-        $('.modalimage').eq(i).attr('id', code[i]);
-        $('.item-gallery--popup')
-            .eq(i)
-            .attr('data-src', '#' + code[i]);
-    }
+	let count = $('.modalimage');
+	var i,
+		code = [];
+	for (i = 0; i < count.length; i++) {
+		code[i] = '_' + Math.random().toString(36).substr(2, 9);
+		$('.modalimage').eq(i).attr('id', code[i]);
+		$('.item-gallery--popup')
+			.eq(i)
+			.attr('data-src', '#' + code[i]);
+	}
 };
+//Edit Atrr download when server return lib document
+const EditAtrr = () => {
+	document.querySelectorAll(".item__wrapper--inner").forEach(item => {
+		const url = item.querySelector(".document--popup-link").getAttribute("data-url")
+		item.querySelector(".download-document--btn a").setAttribute("href" , `https://drive.google.com/u/0/uc?id=${url}&export=download`)
+	})
+}
 
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
-    const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
-        spaceBetween: 10,
-        slidesPerView: 3,
-        observer: true,
-        observeParents: true,
-        loopedSlides: 5,
-    });
+	const thumb = new Swiper(`${id} .slider--popup_thumb .swiper-container`, {
+		spaceBetween: 10,
+		slidesPerView: 3,
+		observer: true,
+		observeParents: true,
+		loopedSlides: 5,
+	});
 
-    const slider = new Swiper(`${id} .slider--popup_main .swiper-container`, {
-        spaceBetween: 10,
-        observer: true,
-        observeParents: true,
-        spaceBetween: 10,
-        loop: true,
-        loopedSlides: 5,
-        navigation: {
-            nextEl: `${id} .slider--popup_main .swiper-button-next`,
-            prevEl: `${id} .slider--popup_main .swiper-button-prev`,
-        },
-        thumbs: {
-            swiper: thumb
-        },
-    });
-    return slider;
+	const slider = new Swiper(`${id} .slider--popup_main .swiper-container`, {
+		spaceBetween: 10,
+		observer: true,
+		observeParents: true,
+		spaceBetween: 10,
+		loopedSlides: 5,
+		navigation: {
+			nextEl: `${id} .slider--popup_main .swiper-button-next`,
+			prevEl: `${id} .slider--popup_main .swiper-button-prev`,
+		},
+		thumbs: {
+			swiper: thumb
+		},
+	});
+	return slider;
 };
 
 // Lib Image SLIDER POPUP
 const initializeLibImage__Slider_Popup = () => {
-    const btn = document.querySelectorAll(
-        '.item-gallery--popup[data-fancybox]'
-    );
-    btn.forEach((item) => {
-        item.addEventListener('click', () => {
-            var id = item.getAttribute("data-src");
-            Libary_Image_Popup(id);
-        });
-    });
+	const btn = document.querySelectorAll(
+		'.item-gallery--popup[data-fancybox]'
+	);
+	btn.forEach((item) => {
+		item.addEventListener('click', () => {
+			var id = item.getAttribute("data-src");
+			Libary_Image_Popup(id);
+		});
+	});
 };
 
 //down row content
 const downRowContent = () => {
-    const list = document.querySelectorAll(".committee__member--item p");
-    let listT = [];
-    list.forEach((item, index) => {
-        listT.push(item.outerText);
-    });
-    for (var i = 0; i < listT.length; i++) {
-        listT[i] = listT[i].replace(",", "<br>");
-        $(".committee__member--item p").eq(i).html(listT[i]);
-    }
+	const list = document.querySelectorAll(".committee__member--item p");
+	let listT = [];
+	list.forEach((item, index) => {
+		listT.push(item.outerText);
+	});
+	for (var i = 0; i < listT.length; i++) {
+		listT[i] = listT[i].replace(",", "<br>");
+		$(".committee__member--item p").eq(i).html(listT[i]);
+	}
 }
 
 //active menu
@@ -915,32 +934,35 @@ const openFileViewer = () => {
     }
     //Popup Document Lib 
 const customPopupDocument = () => {
-    if (document.querySelector(".lib__page")) {
-        var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
-        listDocument.forEach(item => {
-            item.addEventListener("click", () => {
-                const url = item.getAttribute("data-url");
-                $("#popup--document iframe").attr("src", `${url}`);
-                openFileViewer();
-            })
-        })
-    }
+	if (document.querySelector(".lib__page")) {
+		var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
+		listDocument.forEach(item => {
+			item.addEventListener("click", () => {
+				const url = item.getAttribute("data-url");
+				$("#popup--document iframe").attr("src", `https://drive.google.com/file/d/${url}/preview`);
+				$("#popup--document a").attr("href", `https://drive.google.com/u/0/uc?id=${url}&export=download`);
+				$("#popup--document .title").html(`${item.querySelector("h3").innerHTML}`)
+				$("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
+				
+			})
+		})
+	}
 }
 const stateOfLikeButton = () => {
-        var likeBtn = $(".lAS__listItem.like")
-        var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
-        if (stateOfBtn == false) {
-            $(likeBtn).find("h4").html("Thích <span>0</span>")
-        }
-        if (stateOfBtn == true) {
-            $(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
-        }
-    }
-    //get breadcrumb title
+	var likeBtn = $(".lAS__listItem.like")
+	var stateOfBtn = $(".lAS__listItem.like").attr("isLike");
+	if (stateOfBtn == false) {
+		$(likeBtn).find("h4").html("Thích <span>0</span>")
+	}
+	if (stateOfBtn == true) {
+		$(likeBtn).find("h4").html("Bỏ Thích <span>0</span>")
+	}
+}
+//get breadcrumb title
 const getBreadcrumbTitle = () => {
-    let title = $("#breadcrumb-wrapper ul li").last().text();
-    $("#breadcrumb-wrapper ul li").last().addClass('active');
-    $(".pagesBanner__title h1").text(title);
+	let title = $("#breadcrumb-wrapper ul li").last().text();
+	$("#breadcrumb-wrapper ul li").last().addClass('active');
+	$(".pagesBanner__title h1").text(title);
 }
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -949,7 +971,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// COMMON CONTROLLER
 	CommonController();
 	// ACCOUNT CONTROLLER
-	AccountController();
+	// AccountController();
 	// MAIN BANNER WEBSITE
 	initMainBanner();
 	// INIT Smooth Scrollbar
@@ -1021,14 +1043,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	//state of Like Btn
 	stateOfLikeButton();
 	//getBreadcrumbTitle
-    getBreadcrumbTitle();
-    //TAB
-    const Libary__Tab = new Tab('.lib__page .tab-container');
+	getBreadcrumbTitle();
+	//TAB
+	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 window.addEventListener('resize', () => {
-    // CHANGE CONTENT TABLE MOBILE
-    changeContentMobile();
+	// CHANGE CONTENT TABLE MOBILE
+	changeContentMobile();
 });
 
 // CHECK FORM VALID

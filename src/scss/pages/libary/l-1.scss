@@ -170,7 +170,26 @@
 		left: 0;
 		width: 100%;
 		.swiper-slide {
+			user-select: none;
 			border: 5px solid rgb(255, 255, 255);
+			&::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: url(../assets/images/lib-image/after-img.png);
+            }
+		}
+		.swiper-container {
+			padding: 0 10px
+		}
+		.swiper-slide-thumb-active {
+			opacity: 1;
+			&::after {
+				content: none
+			}
 		}
 	}
 	.fancybox-button {
@@ -471,7 +490,16 @@
 		width: 100%;
 
 		.swiper-slide {
+			max-height: 532px;
 			border: 5px solid rgb(255, 255, 255);
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				font-family: 'object-fit: cover, object-position: center';
+				background-size: cover;
+			}
 		}
 	}
 
@@ -584,6 +612,7 @@
 		.header--content {
 			font-size: 18px;
 			font-family: MYRIADPRO-LIGHTIT;
+			margin-bottom: 35px;
 		}
 
 		h3.title {
@@ -592,12 +621,12 @@
 			color: #002F4B;
 		}
 
-		h6.sub-title {
-			font-size: 16px;
-			font-family: UTM-COPPERPLATEB;
-			margin-bottom: 35px;
-			color: #002F4B;
-		}
+		// h6.sub-title {
+		// 	font-size: 16px;
+		// 	font-family: UTM-COPPERPLATEB;
+		// 	margin-bottom: 35px;
+		// 	color: #002F4B;
+		// }
 	}
 }
 
