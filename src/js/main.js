@@ -560,21 +560,17 @@ const ajaxFormResearch = () => {
 		}
 	});
 };
-// Add Class to active news page
-const NewsAddClass = () => {
-	if (document.querySelector('.news--item')) {
-		var temp = document.querySelectorAll('.news--item');
-		temp[0].classList.add("active");
-		temp.forEach((item) => {
-			item.addEventListener('click', () => {
-				temp.forEach(item => {
-					item.classList.remove("active");
-				})
-				item.classList.add("active");
-			})
-		})
-	}
-};
+// active news and event page
+const activeLinkNews = () => {
+	var pathname = window.location.pathname
+	document.querySelectorAll(".news__events .news--item").forEach(item => {
+		var temp = item.querySelector("a").getAttribute("href")
+		if( temp == pathname) {
+			item.classList.add("active")
+		}
+	})
+
+}
 
 //playvideo
 const playVideoIntroduct = () => {
@@ -733,8 +729,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	silderHomeImage();
 	// Submit Contact Form
 	ajaxFormContact();
-	//Get News Content
-	NewsAddClass();
 	//AJAX get Libary Image
 	ajaxGetLibImage();
 	//AJAX get Libary Video
@@ -769,6 +763,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	stateOfLikeButton();
 	//getBreadcrumbTitle
 	getBreadcrumbTitle();
+	//Active link news event
+	activeLinkNews();
 	//TAB
 
 	const Libary__Tab = new Tab('.lib__page .tab-container');
