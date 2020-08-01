@@ -559,13 +559,16 @@ const ajaxFormResearch = () => {
 };
 // active news and event page
 const activeLinkNews = () => {
-	var pathname = window.location.pathname
-	document.querySelectorAll(".news__events .news--item").forEach(item => {
+	if(document.querySelector(".news__events .news--item")) {
+		var pathname = window.location.pathname
+		document.querySelectorAll(".news__events .news--item").forEach(item => {
 		var temp = item.querySelector("a").getAttribute("href")
 		if(pathname.includes(`${temp}`)) {
 			item.classList.add("active")
 		}
 	})
+	}
+	
 
 }
 //playvideo
