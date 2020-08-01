@@ -657,7 +657,7 @@ const seeMoreMember = () => {
 	if (document.querySelector(".member__page")) {
 		var listMember = document.querySelectorAll(".member--item")
 		if (listMember.length > 12) {
-			var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='./assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
+			var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='/Content/resources/assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
 			$(".member__wrapper--inner").append(temp)
 		}
 		listMember.forEach((item, index) => {
