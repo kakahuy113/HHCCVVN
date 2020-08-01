@@ -724,12 +724,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	silderHomeImage();
 	// Submit Contact Form
 	ajaxFormContact();
-	// //AJAX get Libary Image
-	// ajaxGetLibImage();
-	// //AJAX get Libary Video
-	// ajaxGetLibVideo();
-	// //AJAX gget Libary document
-	// ajaxGetLibDocument();
+	//AJAX get Libary Image
+	ajaxGetLibImage();
+	//AJAX get Libary Video
+	ajaxGetLibVideo();
+	//AJAX gget Libary document
+	ajaxGetLibDocument();
 	//play video
 	playVideoIntroduct();
 	//setHeightBgIntroduce

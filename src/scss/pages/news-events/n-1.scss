@@ -89,9 +89,19 @@ ul.news__events--list {
 	}
 	display: flex;
 	.news--item--img {
+		overflow: hidden;
 		-ms-flex: 0 0 570px;
 		flex: 0 0 570px;
 		max-width: 570px;
+		max-height: 324px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			font-family: 'object-fit: cover, object-position: center';
+			background-size: cover;
+		}
 	}
 	.new--item--summary {
 		-ms-flex-preferred-size: 0;
