@@ -18,11 +18,13 @@
                 }
             }
             &:last-child {
-                overflow: hidden;
-                display: -webkit-box;
-                text-overflow: ellipsis;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 1;
+                >a {
+                    margin-bottom: -7px;
+                    width: 40vw;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
             }
             &+li {
                 &:before {
