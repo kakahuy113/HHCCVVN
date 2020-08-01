@@ -133,6 +133,9 @@ section.Research {
                     font-size: 17px;
                     padding-bottom: 12px;
                     width: 100%;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
                     @media (max-width: 1440.98px) {
                         font-size: 15px;
                     }
@@ -213,7 +216,7 @@ section.Research {
                 border-radius: 10px;
                 border: none;
                 height: 26px;
-                width: 71px;
+                min-width: 71px;
             }
             span {
                 font-size: 13px;
