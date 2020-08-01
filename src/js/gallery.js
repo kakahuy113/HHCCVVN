@@ -21,7 +21,7 @@ export const ajaxGetLibImage = () => {
 					ajaxGetMoreLibImage();
 				},
 				success: (res) => {
-					const item = res;
+					const item = res.Result.lib;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
