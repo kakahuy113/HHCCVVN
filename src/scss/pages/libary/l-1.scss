@@ -1,9 +1,9 @@
 .lib__page {
-	.tab-container .tab-content .content {
-		display: block !important;
-		opacity: 1 !important;
-		transition: none !important;
-	}
+	// .tab-container .tab-content .content {
+	// 	display: block !important;
+	// 	opacity: 1 !important;
+	// 	transition: none !important;
+	// }
 }
 .lib--list {
 	margin: 79px 0;
@@ -235,18 +235,29 @@
 		padding: 0 10px;
 		margin-bottom: 57px;
 		.item__wrapper {
+			&:nth-child(odd) {
+				padding-right: 150px;
+				@media (max-width: 1024.98px) {
+					padding-right: 10px;
+					padding-left: 10px;
+				}
+			}
+			&:nth-child(even) {
+				padding-left: 150px;
+				@media (max-width: 1024.98px) {
+					padding-left: 10px;
+					padding-right: 10px;
+				}
+			}
 			padding-bottom: 15px;
 			margin-bottom: 35px;
 			border-bottom: 1px solid rgba($color: #d6d6d6, $alpha: 0.5);
-			@media (max-width: 1024.98px) {
-				-ms-flex: 0 0 100%;
-				flex: 0 0 100%;
-				max-width: 100%;
-				.item__wrapper--inner {
-					float: none !important;
-					justify-content: center;
-				}
-			}
+			// @media (max-width: 1024.98px) {
+			// 	-ms-flex: 0 0 100%;
+			// 	flex: 0 0 100%;
+			// 	max-width: 100%;
+				
+			// }
 		}
 		.item__wrapper--inner {
 			display: flex;
@@ -265,12 +276,11 @@
 						font-family: MYRIADPRO-BOLDIT;	
 					}
 				}
-				.dowload-document-content {
-					padding-right: 42px;
-				}
+				
 			}
 			.download-document--btn {
 				align-self: center;
+				text-align: right;
 				a {
 					border-left: 1px solid rgba($color: #002f4b, $alpha: 0.25);
 					padding-left: 15px;
@@ -330,7 +340,7 @@
 	.slider--popup_main {
 		padding-bottom: 50px;
 		.swiper-slide {
-			user
+			user-select: none;
 			img {
 				width: 100%;
 				max-height: 535px;
@@ -339,7 +349,7 @@
 				font-family: 'object-fit: cover, object-position: center';
 				background-size: cover;
 			}
-		}
+		}s
 		.swiper-button-prev,
 		.swiper-button-next {
 			position: absolute;
@@ -355,7 +365,6 @@
 			color: var(--swiper-navigation-color, var(--swiper-theme-color));
 		}
 	}
-
 	.slider--popup_thumb {
 		padding: 0 44px;
 		position: absolute;
