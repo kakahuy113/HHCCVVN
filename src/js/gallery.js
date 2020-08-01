@@ -5,7 +5,6 @@ import {
 export const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
 		$('.item-image--tab').click(() => {
-			console.log("get ajax image tab");
 			const url = $('.item-image--tab').attr('data-url');
 			$.ajax({
 				type: 'get',
@@ -37,7 +36,6 @@ export const ajaxGetLibImage = () => {
 export const ajaxGetLibVideo = () => {
 	if ($('.item-video--tab')) {
 		$('.item-video--tab').click(() => {
-			console.log("get ajax video tab");
 			const url = $('.item-video--tab').attr('data-url');
 			$.ajax({
 				type: 'get',
@@ -67,7 +65,6 @@ export const ajaxGetLibVideo = () => {
 export const ajaxGetLibDocument = () => {
 	if ($('.item-document--tab')) {
 		$('.item-document--tab').click(() => {
-			console.log("get ajax document tab");
 			const url = $('.item-document--tab').attr('data-url');
 			$.ajax({
 				type: 'get',
@@ -100,7 +97,6 @@ export const ajaxGetLibDocument = () => {
 const ajaxGetMoreLibImage = () => {
 	$('.see-more-images').click(() => {
 		const url = $('.see-more-images').attr('data-url');
-		console.log(url);
 		$.ajax({
 			type: 'get',
 			url: url,
@@ -177,18 +173,6 @@ const ajaxGetMoreLibDocument = () => {
 			},
 		});
 	});
-};
-// Add Class To lib Document
-export const AddClassToLibDocument = () => {
-	if (document.querySelector('.document--inner--content')) {
-		document
-			.querySelectorAll('.item__wrapper--inner')
-			.forEach((item, index) => {
-				if (index % 2 != 0) {
-					item.style.float = 'right';
-				}
-			});
-	}
 };
 // RamdomCode LibImage
 const randomCodePopupImage = () => {

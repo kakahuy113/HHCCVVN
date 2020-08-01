@@ -110,15 +110,12 @@ const actionsLoginPage = () => {
 		if (research__login__option) {
 			research__login__option.classList.add('isLogin');
 		}
-		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
+		$('.lAS__listItem.like').on('click', function (e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
 			const isLike = $(this).attr('isLike');
 			const id = $(this).attr('id');
 			const likeNum = parseInt($(this).find("span").html())
-			console.log(url );
-			console.log(isLike);
-			console.log(id);
 			$.ajax({
 				type: 'post',
 				url: url,
@@ -565,13 +562,12 @@ const activeLinkNews = () => {
 	var pathname = window.location.pathname
 	document.querySelectorAll(".news__events .news--item").forEach(item => {
 		var temp = item.querySelector("a").getAttribute("href")
-		if( temp == pathname) {
+		if(pathname.includes(`${temp}`)) {
 			item.classList.add("active")
 		}
 	})
 
 }
-
 //playvideo
 const playVideoIntroduct = () => {
 	$(".introduct__video--img").click(function (e) {
@@ -587,8 +583,6 @@ const setHeightBgIntroduce = () => {
 	let heightBgIntroduct = $('.introduct__topContent').outerHeight();
 	$("section.Introduct .introduct__bg img").css('height', heightBgIntroduct);
 }
-
-
 //down row content
 const downRowContent = () => {
 	const list = document.querySelectorAll(".committee__member--item p");
@@ -601,7 +595,6 @@ const downRowContent = () => {
 		$(".committee__member--item p").eq(i).html(listT[i]);
 	}
 }
-
 //active menu
 const activeLinkMenu = () => {
 	var link = "";
@@ -624,7 +617,6 @@ const activeLinkMenu = () => {
 		$(".navBar__item").removeClass("active");
 	}
 }
-
 //google recaptcha
 const recaptchaGoogle = () => {
 	$('#research__form').click(function (e) {
@@ -651,7 +643,6 @@ const recaptchaGoogle = () => {
 	});
 
 }
-
 // See All Member
 const seeMoreMember = () => {
 	if (document.querySelector(".member__page")) {
@@ -673,7 +664,6 @@ const seeMoreMember = () => {
 		})
 	}
 }
-
 //state of like button
 const stateOfLikeButton = () => {
 	var likeBtn = $(".lAS__listItem.like")
@@ -690,6 +680,11 @@ const getBreadcrumbTitle = () => {
 	let title = $("#breadcrumb-wrapper ul li").eq(1).text();
 	$("#breadcrumb-wrapper ul li").last().addClass('active');
 	$(".pagesBanner__title h1").text(title);
+}
+//share post facebook
+const sharePostFaceBook = () => {
+	var url = window.location.href;
+	$(".lAS__listItem.share").attr("href", `${url}`);
 }
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
@@ -741,8 +736,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	setHeightBgIntroduce();
 	//GET
 	ajaxFormResearch();
-	// AddClass
-	AddClassToLibDocument();
 	//downRowContent
 	downRowContent();
 	//activeLinkMenu
@@ -765,8 +758,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	getBreadcrumbTitle();
 	//Active link news event
 	activeLinkNews();
+	//Share Facebook
+	sharePostFaceBook();
 	//TAB
-
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
