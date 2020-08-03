@@ -2,7 +2,7 @@ import {
 	getSVGs,
 } from './util/utilities';
 // Ajax Get Lib Image
-export const ajaxGetLibImage = () => {
+ const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
 		$('.item-image--tab').click(() => {
 			const url = $('.item-image--tab').attr('data-url');
@@ -33,7 +33,7 @@ export const ajaxGetLibImage = () => {
 	}
 };
 // Ajax Get Lib Video
-export const ajaxGetLibVideo = () => {
+ const ajaxGetLibVideo = () => {
 	if ($('.item-video--tab')) {
 		$('.item-video--tab').click(() => {
 			const url = $('.item-video--tab').attr('data-url');
@@ -62,7 +62,7 @@ export const ajaxGetLibVideo = () => {
 	}
 };
 // Ajax Get Lib Document
-export const ajaxGetLibDocument = () => {
+const ajaxGetLibDocument = () => {
 	if ($('.item-document--tab')) {
 		$('.item-document--tab').click(() => {
 			const url = $('.item-document--tab').attr('data-url');
@@ -191,7 +191,7 @@ const randomCodePopupImage = () => {
 const EditAtrr = () => {
 	document.querySelectorAll(".item__wrapper--inner").forEach(item => {
 		const url = item.querySelector(".document--popup-link").getAttribute("data-url")
-		item.querySelector(".download-document--btn a").setAttribute("href", `https://drive.google.com/u/0/uc?id=${url}&export=download`)
+		item.querySelector(".download-document--btn a").setAttribute("href", `https://drive.google.com/u/0/uc?id=${url}&=download`)
 	})
 }
 
@@ -251,10 +251,9 @@ const customPopupDocument = () => {
 			item.addEventListener("click", () => {
 				const url = item.getAttribute("data-url");
 				$("#popup--document iframe").attr("src", `https://drive.google.com/file/d/${url}/preview`);
-				$("#popup--document a").attr("href", `https://drive.google.com/u/0/uc?id=${url}&export=download`);
+				$("#popup--document a").attr("href", `https://drive.google.com/u/0/uc?id=${url}&=download`);
 				$("#popup--document .title").html(`${item.querySelector("h3").innerHTML}`)
 				$("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
-
 			})
 		})
 	}
