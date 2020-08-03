@@ -11,6 +11,9 @@
                 color: map-get($mau, trang);
                 font-size: 14px;
                 display: inline-block;
+                @media (max-width: 575.98px) {
+                    font-size: 10px;
+                }
             }
             &.active {
                 a {
@@ -24,6 +27,9 @@
                     overflow: hidden;
                     white-space: nowrap;
                     text-overflow: ellipsis;
+                    @media (max-width: 575.98px) {
+                        margin-bottom: -4px;
+                    }
                 }
             }
             &+li {
@@ -34,6 +40,9 @@
                     top: 0;
                     margin: 0 12px;
                     color: map-get($mau, trang);
+                    @media (max-width: 575.98px) {
+                        margin: 0px 3px;
+                    }
                 }
             }
         }
