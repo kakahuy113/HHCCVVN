@@ -63,7 +63,7 @@ ul.news__events--list {
 .news--item--inner--content {
 	@media (min-width: 1025px) {
 		&:hover {
-			.research__blogItem--img {
+			.news--item--img {
 				img {
 					transform: scale(1.1);
 					transition: 1s all ease-in-out;

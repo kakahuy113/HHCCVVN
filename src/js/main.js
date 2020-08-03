@@ -559,13 +559,16 @@ const ajaxFormResearch = () => {
 };
 // active news and event page
 const activeLinkNews = () => {
-	var pathname = window.location.pathname
-	document.querySelectorAll(".news__events .news--item").forEach(item => {
+	if(document.querySelector(".news__events .news--item")) {
+		var pathname = window.location.pathname
+		document.querySelectorAll(".news__events .news--item").forEach(item => {
 		var temp = item.querySelector("a").getAttribute("href")
 		if(pathname.includes(`${temp}`)) {
 			item.classList.add("active")
 		}
 	})
+	}
+	
 
 }
 //playvideo
@@ -648,8 +651,15 @@ const seeMoreMember = () => {
 	if (document.querySelector(".member__page")) {
 		var listMember = document.querySelectorAll(".member--item")
 		if (listMember.length > 12) {
-			var temp = "<div class='see-more'><img class='lazyload blur-up' data-src='/Content/resources/assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
-			$(".member__wrapper--inner").append(temp)
+			var tempvn = "<div class='see-more'><img class='lazyload blur-up' data-src='/Content/resources/assets/images/member/read-more.png' alt='something'><p>Xem tất cả</p></div>"
+			var tempen ="<div class='see-more'><img class='lazyload blur-up' data-src='/Content/resources/assets/images/member/read-more.png' alt='something'><p>Show All</p></div>"
+			var vnoren = $("html").attr("lang")
+			if(vnoren == "vi") {
+				$(".member__wrapper--inner").append(tempvn)
+			}
+			if(vnoren == "en") {
+				$(".member__wrapper--inner").append(tempen)
+			}
 		}
 		listMember.forEach((item, index) => {
 			if (index > 11) {
@@ -724,12 +734,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	silderHomeImage();
 	// Submit Contact Form
 	ajaxFormContact();
-	//AJAX get Libary Image
-	ajaxGetLibImage();
-	//AJAX get Libary Video
-	ajaxGetLibVideo();
-	//AJAX gget Libary document
-	ajaxGetLibDocument();
 	//play video
 	playVideoIntroduct();
 	//setHeightBgIntroduce
