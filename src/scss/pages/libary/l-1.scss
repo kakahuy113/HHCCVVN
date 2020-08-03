@@ -145,7 +145,6 @@
 // VIDEO TAB
 .lib__page__video {
 	margin-bottom: 75px;
-
 	.content--video {
 		display: grid;
 		grid-gap: 46px 16px;
@@ -168,7 +167,6 @@
 			position: relative;
 			height: 100%;
 		}
-
 		.desc-video {
 			z-index: 999;
 			position: absolute;
@@ -177,7 +175,6 @@
 			color: #fff;
 			max-width: 414px;
 			pointer-events: none;
-
 			h3 {
 				font-family: UTM-COPPERPLATE;
 				font-size: 16px;
