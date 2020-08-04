@@ -693,7 +693,7 @@ const getBreadcrumbTitle = () => {
 const sharePostFaceBook = () => {
 	$('.lAS__listItem.share').click(() => {
 		var url = window.location.href;
-		$(this).attr("href" , `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
+		$('.lAS__listItem.share').attr("href" , `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
 	})
 }
 document.addEventListener('DOMContentLoaded', () => {
