@@ -107,7 +107,8 @@ const actionsLoginPage = () => {
 			const url = $(this).attr('data-url');
 			const isLike = $(this).attr('isLike');
 			const id = $(this).attr('id');
-			
+			const titleisLike = $(this).attr('data-title-islike');
+			const titleunLike = $(this).attr('data-title-unlike');
 			$.ajax({
 				type: 'post',
 				url: url,
@@ -129,13 +130,12 @@ const actionsLoginPage = () => {
 						const likeNum = parseInt($(this).find("span").html());
 						if (res.Result == true) {
 							$(this).attr('isLike', true);
-							const title = $(this).attr('data-title-islike');
-							$(this).find("h4").html(`${title} <span>${likeNum -1}</span>`);
+							$(this).find("h4").html(`${titleisLike} <span>${likeNum -1}</span>`);
 						}
 						if (res.Result == false) {
 							$(this).attr('isLike', false);
-							const title = $(this).attr('data-title-unlike');
-							$(this).find("h4").html(`${title} ${likeNum + 1}`);
+		
+							$(this).find("h4").html(`${titleunLike} ${likeNum + 1}`);
 						}
 					}
 				},
@@ -699,7 +699,7 @@ const getBreadcrumbTitle = () => {
 const sharePostFaceBook = () => {
 	$(".lAS__listItem.share").click(() => {
 		var url = window.location.href;
-		$(".lAS__listItem.share").attr("href" , `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
+		$(this).attr("href" , `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
 	})
 }
 document.addEventListener('DOMContentLoaded', () => {
