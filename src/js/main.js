@@ -2,12 +2,6 @@ import {
 	getSVGs,
 	Loading
 } from './util/utilities';
-import {
-	AddClassToLibDocument,
-	ajaxGetLibDocument,
-	ajaxGetLibImage,
-	ajaxGetLibVideo
-} from './gallery'
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';

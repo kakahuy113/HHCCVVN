@@ -1,6 +1,4 @@
-import {
-	getSVGs,
-} from './util/utilities';
+import { getSVGs } from './util/utilities';
 // Ajax Get Lib Image
  const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
