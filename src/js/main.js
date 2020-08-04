@@ -125,13 +125,18 @@ const actionsLoginPage = () => {
 					stateOfLikeButton();
 				},
 				success: (res) => {
-					if (res.Result == true) {
-						$(this).attr('isLike', true);
-						$(this).find("span").html(`${likeNum -1}`);
+					if(res.Code == 400) {
+						alert(`${res.Message}`)
 					}
-					if (res.Result == false) {
-						$(this).attr('isLike', false);
-						$(this).find("span").html(`${likeNum + 1}`);
+					if(res.Code == 200 ) {
+						if (res.Result == true) {
+							$(this).attr('isLike', true);
+							$(this).find("span").html(`${likeNum -1}`);
+						}
+						if (res.Result == false) {
+							$(this).attr('isLike', false);
+							$(this).find("span").html(`${likeNum + 1}`);
+						}
 					}
 				},
 				error: (res) => {}
