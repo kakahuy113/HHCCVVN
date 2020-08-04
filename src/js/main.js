@@ -102,15 +102,12 @@ const actionsLoginPage = () => {
 		// ACTION FOR ISLOGIN = TRUE
 		headerButtonLogin__wrapper.classList.add('isLogin');
 		headerLogged__wrapper.classList.add('isLogin');
-		if (research__login__option) {
-			research__login__option.classList.add('isLogin');
-		}
 		$('.lAS__listItem.like').on('click', function (e) {
 			e.preventDefault();
 			const url = $(this).attr('data-url');
 			const isLike = $(this).attr('isLike');
 			const id = $(this).attr('id');
-			const likeNum = parseInt($(this).find("span").html())
+			
 			$.ajax({
 				type: 'post',
 				url: url,
@@ -129,24 +126,31 @@ const actionsLoginPage = () => {
 						alert(`${res.Message}`)
 					}
 					if(res.Code == 200 ) {
+						const likeNum = parseInt($(this).find("span").html());
 						if (res.Result == true) {
 							$(this).attr('isLike', true);
-							$(this).find("span").html(`${likeNum -1}`);
+							const title = $(this).attr('data-title-islike');
+							$(this).find("h4").html(`${title} <span>${likeNum -1}</span>`);
 						}
 						if (res.Result == false) {
 							$(this).attr('isLike', false);
-							$(this).find("span").html(`${likeNum + 1}`);
+							const title = $(this).attr('data-title-unlike');
+							$(this).find("h4").html(`${title} ${likeNum + 1}`);
 						}
 					}
 				},
 				error: (res) => {}
 			})
 		});
+		if (research__login__option) {
+			research__login__option.classList.add('isLogin');
+		}
+		
 	} else {
 		// ACTION FOR ISLOGIN = FALSE
 		headerButtonLogin__wrapper.classList.remove('isLogin');
 		headerLogged__wrapper.classList.remove('isLogin');
-		$('.news__events--detail .lAS__listItem.like').on('click', function (e) {
+		$('.lAS__listItem.like').on('click', function (e) {
 			e.preventDefault();
 			$.fancybox.open({
 				src: '#form__login'
@@ -710,6 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	initMainBanner();
 	// INIT Smooth Scrollbar
 	initSmoothScrollbar();
+	//Share Facebook
+	sharePostFaceBook();
 	// AJAX FORM FOOTER
 	ajaxFormFooter();
 	// OPEN TARGET LINK FOOTER
@@ -764,8 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	getBreadcrumbTitle();
 	//Active link news event
 	activeLinkNews();
-	//Share Facebook
-	sharePostFaceBook();
+	
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
