@@ -490,7 +490,7 @@ const ajaxFormContact = () => {
 	$('.contact form .form-button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
-		_thisBtn.addClass('pointer-events', 'none');
+		_thisBtn.css('pointer-events', 'none');
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
 		$('.contact form .form-group input').each(function () {
@@ -523,7 +523,7 @@ const ajaxFormContact = () => {
 			});
 		}
 		else {
-			_thisBtn.removeClass('pointer-events');
+			_thisBtn.css('pointer-events', 'unset');
 		}
 	});
 };
