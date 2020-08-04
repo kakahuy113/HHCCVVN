@@ -133,7 +133,7 @@ const actionsLoginPage = () => {
 						}
 						if (res.Result == false) {
 							$(this).attr('isLike', false);
-							$(this).find("h4").html(`${titleunLike} ${likeNum + 1}`);
+							$(this).find("h4").html(`${titleunLike} <span>${likeNum + 1}</span>`);
 						}
 					}
 				},
