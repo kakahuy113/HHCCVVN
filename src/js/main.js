@@ -501,6 +501,7 @@ const ajaxFormContact = () => {
 
 		if ($('.contact form').valid() === true) {
 			const _key = $(this).attr('data-sitekey');
+			const datasending = $(this).attr("data-sending")
 			grecaptcha.ready(function () {
 				grecaptcha
 					.execute(_key, { action: 'submit' })
@@ -513,6 +514,7 @@ const ajaxFormContact = () => {
 							processData: false,
 							contentType: false,
 							beforeSend: function () {
+								$(this).find("span").html(`${datasending}`);
 							},
 							success: function (res) {
 								alert(`${res.Message}`);
@@ -696,6 +698,7 @@ const sharePostFaceBook = () => {
 		$('.lAS__listItem.share').attr("href" , `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
 	})
 }
+
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
