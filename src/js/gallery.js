@@ -1,7 +1,22 @@
-import {
-	getSVGs
-} from './util/utilities';
-// Ajax Get Lib Image
+const getSVGs = (selector) => {
+	let images;
+	if (selector) {
+		images = Array.from(document.querySelectorAll(selector));
+	} else {
+		images = Array.from(document.querySelectorAll('img.svg'));
+	}
+
+	for (let i = 0; i < images.length; i++) {
+		const url =
+			images[i].getAttribute('src') || images[i].getAttribute('data-src');
+		const getImageRequest = new XMLHttpRequest();
+		getImageRequest.open('GET', url, true);
+		getImageRequest.onload = function (e) {
+			images[i].outerHTML = e.target.response;
+		};
+		getImageRequest.send();
+	}
+};
  const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
 		$('.item-image--tab').click(() => {
@@ -259,7 +274,6 @@ const customPopupDocument = () => {
 	}
 }
 document.addEventListener('DOMContentLoaded', () => {
-	getSVGs();
 	//AJAX get Libary Image
 	ajaxGetLibImage();
 	//AJAX get Libary Video
