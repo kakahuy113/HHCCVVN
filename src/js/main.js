@@ -490,6 +490,7 @@ const ajaxFormContact = () => {
 	$('.contact form .form-button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
+		_thisBtn.addClass('pointer-events', 'none');
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
 		$('.contact form .form-group input').each(function () {
@@ -512,16 +513,17 @@ const ajaxFormContact = () => {
 							processData: false,
 							contentType: false,
 							beforeSend: function () {
-								_thisBtn.attr('disabled', 'disabled');
 							},
 							success: function (res) {
 								alert(`${res.Message}`);
 								window.location.reload();
-								_thisBtn.removeAttr('disabled');
 							},
 						});
 					});
 			});
+		}
+		else {
+			_thisBtn.removeClass('pointer-events');
 		}
 	});
 };
@@ -530,6 +532,7 @@ const ajaxFormResearch = () => {
 	$('.btn.btn-subResearch button').on('click', function (e) {
 		e.preventDefault();
 		const _thisBtn = $(this);
+		_thisBtn.addClass('pointer-events', 'none');
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
 		const nameText = $(
@@ -559,16 +562,17 @@ const ajaxFormResearch = () => {
 							processData: false,
 							contentType: false,
 							beforeSend: function () {
-								_thisBtn.attr('disabled', 'disabled');
 							},
 							success: function (res) {
 								alert(`${res.Message}`);
 								window.location.reload();
-								_thisBtn.removeAttr('disabled');
 							},
 						});
 					});
 			});
+		}
+		else {
+			_thisBtn.removeClass('pointer-events');
 		}
 	});
 };
