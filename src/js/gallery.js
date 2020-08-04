@@ -18,7 +18,6 @@ const getSVGs = (selector) => {
 	}
 };
  const ajaxGetLibImage = () => {
-	if ($('.item-image--tab')) {
 		$('.item-image--tab').click(() => {
 			const url = $('.item-image--tab').attr('data-url');
 			$.ajax({
@@ -45,11 +44,9 @@ const getSVGs = (selector) => {
 				},
 			});
 		})
-	}
 };
 // Ajax Get Lib Video
  const ajaxGetLibVideo = () => {
-	if ($('.item-video--tab')) {
 		$('.item-video--tab').click(() => {
 			const url = $('.item-video--tab').attr('data-url');
 			$.ajax({
@@ -74,11 +71,9 @@ const getSVGs = (selector) => {
 				},
 			});
 		})
-	}
 };
 // Ajax Get Lib Document
 const ajaxGetLibDocument = () => {
-	if ($('.item-document--tab')) {
 		$('.item-document--tab').click(() => {
 			const url = $('.item-document--tab').attr('data-url');
 			$.ajax({
@@ -106,7 +101,6 @@ const ajaxGetLibDocument = () => {
 				}
 			});
 		})
-	}
 };
 // Ajax Get all Lib Image
 const ajaxGetMoreLibImage = () => {
@@ -260,7 +254,6 @@ const loadToWaitRequest = (boolean) => {
 }
 //Popup Document Lib 
 const customPopupDocument = () => {
-	if (document.querySelector(".lib__page")) {
 		var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
 		listDocument.forEach(item => {
 			item.addEventListener("click", () => {
@@ -271,8 +264,12 @@ const customPopupDocument = () => {
 				$("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
 			})
 		})
-	}
 }
+//Click FirstItem
+const triggerClick = () => {
+	document.getElementsByClassName("lib--item")[0].click()
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 	//AJAX get Libary Image
 	ajaxGetLibImage();
@@ -280,4 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	ajaxGetLibVideo();
 	//AJAX gget Libary document
 	ajaxGetLibDocument();
+	//Click FirstItem
+	triggerClick();
 })
