@@ -18,7 +18,13 @@ section.Related {
     }
     .related__col {
         flex: 0 0 20%;
-        padding: 0 10px;
+        padding: 0 7.5px;
+        &:first-child {
+            padding-left: 10px;
+        }
+        &:last-child {
+            padding-right: 10px;
+        }
         @media (max-width: 768.98px) {
             flex: 0 0 50%;
             margin-top: 10px;
@@ -37,6 +43,9 @@ section.Related {
             }
         }
         .related__col--img {
+            margin-bottom: 10px;
+            width: 100%;
+            height: 143px;
             @media (max-width: 768.98px) {
                 width: 100%;
             }

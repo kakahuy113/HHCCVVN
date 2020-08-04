@@ -69,7 +69,7 @@ section.lib__page
 							.content--video
 								-for(var i = 0; i < 9; i++)
 									.isVideo
-										a(data-fancybox, data-width="990", data-height="641", href="https://www.youtube.com/watch?v=JNDfatH4BRM")
+										a(data-fancybox, data-width="990", data-height="641", href="https://www.youtube.com/watch?v=XbGs_qK2PQA")
 											div.item-video
 												div
 													img.ofcv(src=`./assets/images/lib-image/video.png`, alt="something")
@@ -89,16 +89,16 @@ section.lib__page
 								.document--inner--content.row
 									-for(var i = 0; i< 10;i ++)
 										div.item__wrapper.col-6
-											.item__wrapper--inner
-													div.book-icon
+											.item__wrapper--inner.row
+													div.book-icon.col-1
 														img.svg(data-src=`./assets/images/lib-image/document-book.svg`, alt="something")
-													div.title-desc
+													div.title-desc.col-9
 														.dowload-document-content
 															a.document--popup-link(data-fancybox, data-src="#popup--document",data-url="1iiZAqKNcrKq3VGdNyCODHug3YAe48cYN", href="javascript:;")
 																h3.tt-u.lcl.lcl-1 Lorem ipsum dolor sit amet,  adipiscing elit.
 																p
 																	!= "<span>Ngày cập nhật:</span> 10/01/20 "
-													div.download-document--btn
+													div.download-document--btn.col-2
 														a(href="" download)
 															img.svg(data-src=`./assets/images/lib-image/document-dow.svg`, alt="something")
 									#popup--document(style='display: none;')

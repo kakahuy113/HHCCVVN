@@ -1,8 +1,16 @@
 .member-detail__page {
     margin: 81px 0 137px 0;
 }
-
 .wrapper--inner {
+    @media (max-width: 1440px) {
+        .row {
+            &> div {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+    }
     @media (max-width: 1024.98px) {
         .row {
             flex-direction: column;
@@ -22,6 +30,7 @@
             }
         }
     }
+  
 }
 
 .member-detail__wrapper--img {
@@ -51,15 +60,13 @@
         }
     }
     p {
-        // margin-bottom: 15px;
-        verflow: hidden;
+        overflow: hidden;
         display: -webkit-box;
         text-overflow: ellipsis;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
     }
     .info {
-        // max-width: 143px;
         div {
             display: flex;
             &:last-child {

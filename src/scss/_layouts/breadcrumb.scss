@@ -11,6 +11,9 @@
                 color: map-get($mau, trang);
                 font-size: 14px;
                 display: inline-block;
+                @media (max-width: 575.98px) {
+                    font-size: 10px;
+                }
             }
             &.active {
                 a {
@@ -18,11 +21,16 @@
                 }
             }
             &:last-child {
-                overflow: hidden;
-                display: -webkit-box;
-                text-overflow: ellipsis;
-                -webkit-box-orient: vertical;
-                -webkit-line-clamp: 1;
+                >a {
+                    margin-bottom: -7px;
+                    width: 40vw;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    @media (max-width: 575.98px) {
+                        margin-bottom: -4px;
+                    }
+                }
             }
             &+li {
                 &:before {
@@ -32,6 +40,9 @@
                     top: 0;
                     margin: 0 12px;
                     color: map-get($mau, trang);
+                    @media (max-width: 575.98px) {
+                        margin: 0px 3px;
+                    }
                 }
             }
         }

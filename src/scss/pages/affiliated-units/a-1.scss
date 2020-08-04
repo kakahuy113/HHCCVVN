@@ -16,9 +16,6 @@ section.Affiliated-units {
         padding: 0 10px;
         padding-bottom: 50px;
     }
-    .unit__wrapper.col-8 {
-        margin: 0 auto;
-    }
     .unit__content {
         margin-bottom: 50px;
         @media (max-width: 575.98px) {
@@ -74,7 +71,22 @@ section.Affiliated-units {
         }
     }
     .unit__row--list {
-        .unit__col {
+        h3 {
+            margin-bottom: 15px;
+            color: map-get($mau, main-2);
+            font-size: 20px;
+            font-family: MYRIADPRO-SEMIBOLD;
+            @media (max-width: 1440.98px) {
+                font-size: 17px;
+            }
+            @media (max-width: 768.98px) {
+                font-size: 15px;
+                margin-bottom: 10px;
+            }
+        }
+        ul {
+            margin-bottom: 30px;
+            flex: 0 0 50%;
             @media (max-width: 768.98px) {
                 flex: 0 0 100%;
                 max-width: 100%;
@@ -83,57 +95,72 @@ section.Affiliated-units {
                     margin-bottom: 0;
                 }
             }
-            h3 {
-                margin-bottom: 15px;
-                color: map-get($mau, main-2);
-                font-size: 20px;
-                font-family: MYRIADPRO-SEMIBOLD;
-                @media (max-width: 1440.98px) {
-                    font-size: 17px;
-                }
+            &:nth-child(2n) {
                 @media (max-width: 768.98px) {
-                    font-size: 15px;
-                    margin-bottom: 10px;
-                }
-            }
-            ul {
-                &.no-pd {
-                    @media (max-width: 768.98px) {
-                        padding-inline-start: 0;
-                    }
-                }
-                list-style-type: none;
-                &.dot {
-                    padding-left: 0;
-                    >li {
-                        padding-left: 20px;
-                        position: relative;
-                        &::before {
-                            position: absolute;
-                            content: '';
-                            background: map-get($mau, xam);
-                            width: 8px;
-                            height: 8px;
-                            border-radius: 50%;
-                            top: 50%;
-                            left: 5px;
-                            transform: translate(-50%, -50%);
-                        }
-                    }
+                    padding-inline-start: 0;
                 }
                 li {
-                    font-size: 1rem;
-                    color: map-get($mau, xam);
-                    margin-bottom: 10px;
-                    &:last-child {
-                        margin-bottom: 0;
+                    padding-left: 20px;
+                }
+            }
+            list-style-type: none;
+            &:nth-child(2n+1) {
+                padding-left: 0;
+                >li {
+                    padding-left: 20px;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        background: map-get($mau, xam);
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 5px;
+                        transform: translate(-50%, -50%);
                     }
-                    @media (max-width: 1440.98px) {
-                        font-size: 14px;
+                }
+            }
+            li {
+                font-size: 1rem;
+                color: map-get($mau, xam);
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                @media (max-width: 1440.98px) {
+                    font-size: 14px;
+                }
+                @media (max-width: 768.98px) {
+                    font-size: 13px;
+                    // margin-bottom: 10px;
+                }
+                &:first-child {
+                    &::before {
+                        content: none !important;
                     }
-                    @media (max-width: 768.98px) {
-                        font-size: 13px;
-                        // margin-bottom: 10px;
+                    padding-left: 0;
+                    ul {
+                        list-style-type: none;
+                        margin-bottom: 0px !important;
+                        li {
+                            padding-left: 0 !important;
+                            &::before {
+                                content: none !important;
+                            }
+                            margin-bottom: 15px !important;
+                            color: map-get($mau, main-2);
+                            font-size: 20px;
+                            font-family: MYRIADPRO-SEMIBOLD;
+                            @media (max-width: 1440.98px) {
+                                font-size: 17px;
+                            }
+                            @media (max-width: 768.98px) {
+                                font-size: 15px;
+                                margin-bottom: 10px;
+                            }
+                        }
                     }
                 }
             }
