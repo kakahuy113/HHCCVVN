@@ -173,7 +173,10 @@ section.Research {
     }
     .research__login--form {
         border-radius: 15px;
-        padding: 30px 32px;
+        padding: 40px;
+        @media (max-width: 1440.98px) {
+            padding: 15px 25px;
+        }
         @media (max-width: 575.98px) {
             padding: 15px;
         }
