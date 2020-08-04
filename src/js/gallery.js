@@ -1,4 +1,6 @@
-import { getSVGs } from './util/utilities';
+import {
+	getSVGs
+} from './util/utilities';
 // Ajax Get Lib Image
  const ajaxGetLibImage = () => {
 	if ($('.item-image--tab')) {
@@ -257,6 +259,7 @@ const customPopupDocument = () => {
 	}
 }
 document.addEventListener('DOMContentLoaded', () => {
+	getSVGs();
 	//AJAX get Libary Image
 	ajaxGetLibImage();
 	//AJAX get Libary Video

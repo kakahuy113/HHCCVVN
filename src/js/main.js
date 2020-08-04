@@ -2,6 +2,7 @@ import {
 	getSVGs,
 	Loading
 } from './util/utilities';
+
 import Cookie from './lib/Cookie';
 import Tab from './lib/Tab';
 import CommonController from './lib/CommonController';
