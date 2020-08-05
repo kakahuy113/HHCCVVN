@@ -491,6 +491,8 @@ const ajaxFormContact = () => {
 		e.preventDefault();
 		const _thisBtn = $(this);
 		_thisBtn.css('pointer-events', 'none');
+		const datasending = $(this).attr("data-sending");
+		$(this).find("span").html(datasending)
 		const url = _thisBtn.attr('data-url');
 		const formData = new FormData();
 		$('.contact form .form-group input').each(function () {
@@ -498,7 +500,6 @@ const ajaxFormContact = () => {
 			const value = $(this).val();
 			formData.append(name, value);
 		});
-		const datasending = $(this).attr("data-sending");
 		if ($('.contact form').valid() === true) {
 			const _key = $(this).attr('data-sitekey');
 			grecaptcha.ready(function () {
@@ -513,7 +514,6 @@ const ajaxFormContact = () => {
 							processData: false,
 							contentType: false,
 							beforeSend: function () {
-								$(this).find("span").html(datasending)
 							},
 							success: function (res) {
 								alert(`${res.Message}`);
