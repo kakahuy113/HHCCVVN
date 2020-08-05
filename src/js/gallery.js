@@ -92,7 +92,7 @@ const ajaxGetLibDocument = () => {
 					ajaxGetMoreLibDocument();
 				},
 				success: (res) => {
-					const item = res;
+					const item = res.Result.document;
 					const currentItem = $(".tab-content");
 					currentItem.html(item);
 				},
