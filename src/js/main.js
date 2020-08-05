@@ -148,7 +148,7 @@ const actionsLoginPage = () => {
 		// ACTION FOR ISLOGIN = FALSE
 		headerButtonLogin__wrapper.classList.remove('isLogin');
 		headerLogged__wrapper.classList.remove('isLogin');
-		$('.news__events--detail .lAS__listItem.like').on('click', function (
+		$('.lAS__listItem.like').on('click', function (
 			e
 		) {
 			e.preventDefault();
