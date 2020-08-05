@@ -498,10 +498,9 @@ const ajaxFormContact = () => {
 			const value = $(this).val();
 			formData.append(name, value);
 		});
-
+		const datasending = $(this).attr("data-sending");
 		if ($('.contact form').valid() === true) {
 			const _key = $(this).attr('data-sitekey');
-			const datasending = $(this).attr("data-sending")
 			grecaptcha.ready(function () {
 				grecaptcha
 					.execute(_key, { action: 'submit' })
@@ -514,7 +513,7 @@ const ajaxFormContact = () => {
 							processData: false,
 							contentType: false,
 							beforeSend: function () {
-								$(this).find("span").html(`${datasending}`);
+								$(this).find("span").html(datasending)
 							},
 							success: function (res) {
 								alert(`${res.Message}`);
