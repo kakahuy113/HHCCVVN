@@ -526,9 +526,10 @@
 	}
 }
 
-#popup--document {
+#popup--document.fancybox-content {
 	max-width: 1365px;
 	width: 100%;
+	
 	h2 {
 		font-size: 30px;
 		font-family: UTM-COPPERPLATEB;
@@ -568,13 +569,16 @@
 			font-family: UTM-COPPERPLATEB;
 			color: #002F4B;
 		}
-
-		// h6.sub-title {
-		// 	font-size: 16px;
-		// 	font-family: UTM-COPPERPLATEB;
-		// 	margin-bottom: 35px;
-		// 	color: #002F4B;
-		// }
+		@media (max-width: 767.98px) {
+			padding: 20px 10px 0 10px;
+		}
+		@media (max-width: 575.98px) {
+			padding: 20px 0 0 0;
+		}
+		
+	}
+	@media (max-width: 575.98px) {
+		padding: 20px 10px 0 10px;	
 	}
 }
 
