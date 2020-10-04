@@ -38,6 +38,9 @@ section.LikeAndShare {
         height: 36px;
         border-radius: 4px;
         box-shadow: 0px 3px 6px rgba($color: #000000, $alpha: 0.16);
+        &.bonus {
+            width: 150px;
+        }
         @media (max-width: 575.98px) {
             width: 100px;
         }
