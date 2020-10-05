@@ -253,11 +253,12 @@ const loadToWaitRequest = (boolean) => {
     }
     //Popup Document Lib 
 const customPopupDocument = () => {
-        var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
+		var listDocument = document.querySelectorAll(".document-content-tab .document--popup-link")
+		const domain = window.location.origin
         listDocument.forEach(item => {
             item.addEventListener("click", () => {
                 const url = item.getAttribute("data-url");
-                $("#popup--document iframe").attr("src", `https://docs.google.com/viewerng/viewer?url=${url}`);
+                $("#popup--document iframe").attr("src", `https://docs.google.com/viewerng/viewer?url=${domain}${url}`);
                 $("#popup--document a").attr("href", `${url}`);
                 $("#popup--document .title").html(`${item.querySelector("h3").innerHTML}`)
                 $("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
