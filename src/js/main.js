@@ -673,6 +673,7 @@ const seeMoreMember = () => {
 		});
 	}
 };
+
 //state of like button
 const stateOfLikeButton = () => {
 	var likeBtn = $('.lAS__listItem.like');
@@ -684,12 +685,14 @@ const stateOfLikeButton = () => {
 		$(likeBtn).find('h4').html('Bỏ Thích <span>0</span>');
 	}
 };
+
 //get breadcrumb title
 const getBreadcrumbTitle = () => {
 	let title = $('#breadcrumb-wrapper ul li').eq(1).text();
 	$('#breadcrumb-wrapper ul li').last().addClass('active');
 	$('.pagesBanner__title h1').text(title);
 };
+
 //share post facebook
 const sharePostFaceBook = () => {
 	$('.lAS__listItem.share').click(() => {
@@ -764,7 +767,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	getBreadcrumbTitle();
 	//Active link news event
 	activeLinkNews();
-	
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
