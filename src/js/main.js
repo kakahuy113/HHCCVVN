@@ -544,7 +544,6 @@ const ajaxFormResearch = () => {
             formData.append(name, value);
         });
         formData.append(nameText, valText);
-
         if ($('.research__login--form form').valid() === true) {
             const _key = $(this).attr('data-sitekey');
             grecaptcha.ready(function() {
