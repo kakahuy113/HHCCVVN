@@ -666,6 +666,7 @@ const seeMoreMember = () => {
         });
     }
 };
+
 //state of like button
 const stateOfLikeButton = () => {
     var likeBtn = $('.lAS__listItem.like');
@@ -677,12 +678,14 @@ const stateOfLikeButton = () => {
         $(likeBtn).find('h4').html('Bỏ Thích <span>0</span>');
     }
 };
+
 //get breadcrumb title
 const getBreadcrumbTitle = () => {
     let title = $('#breadcrumb-wrapper ul li').eq(1).text();
     $('#breadcrumb-wrapper ul li').last().addClass('active');
     $('.pagesBanner__title h1').text(title);
 };
+
 //share post facebook
 const sharePostFaceBook = () => {
     $('.lAS__listItem.share').click(() => {
@@ -710,74 +713,74 @@ const getAPIBonus = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    Cookie();
-    getSVGs();
-    Loading();
-    // COMMON CONTROLLER
-    CommonController();
-    // ACCOUNT CONTROLLER
-    AccountController();
-    // MAIN BANNER WEBSITE
-    initMainBanner();
-    // INIT Smooth Scrollbar
-    initSmoothScrollbar();
-    //Share Facebook
-    sharePostFaceBook();
-    // AJAX FORM FOOTER
-    ajaxFormFooter();
-    // OPEN TARGET LINK FOOTER
-    openTargetLinkFooter();
-    // INIT CLASS SUB MENU
-    initClassSubMenu();
-    // INIT ELEMENT BUTTON BACK SUB MENU
-    initElementButtonBackSubMenu();
-    // SHOW SUB MENU MOBILE
-    showSubMenuMobile();
-    // SHOW INPUT SEARCH
-    showInputSearch();
-    // CHECK LOGIN
-    actionsLoginPage();
-    // SHOW BACK TO TOP
-    showBackToTop();
-    // COPY DATA BY ATTR
-    copyDataByAttr();
-    // ACTIVE LANGGUAGE
-    activeLanguage();
-    // HOme swiper Video
-    sliderHomeVideo();
-    // HOme swiper Image
-    silderHomeImage();
-    // Submit Contact Form
-    ajaxFormContact();
-    //play video
-    playVideoIntroduct();
-    //setHeightBgIntroduce
-    setHeightBgIntroduce();
-    //GET
-    ajaxFormResearch();
-    //downRowContent
-    downRowContent();
-    //activeLinkMenu
-    activeLinkMenu();
-    //Swiper Home banner
-    sliderHotnewsHome();
-    //Swiper home lib section
-    sliderVideoBanner1();
-    //Swiper home lib section 2
-    sliderVideoBanner2();
-    //Swiper home member section
-    SliderHomeMemberSection();
-    //See All Member
-    seeMoreMember();
-    //state of Like Btn
-    stateOfLikeButton();
-    //getBreadcrumbTitle
-    getBreadcrumbTitle();
-    //Active link news event
-    activeLinkNews();
-    getAPIBonus();
-    //TAB
-    const Libary__Tab = new Tab('.lib__page .tab-container');
+	Cookie();
+	getSVGs();
+	Loading();
+	// COMMON CONTROLLER
+	CommonController();
+	// ACCOUNT CONTROLLER
+	AccountController();
+	// MAIN BANNER WEBSITE
+	initMainBanner();
+	// INIT Smooth Scrollbar
+	initSmoothScrollbar();
+	//Share Facebook
+	sharePostFaceBook();
+	// AJAX FORM FOOTER
+	ajaxFormFooter();
+	// OPEN TARGET LINK FOOTER
+	openTargetLinkFooter();
+	// INIT CLASS SUB MENU
+	initClassSubMenu();
+	// INIT ELEMENT BUTTON BACK SUB MENU
+	initElementButtonBackSubMenu();
+	// SHOW SUB MENU MOBILE
+	showSubMenuMobile();
+	// SHOW INPUT SEARCH
+	showInputSearch();
+	// CHECK LOGIN
+	actionsLoginPage();
+	// SHOW BACK TO TOP
+	showBackToTop();
+	// COPY DATA BY ATTR
+	copyDataByAttr();
+	// ACTIVE LANGGUAGE
+	activeLanguage();
+	// HOme swiper Video
+	sliderHomeVideo();
+	// HOme swiper Image
+	silderHomeImage();
+	// Submit Contact Form
+	ajaxFormContact();
+	//play video
+	playVideoIntroduct();
+	//setHeightBgIntroduce
+	setHeightBgIntroduce();
+	//GET
+	ajaxFormResearch();
+	//downRowContent
+	downRowContent();
+	//activeLinkMenu
+	activeLinkMenu();
+	//Swiper Home banner
+	sliderHotnewsHome();
+	//Swiper home lib section
+	sliderVideoBanner1();
+	//Swiper home lib section 2
+	sliderVideoBanner2();
+	//Swiper home member section
+	SliderHomeMemberSection();
+	//See All Member
+	seeMoreMember();
+	//state of Like Btn
+	stateOfLikeButton();
+	//getBreadcrumbTitle
+	getBreadcrumbTitle();
+	//Active link news event
+	activeLinkNews();
+	getAPIBonus();
+	//TAB
+	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
 
 window.addEventListener('resize', () => {

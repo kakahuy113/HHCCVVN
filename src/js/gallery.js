@@ -17,172 +17,172 @@ const getSVGs = (selector) => {
         getImageRequest.send();
     }
 };
-//  const ajaxGetLibImage = () => {
-// 		$('.item-image--tab').click(() => {
-// 			const url = $('.item-image--tab').attr('data-url');
-// 			$.ajax({
-// 				type: 'get',
-// 				url: url,
-// 				processData: false,
-// 				contentType: false,
-// 				beforeSend: () => {
-// 					loadToWaitRequest(true);
-// 				},
-// 				complete: () => {
-// 					loadToWaitRequest(false);
-// 					randomCodePopupImage();
-// 					initializeLibImage__Slider_Popup();
-// 					ajaxGetMoreLibImage();
-// 				},
-// 				success: (res) => {
-// 					const item = res;
-// 					const currentItem = $(".tab-content");
-// 					currentItem.html(item);
-// 				},
-// 				error: (res) => {
-// 					console.log(res);
-// 				},
-// 			});
-// 		})
-// };
-// // Ajax Get Lib Video
-//  const ajaxGetLibVideo = () => {
-// 		$('.item-video--tab').click(() => {
-// 			const url = $('.item-video--tab').attr('data-url');
-// 			$.ajax({
-// 				type: 'get',
-// 				url: url,
-// 				processData: false,
-// 				contentType: false,
-// 				beforeSend: () => {
-// 					loadToWaitRequest(true);
-// 				},
-// 				complete: () => {
-// 					loadToWaitRequest(false);
-// 					ajaxGetMoreLibVideo();
-// 				},
-// 				success: (res) => {
-// 					const item = res;
-// 					const currentItem = $(".tab-content");
-// 					currentItem.html(item);
-// 				},
-// 				error: (res) => {
-// 					console.log(res);
-// 				},
-// 			});
-// 		})
-// };
-// // Ajax Get Lib Document
-// const ajaxGetLibDocument = () => {
-// 		$('.item-document--tab').click(() => {
-// 			const url = $('.item-document--tab').attr('data-url');
-// 			$.ajax({
-// 				type: 'get',
-// 				url: url,
-// 				processData: false,
-// 				contentType: false,
-// 				beforeSend: () => {
-// 					loadToWaitRequest(true);
-// 				},
-// 				complete: () => {
-// 					loadToWaitRequest(false);
-// 					getSVGs();
-// 					customPopupDocument();
-// 					EditAtrr();
-// 					ajaxGetMoreLibDocument();
-// 				},
-// 				success: (res) => {
-// 					const item = res;
-// 					const currentItem = $(".tab-content");
-// 					currentItem.html(item);
-// 				},
-// 				error: (res) => {
-// 					console.log(res);
-// 				}
-// 			});
-// 		})
-// };
-// // Ajax Get all Lib Image
-// const ajaxGetMoreLibImage = () => {
-// 	$('.see-more-images').click(() => {
-// 		const url = $('.see-more-images').attr('data-url');
-// 		$.ajax({
-// 			type: 'get',
-// 			url: url,
-// 			beforeSend: () => {
-// 				loadToWaitRequest(true);
-// 			},
-// 			complete: () => {
-// 				loadToWaitRequest(false);
-// 				randomCodePopupImage();
-// 				initializeLibImage__Slider_Popup();
-// 			},
-// 			success: (res) => {
-// 				const item = res;
-// 				const currentItem = $(".tab-content");
-// 				currentItem.html(item);
-// 			},
-// 			error: (res) => {
-// 				console.log(res);
-// 			},
-// 		});
-// 	});
-// };
-// // Ajax Get all Lib Video
-// const ajaxGetMoreLibVideo = () => {
-// 	$('.see-more-video').click(() => {
-// 		const url = $('.see-more-video').attr('data-url');
-// 		$.ajax({
-// 			type: 'get',
-// 			url: url,
-// 			processData: false,
-// 			contentType: false,
-// 			beforeSend: () => {
-// 				loadToWaitRequest(true);
-// 			},
-// 			complete: () => {
-// 				loadToWaitRequest(false);
-// 			},
-// 			success: (res) => {
-// 				const item = res;
-// 				const currentItem = $(".tab-content");
-// 				currentItem.html(item);
-// 			},
-// 			error: (res) => {
-// 				console.log(res);
-// 			},
-// 		});
-// 	});
-// };
-// // Ajax Get all Lib Document
-// const ajaxGetMoreLibDocument = () => {
-// 	$('.see-more-document').click(() => {
-// 		const url = $(".see-more-document").attr("data-url");
-// 		$.ajax({
-// 			type: 'get',
-// 			url: url,
-// 			processData: false,
-// 			contentType: false,
-// 			beforeSend: () => {
-// 				loadToWaitRequest(true);
-// 			},
-// 			complete: () => {
-// 				loadToWaitRequest(false);
-// 				getSVGs();
-// 				customPopupDocument();
-// 				EditAtrr();
-// 			},
-// 			success: (res) => {
-// 				const item = res;
-// 				const currentItem = $(".tab-content");
-// 				currentItem.html(item);
-// 			},
-// 			error: (res) => {
-// 				console.log(res);
-// 			},
-// 		});
-// 	});
-// };
+ const ajaxGetLibImage = () => {
+		$('.item-image--tab').click(() => {
+			const url = $('.item-image--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+					randomCodePopupImage();
+					initializeLibImage__Slider_Popup();
+					ajaxGetMoreLibImage();
+				},
+				success: (res) => {
+					const item = res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
+		})
+};
+// Ajax Get Lib Video
+ const ajaxGetLibVideo = () => {
+		$('.item-video--tab').click(() => {
+			const url = $('.item-video--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+					ajaxGetMoreLibVideo();
+				},
+				success: (res) => {
+					const item = res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
+				},
+				error: (res) => {
+					console.log(res);
+				},
+			});
+		})
+};
+// Ajax Get Lib Document
+const ajaxGetLibDocument = () => {
+		$('.item-document--tab').click(() => {
+			const url = $('.item-document--tab').attr('data-url');
+			$.ajax({
+				type: 'get',
+				url: url,
+				processData: false,
+				contentType: false,
+				beforeSend: () => {
+					loadToWaitRequest(true);
+				},
+				complete: () => {
+					loadToWaitRequest(false);
+					getSVGs();
+					customPopupDocument();
+					EditAtrr();
+					ajaxGetMoreLibDocument();
+				},
+				success: (res) => {
+					const item = res;
+					const currentItem = $(".tab-content");
+					currentItem.html(item);
+				},
+				error: (res) => {
+					console.log(res);
+				}
+			});
+		})
+};
+// Ajax Get all Lib Image
+const ajaxGetMoreLibImage = () => {
+	$('.see-more-images').click(() => {
+		const url = $('.see-more-images').attr('data-url');
+		$.ajax({
+			type: 'get',
+			url: url,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+				randomCodePopupImage();
+				initializeLibImage__Slider_Popup();
+			},
+			success: (res) => {
+				const item = res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
+};
+// Ajax Get all Lib Video
+const ajaxGetMoreLibVideo = () => {
+	$('.see-more-video').click(() => {
+		const url = $('.see-more-video').attr('data-url');
+		$.ajax({
+			type: 'get',
+			url: url,
+			processData: false,
+			contentType: false,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+			},
+			success: (res) => {
+				const item = res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
+};
+// Ajax Get all Lib Document
+const ajaxGetMoreLibDocument = () => {
+	$('.see-more-document').click(() => {
+		const url = $(".see-more-document").attr("data-url");
+		$.ajax({
+			type: 'get',
+			url: url,
+			processData: false,
+			contentType: false,
+			beforeSend: () => {
+				loadToWaitRequest(true);
+			},
+			complete: () => {
+				loadToWaitRequest(false);
+				getSVGs();
+				customPopupDocument();
+				EditAtrr();
+			},
+			success: (res) => {
+				const item = res;
+				const currentItem = $(".tab-content");
+				currentItem.html(item);
+			},
+			error: (res) => {
+				console.log(res);
+			},
+		});
+	});
+};
 // RamdomCode LibImage
 const randomCodePopupImage = () => {
     let count = $('.modalimage');
@@ -203,7 +203,6 @@ const EditAtrr = () => {
         item.querySelector(".download-document--btn a").setAttribute("href", `${url}`)
     })
 }
-
 
 // Lib Image popup
 const Libary_Image_Popup = (id) => {
@@ -271,14 +270,14 @@ const triggerClick = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    //AJAX get Libary Image
-    // ajaxGetLibImage();
-    // //AJAX get Libary Video
-    // ajaxGetLibVideo();
-    // //AJAX gget Libary document
-    // ajaxGetLibDocument();
-    //Click FirstItem
-    triggerClick();
-    EditAtrr();
-    customPopupDocument();
+	// AJAX get Libary Image
+	ajaxGetLibImage();
+	//AJAX get Libary Video
+	ajaxGetLibVideo();
+	//AJAX gget Libary document
+	ajaxGetLibDocument();
+	// Click FirstItem
+	triggerClick();
+	EditAtrr();
+	customPopupDocument();
 })
