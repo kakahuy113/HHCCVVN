@@ -258,7 +258,7 @@ const customPopupDocument = () => {
         listDocument.forEach(item => {
             item.addEventListener("click", () => {
                 const url = item.getAttribute("data-url");
-                $("#popup--document iframe").attr("src", `https://docs.google.com/viewerng/viewer?url=${domain}${url}`);
+                $("#popup--document iframe").attr("src", `https://docs.google.com/viewerng/viewer?url=${domain}${url}&embedded=true`);
                 $("#popup--document a").attr("href", `${url}`);
                 $("#popup--document .title").html(`${item.querySelector("h3").innerHTML}`)
                 $("#popup--document .header--content").html(`${item.querySelector("p").innerHTML}`)
