@@ -683,7 +683,7 @@ const stateOfLikeButton = () => {
 const getBreadcrumbTitle = () => {
     let title = $('#breadcrumb-wrapper ul li').eq(1).text();
     $('#breadcrumb-wrapper ul li').last().addClass('active');
-    $('.pagesBanner__title h1').text(title);
+    $('.pagesBanner__title h2').text(title);
 };
 
 //share post facebook
