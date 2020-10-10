@@ -12,12 +12,22 @@
 		.home__member--item {
 			display: inline-flex;
 			width: 190px;
+			overflow: hidden;
 			height: 110px;
 			background: #fff;
 			border-radius: 16px;
 			.item-img__wrapper {
 				align-self: center;
 				margin: 0 auto;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				img {
+					width: unset;
+					height: unset;
+				}
 			}
 			@media (max-width: 575.98px) {
 				width: 160px;

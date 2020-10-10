@@ -1,12 +1,18 @@
 section.LikeAndShare
 	.container
 		.container-1365px.lAS__wrapper
-			.lAS__list(data-href="https://developers.facebook.com/docs/plugins/")
-				a.lAS__listItem.share(href="")
+			.lAS__list
+				a.lAS__listItem.share(href="javascript:;")
 					.lAS__list--item
 						.lAS__item--img
 							img(src="./assets/images/research/share.png", alt="")
 						h4 Chia sẽ
+				a(href="" target="_blank").shareface.item-share
+					img.svg(src="./assets/images/news-events-detail/facebook.svg", alt="")
+				a(href="" target="_blank").sharetweet.item-share
+					img.svg(src="./assets/images/news-events-detail/tweet.svg", alt="")
+				a(href="" target="_blank").sharelinkedin.item-share
+					img.svg(src="./assets/images/news-events-detail/linked.svg", alt="")
 				a.lAS__listItem.like(href="", data-url="asd", isLike="false", id="qwe",data-title-islike="like",data-title-unlike="unlike")
 					.lAS__list--item
 						.lAS__item--img

@@ -688,10 +688,26 @@ const getBreadcrumbTitle = () => {
 
 //share post facebook
 const sharePostFaceBook = () => {
-    $('.lAS__listItem.share').click(() => {
+    $('.shareface').click(() => {
         var url = window.location.href;
-        $('.lAS__listItem.share').attr("href", `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
+        $('.shareface').attr("href", `javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${url}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
     })
+}
+//share tweet\
+const shareTweet = () => {
+	if(document.querySelector(".sharetweet")) {
+		var url = window.location.href
+		const endcodeurl = encodeURI(url);
+		$(".sharetweet").attr("href" , `https://twitter.com/intent/tweet?url=${endcodeurl}`)
+	}
+}
+//share linkedIn
+const sharelinkedIn = () => {
+	if(document.querySelector(".sharelinkedin")) {
+		var url = window.location.href
+		const endcodeurl = encodeURI(url);
+		$(".sharelinkedin").attr("href" , `https://www.linkedin.com/shareArticle?mini=true&url=${endcodeurl}`)
+	}
 }
 
 const getAPIBonus = () => {
@@ -712,6 +728,13 @@ const getAPIBonus = () => {
     }
 }
 
+const toogleShare = () => {
+    if(document.querySelector(".lAS__listItem.share")) {
+        document.querySelector(".lAS__listItem.share").addEventListener("click" , (item) => {
+            document.querySelector(".lAS__listItem.share").classList.toggle("active")
+        })
+    }
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -725,7 +748,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	// INIT Smooth Scrollbar
 	initSmoothScrollbar();
 	//Share Facebook
-	sharePostFaceBook();
+    sharePostFaceBook();
+    shareTweet();
+    sharelinkedIn();
 	// AJAX FORM FOOTER
 	ajaxFormFooter();
 	// OPEN TARGET LINK FOOTER
@@ -778,7 +803,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	getBreadcrumbTitle();
 	//Active link news event
 	activeLinkNews();
-	getAPIBonus();
+    getAPIBonus();
+    toogleShare();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
