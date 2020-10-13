@@ -376,7 +376,12 @@ const openTargetLinkFooter = () => {
     );
     select__linkTarget.addEventListener('change', (e) => {
         const select__valute = select__linkTarget.value;
-        window.open(`${select__valute}`, '_blank');
+        if(select__valute == "") {
+            e.preventDefault();
+        } else {
+            window.open(`${select__valute}`, '_blank');
+        }
+
     });
 };
 
