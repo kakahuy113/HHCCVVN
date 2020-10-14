@@ -277,6 +277,8 @@ const copyDataByAttr = () => {
             var data = itemCopy.getAttribute('data-copy');
             if (data != null && data == itemPaste.getAttribute('data-paste')) {
                 itemPaste.textContent = itemCopy.textContent;
+                const href = itemCopy.getAttribute("href")
+                itemPaste.setAttribute("href" , `${href}`)
             }
         });
     });
