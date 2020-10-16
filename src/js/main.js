@@ -742,6 +742,13 @@ const toogleShare = () => {
         })
     }
 }
+
+const addProtocol = () => {
+    document.querySelectorAll(".website").forEach(item => {
+        const url = item.getAttribute("href");
+        item.setAttribute("href" , `${window.location.protocol}//${url}`)
+    })
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -812,6 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	activeLinkNews();
     getAPIBonus();
     toogleShare();
+    addProtocol();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
