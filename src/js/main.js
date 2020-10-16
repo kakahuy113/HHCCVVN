@@ -749,6 +749,9 @@ const addProtocol = () => {
         item.setAttribute("href" , `${window.location.protocol}//${url}`)
     })
 }
+window.onload = () => {
+    addProtocol();
+}
 document.addEventListener('DOMContentLoaded', () => {
 	Cookie();
 	getSVGs();
@@ -819,7 +822,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	activeLinkNews();
     getAPIBonus();
     toogleShare();
-    addProtocol();
 	//TAB
 	const Libary__Tab = new Tab('.lib__page .tab-container');
 });
