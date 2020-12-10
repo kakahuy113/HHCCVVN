@@ -63,11 +63,12 @@ header {
 
 .header__logo {
     position: absolute;
-    left: 0;
+    left: 5%;
     z-index: 1;
     @media (max-width: 1024.98px) {
         top: 50%;
         transform: translateY(-50%);
+        left: 0;
     }
 }
 
@@ -75,11 +76,11 @@ header {
     display: block;
     margin: 0 auto;
     img.dekstop {
-        width: 150px;
-        height: 150px;
+        width: 140px;
+        height: 140px;
     }
     img.mobile {
-        width: 150px;
+        width: 140px;
         height: 80px;
     }
     @media (max-width: 1024.98px) {
