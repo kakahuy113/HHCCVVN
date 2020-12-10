@@ -74,8 +74,12 @@ header {
 .headerLogo__link {
     display: block;
     margin: 0 auto;
+    img.dekstop {
+        width: 150px;
+        height: 150px;
+    }
     img.mobile {
-        width: 100%;
+        width: 150px;
         height: 80px;
     }
     @media (max-width: 1024.98px) {
